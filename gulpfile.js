@@ -13,7 +13,7 @@ const paths = {
         src: `*.scss`,
         dest: `.`,
         watch: `**/*.scss`,
-        lintFiles: `**/*.scss`,
+        lintFiles: `*.scss`,
         autoprefixerBrowsers: [`last 3 version`]
     }
 };
@@ -32,6 +32,22 @@ gulp.task('sass', () => {
             suffix: '.min'
         }))
         .pipe(gulp.dest(paths.sass.dest))
+});
+
+gulp.task('watch', () => {
+  gulp.watch(paths.sass.watch, ['sass', 'sasslint']);
+});
+
+gulp.task('sasslint', () => {
+    return gulp.src(paths.sass.lintFiles)
+        .pipe($.stylelint({
+            reporters: [
+                {
+                    formatter: 'string',
+                    console: true
+                }
+            ]
+        }));
 });
 
 gulp.task('default', ['sass']);

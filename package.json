@@ -11,6 +11,7 @@
   },
   "devDevependencies": {},
   "devDependencies": {
-    "gulp-postcss": "^6.3.0"
+    "gulp-postcss": "^6.3.0",
+    "gulp-stylelint": "^3.9.0"
   }
 }
