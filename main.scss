@@ -1,3 +1,18 @@
 /* ==========================================================================
    #NIGHTINGALE
    ========================================================================== */
+
+/**
+ * CONTENTS
+ *
+ * GENERIC
+ * Box-sizing...........Better default box-sizing rules.
+ * Normalize.css........Snapshot of Normalize.css as of v5.0.0.
+ * Reset................Small reset on top of Normalize.css.
+ */
+
+@import "generic/generic.box-sizing";
+
+@import "generic/generic.normalize";
+
+@import "generic/generic.reset";
