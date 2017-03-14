@@ -1,5 +1,9 @@
 .foo, .bar, .baz {
 
+  @media print {
+    color: red;
+  }
+
   width: 0;
   background: red;
 
