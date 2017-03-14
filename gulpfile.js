@@ -12,7 +12,7 @@ const paths = {
     sass: {
         src: `*.scss`,
         dest: `.`,
-        watch: `**/*.scss`,
+        watch: `main.scss`,
         lintFiles: `*.scss`,
         autoprefixerBrowsers: [`last 3 version`]
     }
