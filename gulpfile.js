@@ -28,9 +28,6 @@ gulp.task('sass', () => {
                 browsers: paths.sass.autoprefixerBrowsers
             }),
         ]))
-        .pipe($.rename({
-            suffix: '.min'
-        }))
         .pipe(gulp.dest(paths.sass.dest))
 });
 
