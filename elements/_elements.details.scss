@@ -8,8 +8,16 @@
 
 details {
 
-  > :last-child {
-    margin-bottom: 0;
+  /**
+   * This is really far from ideal, but if we drop a DIV directly into the
+   * DETAILS element, we get a nice grouping element. Nearly all of the values
+   * below are eyeballed, so they’re pretty subjective.
+   */
+  > div {
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-left: $global-spacing-unit-small;
+    border-left: 4px solid #e8edee;
   }
 
 }
