@@ -2,8 +2,38 @@
 // #DEFINITIONS
 // ========================================================================== */
 
-$global-font-size: 18px;
-$global-line-height: 26px;
+// Typography
+// ========================================================================== */
+
+$global-font-size: 18px !default;
+$global-line-height: 26px !default;
+
+
+
+
+
+// Colours
+// ========================================================================== */
+
+$colors: (
+  'attention': '#7c2855',
+  'error': '#da291c',
+  'information': '#330072',
+  'nhs-aqua': '#00a499',
+  'nhs-black': '#231f20',
+  'nhs-blue': '#005eb8',
+  'nhs-grey-dark': '#425563',
+  'nhs-grey-mid': '#768692',
+  'nhs-grey-pale': '#e8edee',
+  'nhs-orange': '#ed8b00',
+  'nhs-pink': '#ae2573',
+  'nhs-purple': '#330072',
+  'nhs-purple-light': '#704c9c',
+  'pending': '#8a1538',
+  'success': '#78be20',
+  'warning': '#fae100',
+  'white': '#fff',
+) !default;
 
 
 
