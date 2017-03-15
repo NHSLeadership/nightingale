@@ -28,3 +28,15 @@ $color-links: color('nhs-purple') !default;
 $color-links-hover: color('nhs-purple-light') !default;
 $color-links-active: color('nhs-orange') !default;
 $color-links-visited: color('attention') !default;
+
+
+
+
+
+// Details
+//
+// The DETAILS element is almost identical to the A element, so we just use link
+// variables to style the majority of it.
+// ========================================================================== */
+
+$color-details-border: color('nhs-grey-pale') !default;
