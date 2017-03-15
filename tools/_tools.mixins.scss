@@ -9,7 +9,7 @@
   font-size: $font-size;
   font-size: ($font-size / $global-font-size) * 1rem;
 
-  @if $line-height == auto {
+  @if ($line-height == auto) {
     line-height: ceil($font-size / $global-line-height) * ($global-line-height / $font-size);
   }
 
