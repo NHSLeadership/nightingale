@@ -13,7 +13,7 @@ const paths = {
         src: [`./**/*.scss`,`!./node_modules/**/*.scss`],
         dest: `.`,
         watch: [`./**/*.scss`,`!./node_modules/**/*.scss`],
-        lintFiles: `./**/*.scss`,`!./node_modules/**/*.scss`],
+        lintFiles: [`./**/*.scss`,`!./node_modules/**/*.scss`],
         autoprefixerBrowsers: [`last 3 version`]
     }
 };
