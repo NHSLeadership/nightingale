@@ -10,10 +10,10 @@ const basePaths = {
 
 const paths = {
     sass: {
-        src: `./**/*.scss`,
+        src: [`./**/*.scss`,`!./node_modules/**/*.scss`],
         dest: `.`,
-        watch: `./**/*.scss`,
-        lintFiles: `./**/*.scss`,
+        watch: [`./**/*.scss`,`!./node_modules/**/*.scss`],
+        lintFiles: [`./**/*.scss`,`!./node_modules/**/*.scss`],
         autoprefixerBrowsers: [`last 3 version`]
     }
 };
@@ -21,7 +21,8 @@ const paths = {
 gulp.task('sass', () => {
     return gulp.src(paths.sass.src)
         .pipe($.sass({
-            outputStyle: 'expanded'
+            outputStyle: 'expanded',
+            precision: 9
         }).on('error', $.sass.logError))
         .pipe($.postcss([
             $.autoprefixer({
