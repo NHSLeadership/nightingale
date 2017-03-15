@@ -1,0 +1,55 @@
+// ==========================================================================
+// #MIXINS
+// ========================================================================== */
+
+// Create a rem-based font-size that automatically sits on our baseline grid.
+// ========================================================================== */
+
+@mixin font-size($font-size, $line-height: auto) {
+  font-size: $font-size;
+  font-size: ($font-size / $global-font-size) * 1rem;
+
+  @if $line-height == auto {
+    line-height: ceil($font-size / $global-line-height) * ($global-line-height / $font-size);
+  }
+
+  @else {
+
+    @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+      line-height: $line-height;
+    }
+
+    @elseif ($line-height != none and $line-height != false) {
+
+      @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`.";
+
+    }
+
+  }
+
+}
+
+
+
+
+
+// Generate a rem-based property with its pixel fallback
+// ========================================================================== */
+
+@mixin rem($property, $value) {
+
+  @if (type-of($value) == number and unit($value) == 'px') {
+
+    #{$property}: $value;
+    #{$property}: rem($value);
+
+  }
+
+  @else {
+
+    @error "`@include rem()` expected a pixel value. Actual value was: `#{$value}`";
+
+  }
+
+
+}

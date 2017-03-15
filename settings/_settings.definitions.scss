@@ -1,0 +1,29 @@
+// ==========================================================================
+// #DEFINITIONS
+// ========================================================================== */
+
+$global-font-size: 18px;
+$global-line-height: 26px;
+
+
+
+
+
+///////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//                                                                            \\
+//                               W A R N I N G                                \\
+//                                                                            \\
+///////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// Do not modify anything below this point: this is framework-only reassignment.
+
+$global-spacing-unit: $global-line-height;
+$global-spacing-unit-tiny: round(0.25 * $global-spacing-unit);
+$global-spacing-unit-small: round(0.5 * $global-spacing-unit);
+$global-spacing-unit-large: round(2 * $global-spacing-unit);
+
+@if ($global-spacing-unit != $global-line-height) {
+
+  @error "Do not manually override the vlue of `$global-spacing-unit`.";
+
+}
