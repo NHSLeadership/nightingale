@@ -6,7 +6,7 @@
  * Generate a suite of utility classes that map directly to our colour palette.
  */
 
-@each $name, $value in $colors {
+@each $name, $value in $global-colors {
 
   .u-color-#{$name} {
     color: unquote($value) !important;
