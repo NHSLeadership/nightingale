@@ -35,6 +35,11 @@ $global-colors: (
   'white': '#fff',
 ) !default;
 
+// Grab colors from the above map by calling `color(error)`.
+@function color($key) {
+  @return unquote(map-get($global-colors, $key));
+}
+
 
 
 
