@@ -1,0 +1,27 @@
+/* ==========================================================================
+   #COLORS
+   ========================================================================== */
+
+/**
+ * Generate a suite of utility classes that map directly to our colour palette.
+ */
+
+@each $name, $value in $global-colors {
+
+  .u-color-#{$name} {
+    color: unquote($value) !important;
+  }
+
+  .u-color-bg-#{$name} {
+    background-color: unquote($value) !important;
+  }
+
+  .u-color-#{$name}\:hover:hover {
+    color: unquote($value) !important;
+  }
+
+  .u-color-bg-#{$name}\:hover:hover {
+    background-color: unquote($value) !important;
+  }
+
+}

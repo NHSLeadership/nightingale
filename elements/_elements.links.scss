@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #LINKS
+   ========================================================================== */
+
+/**
+ * This is simply to style bare A elements. Anything more complex should
+ * probably become a Component.
+ */
+
+a {
+  color: $color-links;
+
+  &:hover {
+    color: $color-links-hover;
+  }
+
+  &:active,
+  &:focus {
+    color: $color-links-active;
+  }
+
+  &:visited {
+    color: $color-links-visited;
+  }
+
+}
