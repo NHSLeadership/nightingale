@@ -7,7 +7,7 @@
 
 @function strip-unit($value) {
 
-  @if (typeof($value) == number) {
+  @if (type-of($value) == number) {
 
     @return $value / ($value * 0 + 1);
 

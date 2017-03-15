@@ -1,0 +1,40 @@
+/* ==========================================================================
+   #DETAILS
+   ========================================================================== */
+
+/**
+ * Native browser DETAILS element used to toggle content.
+ */
+
+details {
+
+  /**
+   * This is really far from ideal, but if we drop a DIV directly into the
+   * DETAILS element, we get a nice grouping element. Nearly all of the values
+   * below are eyeballed, so they’re pretty subjective.
+   */
+  > div {
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-left: $global-spacing-unit-small;
+    border-left: 4px solid #e8edee;
+  }
+
+}
+
+  summary {
+    color: #330072;
+    cursor: pointer;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    details[open] > & {
+      color: #78be20;
+      text-decoration: underline;
+    }
+
+  }

@@ -17,6 +17,15 @@
  * Normalize.css........Snapshot of Normalize.css as of v5.0.0.
  * Reset................Small reset on top of Normalize.css.
  * Shared...............Share vertical rhythm etc. across multiple elements.
+ *
+ * ELEMENTS
+ * Page.................HTML and BODY element styles.
+ * Headings.............H1–6 elements.
+ * Quotes...............Pared back quotation styling.
+ * Details..............Basic details element for revealed content.
+ *
+ * OBJECTS
+ * Wrappers.............Page-constraints.
  */
 
 @import "settings/settings.definitions";
@@ -36,3 +45,18 @@
 @import "generic/generic.normalize";
 @import "generic/generic.reset";
 @import "generic/generic.shared";
+
+
+
+
+
+@import "elements/elements.page";
+@import "elements/elements.headings";
+@import "elements/elements.quotes";
+@import "elements/elements.details";
+
+
+
+
+
+@import "objects/objects.wrappers";

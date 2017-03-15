@@ -1,0 +1,15 @@
+/* ==========================================================================
+   #WRAPPERS
+   ========================================================================== */
+
+/**
+ * Page-constraining wrapper elements
+ */
+
+.o-wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $global-spacing-unit;
+  padding-left: $global-spacing-unit;
+  max-width: 1024px;
+}
