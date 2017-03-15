@@ -1,0 +1,30 @@
+// ==========================================================================
+// #COLORS
+// ========================================================================== */
+
+// In this file, we take the literal colors from our palette and define them
+// against variables that we can utilise anywhere throughout the project.
+
+
+
+
+
+// Text
+//
+// 1. Style the very high-level text of the page.
+// ========================================================================== */
+
+$color-text: color('nhs-black') !default; // [1]
+$color-text-bg: color('white') !default; // [1]
+
+
+
+
+
+// Links
+// ========================================================================== */
+
+$color-links: color('nhs-purple') !default;
+$color-links-hover: color('nhs-purple-light') !default;
+$color-links-active: color('nhs-orange') !default;
+$color-links-visited: color('attention') !default;
