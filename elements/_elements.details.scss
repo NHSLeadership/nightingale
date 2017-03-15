@@ -1,0 +1,32 @@
+/* ==========================================================================
+   #DETAILS
+   ========================================================================== */
+
+/**
+ * Native browser DETAILS element used to toggle content.
+ */
+
+details {
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+  summary {
+    color: #330072;
+    cursor: pointer;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    details[open] > & {
+      color: #78be20;
+      text-decoration: underline;
+    }
+
+  }
