@@ -10,10 +10,10 @@ const basePaths = {
 
 const paths = {
     sass: {
-        src: `*.scss`,
+        src: `./**/*.scss`,
         dest: `.`,
-        watch: `main.scss`,
-        lintFiles: `*.scss`,
+        watch: `./**/*.scss`,
+        lintFiles: `./**/*.scss`,
         autoprefixerBrowsers: [`last 3 version`]
     }
 };

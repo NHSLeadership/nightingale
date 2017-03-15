@@ -1,6 +1,5 @@
 {
   "rules": {
-    "at-rule-empty-line-before": "always",
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always-single-line",
     "block-closing-brace-newline-after": "always",

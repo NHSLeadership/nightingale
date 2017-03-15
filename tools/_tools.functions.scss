@@ -1,0 +1,45 @@
+// ==========================================================================
+// #FUNCTIONS
+// ========================================================================== */
+
+// Strip units function
+// ========================================================================== */
+
+@function strip-unit($value) {
+
+  @if (typeof($value) == number) {
+
+    @return $value / ($value * 0 + 1);
+
+  }
+
+  @else {
+
+    @warn "Value must be a number e.g. 12em, 24px etc.";
+
+  }
+
+}
+
+
+
+
+
+// Convert pixel value to rems
+// ========================================================================== */
+
+@function rem($value) {
+
+  @if (type-of($value) == number and unit($value) == 'px') {
+
+    @return ($value / $global-font-size) * 1rem;
+
+  }
+
+  @else {
+
+    @error "`rem()` expected a pixel value. Actual value was: `#{$value}`";
+
+  }
+
+}
