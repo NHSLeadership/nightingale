@@ -23,11 +23,16 @@ details {
 }
 
   summary {
-    color: #330072;
+    color: $color-links;
     cursor: pointer;
     outline: none;
 
-    &:hover,
+    &:hover {
+      color: $color-links-hover;
+      text-decoration: underline;
+    }
+
+    &:active,
     &:focus {
       text-decoration: underline;
     }

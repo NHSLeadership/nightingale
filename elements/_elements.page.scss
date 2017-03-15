@@ -28,4 +28,6 @@ html {
   -ms-text-size-adjust: 100%; /* [4] */
   -moz-osx-font-smoothing: grayscale; /* [5] */
   -webkit-font-smoothing: antialiased; /* [5] */
+  color: $color-text;
+  background-color: $color-text-bg;
 }
