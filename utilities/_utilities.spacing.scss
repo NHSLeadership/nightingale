@@ -63,7 +63,7 @@ $_spacing-sizes: (
 
     @each $size, $value in $_spacing-sizes {
 
-      // Create margin and paddings classes.
+      // Create margin and padding classes.
       .u-margin#{$direction}#{$size}#{$suffix} {
         margin#{$direction}: $value !important;
       }
@@ -72,6 +72,15 @@ $_spacing-sizes: (
         padding#{$direction}: $value !important;
       }
 
+    }
+
+    // Create zero margin and padding classes.
+    .u-margin#{$direction}-none#{$suffix} {
+      margin#{$direction}: 0 !important;
+    }
+
+    .u-padding#{$direction}-none#{$suffix} {
+      padding#{$direction}: 0 !important;
     }
 
   }
