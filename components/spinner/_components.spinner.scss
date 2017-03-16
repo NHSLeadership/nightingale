@@ -1,0 +1,68 @@
+/* ==========================================================================
+   #SPINNER
+   ========================================================================== */
+
+/**
+ * We have two simple types of spinner. One sits on no background, and the
+ * inverse version sits on a coloured background.
+ *
+ * 1. This hides the accessible text (‘Loading…’) present in the HTML
+ */
+
+@keyframes spinner {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+.c-spinner {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  overflow: hidden; /* [1] */
+  text-indent: 100%; /* [1] */
+
+  /**
+   * The actual spinning part of the spinner is a pseudo-element that sits on
+   * top of the spinner’s main box.
+   *
+   * 1. Center the spinner in its bounding box.
+   * 2. The size of the actual spinner is governed by its font-size.
+   */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%; /* [1] */
+    left: 50%; /* [1] */
+    margin-top: -0.5em; /* [1] */
+    margin-left: -0.5em; /* [1] */
+    border: 8px solid $color-spinner-dark;
+    border-top-color: transparent;
+    border-radius: 100%;
+    font-size: 60px; /* [2] */
+    width: 1em; /* [2] */
+    height: 1em; /* [2] */
+    animation: 0.5s spinner linear infinite;
+  }
+
+}
+
+
+
+
+
+/* Inverted Spinners
+   ========================================================================== */
+
+.c-spinner--inverse {
+  background-color: $color-spinner-dark;
+
+  &::after {
+    border-color: $color-spinner-light;
+    border-top-color: transparent;
+  }
+
+}
