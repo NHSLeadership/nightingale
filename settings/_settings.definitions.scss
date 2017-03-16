@@ -2,6 +2,14 @@
 // #DEFINITIONS
 // ========================================================================== */
 
+///
+// CONTENTS
+//
+// Typography...........Our most basic and global typographic settings.
+// Colors...............Load up a map with our color definitions.
+// Responsive...........Define our breakpoint sizes and what they’re called.
+ //
+
 // Typography
 // ========================================================================== */
 
@@ -12,7 +20,7 @@ $global-line-height: 26px !default;
 
 
 
-// Colours
+// Colors
 // ========================================================================== */
 
 $global-colors: (
@@ -39,6 +47,19 @@ $global-colors: (
 @function color($key) {
   @return unquote(map-get($global-colors, $key));
 }
+
+
+
+
+
+// Responsive
+// ========================================================================== */
+$mq-breakpoints: (
+  'sm': 480px,
+  'md': 720px,
+  'lg': 1024px,
+  'xl': 1280px,
+) !default;
 
 
 
