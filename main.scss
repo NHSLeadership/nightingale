@@ -25,6 +25,7 @@
  * Headings.............H1–6 elements.
  * Links................Basic hyperlink styles.
  * Lists................UL, OL element styles.
+ * Images...............Sensible defaults for IMG elements.
  * Quotes...............Pared back quotation styling.
  * Details..............Basic details element for revealed content.
  *
@@ -70,6 +71,7 @@
 @import "elements/elements.headings";
 @import "elements/elements.links";
 @import "elements/elements.lists";
+@import "elements/elements.images";
 @import "elements/elements.quotes";
 @import "elements/elements.details";
 
