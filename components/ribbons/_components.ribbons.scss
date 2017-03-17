@@ -1,0 +1,68 @@
+/* ==========================================================================
+   #RIBBONS
+   ========================================================================== */
+
+/**
+ * Ribbons are informational banners that sit above the main content of the
+ * page.
+ */
+
+.c-ribbon {
+  display: table;
+  width: 100%;
+  background-color: $color-ribbon-bg;
+  color: $color-ribbon;
+  padding-right: $global-spacing-unit;
+  padding-left: $global-spacing-unit;
+  @include font-size(14px);
+
+  @supports (display: flex) {
+    display: flex;
+  }
+
+  a {
+    color: inherit;
+  }
+
+}
+
+  .c-ribbon__icon,
+  .c-ribbon__body,
+  .c-ribbon__close {
+    display: table-cell;
+    padding: $global-spacing-unit-tiny;
+
+    @supports (display: flex) {
+      display: block;
+    }
+
+  }
+
+  .c-ribbon__body {
+    width: 100%;
+    font-weight: normal;
+
+    @supports (display: flex) {
+      width: auto;
+    }
+
+  }
+
+
+
+
+
+/* Style variants
+   ========================================================================== */
+
+.c-ribbon--alpha {
+  background-color: $color-ribbon-alpha-bg;
+}
+
+.c-ribbon--beta {
+  background-color: $color-ribbon-beta-bg;
+}
+
+.c-ribbon--live {
+  background-color: $color-ribbon-live-bg;
+}
