@@ -45,7 +45,7 @@
 
 
 // Generate our regular, non-responsive classes.
-@include _build-widths(16);
+@include _build-widths(12);
 
 
 
@@ -57,7 +57,7 @@
 
   @include mq($from: $alias) {
 
-    @include _build-widths(16, \@#{$alias});
+    @include _build-widths(12, \@#{$alias});
 
   }
 
