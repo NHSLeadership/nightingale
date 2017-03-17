@@ -53,6 +53,17 @@
 
   }
 
+  .c-ribbon__tag {
+    display: inline-block;
+    padding-right: $global-spacing-unit-small;
+    padding-left: $global-spacing-unit-small;
+    @include font-size(16px);
+    text-transform: uppercase;
+    font-weight: normal;
+    background-color: $color-ribbon-tag-bg;
+    color: $color-ribbon-tag;
+  }
+
 
 
 
