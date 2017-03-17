@@ -10,11 +10,16 @@
 .c-ribbon {
   display: table;
   width: 100%;
+  @include font-size(14px);
   background-color: $color-ribbon-bg;
   color: $color-ribbon;
-  padding-right: $global-spacing-unit;
-  padding-left: $global-spacing-unit;
-  @include font-size(14px);
+  padding-right: $global-spacing-unit-small;
+  padding-left: $global-spacing-unit-small;
+
+  @include mq($from: 'sm') {
+    padding-right: $global-spacing-unit;
+    padding-left: $global-spacing-unit;
+  }
 
   @supports (display: flex) {
     display: flex;
