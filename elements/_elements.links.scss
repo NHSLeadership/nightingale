@@ -55,7 +55,7 @@ a {
 // For terseness, let’s set up a block of placeholder declarations that we can
 // refer to later on. This is how we want only-links-in-headings to look.
 %_link-only-child {
-  @include font-size(19px);
+  @include font-size($global-font-size-h4);
   text-decoration: none;
   font-weight: bold;
 }
