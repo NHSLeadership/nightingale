@@ -37,6 +37,8 @@
  * COMPONENTS
  * Buttons..............Button component.
  * Spinner..............Waiting-state spinner.
+ * Ribbons..............Info messages that sit at the top of a page.
+ * Page Footer..........Large footer area at the very bottom of the page.
  *
  * UTILITIES
  * Colors...............Utility classes generated from our color map.
@@ -90,6 +92,8 @@
 
 @import "components/buttons/components.buttons";
 @import "components/spinner/components.spinner";
+@import "components/ribbons/components.ribbons";
+@import "components/page-footer/components.page-footer";
 
 
 
