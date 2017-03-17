@@ -32,6 +32,7 @@
  * OBJECTS
  * Wrappers.............Page-constraints.
  * Layout...............Grid-like layout system.
+ * List Bare............Lists with no indents or bullet points.
  *
  * COMPONENTS
  * Buttons..............Button component.
@@ -81,6 +82,7 @@
 
 @import "objects/objects.wrappers";
 @import "objects/objects.layout";
+@import "objects/objects.list-bare";
 
 
 
