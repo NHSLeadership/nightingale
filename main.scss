@@ -37,6 +37,7 @@
  * COMPONENTS
  * Buttons..............Button component.
  * Spinner..............Waiting-state spinner.
+ * Splitter.............Dividing element.
  * Ribbons..............Info messages that sit at the top of a page.
  * Page Footer..........Large footer area at the very bottom of the page.
  *
@@ -92,6 +93,7 @@
 
 @import "components/buttons/components.buttons";
 @import "components/spinner/components.spinner";
+@import "components/splitter/components.splitter";
 @import "components/ribbons/components.ribbons";
 @import "components/page-footer/components.page-footer";
 
