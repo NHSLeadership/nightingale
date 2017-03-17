@@ -6,6 +6,8 @@
  * Generate a suite of utility classes that map directly to our colour palette.
  */
 
+/* stylelint-disable declaration-no-important */
+
 @each $name, $value in $global-colors {
 
   .u-color-#{$name} {
@@ -25,3 +27,5 @@
   }
 
 }
+
+/* stylelint-enable */

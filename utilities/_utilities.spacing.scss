@@ -39,6 +39,8 @@ $_spacing-sizes: (
 
 
 
+/* stylelint-disable declaration-no-important */
+
 // Use a mixin to build spacing classes, rather than generating them directly.
 // This also allows us to call the mixin from within other loops.
 @mixin _build-spacing($breakpoint: null) {
@@ -71,6 +73,8 @@ $_spacing-sizes: (
   }
 
 }
+
+/* stylelint-enable */
 
 
 

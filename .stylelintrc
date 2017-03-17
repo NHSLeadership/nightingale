@@ -15,6 +15,7 @@
     "declaration-block-trailing-semicolon": "always",
     "declaration-colon-space-after": "always-single-line",
     "declaration-colon-space-before": "never",
+    "declaration-no-important": true,
     "function-name-case": "lower",
     "length-zero-no-unit": true,
     "max-empty-lines": 5,
