@@ -7,21 +7,21 @@
  */
 
 h1 {
-  @include font-size(48px);
+  @include font-size($global-font-size-h1);
   font-weight: bold;
 }
 
 h2 {
-  @include font-size(36px);
+  @include font-size($global-font-size-h2);
   font-weight: bold;
 }
 
 h3 {
-  @include font-size(27px);
+  @include font-size($global-font-size-h3);
   font-weight: bold;
 }
 
 h4 {
-  @include font-size(19px);
+  @include font-size($global-font-size-h4);
   font-weight: bold;
 }

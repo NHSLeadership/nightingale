@@ -35,3 +35,37 @@ a {
   }
 
 }
+
+
+
+
+
+/* Heading links
+ *
+ * A specific design style dictates that orphaned links in headers should look
+ * like an H4. This is an attempt at that, but if it goes wrong then we need to
+ * either remove or revisit it.
+ *
+ * 1. We’re using the `:only-child` selector here. AFAIK it has decent browser
+ *    support, but if not we can proxy it by using the potentially better
+ *    supported `:first-child:last-child` (because if something is both the
+ *    first and the last child, it must be the only child).
+   ========================================================================== */
+
+// For terseness, let’s set up a block of placeholder declarations that we can
+// refer to later on. This is how we want only-links-in-headings to look.
+%_link-only-child {
+  @include font-size($global-font-size-h4);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+// Loop through headings 1 through 6…
+@for $i from 1 through 6 {
+
+  // …and recycle the declarations we left behind previously.
+  h#{$i} > a:only-child { /* [1] */
+    @extend %_link-only-child;
+  }
+
+}

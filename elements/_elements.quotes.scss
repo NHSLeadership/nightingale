@@ -33,6 +33,9 @@ q {
 
 
 /* Standalone blockquotes
+ *
+ * 1. The defined line-height for BLOCKQUOTE elements is 32px, therefore we need
+ *    to grab the unitless line-height by calculating the ratio.
    ========================================================================== */
 
 blockquote {
@@ -40,7 +43,7 @@ blockquote {
   // How many times bigger than the text should the hung quote be?
   $hung-quote-ratio: 3;
 
-  @include font-size(24px, 1.333333333);
+  @include font-size(24px, 32/24);
   font-style: italic;
   color: #425563;
   padding-left: $hung-quote-ratio * 1em;

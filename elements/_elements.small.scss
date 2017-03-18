@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #SMALL
+   ========================================================================== */
+
+/**
+ * There’s a standard, set size for smallprint (i.e. it’s not relative to its
+ * context) so we can set that up very easily.
+ *
+ * 1. The defined line-height for SMALL elements is 20px, therefore we need to
+ *    grab the unitless line-height by calculating the ratio.
+ * 2. Needed to make SMALL elements honour the defined line-height.
+ */
+
+small {
+  @include font-size(14px, 20/14); /* [1] */
+  display: inline-block; /* [2] */
+}
