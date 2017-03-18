@@ -57,6 +57,21 @@ $color-btn-disabled-bg: color('nhs-grey-pale') !default;
 
 
 
+// Ribbons
+// ========================================================================== */
+
+$color-ribbon: color('white');
+$color-ribbon-bg: color('nhs-black');
+$color-ribbon-alpha-bg: color('nhs-pink');
+$color-ribbon-beta-bg: color('nhs-orange');
+$color-ribbon-live-bg: color('nhs-aqua');
+$color-ribbon-tag: color('white');
+$color-ribbon-tag-bg: color('nhs-black');
+
+
+
+
+
 // Details
 //
 // The DETAILS element is almost identical to the A element, so we just use link
