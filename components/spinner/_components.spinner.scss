@@ -6,7 +6,8 @@
  * We have two simple types of spinner. One sits on no background, and the
  * inverse version sits on a coloured background.
  *
- * 1. This hides the accessible text (‘Loading…’) present in the HTML
+ * 1. Detect support for animations before we actually try animating.
+ * 2. This hides the accessible text (‘Loading…’) present in the HTML
  */
 
 @keyframes spinner {
@@ -21,31 +22,42 @@
   position: relative;
   display: inline-block;
   width: 100px;
-  height: 100px;
-  overflow: hidden; /* [1] */
-  text-indent: 100%; /* [1] */
+  line-height: 100px;
+  text-align: center;
 
-  /**
-   * The actual spinning part of the spinner is a pseudo-element that sits on
-   * top of the spinner’s main box.
-   *
-   * 1. Center the spinner in its bounding box.
-   * 2. The size of the actual spinner is governed by its font-size.
-   */
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%; /* [1] */
-    left: 50%; /* [1] */
-    margin-top: -0.5em; /* [1] */
-    margin-left: -0.5em; /* [1] */
-    border: 8px solid $color-spinner-dark;
-    border-top-color: transparent;
-    border-radius: 100%;
-    font-size: 60px; /* [2] */
-    width: 1em; /* [2] */
-    height: 1em; /* [2] */
-    animation: 0.5s spinner linear infinite;
+  @supports (animation: 0.5s spinner) { /* [1] */
+
+    overflow: hidden; /* [2] */
+    text-indent: 100%; /* [2] */
+    vertical-align: middle;
+
+  }
+
+  @supports (animation: 0.5s spinner) {
+
+    /**
+     * The actual spinning part of the spinner is a pseudo-element that sits on
+     * top of the spinner’s main box.
+     *
+     * 1. Center the spinner in its bounding box.
+     * 2. The size of the actual spinner is governed by its font-size.
+     */
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%; /* [1] */
+      left: 50%; /* [1] */
+      margin-top: -0.5em; /* [1] */
+      margin-left: -0.5em; /* [1] */
+      border: 8px solid $color-spinner-dark;
+      border-top-color: transparent;
+      border-radius: 100%;
+      font-size: 60px; /* [2] */
+      width: 1em; /* [2] */
+      height: 1em; /* [2] */
+      animation: 0.5s spinner linear infinite;
+    }
+
   }
 
 }
@@ -59,10 +71,15 @@
 
 .c-spinner--inverse {
   background-color: $color-spinner-dark;
+  color: $color-spinner-light;
 
-  &::after {
-    border-color: $color-spinner-light;
-    border-top-color: transparent;
+  @supports (animation: 0.5s spinner) {
+
+    &::after {
+      border-color: $color-spinner-light;
+      border-top-color: transparent;
+    }
+
   }
 
 }

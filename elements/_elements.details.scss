@@ -37,9 +37,13 @@ details {
       text-decoration: underline;
     }
 
-    details[open] > & {
-      color: #78be20;
-      text-decoration: underline;
-    }
+    /* stylelint-disable selector-no-qualifying-type */
+
+      details[open] > & {
+        color: #78be20;
+        text-decoration: underline;
+      }
+
+    /* stylelint-enable */
 
   }

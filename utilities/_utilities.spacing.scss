@@ -39,24 +39,11 @@ $_spacing-sizes: (
 
 
 
+/* stylelint-disable declaration-no-important */
+
 // Use a mixin to build spacing classes, rather than generating them directly.
 // This also allows us to call the mixin from within other loops.
-@mixin _build-spacing() {
-
-  // If we’re not creating responsive classes, these variables won’t exist and
-  // will therefore throw an error. All we’re doing here is assigning them some
-  // null values that will either a) not throw an error or b) will get
-  // overridden automatically if we are generating responsive classes.
-  $alias: null !default;
-  $suffix: null !default;
-
-  // If the `$alias` variable is already set, let’s generate a responsive suffix
-  // out of it.
-  @if ($alias != null) {
-
-    $suffix: '\@' + $alias;
-
-  }
+@mixin _build-spacing($breakpoint: null) {
 
   // Start looping through our different permutations.
   @each $direction in $_spacing-directions {
@@ -64,28 +51,30 @@ $_spacing-sizes: (
     @each $size, $value in $_spacing-sizes {
 
       // Create margin and padding classes.
-      .u-margin#{$direction}#{$size}#{$suffix} {
+      .u-margin#{$direction}#{$size}#{$breakpoint} {
         margin#{$direction}: $value !important;
       }
 
-      .u-padding#{$direction}#{$size}#{$suffix} {
+      .u-padding#{$direction}#{$size}#{$breakpoint} {
         padding#{$direction}: $value !important;
       }
 
     }
 
     // Create zero margin and padding classes.
-    .u-margin#{$direction}-none#{$suffix} {
+    .u-margin#{$direction}-none#{$breakpoint} {
       margin#{$direction}: 0 !important;
     }
 
-    .u-padding#{$direction}-none#{$suffix} {
+    .u-padding#{$direction}-none#{$breakpoint} {
       padding#{$direction}: 0 !important;
     }
 
   }
 
 }
+
+/* stylelint-enable */
 
 
 
@@ -104,7 +93,7 @@ $_spacing-sizes: (
 
   @include mq($from: $alias) {
 
-    @include _build-spacing();
+    @include _build-spacing(\@#{$alias});
 
   }
 

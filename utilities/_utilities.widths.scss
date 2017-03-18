@@ -2,6 +2,8 @@
    #WIDTHS
    ========================================================================== */
 
+/* stylelint-disable declaration-no-important */
+
 @mixin _build-widths($columns, $breakpoint: null) {
 
   // Loop through the number of columns for each denominator of our fractions.
@@ -39,6 +41,8 @@
   }
 
 }
+
+/* stylelint-enable */
 
 
 

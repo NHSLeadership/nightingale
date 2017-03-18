@@ -23,16 +23,20 @@ a {
     color: $color-links-visited;
   }
 
-  &[target="_blank"]::after {
-    content: "⇱";
-    display: inline-block;
-    font: menu;
-    font-size: inherit;
-    vertical-align: text-top;
-    text-decoration: none;
-    margin-left: 2px;
-    transform: scaleX(-1) translateY(-2px);
-  }
+  /* stylelint-disable selector-no-qualifying-type */
+
+    &[target="_blank"]::after {
+      content: "⇱";
+      display: inline-block;
+      font: menu;
+      font-size: inherit;
+      vertical-align: text-top;
+      text-decoration: none;
+      margin-left: 2px;
+      transform: scaleX(-1) translateY(-2px);
+    }
+
+  /* stylelint-enable */
 
 }
 
