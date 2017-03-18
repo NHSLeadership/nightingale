@@ -34,6 +34,17 @@ $color-links-visited: color('attention') !default;
 
 
 
+// Page Footer
+// ========================================================================== */
+
+$color-page-footer-border: color('nhs-purple');
+$color-page-footer-bg: color('nhs-grey-pale');
+$color-page-footer-links: color('nhs-grey-mid');
+
+
+
+
+
 // Buttons
 // ========================================================================== */
 
@@ -89,3 +100,12 @@ $color-details-border: color('nhs-grey-pale') !default;
 
 $color-spinner-light: color('white') !default;
 $color-spinner-dark: color('nhs-blue') !default;
+
+
+
+
+
+// Splitters
+// ========================================================================== */
+
+$color-splitter: color('nhs-grey-mid') !default;

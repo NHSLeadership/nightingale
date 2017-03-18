@@ -32,11 +32,14 @@
  * OBJECTS
  * Wrappers.............Page-constraints.
  * Layout...............Grid-like layout system.
+ * List Bare............Lists with no indents or bullet points.
  *
  * COMPONENTS
  * Buttons..............Button component.
  * Spinner..............Waiting-state spinner.
+ * Splitter.............Dividing element.
  * Ribbons..............Info messages that sit at the top of a page.
+ * Page Footer..........Large footer area at the very bottom of the page.
  *
  * UTILITIES
  * Colors...............Utility classes generated from our color map.
@@ -82,6 +85,7 @@
 
 @import "objects/objects.wrappers";
 @import "objects/objects.layout";
+@import "objects/objects.list-bare";
 
 
 
@@ -89,7 +93,9 @@
 
 @import "components/buttons/components.buttons";
 @import "components/spinner/components.spinner";
+@import "components/splitter/components.splitter";
 @import "components/ribbons/components.ribbons";
+@import "components/page-footer/components.page-footer";
 
 
 

@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #SPLITTER
+   ========================================================================== */
+
+/**
+ * A splitter is a simple splitting device for dividing up sections of content.
+ * Usually applied to an HR element.
+ *
+ * 1. To maintain vertical rhythm, we subtract the splitter’s thickness from its
+ *    margin-bottom value.
+ */
+
+.c-splitter {
+  @include rem(margin-bottom, $global-spacing-unit - 1px); /* [1] */
+  border: none;
+  border-top: 1px solid $color-splitter;
+}

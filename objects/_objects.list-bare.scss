@@ -1,0 +1,13 @@
+/* ==========================================================================
+   #LIST-BARE
+   ========================================================================== */
+
+/**
+ * The List Bare object is a simple design pattern whereby we strip the list of
+ * its bullets and indents: stripping it bare.
+ */
+
+.o-list-bare {
+  margin-left: 0;
+  list-style: none;
+}
