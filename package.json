@@ -6,10 +6,10 @@
     "url": "https://github.com/NHSLeadership/nightingale.git"
   },
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha ./test/test.js",
     "deploy": "mkdir -p ./dist && cat ./main.scss | node_modules/.bin/node-sass --precision 9 --include-path node_modules/ --output-style expanded > dist/main.css",
     "lint": "stylelint '**/*.scss' --syntax scss",
-    "watch": "node_modules/.bin/node-sass --precision 9 --watch main.scss --output-style expanded --output dist"
+    "watch": "node_modules/.bin/node-sass --precision 9 --watch main.scss --output-style expanded --output dist",
+    "serve": "./node_modules/.bin/serve . & yarn watch"
   },
   "dependencies": {
     "autoprefixer": "^6.7.7",
@@ -19,5 +19,8 @@
     "sass-true": "^2.2.1",
     "stylelint": "^7.9.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "optionalDependencies": {
+    "serve": "^5.0.3"
+  }
 }
