@@ -1,17 +1,23 @@
 {
   "name": "Nightingale",
-  "description": "NHS Leadership's Front-end Framework",
+  "description": "Framework for the NHS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NHSLeadership/nightingale.git"
+  },
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha ./test/test.js",
+    "deploy": "mkdir -p ./dist && cat ./main.scss | node_modules/.bin/node-sass --precision 9 --include-path node_modules/ --output-style expanded > dist/main.css",
+    "lint": "stylelint '**/*.scss' --syntax scss",
+    "watch": "node_modules/.bin/node-sass --precision 9 --watch main.scss --output-style expanded --output dist"
+  },
   "dependencies": {
     "autoprefixer": "^6.7.7",
-    "gulp": "^3.9.1",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
+    "mocha": "^3.2.0",
+    "node-sass": "^4.5.0",
     "sass-mq": "^3.3.2",
-    "yargs": "^7.0.2"
+    "sass-true": "^2.2.1",
+    "stylelint": "^7.9.0"
   },
-  "devDependencies": {
-    "gulp-postcss": "^6.3.0",
-    "gulp-stylelint": "^3.9.0"
-  }
+  "devDependencies": {}
 }
