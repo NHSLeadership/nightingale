@@ -1,6 +1,14 @@
 {
-  "name": "Nightingale",
-  "description": "NHS Leadership's Front-end Framework",
+  "name": "nightingale",
+  "description": "NHS Leadership Front-end Framework core",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:NHSLeadership/nightingale.git"
+  },
+  "author": "NHS Leadership Academy",
+  "bugs": {
+    "url": "https://github.com/NHSLeadership/nightingale/issues"
+  },
   "dependencies": {
     "autoprefixer": "^6.7.7",
     "gulp": "^3.9.1",
