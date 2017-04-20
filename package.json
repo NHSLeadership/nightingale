@@ -5,7 +5,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com:NHSLeadership/nightingale.git"
   },
-  "author": "NHS Leadership Academy",]
+  "author": "NHS Leadership Academy",
   "bugs": {
     "url": "https://github.com/NHSLeadership/nightingale/issues"
   },
