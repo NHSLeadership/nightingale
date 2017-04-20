@@ -1,5 +1,6 @@
 {
   "name": "nightingale",
+  "version": "1.0",
   "description": "NHS Leadership Front-end Framework core",
   "repository": {
     "type": "git",
