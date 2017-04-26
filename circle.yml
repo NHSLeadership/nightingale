@@ -21,15 +21,8 @@ test:
   override:
     - yarn deploy
 
-experimental:
-  notify:
-    branches:
-      only:
-        - master
-
 deployment:
   production:
-    branch: tkt-00031
     commands:
       - aws s3 sync dist/ s3://nhs-nightingale/${CIRCLE_BRANCH}/${CIRCLE_BUILD_NUM}
       - aws s3 sync dist/ s3://nhs-nightingale/latest --delete

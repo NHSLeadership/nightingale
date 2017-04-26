@@ -9,18 +9,11 @@
     "deploy": "mkdir -p ./dist && cat ./main.scss | node_modules/.bin/node-sass --precision 9 --include-path node_modules/ --output-style expanded > dist/main.css",
     "lint": "stylelint '**/*.scss' --syntax scss",
     "watch": "node_modules/.bin/node-sass --precision 9 --watch main.scss --output-style expanded --output dist",
-    "serve": "./node_modules/.bin/serve . & yarn watch"
   },
   "dependencies": {
     "autoprefixer": "^6.7.7",
-    "mocha": "^3.2.0",
     "node-sass": "^4.5.0",
     "sass-mq": "^3.3.2",
-    "sass-true": "^2.2.1",
     "stylelint": "^7.9.0"
   },
-  "devDependencies": {},
-  "optionalDependencies": {
-    "serve": "^5.0.3"
-  }
 }

@@ -1,3 +1,0 @@
-# Brewfile
-brew install yarn
-
