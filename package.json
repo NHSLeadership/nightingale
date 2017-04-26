@@ -1,9 +1,15 @@
 {
-  "name": "Nightingale",
-  "description": "Framework for the NHS",
+  "name": "nightingale",
+  "version": "1.0.0",
+  "description": "NHS Leadership Front-end Framework core",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NHSLeadership/nightingale.git"
+    "url": "git+ssh://git@github.com:NHSLeadership/nightingale.git"
+  },
+  "author": "NHS Leadership Academy",
+  "bugs": {
+    "url": "https://github.com/NHSLeadership/nightingale/issues"
+
   },
   "scripts": {
     "deploy": "mkdir -p ./dist && cat ./main.scss | node_modules/.bin/node-sass --precision 9 --include-path node_modules/ --output-style expanded > dist/main.css",
