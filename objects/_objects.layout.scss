@@ -57,23 +57,29 @@
 /* Default/mandatory classes.
    ========================================================================== */
 
+/**
+ * 1. Use the font-size hack to get around whitespace issues caused by
+ *    `inline-block.`
+ * 2. No rems in IE8; use a pixel fallback as well as the rem value.
+ */
 .o-layout {
   margin: 0;
   padding: 0;
   list-style: none;
   box-sizing: border-box;
   margin-left: -$global-spacing-unit;
-  font-size: 0;
+  font-size: 0; /* [1] */
 }
 
-.o-layout__item {
-  display: inline-block;
-  vertical-align: top;
-  width: 100%;
-  box-sizing: border-box;
-  padding-left: $global-spacing-unit;
-  font-size: 1rem;
-}
+  .o-layout__item {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: $global-spacing-unit;
+    font-size: $global-font-size; /* [1][2] */
+    font-size: 1rem; /* [1] */
+  }
 
 
 
