@@ -1,0 +1,24 @@
+// ==========================================================================
+// #Z-INDEX
+// ========================================================================== */
+
+// Instead of letting developers use their own `z-index` values (ultimately
+// leading to `z-index: 999999999;`), let’s define a small and limited array of
+// values than can be used to nudge things up and down the stack.
+
+$z-index: (
+  '1':  10,
+  '2':  20,
+  '3':  30,
+  '4':  40,
+  '5':  50,
+  '6':  60,
+  '7':  70,
+  '8':  80,
+  '9':  90,
+  '10': 100,
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
