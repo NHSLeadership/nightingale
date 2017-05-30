@@ -1,0 +1,20 @@
+/* ==========================================================================
+   #Z-INDEX
+   ========================================================================== */
+
+/**
+ * Quickly spit out some little utility classes to make use of our stacking
+ * values (can be used to nudge things up and down in the HTML is necessary).
+ */
+
+/* stylelint-disable declaration-no-important */
+
+@each $key, $value in $z-index {
+
+  .u-z-index-#{$key} {
+    z-index: $value !important
+  }
+
+}
+
+/* stylelint-enable */
