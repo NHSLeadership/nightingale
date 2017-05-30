@@ -23,14 +23,16 @@ $z-index: (
 @function z-index($key) {
 
   @if (type-of($key) != number) {
-    @error "Value of `z-index()` should be a number."
+    @error "Value of `z-index()` should be a number.";
   }
 
   @if (map-has-key($z-index, $key)) {
 
     @return map-get($z-index, $key);
 
-  } @else {
+  }
+
+  @else {
 
     @error "#{$key} is not a valid value for `z-index()`.";
 
