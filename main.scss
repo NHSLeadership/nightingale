@@ -48,6 +48,7 @@
  * Colors...............Utility classes generated from our color map.
  * Spacing..............Nudge layouts around with our spacing classes.
  * Widths...............Generate width classes that can be used with our grid.
+ * Z-Index..............A suite of stacking utility classes.
  */
 
 @import "settings/settings.definitions";
@@ -110,3 +111,4 @@
 @import "utilities/utilities.colors";
 @import "utilities/utilities.spacing";
 @import "utilities/utilities.widths";
+@import "utilities/utilities.z-index";
