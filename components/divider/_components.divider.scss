@@ -1,0 +1,24 @@
+/* ==========================================================================
+   #DIVIDER
+   ========================================================================== */
+
+/**
+ * A divider is a simple splitting device for dividing up sections of content.
+ * Usually applied to an HR element.
+ *
+ * 1. To maintain vertical rhythm, we subtract the divider’s thickness from its
+ *    margin-bottom value.
+ */
+
+.c-divider {
+  @include rem(margin-bottom, $global-spacing-unit - 1px); /* [1] */
+  border: none;
+  border-top: 1px solid $color-divider;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.c-divider--large {
+  border-top-color: $color-divider-large;
+  border-top-width: 4px;
+}
