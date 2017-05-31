@@ -43,6 +43,10 @@
     margin-bottom: $global-spacing-unit-tiny;
   }
 
+    .c-progress__\% {
+      @include font-size(48px);
+    }
+
   .c-progress__title-sub {
     @include font-size(24px);
     margin-bottom: $global-spacing-unit-small;
