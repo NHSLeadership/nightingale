@@ -1,0 +1,96 @@
+/* ==========================================================================
+   #PROGRESS WHEEL
+   ========================================================================== */
+
+/**
+ * This is pretty horrendous, but please just trust me.
+ *
+ * We form our progress wheel by rotating and/or masking sections of a ring. As
+ * the percentage-complete increases, we rotate the partial ring around
+ * a corresponding number of degrees. Depending on how much of the ring we need
+ * to show, we might have to mask the beginning of it and only allow a small
+ * percentage to protrude.
+ *
+ * Feel free to reverse engineer the code (or even better, improve it!) but for
+ * now just know that it works :)
+ */
+
+.c-progress-wheel {
+
+  &,
+  &::before,
+  &::after {
+    width: 200px;
+    height: 200px;
+    border: 20px solid transparent;
+    border-radius: 100%;
+  }
+
+  & {
+    border-color: $color-progress-wheel-fill;
+    position: relative;
+  }
+
+  /**
+   * This element forms the actual progress bar…
+   */
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    border-left-color: $color-progress-wheel-bar;
+    border-bottom-color: $color-progress-wheel-bar;
+    transform: rotate(45deg);
+  }
+
+  /**
+   * …and this element is its mask
+   */
+  &::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    border-left-color: $color-progress-wheel-fill;
+    border-bottom-color: $color-progress-wheel-fill;
+    transform: rotate(45deg);
+  }
+
+}
+
+/**
+ * For every percent of completeness, rotate the progress bar 3.6º.
+ */
+@for $i from 1 through 100 {
+
+  [data-percent^="#{$i}"]::before {
+    transform: rotate(45 + ( $i * 3.6) + deg);
+
+    @if ($i >= 50) {
+      // If the wheel is filling up, we need more partial-ring. Turn another
+      // quarter on.
+      border-bottom-color: $color-progress-wheel-bar;
+    }
+
+  }
+
+  [data-percent="#{$i}"]::after {
+
+    // Beyond 50% complete, the mask needs to start chasing the bar and
+    // actually begin to form its beginnings…
+    @if ($i >= 50) {
+        border-left-color: $color-progress-wheel-bar;
+        transform: rotate(135deg);
+      }
+
+    // …and beyond 75% complete we need to do even more catching up.
+    @if ($i >= 75) {
+      border-left-color: $color-progress-wheel-bar;
+      border-bottom-color: $color-progress-wheel-bar;
+      transform: rotate(225deg);
+    }
+
+  }
+
+}
