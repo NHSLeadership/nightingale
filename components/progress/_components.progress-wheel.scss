@@ -17,6 +17,7 @@
 
 $_wheel-size: 80px;
 $_wheel-thickness: 10px;
+$_wheel-increments: 1;
 
 .c-progress-wheel {
 
@@ -81,10 +82,10 @@ $_wheel-thickness: 10px;
 /**
  * For every percent of completeness, rotate the progress bar 3.6º.
  */
-@for $i from 1 through 100 {
+@for $i from 1 through (100 / $_wheel-increments) {
 
-  [data-percent="#{$i}"]::before {
-    transform: rotate(45 + ( $i * 3.6) + deg);
+  [data-percent="#{$i * $_wheel-increments}"]::before {
+    transform: rotate(45 + (($i * $_wheel-increments) * 3.6) + deg);
 
     @if ($i >= 50) {
       // If the wheel is filling up, we need more partial-ring. Turn another
