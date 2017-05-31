@@ -14,9 +14,9 @@
 // 1. Style the very high-level text of the page.
 // ========================================================================== */
 
-$color-text: color('nhs-black') !default; // [1]
-$color-text-bg: color('white') !default; // [1]
-$color-lists: color('nhs-grey-dark') !default;
+$color-text:    color('nhs-black')     !default; // [1]
+$color-text-bg: color('white')         !default; // [1]
+$color-lists:   color('nhs-grey-dark') !default;
 
 
 
@@ -25,10 +25,10 @@ $color-lists: color('nhs-grey-dark') !default;
 // Links
 // ========================================================================== */
 
-$color-links: color('nhs-purple') !default;
-$color-links-hover: color('nhs-purple-light') !default;
-$color-links-active: color('nhs-orange') !default;
-$color-links-visited: color('attention') !default;
+$color-links:         color('nhs-purple')       !default;
+$color-links-hover:   color('nhs-purple-light') !default;
+$color-links-active:  color('nhs-orange')       !default;
+$color-links-visited: color('attention')        !default;
 
 
 
@@ -38,8 +38,8 @@ $color-links-visited: color('attention') !default;
 // ========================================================================== */
 
 $color-page-footer-border: color('nhs-purple');
-$color-page-footer-bg: color('nhs-grey-pale');
-$color-page-footer-links: color('nhs-grey-mid');
+$color-page-footer-bg:     color('nhs-grey-pale');
+$color-page-footer-links:  color('nhs-grey-mid');
 
 
 
@@ -48,20 +48,20 @@ $color-page-footer-links: color('nhs-grey-mid');
 // Buttons
 // ========================================================================== */
 
-$color-btn-submit: color('white') !default;
-$color-btn-submit-bg: color('success') !default;
-$color-btn-submit-bg-hover: #9bcf5a !default;
+$color-btn-submit:          color('white')   !default;
+$color-btn-submit-bg:       color('success') !default;
+$color-btn-submit-bg-hover: #9bcf5a          !default;
 
-$color-btn-primary: color('white') !default;
-$color-btn-primary-bg: color('nhs-purple') !default;
-$color-btn-primary-bg-hover: #5d348f !default;
+$color-btn-primary:          color('white')      !default;
+$color-btn-primary-bg:       color('nhs-purple') !default;
+$color-btn-primary-bg-hover: #5d348f             !default;
 
-$color-btn-secondary: color('nhs-purple') !default;
-$color-btn-secondary-bg: color('white') !default;
-$color-btn-secondary-bg-hover: #f4f4f4 !default;
-$color-btn-secondary-border: color('nhs-grey-pale') !default;
+$color-btn-secondary:          color('nhs-purple')    !default;
+$color-btn-secondary-bg:       color('white')         !default;
+$color-btn-secondary-bg-hover: #f4f4f4                !default;
+$color-btn-secondary-border:   color('nhs-grey-pale') !default;
 
-$color-btn-disabled: color('white') !default;
+$color-btn-disabled:    color('white')         !default;
 $color-btn-disabled-bg: color('nhs-grey-pale') !default;
 
 
@@ -71,13 +71,13 @@ $color-btn-disabled-bg: color('nhs-grey-pale') !default;
 // Ribbons
 // ========================================================================== */
 
-$color-ribbon: color('white');
-$color-ribbon-bg: color('nhs-black');
+$color-ribbon:          color('white');
+$color-ribbon-bg:       color('nhs-black');
 $color-ribbon-alpha-bg: color('nhs-pink');
-$color-ribbon-beta-bg: color('nhs-orange');
-$color-ribbon-live-bg: color('nhs-aqua');
-$color-ribbon-tag: color('white');
-$color-ribbon-tag-bg: color('nhs-black');
+$color-ribbon-beta-bg:  color('nhs-orange');
+$color-ribbon-live-bg:  color('nhs-aqua');
+$color-ribbon-tag:      color('white');
+$color-ribbon-tag-bg:   color('nhs-black');
 
 
 
@@ -98,14 +98,15 @@ $color-details-border: color('nhs-grey-pale') !default;
 // Spinners
 // ========================================================================== */
 
-$color-spinner-light: color('white') !default;
-$color-spinner-dark: color('nhs-blue') !default;
+$color-spinner-light: color('white')    !default;
+$color-spinner-dark:  color('nhs-blue') !default;
 
 
 
 
 
-// Splitters
+// Dividers
 // ========================================================================== */
 
-$color-splitter: color('nhs-grey-mid') !default;
+$color-divider:       color('nhs-grey-mid')  !default;
+$color-divider-large: color('nhs-grey-pale') !default;
