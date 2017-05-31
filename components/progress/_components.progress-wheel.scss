@@ -64,6 +64,20 @@ $_wheel-thickness: 10px;
 
 }
 
+
+
+  /**
+   * The actual text content of the progress wheel needs its own element.
+   */
+  .c-progress-wheel__text {
+    position: absolute;
+    right: 0;
+    left: 0;
+    text-align: center;
+    @include font-size(19px);
+    line-height: $_wheel-size - (2 * $_wheel-thickness);
+  }
+
 /**
  * For every percent of completeness, rotate the progress bar 3.6º.
  */
