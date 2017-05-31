@@ -19,6 +19,7 @@
   "dependencies": {
     "autoprefixer": "^6.7.7",
     "node-sass": "^4.5.0",
+    "normalize.css": "^7.0.0",
     "sass-mq": "^3.3.2",
     "stylelint": "^7.9.0"
   }
