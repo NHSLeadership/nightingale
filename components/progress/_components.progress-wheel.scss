@@ -15,14 +15,17 @@
  * now just know that it works :)
  */
 
+$_wheel-size: 80px;
+$_wheel-thickness: 10px;
+
 .c-progress-wheel {
 
   &,
   &::before,
   &::after {
-    width:  68px;
-    height: 68px;
-    border: 10px solid transparent;
+    width:  $_wheel-size;
+    height: $_wheel-size;
+    border: $_wheel-thickness solid transparent;
     border-radius: 100%;
   }
 
@@ -30,8 +33,8 @@
   &::after {
     content: "";
     position: absolute;
-    top:  -10px;
-    left: -10px;
+    top:  -$_wheel-thickness;
+    left: -$_wheel-thickness;
   }
 
   & {
