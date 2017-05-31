@@ -40,7 +40,7 @@
  * COMPONENTS
  * Buttons..............Button component.
  * Spinner..............Waiting-state spinner.
- * Splitter.............Dividing element.
+ * Divider..............Dividing element (`HR`).
  * Ribbons..............Info messages that sit at the top of a page.
  * Page Footer..........Large footer area at the very bottom of the page.
  * Progress.............Progress bar
@@ -101,7 +101,7 @@
 
 @import "components/buttons/components.buttons";
 @import "components/spinner/components.spinner";
-@import "components/splitter/components.splitter";
+@import "components/divider/components.divider";
 @import "components/ribbons/components.ribbons";
 @import "components/page-footer/components.page-footer";
 @import "components/progress/components.progress";

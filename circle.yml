@@ -8,9 +8,9 @@ machine:
 
 dependencies:
   override:
-    - yarn   
+    - yarn
   cache_directories:
-    - ~/.cache/yarn     
+    - ~/.cache/yarn
 
 general:
   artifacts:
