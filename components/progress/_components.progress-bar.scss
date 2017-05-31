@@ -1,5 +1,5 @@
 /* ==========================================================================
-   #PROGRESS
+   #PROGRESS BAR
    ========================================================================== */
 
 /**
@@ -18,7 +18,7 @@
  * defined by an inline style in the HTML.
  */
 
-@keyframes _progress {
+@keyframes _progress-bar {
 
   from {
     left: -100%;
@@ -30,42 +30,42 @@
 
 
 
-.c-progress {
+.c-progress-bar {
   text-align: center;
-  color: $color-progress;
+  color: $color-progress-bar;
 }
 
 
 
-  .c-progress__title {
+  .c-progress-bar__title {
     @include font-size(36px);
-    color: $color-progress-title;
+    color: $color-progress-bar-title;
     margin-bottom: $global-spacing-unit-tiny;
   }
 
-    .c-progress__\% {
+    .c-progress-bar__\% {
       @include font-size(48px);
     }
 
-  .c-progress__title-sub {
+  .c-progress-bar__title-sub {
     @include font-size(24px);
     margin-bottom: $global-spacing-unit-small;
   }
 
 
 
-  .c-progress__bar {
+  .c-progress-bar__bar {
     position: relative;
     overflow: hidden;
-    background-color: $color-progress-bar;
+    background-color: $color-progress-bar-bar;
     height: 10px;
     margin-bottom: $global-spacing-unit-small;
   }
 
-    .c-progress__fill {
+    .c-progress-bar__fill {
       position: absolute;
       width: 100%;
       height: 100%;
-      background-color: $color-progress-fill;
-      animation: _progress 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+      background-color: $color-progress-bar-fill;
+      animation: _progress-bar 1s cubic-bezier(0.65, 0.05, 0.36, 1);
     }

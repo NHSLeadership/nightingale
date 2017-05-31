@@ -118,7 +118,7 @@ $color-divider-large: color('nhs-grey-pale') !default;
 // Progress
 // ========================================================================== */
 
-$color-progress:       color('nhs-grey-dark') !default;
-$color-progress-title: color('nhs-grey-mid')  !default;
-$color-progress-bar:   color('nhs-grey-pale') !default;
-$color-progress-fill:  color('nhs-aqua')      !default;
+$color-progress-bar:       color('nhs-grey-dark') !default;
+$color-progress-bar-title: color('nhs-grey-mid')  !default;
+$color-progress-bar-bar:   color('nhs-grey-pale') !default;
+$color-progress-bar-fill:  color('nhs-aqua')      !default;
