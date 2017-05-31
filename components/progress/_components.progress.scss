@@ -1,0 +1,67 @@
+/* ==========================================================================
+   #PROGRESS
+   ========================================================================== */
+
+/**
+ * Simple progress bar component to show what percentage of a course is
+ * complete/incomplete.
+ */
+
+
+
+
+
+/**
+ * Small, private-scope keyframe declaration to smoothly animate the progress
+ * bar when it first loads. The bar starts off hidden off to the left of the
+ * container and then animates in from the left. Its final resting point is
+ * defined by an inline style in the HTML.
+ */
+
+@keyframes _progress {
+
+  from {
+    left: -100%;
+  }
+
+}
+
+
+
+
+
+.c-progress {
+  text-align: center;
+  color: $color-progress;
+}
+
+
+
+  .c-progress__title {
+    @include font-size(36px);
+    color: $color-progress-title;
+    margin-bottom: $global-spacing-unit-tiny;
+  }
+
+  .c-progress__title-sub {
+    @include font-size(24px);
+    margin-bottom: $global-spacing-unit-small;
+  }
+
+
+
+  .c-progress__bar {
+    position: relative;
+    overflow: hidden;
+    background-color: $color-progress-bar;
+    height: 10px;
+    margin-bottom: $global-spacing-unit-small;
+  }
+
+    .c-progress__fill {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $color-progress-fill;
+      animation: _progress 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+    }

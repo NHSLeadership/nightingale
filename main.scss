@@ -43,6 +43,7 @@
  * Splitter.............Dividing element.
  * Ribbons..............Info messages that sit at the top of a page.
  * Page Footer..........Large footer area at the very bottom of the page.
+ * Progress.............Progress bar
  *
  * UTILITIES
  * Colors...............Utility classes generated from our color map.
@@ -103,6 +104,7 @@
 @import "components/splitter/components.splitter";
 @import "components/ribbons/components.ribbons";
 @import "components/page-footer/components.page-footer";
+@import "components/progress/components.progress";
 
 
 
