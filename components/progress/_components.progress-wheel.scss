@@ -6,7 +6,7 @@
  * This is pretty horrendous, but please just trust me.
  *
  * We form our progress wheel by rotating and/or masking sections of a ring. As
- * the percentage-complete increases, we rotate the partial ring around
+ * the percentage-complete increases, we rotate the partial ring around by
  * a corresponding number of degrees. Depending on how much of the ring we need
  * to show, we might have to mask the beginning of it and only allow a small
  * percentage to protrude.
@@ -79,6 +79,10 @@ $_wheel-increments: 1;
     line-height: $_wheel-size - (2 * $_wheel-thickness);
   }
 
+
+
+
+
 /**
  * For every percent of completeness, rotate the progress bar 3.6º.
  */
@@ -87,7 +91,7 @@ $_wheel-increments: 1;
   [data-percent="#{$i * $_wheel-increments}"]::before {
     transform: rotate(45 + (($i * $_wheel-increments) * 3.6) + deg);
 
-    @if ($i >= 50) {
+    @if (($i * $_wheel-increments) >= 50) {
       // If the wheel is filling up, we need more partial-ring. Turn another
       // quarter on.
       border-bottom-color: $color-progress-wheel-bar;
@@ -95,17 +99,17 @@ $_wheel-increments: 1;
 
   }
 
-  [data-percent="#{$i}"]::after {
+  [data-percent="#{$i * $_wheel-increments}"]::after {
 
     // Beyond 50% complete, the mask needs to start chasing the bar and
     // actually begin to form its beginnings…
-    @if ($i >= 50 and $i < 75) {
+    @if (($i * $_wheel-increments) >= 50 and ($i * $_wheel-increments) < 75) {
       border-left-color: $color-progress-wheel-bar;
       transform: rotate(135deg);
     }
 
     // …and beyond 75% complete we need to do even more catching up.
-    @if ($i >= 75) {
+    @if (($i * $_wheel-increments) >= 75) {
       border-left-color: $color-progress-wheel-bar;
       border-bottom-color: $color-progress-wheel-bar;
       transform: rotate(225deg);
