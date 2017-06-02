@@ -63,14 +63,14 @@
 
 @import "tools/tools.functions";
 @import "tools/tools.mixins";
-@import "node_modules/sass-mq/mq";
+@import "sass-mq/mq";
 
 
 
 
 
 @import "generic/generic.box-sizing";
-@import "generic/generic.normalize";
+@import "normalize.css/normalize";
 @import "generic/generic.reset";
 @import "generic/generic.shared";
 @import "generic/generic.font-face";
