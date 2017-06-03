@@ -7,6 +7,7 @@
  */
 
 .o-wrapper {
+  @include clearfix();
   margin-right: auto;
   margin-left: auto;
   padding-right: $global-spacing-unit;
