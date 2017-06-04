@@ -2,6 +2,23 @@
 // #MIXINS
 // ========================================================================== */
 
+
+
+
+
+// Drop clearfix styles into our element.
+// ========================================================================== */
+
+@mixin clearfix() {
+
+  &:after {
+    content: "" !important;
+    display: block !important;
+    clear: both !important;
+  }
+
+}
+
 // Create a rem-based font-size that automatically sits on our baseline grid.
 // ========================================================================== */
 

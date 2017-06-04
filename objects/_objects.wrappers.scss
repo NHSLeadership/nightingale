@@ -7,9 +7,16 @@
  */
 
 .o-wrapper {
+  @include clearfix();
   margin-right: auto;
   margin-left: auto;
-  padding-right: $global-spacing-unit;
-  padding-left: $global-spacing-unit;
+  padding-right: $global-spacing-unit-small;
+  padding-left:  $global-spacing-unit-small;
   max-width: 1024px;
+
+  @include mq($from: md) {
+    padding-right: $global-spacing-unit;
+    padding-left: $global-spacing-unit;
+  }
+
 }
