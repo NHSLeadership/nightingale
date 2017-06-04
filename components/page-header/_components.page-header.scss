@@ -1,0 +1,68 @@
+/* ==========================================================================
+   #PAGE HEADER
+   ========================================================================== */
+
+/**
+ * Long-form comment.
+ *
+ * If you’d like to create a new Sass file for the project, simply copy and
+ * paste this one and fill it in like for like.
+ *
+ * This spans multiple lines and is also constrained to no longer than 80
+ * characters in width.
+ *
+ * 1. Cheap clearfix. Replace with something proper.
+ * 2. Create a larger margin to account for the fact we’re using an absolutely
+ *    positioned element to provide the faux double border.
+ */
+
+.c-page-header {
+  width: 100%; /* [1] */
+  float: left; /* [1] */
+  position: relative;
+  padding-top:    $global-spacing-unit-small;
+  padding-bottom: $global-spacing-unit-small;
+  margin-bottom: ($global-spacing-unit + $global-spacing-unit-small); /* [2] */
+  border-bottom: $global-spacing-unit-small solid color('nhs-blue');
+  background-color: $color-page-head-bg;
+
+  @include mq($from: md) {
+    padding-top:    $global-spacing-unit;
+    padding-bottom: $global-spacing-unit;
+  }
+
+  /**
+   * Create a faux double border effect by dropping an absolutely positioned
+   * pseudo-element after the header.
+   */
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -$global-spacing-unit;
+    left: 0;
+    border-bottom: $global-spacing-unit-small solid color('nhs-purple');
+  }
+
+}
+
+/**
+ * Invert the colours of the header: light text on a dark background.
+ */
+.c-page-header--invert {
+  margin-bottom: $global-spacing-unit;
+  background-color: $color-page-head-bg-invert;
+  color: $color-page-head-invert;
+  border-bottom-color: color('nhs-purple');
+
+  /**
+   * This effectively removes the double border, but we can’t delete it entirely
+   * because it also doubles up as our clearfix. If we can ever drop the
+   * clearfix from the parent element we can just destroy this pseudo-element.
+   */
+  &::after {
+    position: static;
+    border-bottom: none;
+  }
+
+}

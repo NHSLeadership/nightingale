@@ -42,6 +42,7 @@
  * Spinner..............Waiting-state spinner.
  * Divider..............Dividing element (`HR`).
  * Ribbons..............Info messages that sit at the top of a page.
+ * Page Header..........Main page header component
  * Page Footer..........Large footer area at the very bottom of the page.
  *
  * UTILITIES
@@ -102,6 +103,7 @@
 @import "components/spinner/components.spinner";
 @import "components/divider/components.divider";
 @import "components/ribbons/components.ribbons";
+@import "components/page-header/components.page-header";
 @import "components/page-footer/components.page-footer";
 
 
