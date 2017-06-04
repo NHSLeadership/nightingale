@@ -66,3 +66,28 @@
   }
 
 }
+
+
+
+
+
+  /* Logos
+     ======================================================================== */
+
+  .c-page-header__logo {
+    float: left;
+    margin-bottom: $global-spacing-unit-tiny;
+  }
+
+
+
+
+
+  /* Title
+     ======================================================================== */
+
+  .c-page-header__title {
+    @include font-size(21px);
+    display: block;
+    clear: both;
+  }
