@@ -16,14 +16,17 @@
  *    positioned element to provide the faux double border.
  */
 
+$_border-large: 15px;
+$_border-small: 10px;
+
 .c-page-header {
   width: 100%; /* [1] */
   float: left; /* [1] */
   position: relative;
   padding-top:    $global-spacing-unit-small;
   padding-bottom: $global-spacing-unit-small;
-  margin-bottom: ($global-spacing-unit + $global-spacing-unit-small); /* [2] */
-  border-bottom: $global-spacing-unit-small solid color('nhs-blue');
+  margin-bottom: $global-spacing-unit + $_border-small; /* [2] */
+  border-bottom: $_border-large solid color('nhs-blue');
   background-color: $color-page-head-bg;
 
   @include mq($from: md) {
@@ -39,9 +42,9 @@
     content: "";
     position: absolute;
     right: 0;
-    bottom: -$global-spacing-unit;
+    bottom: -($_border-small + $_border-large);
     left: 0;
-    border-bottom: $global-spacing-unit-small solid color('nhs-purple');
+    border-bottom: $_border-small solid color('nhs-purple');
   }
 
 }
@@ -53,7 +56,7 @@
   margin-bottom: $global-spacing-unit;
   background-color: $color-page-head-bg-invert;
   color: $color-page-head-invert;
-  border-bottom-color: color('nhs-purple');
+  border-bottom: $_border-small solid color('nhs-purple');
 
   /**
    * This effectively removes the double border, but we can’t delete it entirely
