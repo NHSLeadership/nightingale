@@ -1,0 +1,96 @@
+/* ==========================================================================
+   #NAV PRIMARY
+   ========================================================================== */
+
+/**
+ * The primary nav sits within the main header area. It’s fully responsive.
+ *
+ * 1. `font-size: 0;` hack to collapse whitespace.
+ */
+
+.c-nav-primary {
+  text-align: right;
+
+  @include mq($from: md) {
+    font-size: 0; /* [1] */
+  }
+
+}
+
+  /**
+   * 1. We definitely need a more accessible way of showing/hiding this content.
+   */
+  .c-nav-primary__list {
+    display: none; /* [1] */
+    margin-bottom: 0;
+    margin-left: 0;
+    list-style: none;
+
+    @include mq($from: md) {
+      display: block; /* [1] */
+    }
+
+    .no-js &,
+    &.is-open {
+      display: block; /* [1] */
+    }
+
+  }
+
+    .c-nav-primary__item {
+      @include font-size(16px);
+      vertical-align: top;
+
+      @include mq($from: md) {
+        display: inline-block;
+
+        /**
+         * Insert spaces between items.
+         */
+        & + & {
+          margin-left: $global-spacing-unit;
+        }
+
+      }
+
+    }
+
+      .c-nav-primary__link {
+        text-decoration: none;
+        font-weight: bold;
+
+        /**
+         * Specificity bump to circumvent `a:visited {}` styles.
+         */
+        &,
+        &:visited {
+          color: $color-nav-primary;
+        }
+
+        /**
+         * Colours invert on dark header backgrounds.
+         */
+        .c-page-header--invert & {
+          color: $color-nav-primary-invert;
+        }
+
+      }
+
+
+
+
+
+/* Triggers
+   ========================================================================== */
+
+.c-nav-trigger {
+  color: #fff;
+  background: none;
+  cursor: pointer;
+  border: none;
+
+  @include mq($from: md) {
+    display: none;
+  }
+
+}

@@ -91,6 +91,18 @@ $_border-small: 10px;
 
   .c-page-header__title {
     @include font-size(21px);
+    float: left;
     display: block;
     clear: both;
+  }
+
+
+
+
+
+  /* Nav
+     ======================================================================== */
+
+  .c-page-header__nav {
+    float: right;
   }
