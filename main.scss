@@ -43,6 +43,8 @@
  * Divider..............Dividing element (`HR`).
  * Ribbons..............Info messages that sit at the top of a page.
  * Page Footer..........Large footer area at the very bottom of the page.
+ * Progress Bar.........Linear progress bar
+ * Progress Wheel.......Circular progress indicator
  *
  * UTILITIES
  * Colors...............Utility classes generated from our color map.
@@ -103,6 +105,8 @@
 @import "components/divider/components.divider";
 @import "components/ribbons/components.ribbons";
 @import "components/page-footer/components.page-footer";
+@import "components/progress/components.progress-bar";
+@import "components/progress/components.progress-wheel";
 
 
 

@@ -1,0 +1,124 @@
+/* ==========================================================================
+   #PROGRESS WHEEL
+   ========================================================================== */
+
+/**
+ * This is pretty horrendous, but please just trust me.
+ *
+ * We form our progress wheel by rotating and/or masking sections of a ring. As
+ * the percentage-complete increases, we rotate the partial ring around by
+ * a corresponding number of degrees. Depending on how much of the ring we need
+ * to show, we might have to mask the beginning of it and only allow a small
+ * percentage to protrude.
+ *
+ * Feel free to reverse engineer the code (or even better, improve it!) but for
+ * now just know that it works :)
+ */
+
+$_wheel-size: 80px;
+$_wheel-thickness: 10px;
+$_wheel-increments: 1;
+
+.c-progress-wheel {
+  position: relative;
+  margin-right: auto;
+  margin-left:  auto;
+
+  &,
+  &::before,
+  &::after {
+    width:  $_wheel-size;
+    height: $_wheel-size;
+    border: $_wheel-thickness solid transparent;
+    border-radius: 100%;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top:  -$_wheel-thickness;
+    left: -$_wheel-thickness;
+  }
+
+  /**
+   * Define this in its own separate ruleset so that it doesn’t accidentally get
+   * overridden by the `border` shorthand defined earlier.
+   */
+  & {
+    border-color: $color-progress-wheel-fill;
+  }
+
+  /**
+   * This element forms the actual progress bar…
+   */
+  &::before {
+    border-bottom-color: $color-progress-wheel-bar;
+    border-left-color: $color-progress-wheel-bar;
+    transform: rotate(45deg);
+  }
+
+  /**
+   * …and this element is its mask
+   */
+  &::after {
+    border-left-color: $color-progress-wheel-fill;
+    border-bottom-color: $color-progress-wheel-fill;
+    transform: rotate(45deg);
+  }
+
+}
+
+
+
+  /**
+   * The actual text content of the progress wheel needs its own element.
+   */
+  .c-progress-wheel__text {
+    position: absolute;
+    right: 0;
+    left: 0;
+    text-align: center;
+    @include font-size(19px);
+    line-height: $_wheel-size - (2 * $_wheel-thickness);
+  }
+
+
+
+
+
+/**
+ * For every percent of completeness, rotate the progress bar 3.6º.
+ */
+@for $i from 1 through (100 / $_wheel-increments) {
+
+  [data-percent="#{$i * $_wheel-increments}"]::before {
+    transform: rotate(45 + (($i * $_wheel-increments) * 3.6) + deg);
+
+    @if (($i * $_wheel-increments) >= 50) {
+      // If the wheel is filling up, we need more partial-ring. Turn another
+      // quarter on.
+      border-bottom-color: $color-progress-wheel-bar;
+    }
+
+  }
+
+  [data-percent="#{$i * $_wheel-increments}"]::after {
+
+    // Beyond 50% complete, the mask needs to start chasing the bar and
+    // actually begin to form its beginnings…
+    @if (($i * $_wheel-increments) >= 50 and ($i * $_wheel-increments) < 75) {
+      border-left-color: $color-progress-wheel-bar;
+      transform: rotate(135deg);
+    }
+
+    // …and beyond 75% complete we need to do even more catching up.
+    @if (($i * $_wheel-increments) >= 75) {
+      border-left-color: $color-progress-wheel-bar;
+      border-bottom-color: $color-progress-wheel-bar;
+      transform: rotate(225deg);
+    }
+
+  }
+
+}
