@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="jsPage" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
@@ -10,6 +10,13 @@
   <title>Nightingale</title>
 
   <link rel="stylesheet" href="./dist/main.css" />
+
+  <script>
+    (function(){
+      var page = document.getElementById('jsPage');
+      page.classList.remove('no-js');
+    }());
+  </script>
 
   <style>
 
