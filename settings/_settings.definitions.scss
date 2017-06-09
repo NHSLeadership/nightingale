@@ -8,6 +8,7 @@
 // Typography...........Our most basic and global typographic settings.
 // Colors...............Load up a map with our color definitions.
 // Responsive...........Define our breakpoint sizes and what they’re called.
+// Sizing...............Settings pertaining to various UI sizes.
  //
 
 
@@ -70,6 +71,16 @@ $mq-breakpoints: (
   'lg': 1024px,
   'xl': 1280px,
 ) !default;
+
+
+
+
+
+// Sizing
+// ========================================================================== */
+
+$global-border-heavy: 15px !default;
+$global-border-mid: 10px !default;
 
 
 
