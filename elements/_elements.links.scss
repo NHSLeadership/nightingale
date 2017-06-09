@@ -5,10 +5,17 @@
 /**
  * This is simply to style bare A elements. Anything more complex should
  * probably become a Component.
+ *
+ * 1. Ensure that underlines don’t pass through descenders. Nice!
  */
 
 a {
   color: $color-links;
+  text-decoration-skip: ink; /* [1] */
+
+  &:visited {
+    color: $color-links-visited;
+  }
 
   &:hover {
     color: $color-links-hover;
@@ -17,10 +24,6 @@ a {
   &:active,
   &:focus {
     color: $color-links-active;
-  }
-
-  &:visited {
-    color: $color-links-visited;
   }
 
   /* stylelint-disable selector-no-qualifying-type */
@@ -46,30 +49,51 @@ a {
 
 /* Heading links
  *
- * A specific design style dictates that orphaned links in headers should look
- * like an H4. This is an attempt at that, but if it goes wrong then we need to
- * either remove or revisit it.
- *
- * 1. We’re using the `:only-child` selector here. AFAIK it has decent browser
- *    support, but if not we can proxy it by using the potentially better
- *    supported `:first-child:last-child` (because if something is both the
- *    first and the last child, it must be the only child).
+ * Links in headings look a little different
    ========================================================================== */
 
-// For terseness, let’s set up a block of placeholder declarations that we can
-// refer to later on. This is how we want only-links-in-headings to look.
-%_link-only-child {
-  @include font-size($global-font-size-h4);
+%_heading-link {
   text-decoration: none;
-  font-weight: bold;
+  color: $color-links-headings;
+}
+
+%_heading-link-visited {
+  text-decoration: underline;
+  color: $color-links-headings;
+}
+
+%_heading-link-hover {
+  text-decoration: underline;
+  color: $color-links-headings-hover;
+}
+
+%_heading-link-focus {
+  text-decoration: underline;
+  color: $color-links-headings;
 }
 
 // Loop through headings 1 through 6…
 @for $i from 1 through 6 {
 
   // …and recycle the declarations we left behind previously.
-  h#{$i} > a:only-child { /* [1] */
-    @extend %_link-only-child;
+  h#{$i} > a {
+
+    &:link {
+      @extend %_heading-link;
+    }
+
+    &:visited {
+      @extend %_heading-link-visited;
+    }
+
+    &:hover {
+      @extend %_heading-link-hover;
+    }
+
+    &:focus {
+      @extend %_heading-link-focus;
+    }
+
   }
 
 }

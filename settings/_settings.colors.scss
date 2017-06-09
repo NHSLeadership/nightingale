@@ -25,10 +25,13 @@ $color-lists:   color('nhs-grey-dark') !default;
 // Links
 // ========================================================================== */
 
-$color-links:         color('nhs-purple')       !default;
-$color-links-hover:   color('nhs-purple-light') !default;
-$color-links-active:  color('nhs-orange')       !default;
-$color-links-visited: color('attention')        !default;
+$color-links:         color('nhs-purple') !default;
+$color-links-hover:   #8060a7             !default;
+$color-links-active:  color('nhs-blue')   !default;
+$color-links-visited: color('nhs-blue')   !default;
+
+$color-links-headings:       color('nhs-black') !default;
+$color-links-headings-hover: #646162            !default;
 
 
 
