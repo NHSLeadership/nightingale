@@ -5,10 +5,13 @@
 /**
  * This is simply to style bare A elements. Anything more complex should
  * probably become a Component.
+ *
+ * 1. Ensure that underlines don’t pass through descenders. Nice!
  */
 
 a {
   color: $color-links;
+  text-decoration-skip: ink; /* [1] */
 
   &:hover {
     color: $color-links-hover;

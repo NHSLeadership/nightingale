@@ -26,6 +26,7 @@ details {
     color: $color-links;
     cursor: pointer;
     outline: none;
+    text-decoration-skip: ink;
 
     &:hover {
       color: $color-links-hover;
