@@ -26,10 +26,11 @@ details {
     color: $color-links;
     cursor: pointer;
     outline: none;
+    text-decoration: underline;
+    text-decoration-skip: ink;
 
     &:hover {
       color: $color-links-hover;
-      text-decoration: underline;
     }
 
     &:active,
@@ -40,7 +41,7 @@ details {
     /* stylelint-disable selector-no-qualifying-type */
 
       details[open] > & {
-        color: #78be20;
+        color: #005eb8;
         text-decoration: underline;
       }
 
