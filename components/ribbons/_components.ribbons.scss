@@ -53,8 +53,16 @@
    * Dismiss the ribbon.
    */
   .c-ribbon__close {
+    border: none;
+    padding: 0;
     float: right;
     margin-left: $global-spacing-unit-small;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 100%;
+    background-color: $color-ribbon-btn-bg;
   }
 
 
