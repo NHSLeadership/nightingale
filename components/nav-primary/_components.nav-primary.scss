@@ -9,13 +9,16 @@
  */
 
 .c-nav-primary {
-  text-align: right;
+  @include clearfix();
+  clear: both;
 
   @include mq($from: md) {
     font-size: 0; /* [1] */
   }
 
 }
+
+
 
   /**
    * 1. We definitely need a more accessible way of showing/hiding this content.
@@ -33,9 +36,12 @@
     .no-js &,
     &.is-open {
       display: block; /* [1] */
+      clear: both;
     }
 
   }
+
+
 
     .c-nav-primary__item {
       @include font-size(16px);
@@ -55,9 +61,14 @@
 
     }
 
-      .c-nav-primary__link {
+
+
+      // Create a mixin to hold repeated nav link styles (they’re used for
+      // primary links and for sub-nav links).
+      @mixin _nav-link-style() {
         text-decoration: none;
         font-weight: bold;
+        display: block;
 
         /**
          * Specificity bump to circumvent `a:visited {}` styles.
@@ -66,6 +77,16 @@
         &:visited {
           color: $color-nav-primary;
         }
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+
+      }
+
+      .c-nav-primary__link {
+        @include _nav-link-style();
 
         /**
          * Colours invert on dark header backgrounds.
@@ -84,13 +105,57 @@
    ========================================================================== */
 
 .c-nav-trigger {
-  color: #fff;
+  color: $color-nav-primary;
   background: none;
   cursor: pointer;
   border: none;
+  float: right;
 
   @include mq($from: md) {
     display: none;
   }
 
+  /**
+   * Colours invert on dark header backgrounds.
+   */
+  .c-page-header--invert & {
+    color: $color-nav-primary-invert;
+  }
+
 }
+
+
+
+
+
+/* Sub-nav
+ *
+ * Large sub-navigation blocks can contain any arbitrary content (though most
+ * often it will be other links).
+ *
+ * 1. Pull the sub nav back out to be full-bleed.
+   ========================================================================== */
+.c-nav-primary__sub {
+  background-color: $color-nav-primary-sub-bg;
+  margin-right: -$global-spacing-unit-small; /* [1] */
+  margin-left: -$global-spacing-unit-small; /* [1] */
+  padding: $global-spacing-unit-small;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
+}
+
+  /**
+   * Specific link content in the subnav shares much of the same aesthetic as
+   * main links, hence the use of our mixin.
+   */
+  .c-nav-primary__sub-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding: $global-spacing-unit-small;
+    background-color: white;
+
+    a {
+      @include _nav-link-style();
+    }
+
+  }
