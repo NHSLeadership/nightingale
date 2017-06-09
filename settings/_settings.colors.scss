@@ -48,9 +48,13 @@ $color-page-head-bg-invert: color('nhs-blue') !default;
 // Nav Primary
 // ========================================================================== */
 
-$color-nav-primary:        color('nhs-black')     !default;
-$color-nav-primary-invert: color('white')         !default;
-$color-nav-primary-sub-bg: color('nhs-grey-pale') !default;
+$color-nav-primary:                   color('nhs-black')     !default;
+$color-nav-primary-invert:            color('white')         !default;
+$color-nav-primary-sub-bg:            color('nhs-grey-pale') !default;
+$color-nav-primary-trigger:           color('nhs-blue')     !default;
+$color-nav-primary-trigger-active:    color('nhs-black')     !default;
+$color-nav-primary-trigger-bg:        color('nhs-grey-pale') !default;
+$color-nav-primary-trigger-bg-invert: color('nhs-white')     !default;
 
 
 

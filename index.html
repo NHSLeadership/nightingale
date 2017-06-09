@@ -68,9 +68,9 @@
 
       <strong class="c-page-header__title">Leadership Academy</strong>
 
-      <nav class="c-nav-primary  c-page-header__nav">
+      <button class="c-nav-trigger" id="jsNavTrigger">☰</button>
 
-        <button class="c-nav-trigger" id="jsNavTrigger">☰</button>
+      <nav class="c-nav-primary  c-page-header__nav">
 
         <ul class="c-nav-primary__list" id="jsNav">
 
@@ -137,8 +137,12 @@
         navTrigger.addEventListener('click', function () {
           if (nav.classList.contains('is-open')) {
             nav.classList.remove('is-open');
+            this.classList.remove('is-active');
+            this.innerHTML = '☰';
           } else {
             nav.classList.add('is-open');
+            this.classList.add('is-active');
+            this.innerHTML = '×';
           }
         });
 

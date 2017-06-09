@@ -105,11 +105,24 @@
    ========================================================================== */
 
 .c-nav-trigger {
+  @include font-size(18px);
+  margin:  0;
+  padding: 0;
+  width: $global-spacing-unit;
+  height: $global-spacing-unit;
+  line-height: $global-spacing-unit;
+  text-align: center;
   color: $color-nav-primary;
   background: none;
+  background-color: $color-nav-primary-trigger-bg;
+  color: $color-nav-primary-trigger;
   cursor: pointer;
   border: none;
   float: right;
+
+  &.is-active {
+    color: $color-nav-primary-trigger-active;
+  }
 
   @include mq($from: md) {
     display: none;
@@ -119,7 +132,7 @@
    * Colours invert on dark header backgrounds.
    */
   .c-page-header--invert & {
-    color: $color-nav-primary-invert;
+    background-color: $color-nav-primary-trigger-bg-invert;
   }
 
 }
