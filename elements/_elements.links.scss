@@ -13,6 +13,10 @@ a {
   color: $color-links;
   text-decoration-skip: ink; /* [1] */
 
+  &:visited {
+    color: $color-links-visited;
+  }
+
   &:hover {
     color: $color-links-hover;
   }
@@ -20,10 +24,6 @@ a {
   &:active,
   &:focus {
     color: $color-links-active;
-  }
-
-  &:visited {
-    color: $color-links-visited;
   }
 
   /* stylelint-disable selector-no-qualifying-type */
