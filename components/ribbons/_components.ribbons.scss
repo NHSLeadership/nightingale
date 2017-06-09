@@ -5,31 +5,14 @@
 /**
  * Ribbons are informational banners that sit above the main content of the
  * page.
- *
- * 1. Use `display: table;` in older browsers in order to achieve the packing
- *    effect.
  */
 
 .c-ribbon {
-  display: table; /* [1] */
-  width: 100%; /* [1] */
   @include font-size(14px);
   background-color: $color-ribbon-bg;
   color: $color-ribbon;
-  padding-right: $global-spacing-unit-small;
-  padding-left: $global-spacing-unit-small;
-
-  @include mq($from: 'sm') {
-    padding-right: $global-spacing-unit;
-    padding-left: $global-spacing-unit;
-  }
-
-  /**
-   * If the browser supports Flexbox, we should use that instead.
-   */
-  @supports (display: flex) {
-    display: flex;
-  }
+  padding-top: $global-spacing-unit-small;
+  padding-bottom: $global-spacing-unit-small;
 
   /**
    * Links want to be the same colour as the content.
@@ -41,43 +24,11 @@
 }
 
   /**
-   * 1. More use of `display: table;` for the browsers that need it.
-   */
-  .c-ribbon__icon,
-  .c-ribbon__body,
-  .c-ribbon__close {
-    display: table-cell; /* [1] */
-    padding: $global-spacing-unit-tiny;
-
-    /**
-     * I ❤️ `@supports`.
-     */
-    @supports (display: flex) {
-      display: block;
-    }
-
-  }
-
-  /**
-   * This houses the main content of the ribbon, usually text.
-   */
-  .c-ribbon__body {
-    width: 100%;
-    font-weight: normal;
-
-    /**
-     * No need to force widths if we’re using Flexbox, it seems.
-     */
-    @supports (display: flex) {
-      width: auto;
-    }
-
-  }
-
-  /**
-   * Some ribbons have small textual tags (e.g. Alpha, Beta).
+   * The Alpha, Beta, Live tag.
    */
   .c-ribbon__tag {
+    float: left;
+    margin-right: $global-spacing-unit-small;
     display: inline-block;
     padding-right: $global-spacing-unit-small;
     padding-left: $global-spacing-unit-small;
@@ -85,6 +36,25 @@
     text-transform: uppercase;
     background-color: $color-ribbon-tag-bg;
     color: $color-ribbon-tag;
+  }
+
+  /**
+   * This houses the main content of the ribbon, usually text.
+   *
+   * 1. Block formatting context.
+   */
+  .c-ribbon__body {
+    font-weight: normal;
+    display: block;
+    overflow: hidden; /* [1] */
+  }
+
+  /**
+   * Dismiss the ribbon.
+   */
+  .c-ribbon__close {
+    float: right;
+    margin-left: $global-spacing-unit-small;
   }
 
 
