@@ -21,7 +21,7 @@
 /* Labels
    ========================================================================== */
 
-.c-label {
+.c-form-label {
   @include _label-text();
 }
 
@@ -32,7 +32,7 @@
 /* Inputs
    ========================================================================== */
 
-.c-input {
+.c-form-input {
   @include font-size(14px);
   color: $color-form;
   padding-right: 5px;
@@ -67,7 +67,7 @@
  * we need an empty `span` in the HTML to which we actually apply our styles.
    ========================================================================== */
 
-.c-checkbox {
+.c-form-checkbox {
   @include font-size(14px);
   font-weight: normal;
 }
@@ -76,12 +76,12 @@
    * 1. Hide the actual input…
    * 2. …and remove it from document flow.
    */
-  .c-checkbox__input {
+  .c-form-checkbox__input {
     opacity: 0; /* [1] */
     position: absolute; /* [2] */
   }
 
-  .c-checkbox__faux {
+  .c-form-checkbox__faux {
     display: inline-block;
     margin-right: $global-spacing-unit-tiny;
     font-size: 20px;
@@ -95,7 +95,7 @@
     /**
      * Once the `input` is checked, let’s style up the faux input next to it.
      */
-    .c-checkbox__input:checked + & {
+    .c-form-checkbox__input:checked + & {
       background-color: $color-checkbox-bg-checked;
       position: relative;
       border-color: transparent;
@@ -118,22 +118,22 @@
     /**
      * When someone is interacting with the input, highlight them.
      */
-    .c-checkbox__input:active + &,
-    .c-checkbox__input:focus + & {
+    .c-form-checkbox__input:active + &,
+    .c-form-checkbox__input:focus + & {
       border-color: $color-form-border-focus;
     }
 
     /**
      * If it’s a radio button, let’s style it slightly differently.
      */
-    .c-checkbox--radio > & {
+    .c-form-checkbox--radio > & {
       border-radius: 100%;
     }
 
     /**
      * Checked radio boxes look very different to their checkbox counterparts.
      */
-    .c-checkbox--radio > .c-checkbox__input:checked + &::after {
+    .c-form-checkbox--radio > .c-form-checkbox__input:checked + &::after {
       top: 5px;
       left: 5px;
       border: none;
