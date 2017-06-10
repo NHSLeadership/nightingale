@@ -22,6 +22,22 @@ $color-lists:   color('nhs-grey-dark') !default;
 
 
 
+// General
+//
+// For more general/generic colours that are based on our palette.
+// ========================================================================== */
+
+$color-attention:   color('attention')   !default;
+$color-error:       color('error')       !default;
+$color-information: color('information') !default;
+$color-pending:     color('pending')     !default;
+$color-success:     color('success')     !default;
+$color-warning:     color('warning')     !default;
+
+
+
+
+
 // Links
 // ========================================================================== */
 

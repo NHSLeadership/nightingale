@@ -161,17 +161,23 @@
           <ul>
 
             <li>
-              <label for="fname">
-                First Name
+              <label for="name">
+                Full Name
               </label>
-              <input type="text" class="c-input" id="fname" required placeholder="Harry Roberts" />
+              <input type="text" class="c-input" id="name" required placeholder="Firstname Lastname" />
             </li>
 
             <li>
               <label for="email">
                 Email
               </label>
-              <input type="email" class="c-input  is-error" id="email" required placeholder="name@domain.com" value="harry@csswizardrycom" />
+              <input type="email" class="c-input  is-error" id="email" required placeholder="name@domain.com" value="harry@csswizardry.com" />
+              <details class="c-form-error">
+                <summary>Email not recognised</summary>
+                <div>
+                  Yikes! It looks like this email is not recognised.
+                </div>
+              </details>
             </li>
 
             <li>

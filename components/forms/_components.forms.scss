@@ -150,6 +150,19 @@
 
 
 
-.c-other-block {
-  font-weight: bold; /* [1] */
+/* Errors
+ *
+ * This class extends the styles of regular DETAILS elements to provide expanded
+ * error messages.
+   ========================================================================== */
+
+.c-form-error {
+  @include font-size(14px);
+  margin-bottom: 0;
+
+  &[open] > summary,
+  > summary {
+    color: $color-error;
+  }
+
 }
