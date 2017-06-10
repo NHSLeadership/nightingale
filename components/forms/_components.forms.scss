@@ -18,6 +18,34 @@
 
 
 
+/* Inputs
+   ========================================================================== */
+
+.c-input {
+  @include font-size(14px);
+  color: $color-form;
+  padding-right: 5px;
+  padding-left: 5px;
+  border: 1px solid $color-form-border;
+  width: 345px;
+  max-width: 100%;
+
+  &:active,
+  &:focus {
+    outline: none;
+    border-color: $color-form-border-focus;
+  }
+
+  &.is-error {
+    border-color: $color-form-border-error;
+  }
+
+}
+
+
+
+
+
 /* Checkboxes
  *
  * We make faux checkboxes (and radios) by using the `:checked` pseudo selector:
