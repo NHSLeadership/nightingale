@@ -81,7 +81,7 @@
      */
     .c-checkbox__input:active + &,
     .c-checkbox__input:focus + & {
-      border-color: #ffb81c;
+      border-color: $color-form-border-focus;
     }
 
     /**
