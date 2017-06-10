@@ -40,6 +40,7 @@
   border: 1px solid $color-form-border;
   width: 345px;
   max-width: 100%;
+  background-color: $color-form-bg;
 
   &:active,
   &:focus {
@@ -51,6 +52,10 @@
     border-color: $color-form-border-error;
   }
 
+}
+
+select.c-form-input {
+  height: 30px;
 }
 
 
