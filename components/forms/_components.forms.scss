@@ -50,7 +50,7 @@
     height: 1em;
     background-color: $color-checkbox-bg;
     vertical-align: middle;
-    border: 2px solid $color-form-border;
+    border: 1px solid $color-form-border;
     transition: 0.2s;
 
     /**
@@ -64,11 +64,11 @@
       &::after {
         content: "";
         position: absolute;
-        top: 4px;
-        left: 3px;
+        top: 5px;
+        left: 4px;
         width: 10px;
         height: 5px;
-        border: 2px solid transparent;
+        border: 1px solid transparent;
         border-bottom-color: white;
         border-left-color: white;
         transform: rotate(-45deg)
@@ -95,8 +95,8 @@
      * Checked radio boxes look very different to their checkbox counterparts.
      */
     .c-checkbox--radio > .c-checkbox__input:checked + &::after {
-      top: 4px;
-      left: 4px;
+      top: 5px;
+      left: 5px;
       border: none;
       border-radius: 100%;
       width: 8px;
