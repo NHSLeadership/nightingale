@@ -3,15 +3,10 @@
    ========================================================================== */
 
 /**
- * Long-form comment.
- *
- * If you’d like to create a new Sass file for the project, simply copy and
- * paste this one and fill it in like for like.
- *
- * This spans multiple lines and is also constrained to no longer than 80
- * characters in width.
- *
- * 1. Provide line comments like this.
+ * This file holds a collection of various different styles of form component,
+ * from form fields to checkboxes, errors to labels. We may decide in future
+ * that we want to break this file out into smaller ones, but for now things
+ * feel manageable.
  */
 
 
@@ -19,6 +14,10 @@
 
 
 /* Labels
+ *
+ * Sometimes we need to apply label styles to inert, non-label elements (e.g.
+ * meta-labels above groups of checkboxes). We can do that using the following
+ * class.
    ========================================================================== */
 
 .c-form-label {
@@ -30,6 +29,9 @@
 
 
 /* Inputs
+ *
+ * The `.c-form-input` class can be used on `input`s, `textarea`s, `select`s,
+ * etc.
    ========================================================================== */
 
 .c-form-input {
@@ -54,6 +56,9 @@
 
 }
 
+/**
+ * `select` elements need their height setting a little more explicitly.
+ */
 select.c-form-input {
   height: 30px;
 }
