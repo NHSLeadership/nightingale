@@ -3,7 +3,8 @@
    ========================================================================== */
 
 label {
-  @include font-size(14px);
-  display: inline-block;
+  display: block;
   cursor: pointer;
+  font-weight: bold;
+  color: $color-form-label;
 }
