@@ -1,0 +1,114 @@
+/* ==========================================================================
+   #FORMS
+   ========================================================================== */
+
+/**
+ * Long-form comment.
+ *
+ * If you’d like to create a new Sass file for the project, simply copy and
+ * paste this one and fill it in like for like.
+ *
+ * This spans multiple lines and is also constrained to no longer than 80
+ * characters in width.
+ *
+ * 1. Provide line comments like this.
+ */
+
+
+
+
+
+/* Checkboxes
+ *
+ * We make faux checkboxes (and radios) by using the `:checked` pseudo selector:
+ * when a hidden `input` is activated, we style an adjacent `span`.
+ *
+ * This technique comes with a few caveats and constraints: the `input` MUST be
+ * wrapped in a `label` element in order for it to be indirectly triggered, and
+ * we need an empty `span` in the HTML to which we actually apply our styles.
+   ========================================================================== */
+
+.c-checkbox {
+}
+
+  /**
+   * 1. Hide the actual input…
+   * 2. …and remove it from document flow.
+   */
+  .c-checkbox__input {
+    opacity: 0; /* [1] */
+    position: absolute; /* [2] */
+  }
+
+  .c-checkbox__faux {
+    display: inline-block;
+    margin-right: $global-spacing-unit-tiny;
+    font-size: 20px;
+    width: 1em;
+    height: 1em;
+    background-color: white;
+    vertical-align: middle;
+    border: 2px solid #E8EDEE;
+    transition: 0.2s;
+
+    /**
+     * Once the `input` is checked, let’s style up the faux input next to it.
+     */
+    .c-checkbox__input:checked + & {
+      background-color: #78BE20;
+      position: relative;
+      border-color: transparent;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 3px;
+        width: 10px;
+        height: 5px;
+        border: 2px solid transparent;
+        border-bottom-color: white;
+        border-left-color: white;
+        transform: rotate(-45deg)
+      }
+
+    }
+
+    /**
+     * When someone is interacting with the input, highlight them.
+     */
+    .c-checkbox__input:active + &,
+    .c-checkbox__input:focus + & {
+      border-color: #FFB81C;
+    }
+
+    /**
+     * If it’s a radio button, let’s style it slightly differently.
+     */
+    .c-checkbox--radio > & {
+      border-radius: 100%;
+    }
+
+    /**
+     * Checked radio boxes look very different to their checkbox counterparts.
+     */
+    .c-checkbox--radio > .c-checkbox__input:checked + &::after {
+      top: 4px;
+      left: 4px;
+      border: none;
+      border-radius: 100%;
+      width: 8px;
+      height: 8px;
+      background-color: white;
+      transform: none;
+    }
+
+  }
+
+
+
+
+
+.c-other-block {
+  font-weight: bold; /* [1] */
+}
