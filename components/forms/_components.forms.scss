@@ -46,16 +46,16 @@
     font-size: 20px;
     width: 1em;
     height: 1em;
-    background-color: white;
+    background-color: $color-checkbox-bg;
     vertical-align: middle;
-    border: 2px solid #E8EDEE;
+    border: 2px solid $color-form-border;
     transition: 0.2s;
 
     /**
      * Once the `input` is checked, let’s style up the faux input next to it.
      */
     .c-checkbox__input:checked + & {
-      background-color: #78BE20;
+      background-color: $color-checkbox-bg-checked;
       position: relative;
       border-color: transparent;
 
@@ -79,7 +79,7 @@
      */
     .c-checkbox__input:active + &,
     .c-checkbox__input:focus + & {
-      border-color: #FFB81C;
+      border-color: #ffb81c;
     }
 
     /**
