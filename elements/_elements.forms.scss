@@ -2,9 +2,15 @@
    #FORMS
    ========================================================================== */
 
-label {
+// We want to reuse label styling on non-label elements later on; this is
+// a private-use mixin to help us achieve just that.
+@mixin _label-text() {
   display: block;
-  cursor: pointer;
   font-weight: bold;
   color: $color-form-label;
+}
+
+label {
+  @include _label-text();
+  cursor: pointer;
 }
