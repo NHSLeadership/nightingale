@@ -3,13 +3,10 @@
    ========================================================================== */
 
 /**
- * Long-form comment.
- *
- * If you’d like to create a new Sass file for the project, simply copy and
- * paste this one and fill it in like for like.
- *
- * This spans multiple lines and is also constrained to no longer than 80
- * characters in width.
+ * The site’s main page header is relatively uncomplicated; its function is more
+ * to wrap the more complex sub-components. We do have some slightly unusual
+ * rules pertaining to double borders and colour inversion, but nothing that’s
+ * going to keep you up at night.
  *
  * 1. Create a larger margin to account for the fact we’re using an absolutely
  *    positioned element to provide the faux double border.
