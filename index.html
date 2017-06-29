@@ -70,7 +70,7 @@
 
       <button class="c-nav-trigger" id="jsNavTrigger" aria-label="menu" data-expands="#jsNav">☰</button>
 
-      <nav class="c-nav-primary  c-page-header__nav">
+      <nav class="c-nav-primary  c-page-header__nav" id="primaryNav">
 
         <ul class="c-nav-primary__list" id="jsNav">
 
@@ -370,8 +370,20 @@
 
   </footer>
   <script>
-    // Handle opening and closing submenus
     (function() {
+      // Move the submenus at large viewport widths
+      if (window.innerWidth > 720) {
+        // Get all the submenus
+        var submenus = document.querySelectorAll('.c-nav-primary__sub')
+
+        Array.prototype.forEach.call(submenus, function(submenu) {
+          var clone = submenu.cloneNode(true)
+          var wrapper = document.querySelector('.c-page-header')
+          wrapper.appendChild(clone)
+          submenu.parentNode.removeChild(submenu)
+        })
+      }
+
       // Get all the toggle button nodes in the document
       var toggleButtons = document.querySelectorAll('[data-expands]')
 
@@ -379,7 +391,6 @@
       function toggle(toggleButton, target, displayMode) {
         var expanded = toggleButton.getAttribute('aria-expanded') === 'true'
         toggleButton.setAttribute('aria-expanded', !expanded)
-        console.log(displayMode)
         target.style.display = target.style.display === 'none' ? displayMode : 'none'
       }
 
