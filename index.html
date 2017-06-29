@@ -68,7 +68,7 @@
 
       <strong class="c-page-header__title">Leadership Academy</strong>
 
-      <button class="c-nav-trigger" id="jsNavTrigger">☰</button>
+      <button class="c-nav-trigger" id="jsNavTrigger" aria-label="menu" data-expands="#jsNav">☰</button>
 
       <nav class="c-nav-primary  c-page-header__nav">
 
@@ -87,9 +87,9 @@
           </li>
 
           <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link">Item Four</a>
+            <a href="#0" class="c-nav-primary__link" data-expands="#item-4-sub">Item Four</a>
 
-            <div class="c-nav-primary__sub">
+            <div class="c-nav-primary__sub" id="item-4-sub">
 
               <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
 
@@ -127,27 +127,6 @@
       </nav>
 
     </div>
-
-    <script>
-      (function(){
-
-        var navTrigger = document.getElementById('jsNavTrigger');
-        var nav = document.getElementById('jsNav');
-
-        navTrigger.addEventListener('click', function () {
-          if (nav.classList.contains('is-open')) {
-            nav.classList.remove('is-open');
-            this.classList.remove('is-active');
-            this.innerHTML = '☰';
-          } else {
-            nav.classList.add('is-open');
-            this.classList.add('is-active');
-            this.innerHTML = '×';
-          }
-        });
-
-      }());
-    </script>
 
   </header>
 
@@ -390,6 +369,72 @@
     </div>
 
   </footer>
+  <script>
+    // Handle opening and closing submenus
+    (function() {
+      // Get all the toggle button nodes in the document
+      var toggleButtons = document.querySelectorAll('[data-expands]')
 
+      // Toggle function
+      function toggle(toggleButton, target, displayMode) {
+        var expanded = toggleButton.getAttribute('aria-expanded') === 'true'
+        toggleButton.setAttribute('aria-expanded', !expanded)
+        console.log(displayMode)
+        target.style.display = target.style.display === 'none' ? displayMode : 'none'
+      }
+
+      // Iterate over those buttons
+      Array.prototype.forEach.call(toggleButtons, function(toggleButton) {
+        // Give the element the button role
+        toggleButton.setAttribute('role', 'button')
+
+        // If the node type is not focusable, add tabindex="0"
+        // and set the nonStandard bool to true
+        if (toggleButton.nodeName !== ("A" || "BUTTON")) {
+          var nonStandard = true
+          toggleButton.setAttribute('tabindex', '0')
+        }
+
+        // Set the aria-expanded value to false to begin with
+        toggleButton.setAttribute('aria-expanded', 'false')
+
+        // Define the target selector
+        var selector = toggleButton.getAttribute('data-expands')
+
+        // Define the target element via the selector supplied
+        // as the `data-expands` value
+        var target = document.querySelector(selector)
+
+        // Get the (visible) display mode of the target
+        // because it may not be block...
+        var displayMode = target.currentStyle ? target.currentStyle.display : window.getComputedStyle(target, null).display
+        if (displayMode === 'none') {
+          target.style.display = 'none'
+          displayMode = 'block'
+        }
+        // Add click listener to toggle
+        toggleButton.addEventListener('click', function() {
+          toggle(toggleButton, target, displayMode)
+        })
+
+        // If the element is nonStandard,
+        // trigger click event on SPACE and ENTER
+        if (nonStandard) {
+          toggleButton.addEventListener('keypress', function(e) {
+            var key = 'which' in e ? e.which : e.keyCode;
+            if (key === (32 || 13)) {
+              toggleButton.click()
+            }
+          })
+        }
+      })
+
+      // Hamburger menu text node toggle
+      var navTrigger = document.getElementById('jsNavTrigger');
+      navTrigger.addEventListener('click', function() {
+        this.innerHTML = this.innerHTML === '×' ? '☰' : '×'
+      })
+    })()
+  </script>
 </body>
 </html>

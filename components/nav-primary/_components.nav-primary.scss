@@ -151,6 +151,7 @@
  * 1. Pull the sub nav back out to be full-bleed.
    ========================================================================== */
 .c-nav-primary__sub {
+  display: none;
   background-color: $color-nav-primary-sub-bg;
   margin-right: -$global-spacing-unit-small; /* [1] */
   margin-left: -$global-spacing-unit-small; /* [1] */
