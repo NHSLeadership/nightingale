@@ -13,6 +13,26 @@
 
 
 
+/* Lists
+ *
+ * In order to display neat lists of form elements, wrap them in
+ * a `.c-form-list` element.
+   ========================================================================== */
+
+.c-form-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+  .c-form-list__item,
+  .c-form-list > li {
+    margin-bottom: $global-spacing-unit-small;
+  }
+
+
+
+
+
 /* Labels
  *
  * Sometimes we need to apply label styles to inert, non-label elements (e.g.
