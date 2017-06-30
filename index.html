@@ -87,9 +87,9 @@
           </li>
 
           <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link" data-expands="#item-4-sub">Item Four</a>
+            <a href="#0" class="c-nav-primary__link" data-expands="#item-4-sub" data-popup>Item Four</a>
 
-            <div class="c-nav-primary__sub" id="item-4-sub">
+            <div class="c-nav-primary__sub" id="item-4-sub" role="group" aria-label="sub navigation menu">
 
               <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
 
@@ -388,10 +388,39 @@
       var toggleButtons = document.querySelectorAll('[data-expands]')
 
       // Toggle function
-      function toggle(toggleButton, target, displayMode) {
+      function toggle(toggleButton, target, displayMode, popupMode) {
         var expanded = toggleButton.getAttribute('aria-expanded') === 'true'
         toggleButton.setAttribute('aria-expanded', !expanded)
         target.style.display = target.style.display === 'none' ? displayMode : 'none'
+        if (!expanded && popupMode) {
+          // Get the first and last focusable elements
+          var first = target.querySelector('a[href], button, input, textarea, select, [tabindex="0"]')
+          var all = target.querySelectorAll('a[href], button, input, textarea, select, [tabindex="0"]')
+          var last = all[all.length - 1]
+
+          // Focus the first focusable elem
+          first.focus()
+
+          // Refocus `toggleButton` if the user
+          // presses Shift + Tab on first focusable elem
+          first.addEventListener('keydown', function(e) {
+            var key = 'which' in e ? e.which : e.keyCode;
+            if (key === 9 && e.shiftKey) {
+              e.preventDefault()
+              toggleButton.focus()
+            }
+          })
+
+          // Refocus `toggleButton` if the user
+          // presses Tab on last focusable elem
+          last.addEventListener('keydown', function(e) {
+            var key = 'which' in e ? e.which : e.keyCode;
+            if (key === 9 && !e.shiftKey) {
+              e.preventDefault()
+              toggleButton.focus()
+            }
+          })
+        }
       }
 
       // Iterate over those buttons
@@ -416,6 +445,17 @@
         // as the `data-expands` value
         var target = document.querySelector(selector)
 
+        // If it has `data-popup` give it `aria-haspopup`
+        // and set it to popupMode
+        if (toggleButton.getAttribute('data-popup') !== null) {
+          toggleButton.setAttribute('aria-haspopup', 'true')
+          var popupMode = true
+
+          // Give the target the right semantics too
+          target.setAttribute('role', 'group')
+          target.setAttribute('aria-label', 'submenu')
+        }
+
         // Get the (visible) display mode of the target
         // because it may not be block...
         var displayMode = target.currentStyle ? target.currentStyle.display : window.getComputedStyle(target, null).display
@@ -425,7 +465,7 @@
         }
         // Add click listener to toggle
         toggleButton.addEventListener('click', function() {
-          toggle(toggleButton, target, displayMode)
+          toggle(toggleButton, target, displayMode, popupMode)
         })
 
         // If the element is nonStandard,
