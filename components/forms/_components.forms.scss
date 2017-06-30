@@ -70,6 +70,7 @@
     border-color: $color-form-border-focus;
   }
 
+  &:invalid,
   &.is-error {
     border-color: $color-form-border-error;
   }
