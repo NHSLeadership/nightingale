@@ -1,0 +1,252 @@
+/* ==========================================================================
+   #FORMS
+   ========================================================================== */
+
+/**
+ * This file holds a collection of various different styles of form component,
+ * from form fields to checkboxes, errors to labels. We may decide in future
+ * that we want to break this file out into smaller ones, but for now things
+ * feel manageable.
+ */
+
+
+
+
+
+/* Lists
+ *
+ * In order to display neat lists of form elements, wrap them in
+ * a `.c-form-list` element.
+   ========================================================================== */
+
+.c-form-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+  .c-form-list__item,
+  .c-form-list > li {
+    margin-bottom: $global-spacing-unit-small;
+  }
+
+
+
+
+
+/* Labels
+ *
+ * Sometimes we need to apply label styles to inert, non-label elements (e.g.
+ * meta-labels above groups of checkboxes). We can do that using the following
+ * class.
+   ========================================================================== */
+
+.c-form-label {
+  @include _label-text();
+}
+
+
+
+
+
+/* Inputs
+ *
+ * The `.c-form-input` class can be used on `input`s, `textarea`s, `select`s,
+ * etc.
+ *
+ * 1. Remove opinionated defaults (mainly in iOS).
+   ========================================================================== */
+
+.c-form-input {
+  @include font-size(14px);
+  color: $color-form;
+  padding-right: 5px;
+  padding-left: 5px;
+  border: 1px solid $color-form-border;
+  width: 345px;
+  max-width: 100%;
+  background-color: $color-form-bg;
+  border-radius: 0; /* [1] */
+  -webkit-appearance: none; /* [1] */
+     -moz-appearance: none; /* [1] */
+      -ms-appearance: none; /* [1] */
+          appearance: none; /* [1] */
+
+  &:active,
+  &:focus {
+    outline: none;
+    border-color: $color-form-border-focus;
+  }
+
+  &:invalid,
+  &.is-error {
+    border-color: $color-form-border-error;
+  }
+
+  &::placeholder {
+    font-style: italic;
+  }
+
+}
+
+/**
+ * `select` elements need their height setting a little more explicitly.
+ */
+select.c-form-input {
+  height: 30px;
+}
+
+
+
+
+
+/* Dropdowns
+ *
+ * In order to have semi-custom dropdowns, we have to wrap them in a DIV with
+ * a class of `c-form-dropdown`. This allows us to utilise a pseudo-element
+ * which acts as the dropdown arrow.
+   ========================================================================== */
+
+.c-form-dropdown {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -8px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid transparent;
+    border-bottom-color: color('nhs-black');
+    border-left-color: color('nhs-black');
+    transform: rotate(-45deg);
+  }
+
+}
+
+  .c-form-dropdown__select {
+    cursor: pointer;
+    background: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+        -ms-appearance: none;
+            appearance: none;
+    border-radius: 0;
+  }
+
+
+
+
+
+/* Checkboxes
+ *
+ * We make faux checkboxes (and radios) by using the `:checked` pseudo selector:
+ * when a hidden `input` is activated, we style an adjacent `span`.
+ *
+ * This technique comes with a few caveats and constraints: the `input` MUST be
+ * wrapped in a `label` element in order for it to be indirectly triggered, and
+ * we need an empty `span` in the HTML to which we actually apply our styles.
+   ========================================================================== */
+
+.c-form-checkbox {
+  @include font-size(14px);
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+  /**
+   * 1. Hide the actual input…
+   * 2. …and remove it from document flow.
+   */
+  .c-form-checkbox__input {
+    opacity: 0; /* [1] */
+    position: absolute; /* [2] */
+  }
+
+  .c-form-checkbox__faux {
+    display: inline-block;
+    margin-right: $global-spacing-unit-tiny;
+    font-size: 20px;
+    width: 1em;
+    height: 1em;
+    background-color: $color-checkbox-bg;
+    vertical-align: middle;
+    border: 1px solid $color-form-border;
+    transition: 0.2s;
+
+    /**
+     * Once the `input` is checked, let’s style up the faux input next to it.
+     */
+    .c-form-checkbox__input:checked + & {
+      background-color: $color-checkbox-bg-checked;
+      position: relative;
+      border-color: transparent;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 4px;
+        width: 10px;
+        height: 5px;
+        border: 1px solid transparent;
+        border-bottom-color: white;
+        border-left-color: white;
+        transform: rotate(-45deg)
+      }
+
+    }
+
+    /**
+     * When someone is interacting with the input, highlight them.
+     */
+    .c-form-checkbox__input:active + &,
+    .c-form-checkbox__input:focus + & {
+      border-color: $color-form-border-focus;
+    }
+
+    /**
+     * If it’s a radio button, let’s style it slightly differently.
+     */
+    .c-form-checkbox--radio > & {
+      border-radius: 100%;
+    }
+
+    /**
+     * Checked radio boxes look very different to their checkbox counterparts.
+     */
+    .c-form-checkbox--radio > .c-form-checkbox__input:checked + &::after {
+      top: 5px;
+      left: 5px;
+      border: none;
+      border-radius: 100%;
+      width: 8px;
+      height: 8px;
+      background-color: white;
+      transform: none;
+    }
+
+  }
+
+
+
+
+
+/* Errors
+ *
+ * This class extends the styles of regular DETAILS elements to provide expanded
+ * error messages.
+   ========================================================================== */
+
+.c-form-error {
+  @include font-size(14px);
+  margin-bottom: 0;
+
+  &[open] > summary,
+  > summary {
+    color: $color-error;
+  }
+
+}

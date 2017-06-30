@@ -77,6 +77,119 @@
 
         </div>
 
+        <form>
+
+          <ul class="c-form-list">
+
+            <li>
+              <label for="title">
+                Title
+                <small>Copy for brief explanation of label request, which can
+                  span two lines maximum.</small>
+              </label>
+              <div class="c-form-dropdown">
+                <select class="c-form-dropdown__select  c-form-input" id="title">
+                  <option>Miss.</option>
+                  <option>Mr.</option>
+                  <option>Mrs.</option>
+                  <option>Ms.</option>
+                </select>
+              </div>
+            </li>
+
+            <li>
+              <label for="name">
+                Full Name
+              </label>
+              <input type="text" class="c-form-input" id="name" placeholder="Jane Smith" />
+            </li>
+
+            <li>
+              <label for="email">
+                Email
+              </label>
+              <input type="email" class="c-form-input  is-error" id="email" placeholder="name@domain.com" value="jane@gmail.com" />
+              <details class="c-form-error">
+                <summary>Email not recognised</summary>
+                <div>
+                  Yikes! It looks like this email is not recognised.
+                </div>
+              </details>
+            </li>
+
+            <li>
+              <label for="url">
+                Website
+              </label>
+              <input type="text" class="c-form-input" id="url" placeholder="http://" />
+            </li>
+
+            <li>
+              <label for="twitter">
+                Twitter Handle
+              </label>
+              <input type="text" class="c-form-input" id="twitter" value="@" />
+            </li>
+
+            <li>
+              <label for="comments">
+                Comments
+              </label>
+              <textarea rows="5" cols="50" class="c-form-input" id="comments"></textarea>
+            </li>
+
+            <li>
+
+              <strong class="c-form-label">How would you prefer to be contacted?</strong>
+
+              <label class="c-form-checkbox">
+                <input type="checkbox" class="c-form-checkbox__input" />
+                <span class="c-form-checkbox__faux"></span>
+                Email
+              </label>
+
+              <label class="c-form-checkbox">
+                <input type="checkbox" class="c-form-checkbox__input" checked />
+                <span class="c-form-checkbox__faux"></span>
+                Phone
+              </label>
+
+              <label class="c-form-checkbox">
+                <input type="checkbox" class="c-form-checkbox__input" />
+                <span class="c-form-checkbox__faux"></span>
+                Post
+              </label>
+
+            </li>
+
+            <li>
+
+              <strong class="c-form-label">How would you prefer to be contacted?</strong>
+
+              <label class="c-form-checkbox  c-form-checkbox--radio">
+                <input type="radio" class="c-form-checkbox__input" checked name="options" />
+                <span class="c-form-checkbox__faux"></span>
+                Email
+              </label>
+
+              <label class="c-form-checkbox  c-form-checkbox--radio">
+                <input type="radio" class="c-form-checkbox__input" name="options" />
+                <span class="c-form-checkbox__faux"></span>
+                Phone
+              </label>
+
+              <label class="c-form-checkbox  c-form-checkbox--radio">
+                <input type="radio" class="c-form-checkbox__input" name="options" />
+                <span class="c-form-checkbox__faux"></span>
+                Post
+              </label>
+
+            </li>
+
+          </ul>
+
+        </form>
+
         <h1>Heading Level 1</h1>
 
         <h2>Heading Level 2</h2>

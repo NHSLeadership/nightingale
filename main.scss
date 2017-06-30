@@ -31,6 +31,7 @@
  * Quotes...............Pared back quotation styling.
  * Small................Smallprint and legalese.
  * Details..............Basic details element for revealed content.
+ * Forms................Element-only form styles.
  *
  * OBJECTS
  * Wrappers.............Page-constraints.
@@ -45,6 +46,7 @@
  * Page Footer..........Large footer area at the very bottom of the page.
  * Progress Bar.........Linear progress bar
  * Progress Wheel.......Circular progress indicator
+ * Forms................All of our different form styles.
  *
  * UTILITIES
  * Colors...............Utility classes generated from our color map.
@@ -87,6 +89,7 @@
 @import "elements/elements.quotes";
 @import "elements/elements.small";
 @import "elements/elements.details";
+@import "elements/elements.forms";
 
 
 
@@ -107,6 +110,7 @@
 @import "components/page-footer/components.page-footer";
 @import "components/progress/components.progress-bar";
 @import "components/progress/components.progress-wheel";
+@import "components/forms/components.forms";
 
 
 

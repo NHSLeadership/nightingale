@@ -40,3 +40,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+
+/**
+ * Form styles
+ */
+button, input, optgroup, select, textarea {
+  font: inherit;
+}
