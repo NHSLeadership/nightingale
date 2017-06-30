@@ -52,6 +52,8 @@
  *
  * The `.c-form-input` class can be used on `input`s, `textarea`s, `select`s,
  * etc.
+ *
+ * 1. Remove opinionated defaults (mainly in iOS).
    ========================================================================== */
 
 .c-form-input {
@@ -63,6 +65,11 @@
   width: 345px;
   max-width: 100%;
   background-color: $color-form-bg;
+  border-radius: 0; /* [1] */
+  -webkit-appearance: none; /* [1] */
+     -moz-appearance: none; /* [1] */
+      -ms-appearance: none; /* [1] */
+          appearance: none; /* [1] */
 
   &:active,
   &:focus {
