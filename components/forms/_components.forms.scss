@@ -87,6 +87,47 @@ select.c-form-input {
 
 
 
+/* Dropdowns
+ *
+ * In order to have semi-custom dropdowns, we have to wrap them in a DIV with
+ * a class of `c-form-dropdown`. This allows us to utilise a pseudo-element
+ * which acts as the dropdown arrow.
+   ========================================================================== */
+
+.c-form-dropdown {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -8px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid transparent;
+    border-bottom-color: color('nhs-black');
+    border-left-color: color('nhs-black');
+    transform: rotate(-45deg);
+  }
+
+}
+
+  .c-form-dropdown__select {
+    cursor: pointer;
+    background: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+        -ms-appearance: none;
+            appearance: none;
+    border-radius: 0;
+  }
+
+
+
+
+
 /* Checkboxes
  *
  * We make faux checkboxes (and radios) by using the `:checked` pseudo selector:
