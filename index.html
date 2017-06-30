@@ -387,42 +387,6 @@
       // Get all the toggle button nodes in the document
       var toggleButtons = document.querySelectorAll('[data-expands]')
 
-      // Toggle function
-      function toggle(toggleButton, target, displayMode, popupMode) {
-        var expanded = toggleButton.getAttribute('aria-expanded') === 'true'
-        toggleButton.setAttribute('aria-expanded', !expanded)
-        target.style.display = target.style.display === 'none' ? displayMode : 'none'
-        if (!expanded && popupMode) {
-          // Get the first and last focusable elements
-          var first = target.querySelector('a[href], button, input, textarea, select, [tabindex="0"]')
-          var all = target.querySelectorAll('a[href], button, input, textarea, select, [tabindex="0"]')
-          var last = all[all.length - 1]
-
-          // Focus the first focusable elem
-          first.focus()
-
-          // Refocus `toggleButton` if the user
-          // presses Shift + Tab on first focusable elem
-          first.addEventListener('keydown', function(e) {
-            var key = 'which' in e ? e.which : e.keyCode;
-            if (key === 9 && e.shiftKey) {
-              e.preventDefault()
-              toggleButton.focus()
-            }
-          })
-
-          // Refocus `toggleButton` if the user
-          // presses Tab on last focusable elem
-          last.addEventListener('keydown', function(e) {
-            var key = 'which' in e ? e.which : e.keyCode;
-            if (key === 9 && !e.shiftKey) {
-              e.preventDefault()
-              toggleButton.focus()
-            }
-          })
-        }
-      }
-
       // Iterate over those buttons
       Array.prototype.forEach.call(toggleButtons, function(toggleButton) {
         // Give the element the button role
@@ -465,7 +429,44 @@
         }
         // Add click listener to toggle
         toggleButton.addEventListener('click', function() {
-          toggle(toggleButton, target, displayMode, popupMode)
+          var expanded = toggleButton.getAttribute('aria-expanded') === 'true'
+          toggleButton.setAttribute('aria-expanded', !expanded)
+          target.style.display = target.style.display === 'none' ? displayMode : 'none'
+          if (!expanded && popupMode) {
+            // Get the first and last focusable elements
+            var first = target.querySelector('a[href], button, input, textarea, select, [tabindex="0"]')
+            var all = target.querySelectorAll('a[href], button, input, textarea, select, [tabindex="0"]')
+            var last = all[all.length - 1]
+
+            // Focus the first focusable elem
+            first.focus()
+
+            // Refocus `toggleButton` if the user
+            // presses Shift + Tab on first focusable elem
+            first.addEventListener('keydown', function(e) {
+              var key = 'which' in e ? e.which : e.keyCode;
+              if (key === 9 && e.shiftKey) {
+                e.preventDefault()
+                toggleButton.focus()
+              }
+            })
+
+            // Refocus `toggleButton` if the user
+            // presses Tab on last focusable elem
+            last.addEventListener('keydown', function(e) {
+              var key = 'which' in e ? e.which : e.keyCode;
+              if (key === 9 && !e.shiftKey) {
+                e.preventDefault()
+                toggleButton.focus()
+              }
+            })
+          }
+
+          // Hide the target on button focus
+          toggleButton.addEventListener('focus', function() {
+              target.style.display = 'none'
+              this.setAttribute('aria-expanded', 'false')
+          })
         })
 
         // If the element is nonStandard,
