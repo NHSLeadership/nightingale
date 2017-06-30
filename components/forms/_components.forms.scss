@@ -74,6 +74,10 @@
     border-color: $color-form-border-error;
   }
 
+  &::placeholder {
+    font-style: italic;
+  }
+
 }
 
 /**
