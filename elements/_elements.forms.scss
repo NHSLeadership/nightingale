@@ -13,4 +13,12 @@
 label {
   @include _label-text();
   cursor: pointer;
+  margin-bottom: $global-spacing-unit-small;
+
+  > small {
+    display: block;
+    color: $color-form-label-sub;
+    font-weight: normal;
+  }
+
 }
