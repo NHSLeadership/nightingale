@@ -22,6 +22,22 @@ $color-lists:   color('nhs-grey-dark') !default;
 
 
 
+// General
+//
+// For more general/generic colours that are based on our palette.
+// ========================================================================== */
+
+$color-attention:   color('attention')   !default;
+$color-error:       color('error')       !default;
+$color-information: color('information') !default;
+$color-pending:     color('pending')     !default;
+$color-success:     color('success')     !default;
+$color-warning:     color('warning')     !default;
+
+
+
+
+
 // Links
 // ========================================================================== */
 
@@ -63,6 +79,22 @@ $color-nav-primary-trigger-bg-invert: color('nhs-white')     !default;
 
 
 
+// General
+//
+// For more general/generic colours that are based on our palette.
+// ========================================================================== */
+
+$color-attention:   color('attention')   !default;
+$color-error:       color('error')       !default;
+$color-information: color('information') !default;
+$color-pending:     color('pending')     !default;
+$color-success:     color('success')     !default;
+$color-warning:     color('warning')     !default;
+
+
+
+
+
 // Page Footer
 // ========================================================================== */
 
@@ -97,16 +129,36 @@ $color-btn-disabled-bg: color('nhs-grey-pale') !default;
 
 
 
+// Forms
+// ========================================================================== */
+
+$color-form:               color('nhs-black')     !default;
+$color-form-bg:            color('white')         !default;
+$color-form-border:        color('nhs-grey-pale') !default;
+$color-form-border-focus:  #ffb81c                !default;
+$color-form-border-error:  color('error')         !default;
+$color-form-label:         color('nhs-black')     !default;
+$color-form-label-sub:     color('nhs-grey-dark') !default;
+
+$color-checkbox-bg:         color('white')   !default;
+$color-checkbox-bg-checked: color('success') !default;
+
+
+
+
+
 // Ribbons
 // ========================================================================== */
 
-$color-ribbon:          color('white');
-$color-ribbon-bg:       color('nhs-black');
-$color-ribbon-alpha-bg: color('nhs-pink');
-$color-ribbon-beta-bg:  color('nhs-orange');
-$color-ribbon-live-bg:  color('nhs-aqua');
-$color-ribbon-tag:      color('white');
-$color-ribbon-tag-bg:   color('nhs-black');
+$color-ribbon:          color('white')      !default;
+$color-ribbon-bg:       color('nhs-black')  !default;
+$color-ribbon-alpha-bg: color('nhs-pink')   !default;
+$color-ribbon-beta:     color('nhs-black')  !default;
+$color-ribbon-beta-bg:  color('nhs-orange') !default;
+$color-ribbon-live-bg:  color('nhs-aqua')   !default;
+$color-ribbon-tag:      color('white')      !default;
+$color-ribbon-tag-bg:   color('nhs-black')  !default;
+$color-ribbon-btn-bg:   color('white')      !default;
 
 
 
