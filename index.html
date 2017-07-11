@@ -522,9 +522,9 @@
         // Do header class
         // if it's a submenu that's been opened
         if (expanded && target.getAttribute('aria-label') === 'submenu') {
-          header.setAttribute('class', headerClasses + ' has-submenu')
+          header.setAttribute('class', headerClasses + ' has-sub-nav')
         } else {
-          header.setAttribute('class', headerClasses.replace(' has-submenu', ''))
+          header.setAttribute('class', headerClasses.replace(' has-sub-nav', ''))
         }
 
         if (expanded && popupMode) {
