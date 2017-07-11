@@ -58,7 +58,7 @@
 
   </div>
 
-  <header class="c-page-header  c-page-header--invert">
+  <header class="c-page-header  c-page-header--invert" id="jsPageHeader">
 
     <div class="o-wrapper">
 
@@ -87,7 +87,7 @@
           <li class="c-nav-primary__item">
             <a href="#0" class="c-nav-primary__link" data-expands="#item-4-sub" data-popup>Item Four</a>
 
-            <div class="c-nav-primary__sub" id="item-4-sub" role="group" aria-label="sub navigation menu">
+            <div class="c-nav-primary__sub  jsNavSub" id="item-4-sub" role="group" aria-label="sub navigation menu">
 
               <div class="o-wrapper">
 
@@ -491,11 +491,11 @@
       var setupToggles = function() {
         if (window.innerWidth > 720) {
           // Get all the submenus
-          var submenus = document.querySelectorAll('.c-nav-primary__sub')
+          var submenus = document.querySelectorAll('.jsNavSub')
 
           Array.prototype.forEach.call(submenus, function(submenu) {
             var clone = submenu.cloneNode(true)
-            var wrapper = document.querySelector('.c-page-header')
+            var wrapper = document.getElementById('jsPageHeader')
             wrapper.appendChild(clone)
             submenu.parentNode.removeChild(submenu)
           })
@@ -516,7 +516,7 @@
         target.style.display = target.style.display === 'none' ? displayMode : 'none'
 
         // Get header class value
-        var header = document.querySelector('.c-page-header')
+        var header = document.getElementById('jsPageHeader')
         var headerClasses = header.getAttribute('class')
 
         // Do header class
