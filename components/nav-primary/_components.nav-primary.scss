@@ -97,6 +97,35 @@
           color: $color-nav-primary-invert;
         }
 
+        /**
+         * Dropdown toggle arrow. This is , completely bodged in for now; there
+         * will be a separate task to actually swap this out for a proper icon.
+         */
+        &[aria-haspopup="true"] {
+          position: relative;
+          padding-right: 15px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            margin-top: -8px;
+            border: 2px solid transparent;
+            border-right-color: currentColor;
+            border-bottom-color: currentColor;
+            transform: rotate(45deg);
+          }
+
+        }
+
+        &[aria-expanded="true"]::after {
+          transform: rotate(225deg);
+          margin-top: -2px;
+        }
+
       }
 
 
