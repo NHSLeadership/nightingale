@@ -162,6 +162,7 @@
   @include mq($from: md) {
     padding-top: $global-spacing-unit;
     padding-bottom: $global-spacing-unit;
+    margin-top: $global-spacing-unit;
   }
 
 }

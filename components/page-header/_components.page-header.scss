@@ -39,6 +39,14 @@
     border-bottom: $global-border-mid solid color('nhs-purple');
   }
 
+  @include mq($from: md) {
+
+    &.has-sub-nav {
+      padding-bottom: 0;
+    }
+
+  }
+
 }
 
 /**
