@@ -134,15 +134,17 @@ $color-checkbox-bg-checked: color('success') !default;
 // Ribbons
 // ========================================================================== */
 
-$color-ribbon:          color('white')      !default;
-$color-ribbon-bg:       color('nhs-black')  !default;
-$color-ribbon-alpha-bg: color('nhs-pink')   !default;
-$color-ribbon-beta:     color('nhs-black')  !default;
-$color-ribbon-beta-bg:  color('nhs-orange') !default;
-$color-ribbon-live-bg:  color('nhs-aqua')   !default;
-$color-ribbon-tag:      color('white')      !default;
-$color-ribbon-tag-bg:   color('nhs-black')  !default;
-$color-ribbon-btn-bg:   color('white')      !default;
+$color-ribbon:                color('white')     !default;
+$color-ribbon-bg:             color('nhs-black') !default;
+$color-ribbon-alpha-bg:       color('nhs-pink')  !default;
+$color-ribbon-beta:           color('nhs-black') !default;
+$color-ribbon-beta-bg:        color('nhs-orange')!default;
+$color-ribbon-live-bg:        color('nhs-aqua')  !default;
+$color-ribbon-tag:            color('white')     !default;
+$color-ribbon-tag-bg:         color('nhs-black') !default;
+$color-ribbon-btn-bg:         color('white')     !default;
+$color-ribbon-expandable:     color('nhs-black') !default;
+$color-ribbon-expandable-bg:  #ccdff1            !default;
 
 
 
