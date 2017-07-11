@@ -8,7 +8,7 @@
  */
 
 .c-page-footer {
-  border-top: $global-spacing-unit-small solid $color-page-footer-border;
+  border-top: $global-border-mid solid $color-page-footer-border;
   background-color: $color-page-footer-bg;
   padding: $global-spacing-unit;
   @include font-size(14px);

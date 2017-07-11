@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="jsPage" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
@@ -10,6 +10,13 @@
   <title>Nightingale</title>
 
   <link rel="stylesheet" href="./dist/main.css" />
+
+  <script>
+    (function(){
+      var page = document.getElementById('jsPage');
+      page.classList.remove('no-js');
+    }());
+  </script>
 
   <style>
 
@@ -37,7 +44,7 @@
 </head>
 <body>
 
-  <div class="c-ribbon  c-ribbon--beta  u-margin-bottom">
+  <div class="c-ribbon  c-ribbon--beta">
 
     <div class="o-wrapper">
 
@@ -51,13 +58,85 @@
 
   </div>
 
-  <div class="o-wrapper">
+  <header class="c-page-header" id="jsPageHeader">
 
-    <img src="./assets/img/logo-nhs.png" alt="" width="74" height="30" class="u-margin-bottom" style="vertical-align: middle;" />
+    <div class="o-wrapper">
+
+      <img src="./assets/img/logo-nhs-white.png" alt="NHS" width="74" height="30" class="c-page-header__logo" />
+
+      <strong class="c-page-header__title">Leadership Academy</strong>
+
+      <button class="c-nav-trigger" id="jsNavTrigger" aria-label="menu" data-expands="#jsNav">☰</button>
+
+      <nav class="c-nav-primary  c-page-header__nav" id="primaryNav">
+
+        <ul class="c-nav-primary__list" id="jsNav">
+
+          <li class="c-nav-primary__item">
+            <a href="#0" class="c-nav-primary__link">Item One</a>
+          </li>
+
+          <li class="c-nav-primary__item">
+            <a href="#0" class="c-nav-primary__link">Item Two</a>
+          </li>
+
+          <li class="c-nav-primary__item">
+            <a href="#0" class="c-nav-primary__link">Item Three</a>
+          </li>
+
+          <li class="c-nav-primary__item">
+            <a href="#0" class="c-nav-primary__link" data-expands="#item-4-sub" data-popup>Sub Nav</a>
+
+            <div class="c-nav-primary__sub  jsNavSub" id="item-4-sub" role="group" aria-label="sub navigation menu">
+
+              <div class="o-wrapper">
+
+                <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
+
+                <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
+                within this dropdown menu.</small></p>
+
+                <p class="u-margin-bottom-small">
+                  <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
+                </p>
+
+                <ul class="c-nav-primary__sub-links">
+                  <li>
+                    <a href="#0">Sub Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#0">Sub Link 2</a>
+                  </li>
+                  <li>
+                    <a href="#0">Sub Link 3</a>
+                  </li>
+                  <li>
+                    <a href="#0">Sub Link 4</a>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+          </li>
+
+          <li class="c-nav-primary__item">
+            <a href="#0" class="c-nav-primary__link">Item Five</a>
+          </li>
+
+        </ul>
+      </nav>
+
+    </div>
+
+  </header>
+
+  <div class="o-wrapper">
 
     <div class="o-layout">
 
-      <main class="o-layout__item  u-8/12">
+      <main class="o-layout__item  u-8/12@lg">
 
         <p class="c-progress-wheel" data-percent="33">
           <b class="c-progress-wheel__text">33%</b>
@@ -306,7 +385,7 @@
 
       </main><!-- /.o-layout__item -->
 
-      <div class="o-layout__item  u-4/12">
+      <div class="o-layout__item  u-4/12@lg">
 
         <blockquote>
           <p>Pellentesque habitant morbi tristique senectus et netus et
@@ -405,6 +484,132 @@
     </div>
 
   </footer>
+  <script>
 
+    (function() {
+
+      var setupToggles = function() {
+        if (window.innerWidth > 720) {
+          // Get all the submenus
+          var submenus = document.querySelectorAll('.jsNavSub')
+
+          Array.prototype.forEach.call(submenus, function(submenu) {
+            var clone = submenu.cloneNode(true)
+            var wrapper = document.getElementById('jsPageHeader')
+            wrapper.appendChild(clone)
+            submenu.parentNode.removeChild(submenu)
+          })
+        }
+      }
+
+      setupToggles()
+
+      function getDisplayMode(target) {
+        var displayMode = target.currentStyle ? target.currentStyle.display : window.getComputedStyle(target, null).display
+        return displayMode
+      }
+
+      function toggle(toggleButton, target, popupMode, displayMode) {
+        var expanded = toggleButton.getAttribute('aria-expanded') === 'true'
+        expanded = !expanded
+        toggleButton.setAttribute('aria-expanded', expanded)
+        target.style.display = target.style.display === 'none' ? displayMode : 'none'
+
+        // Get header class value
+        var header = document.getElementById('jsPageHeader')
+        var headerClasses = header.getAttribute('class')
+
+        // Do header class
+        // if it's a submenu that's been opened
+        if (expanded && target.getAttribute('aria-label') === 'submenu') {
+          header.setAttribute('class', headerClasses + ' has-sub-nav')
+        } else {
+          header.setAttribute('class', headerClasses.replace(' has-sub-nav', ''))
+        }
+
+        if (expanded && popupMode) {
+          // Get the first and last focusable elements
+          var first = target.querySelector('a[href], button, input, textarea, select, [tabindex="0"]')
+          var all = target.querySelectorAll('a[href], button, input, textarea, select, [tabindex="0"]')
+          var last = all[all.length - 1]
+
+          // Focus the first focusable elem
+          first.focus()
+
+          // Refocus `toggleButton` if the user
+          // presses Shift + Tab on first focusable elem
+          first.addEventListener('keydown', function(e) {
+            var key = 'which' in e ? e.which : e.keyCode;
+            if (key === 9 && e.shiftKey) {
+              e.preventDefault()
+              toggleButton.focus()
+            }
+          })
+
+          // Refocus `toggleButton` if the user
+          // presses Tab on last focusable elem
+          last.addEventListener('keydown', function(e) {
+            var key = 'which' in e ? e.which : e.keyCode;
+            if (key === 9 && !e.shiftKey) {
+              e.preventDefault()
+              toggleButton.focus()
+            }
+          })
+        }
+      }
+
+      // Get all the toggle button nodes in the document
+      var toggleButtons = document.querySelectorAll('[data-expands]')
+
+      // Iterate over those buttons
+      Array.prototype.forEach.call(toggleButtons, function(toggleButton) {
+        // Give the element the button role
+        toggleButton.setAttribute('role', 'button')
+
+        // Set the aria-expanded value to false to begin with
+        toggleButton.setAttribute('aria-expanded', 'false')
+
+        // Define the target element via the selector supplied
+        // as the `data-expands` value
+        var target = document.querySelector(toggleButton.getAttribute('data-expands'))
+
+        // If it has `data-popup` give it `aria-haspopup`
+        // and set it to popupMode
+        if (toggleButton.getAttribute('data-popup') !== null) {
+          toggleButton.setAttribute('aria-haspopup', 'true')
+          var popupMode = true
+
+          // Give the target the right semantics too
+          target.setAttribute('role', 'group')
+          target.setAttribute('aria-label', 'submenu')
+        }
+
+        // Get and set displayMode
+        var displayMode = getDisplayMode(target)
+        if (displayMode === 'none') {
+          target.style.display = 'none'
+          displayMode = 'block'
+        }
+
+        toggleButton.addEventListener('click', function() {
+          // Do the toggling
+          toggle(toggleButton, target, popupMode, displayMode)
+        })
+
+        // Close menu on outside click
+        document.addEventListener('click', function(e) {
+          if ((!target.contains(e.target) && toggleButton !== e.target) && toggleButton.getAttribute('aria-expanded') === 'true') {
+            toggleButton.click()
+          }
+        })
+      })
+
+      // Hamburger menu text node toggle
+      var navTrigger = document.getElementById('jsNavTrigger');
+      navTrigger.addEventListener('click', function() {
+        this.innerHTML = this.innerHTML === '×' ? '☰' : '×'
+      })
+    })()
+  </script>
 </body>
 </html>

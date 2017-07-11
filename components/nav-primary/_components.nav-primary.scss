@@ -1,0 +1,215 @@
+/* ==========================================================================
+   #NAV PRIMARY
+   ========================================================================== */
+
+/**
+ * The primary nav sits within the main header area. It’s fully responsive.
+ *
+ * 1. `font-size: 0;` hack to collapse whitespace.
+ */
+
+.c-nav-primary {
+  @include clearfix();
+  clear: both;
+
+  @include mq($from: md) {
+    font-size: 0; /* [1] */
+    float: right;
+    clear: none;
+  }
+
+}
+
+
+
+  /**
+   * 1. We definitely need a more accessible way of showing/hiding this content.
+   */
+  .c-nav-primary__list {
+    display: none; /* [1] */
+    margin-bottom: 0;
+    margin-left: 0;
+    list-style: none;
+
+    @include mq($from: md) {
+      display: block; /* [1] */
+    }
+
+    .no-js &,
+    &.is-open {
+      display: block; /* [1] */
+      clear: both;
+    }
+
+  }
+
+
+
+    .c-nav-primary__item {
+      @include font-size(16px);
+      vertical-align: top;
+
+      @include mq($from: md) {
+        display: inline-block;
+
+        /**
+         * Insert spaces between items.
+         */
+        & + & {
+          margin-left: $global-spacing-unit;
+        }
+
+      }
+
+    }
+
+
+
+      // Create a mixin to hold repeated nav link styles (they’re used for
+      // primary links and for sub-nav links).
+      @mixin _nav-link-style() {
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+
+        /**
+         * Specificity bump to circumvent `a:visited {}` styles.
+         */
+        &,
+        &:visited {
+          color: $color-nav-primary;
+        }
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+
+      }
+
+      .c-nav-primary__link {
+        @include _nav-link-style();
+
+        /**
+         * Colours invert on dark header backgrounds.
+         */
+        .c-page-header--invert & {
+          color: $color-nav-primary-invert;
+        }
+
+        /**
+         * Dropdown toggle arrow. This is , completely bodged in for now; there
+         * will be a separate task to actually swap this out for a proper icon.
+         */
+        &[aria-haspopup="true"] {
+          position: relative;
+          padding-right: 15px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            margin-top: -8px;
+            border: 2px solid transparent;
+            border-right-color: currentColor;
+            border-bottom-color: currentColor;
+            transform: rotate(45deg);
+          }
+
+        }
+
+        &[aria-expanded="true"]::after {
+          transform: rotate(225deg);
+          margin-top: -2px;
+        }
+
+      }
+
+
+
+
+
+/* Triggers
+   ========================================================================== */
+
+.c-nav-trigger {
+  @include font-size(18px);
+  margin:  0;
+  padding: 0;
+  width: $global-spacing-unit;
+  height: $global-spacing-unit;
+  line-height: $global-spacing-unit;
+  text-align: center;
+  color: $color-nav-primary;
+  background: none;
+  background-color: $color-nav-primary-trigger-bg;
+  color: $color-nav-primary-trigger;
+  cursor: pointer;
+  border: none;
+  float: right;
+
+  &.is-active {
+    color: $color-nav-primary-trigger-active;
+  }
+
+  @include mq($from: md) {
+    display: none;
+  }
+
+  /**
+   * Colours invert on dark header backgrounds.
+   */
+  .c-page-header--invert & {
+    background-color: $color-nav-primary-trigger-bg-invert;
+  }
+
+}
+
+
+
+
+
+/* Sub-nav
+ *
+ * Large sub-navigation blocks can contain any arbitrary content (though most
+ * often it will be other links).
+ *
+ * 1. Pull the sub nav back out to be full-bleed.
+   ========================================================================== */
+.c-nav-primary__sub {
+  display: none;
+  background-color: $color-nav-primary-sub-bg;
+  color: $color-nav-primary-sub;
+  margin-right: -$global-spacing-unit-small; /* [1] */
+  margin-left: -$global-spacing-unit-small; /* [1] */
+  padding-top: $global-spacing-unit-small;
+  padding-bottom: $global-spacing-unit-small;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
+
+  @include mq($from: md) {
+    padding-top: $global-spacing-unit;
+    padding-bottom: $global-spacing-unit;
+    margin-top: $global-spacing-unit;
+  }
+
+}
+
+  /**
+   * Specific link content in the subnav shares much of the same aesthetic as
+   * main links, hence the use of our mixin.
+   */
+  .c-nav-primary__sub-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding: $global-spacing-unit-small;
+    background-color: white;
+
+    a {
+      @include _nav-link-style();
+    }
+
+  }

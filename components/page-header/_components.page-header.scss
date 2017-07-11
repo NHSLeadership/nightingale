@@ -1,0 +1,107 @@
+/* ==========================================================================
+   #PAGE HEADER
+   ========================================================================== */
+
+/**
+ * The site’s main page header is relatively uncomplicated; its function is more
+ * to wrap the more complex sub-components. We do have some slightly unusual
+ * rules pertaining to double borders and colour inversion, but nothing that’s
+ * going to keep you up at night.
+ *
+ * 1. Create a larger margin to account for the fact we’re using an absolutely
+ *    positioned element to provide the faux double border.
+ */
+
+.c-page-header {
+  @include clearfix();
+  position: relative;
+  padding-top:    $global-spacing-unit-small;
+  padding-bottom: $global-spacing-unit-small;
+  margin-bottom: $global-spacing-unit + $global-border-mid; /* [1] */
+  border-bottom: $global-border-heavy solid color('nhs-blue');
+  background-color: $color-page-head-bg;
+
+  @include mq($from: md) {
+    padding-top:    $global-spacing-unit;
+    padding-bottom: $global-spacing-unit;
+  }
+
+  /**
+   * Create a faux double border effect by dropping an absolutely positioned
+   * pseudo-element after the header.
+   */
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -($global-border-mid + $global-border-heavy);
+    left: 0;
+    border-bottom: $global-border-mid solid color('nhs-purple');
+  }
+
+  @include mq($from: md) {
+
+    &.has-sub-nav {
+      padding-bottom: 0;
+    }
+
+  }
+
+}
+
+/**
+ * Invert the colours of the header: light text on a dark background.
+ */
+.c-page-header--invert {
+  margin-bottom: $global-spacing-unit;
+  background-color: $color-page-head-bg-invert;
+  color: $color-page-head-invert;
+  border-bottom: $global-border-mid solid color('nhs-purple');
+
+  /**
+   * This effectively removes the double border, but we can’t delete it entirely
+   * because it also doubles up as our clearfix. If we can ever drop the
+   * clearfix from the parent element we can just destroy this pseudo-element.
+   */
+  &::after {
+    position: static;
+    border-bottom: none;
+  }
+
+}
+
+
+
+
+
+  /* Logos
+     ======================================================================== */
+
+  .c-page-header__logo {
+    float: left;
+    margin-bottom: $global-spacing-unit-tiny;
+  }
+
+
+
+
+
+  /* Title
+     ======================================================================== */
+
+  .c-page-header__title {
+    @include font-size(21px);
+    float: left;
+    display: block;
+    clear: both;
+  }
+
+
+
+
+
+  /* Nav
+     ======================================================================== */
+
+  .c-page-header__nav {
+  }
