@@ -155,8 +155,15 @@
   background-color: $color-nav-primary-sub-bg;
   margin-right: -$global-spacing-unit-small; /* [1] */
   margin-left: -$global-spacing-unit-small; /* [1] */
-  padding: $global-spacing-unit-small;
+  padding-top: $global-spacing-unit-small;
+  padding-bottom: $global-spacing-unit-small;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
+
+  @include mq($from: md) {
+    padding-top: $global-spacing-unit;
+    padding-bottom: $global-spacing-unit;
+  }
+
 }
 
   /**
