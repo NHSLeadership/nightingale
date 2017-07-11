@@ -6,6 +6,10 @@
  * Native browser DETAILS element used to toggle content.
  */
 
+// Pretty icky, but this works out how much we *relatively* need to out-/indent
+// SUMMARY elements by in order to hang the indicator.
+$_details-indent: 19px/$global-font-size * 1em;
+
 details {
   color: $color-details;
 
@@ -16,19 +20,24 @@ details {
    */
   > div {
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: $_details-indent;
     padding-left: $global-spacing-unit-small;
     border-left: 4px solid $color-details-border;
   }
 
 }
 
+  /**
+   * 1. Has the effect of hanging the ‘status arrow’.
+   */
   summary {
     color: $color-links;
     cursor: pointer;
     outline: none;
     text-decoration: underline;
     text-decoration-skip: ink;
+    padding-left: $_details-indent; /* [1] */
+    text-indent: -$_details-indent; /* [1] */
 
     &:hover {
       color: $color-links-hover;
