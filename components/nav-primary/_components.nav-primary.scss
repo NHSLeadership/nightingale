@@ -153,6 +153,7 @@
 .c-nav-primary__sub {
   display: none;
   background-color: $color-nav-primary-sub-bg;
+  color: $color-nav-primary-sub;
   margin-right: -$global-spacing-unit-small; /* [1] */
   margin-left: -$global-spacing-unit-small; /* [1] */
   padding-top: $global-spacing-unit-small;
