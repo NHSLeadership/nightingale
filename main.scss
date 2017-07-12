@@ -49,6 +49,7 @@
  * Progress Bar.........Linear progress bar
  * Progress Wheel.......Circular progress indicator
  * Forms................All of our different form styles.
+ * Pagination...........Component for paging through items/views.
  *
  * UTILITIES
  * Colors...............Utility classes generated from our color map.
@@ -116,6 +117,7 @@
 @import "components/progress/components.progress-bar";
 @import "components/progress/components.progress-wheel";
 @import "components/forms/components.forms";
+@import "components/pagination/components.pagination";
 
 
 
