@@ -59,8 +59,7 @@
 .c-form-input {
   @include font-size(14px);
   color: $color-form;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding: 4px 5px;
   border: 1px solid $color-form-border;
   width: 345px;
   max-width: 100%;
