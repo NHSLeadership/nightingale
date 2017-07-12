@@ -51,7 +51,7 @@ details {
     /* stylelint-disable selector-no-qualifying-type */
 
       details[open] > & {
-        color: #005eb8;
+        color: $color-links-hover;
         text-decoration: underline;
       }
 
