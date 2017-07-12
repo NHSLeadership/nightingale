@@ -20,6 +20,32 @@
 
   <style>
 
+    h2::before,
+    h3::before,
+    h4::before,
+    h5::before,
+    h6::before {
+      content: "#";
+      display: inline-block;
+      text-align: center;
+      width: 1em;
+      margin-left: -1em;
+      opacity: 0;
+    }
+
+    h2:hover::before,
+    h3:hover::before,
+    h4:hover::before,
+    h5:hover::before,
+    h6:hover::before,
+    h2:target::before,
+    h3:target::before,
+    h4:target::before,
+    h5:target::before,
+    h6:target::before {
+      opacity: 0.25;
+    }
+
     .c-color-grid {
       display: flex;
       flex-wrap: wrap;
@@ -157,6 +183,15 @@
 
       <main class="o-layout__item  u-8/12@lg">
 
+        <h1>Nightingale</h1>
+
+        <p>Welcome to the NHS Leadership Academy UI Toolkit and front-end
+        framework, codename <b>Nightingale</b>.</p>
+
+        <hr class="c-divider" />
+
+        <h2 id="progress-monitors">Progress Monitors</h2>
+
         <p class="c-progress-wheel" data-percent="33">
           <b class="c-progress-wheel__text">33%</b>
         </p>
@@ -178,6 +213,8 @@
         </div>
 
         <hr class="c-divider" />
+
+        <h2 id="pagination">Pagination</h2>
 
         <ol class="c-pagination">
 
@@ -223,6 +260,10 @@
           </li>
 
         </ol>
+
+        <hr class="c-divider" />
+
+        <h2 id="forms">Forms</h2>
 
         <form>
 
@@ -341,6 +382,10 @@
 
         </form>
 
+        <hr class="c-divider" />
+
+        <h2 id="headings">Headings</h2>
+
         <h1>Heading Level 1</h1>
 
         <h2>Heading Level 2</h2>
@@ -371,6 +416,10 @@
         sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris
         placerat eleifend leo.</p>
 
+        <hr class="c-divider" />
+
+        <h2 id="colours">Colours</h2>
+
         <ul class="c-color-grid">
           <li class="u-color-bg-attention"></li>
           <li class="u-color-bg-error"></li>
@@ -391,6 +440,10 @@
           <li class="u-color-bg-white"></li>
         </ul>
 
+        <hr class="c-divider" />
+
+        <h2>Spinners</h2>
+
         <p>
           <strong class="c-spinner">Loading…</strong>
           <strong class="c-spinner  c-spinner--inverse">Loading…</strong>
@@ -401,6 +454,10 @@
           tortor quam, feugiat vitae</q>, ultricies eget, tempor sit amet, ante.
         Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
         Mauris placerat eleifend leo.</p>
+
+        <hr class="c-divider" />
+
+        <h2 id="buttons">Buttons</h2>
 
         <p>
           <a href="#0" class="c-btn  c-btn--submit">Click me!</a>
@@ -419,10 +476,14 @@
         <p><a href="#0" class="c-btn  c-btn--full  c-btn--secondary">Click me!</a></p>
 
         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
-          <a href="#u">fames ac turpis egestas</a>. <q>Vestibulum tortor quam,
+          <a href="#k">fames ac turpis egestas</a>. <q>Vestibulum tortor quam,
         feugiat vitae</q>, ultricies eget, tempor sit amet, ante. Donec eu libero
         sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
         eleifend leo.</p>
+
+        <hr class="c-divider" />
+
+        <h2 id="reveal">Reveal</h2>
 
         <details open>
           <summary>Expandable Content – Open by Default</summary>
@@ -455,7 +516,13 @@
 
       </main><!-- /.o-layout__item -->
 
+
+
+
+
       <div class="o-layout__item  u-4/12@lg">
+
+        <h2 id="quotes">Quotes</h2>
 
         <blockquote>
           <p>Pellentesque habitant morbi tristique senectus et netus et
@@ -505,7 +572,7 @@
 
           <ul class="o-list-bare">
             <li><a href="#0">Item 1</a></li>
-            <li><a href="#0">Item 2</a></li>
+            <li><a href="#1">Item 2</a></li>
             <li><a href="#0">Item 3</a></li>
             <li><a href="#0">Item 4</a></li>
             <li><a href="#0">Item 5</a></li>
@@ -519,10 +586,10 @@
 
           <ul class="o-list-bare">
             <li><a href="#0">Item 1</a></li>
-            <li><a href="#0">Item 2</a></li>
-            <li><a href="#0">Item 3</a></li>
+            <li><a href="#4">Item 2</a></li>
+            <li><a href="#1">Item 3</a></li>
             <li><a href="#0">Item 4</a></li>
-            <li><a href="#0">Item 5</a></li>
+            <li><a href="#9">Item 5</a></li>
           </ul>
 
         </div>
@@ -532,7 +599,7 @@
           <h4>Footer Title</h4>
 
           <ul class="o-list-bare">
-            <li><a href="#0">Item 1</a></li>
+            <li><a href="#7">Item 1</a></li>
             <li><a href="#0">Item 2</a></li>
             <li><a href="#0">Item 3</a></li>
             <li><a href="#0">Item 4</a></li>
@@ -681,5 +748,17 @@
       })
     })()
   </script>
+
+<script>
+    var headings = document.querySelectorAll("h2[id], h3[id], h4[id], h5[id], h6[id]");
+
+    for (var i = 0; i < headings.length; i++) {
+      headings[i].innerHTML =
+        '<a href="#' + headings[i].id + '">' +
+        headings[i].innerText +
+        '</a>';
+    }
+</script>
+
 </body>
 </html>
