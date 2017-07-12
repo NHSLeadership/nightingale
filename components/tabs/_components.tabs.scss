@@ -1,0 +1,36 @@
+/* ==========================================================================
+   #TABS
+   ========================================================================== */
+
+.c-tabs {
+  margin-left: 0;
+  list-style: none;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  text-align: center;
+}
+
+  .c-tabs__item {
+    display: table-cell;
+  }
+
+    .c-tabs__link {
+      display: block;
+      border: 1px solid $color-tabs-border;
+      text-decoration: none;
+      padding: 4px;
+
+      &#{&} {
+        color: $color-tabs;
+      }
+
+      &.is-current {
+        color: $color-tabs-current;
+        border: none;
+        border-bottom: 5px solid $color-tabs-border-current;
+        padding-bottom: 0;
+        pointer-events: none;
+      }
+
+    }
