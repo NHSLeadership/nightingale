@@ -200,6 +200,12 @@
     padding-top: $global-spacing-unit;
     padding-bottom: $global-spacing-unit;
     margin-top: $global-spacing-unit;
+
+    .has-sub-nav & {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
   }
 
 }
