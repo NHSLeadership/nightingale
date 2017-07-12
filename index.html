@@ -20,11 +20,11 @@
 
   <style>
 
-    h2::before,
-    h3::before,
-    h4::before,
-    h5::before,
-    h6::before {
+    h2[id]::before,
+    h3[id]::before,
+    h4[id]::before,
+    h5[id]::before,
+    h6[id]::before {
       content: "#";
       display: inline-block;
       text-align: center;
@@ -33,16 +33,16 @@
       opacity: 0;
     }
 
-    h2:hover::before,
-    h3:hover::before,
-    h4:hover::before,
-    h5:hover::before,
-    h6:hover::before,
-    h2:target::before,
-    h3:target::before,
-    h4:target::before,
-    h5:target::before,
-    h6:target::before {
+    h2[id]:hover::before,
+    h3[id]:hover::before,
+    h4[id]:hover::before,
+    h5[id]:hover::before,
+    h6[id]:hover::before,
+    h2[id]:target::before,
+    h3[id]:target::before,
+    h4[id]:target::before,
+    h5[id]:target::before,
+    h6[id]:target::before {
       opacity: 0.25;
     }
 
