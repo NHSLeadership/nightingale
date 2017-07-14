@@ -47,6 +47,34 @@
     font-weight: normal;
     display: block;
     overflow: hidden; /* [1] */
+
+    /**
+     * The ribbon’s text (a DETAILS element) needs to look pretty different if
+     * we’re inside of an expandable ribbon
+     */
+    .c-ribbon--expandable & {
+      margin-bottom: 0;
+
+      /**
+       * 1. Pure CSS truncation. Nice!
+       */
+      > summary {
+        white-space: nowrap; /* [1] */
+        text-overflow: ellipsis; /* [1] */
+        overflow: hidden; /* [1] */
+        text-decoration: none;
+        color: $color-ribbon-expandable;
+      }
+
+      /**
+       * Remove truncation when we open the body text up fully.
+       */
+      &[open] > summary {
+        white-space: normal;
+      }
+
+    }
+
   }
 
   /**
@@ -83,4 +111,8 @@
 
 .c-ribbon--live {
   background-color: $color-ribbon-live-bg;
+}
+
+.c-ribbon--expandable {
+  background-color: $color-ribbon-expandable-bg;
 }

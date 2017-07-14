@@ -11,6 +11,8 @@
 
   <link rel="stylesheet" href="./dist/main.css" />
 
+  <link rel="shortcut icon" href="/favicon.png">
+
   <script>
     (function(){
       var page = document.getElementById('jsPage');
@@ -19,6 +21,32 @@
   </script>
 
   <style>
+
+    h2[id]::before,
+    h3[id]::before,
+    h4[id]::before,
+    h5[id]::before,
+    h6[id]::before {
+      content: "#";
+      display: inline-block;
+      text-align: center;
+      width: 1em;
+      margin-left: -1em;
+      opacity: 0;
+    }
+
+    h2[id]:hover::before,
+    h3[id]:hover::before,
+    h4[id]:hover::before,
+    h5[id]:hover::before,
+    h6[id]:hover::before,
+    h2[id]:target::before,
+    h3[id]:target::before,
+    h4[id]:target::before,
+    h5[id]:target::before,
+    h6[id]:target::before {
+      opacity: 0.25;
+    }
 
     .c-color-grid {
       display: flex;
@@ -44,13 +72,23 @@
 </head>
 <body>
 
+  <div class="c-ribbon  c-ribbon--expandable">
+
+    <div class="o-wrapper">
+
+      <details class="c-ribbon__body">
+        <summary><b>In partnership with:</b> NHS Health Education England – The Princess Alexandra Hospital NHS Trust – South Essex Partnership University NHS Foundation Trust – Virgin Health Care – Bupa – Simplyhealth – Pruhealth – Department of Health.</summary>
+      </details>
+
+    </div>
+
+  </div>
+
   <div class="c-ribbon  c-ribbon--beta">
 
     <div class="o-wrapper">
 
       <strong class="c-ribbon__tag">Beta</strong>
-
-      <button class="c-ribbon__close">&times;</button>
 
       <strong class="c-ribbon__body">This page is part of a new service – your <a href="#0">feedback</a> will help us to improve it.</strong>
 
@@ -62,9 +100,9 @@
 
     <div class="o-wrapper">
 
-      <img src="./assets/img/logo-nhs-white.png" alt="NHS" width="74" height="30" class="c-page-header__logo" />
+      <img src="./assets/img/logo-nhs.png" alt="NHS" width="89" height="36" class="c-page-header__logo" />
 
-      <strong class="c-page-header__title">Leadership Academy</strong>
+      <strong class="c-page-header__title"><img src="./assets/img/logo-sub.png" alt="Leadership Academy" width="241" height="25" /></strong>
 
       <button class="c-nav-trigger" id="jsNavTrigger" aria-label="menu" data-expands="#jsNav">☰</button>
 
@@ -85,39 +123,48 @@
           </li>
 
           <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link" data-expands="#item-4-sub" data-popup>Sub Nav</a>
+            <button class="c-nav-primary__link" data-expands="#item-4-sub" data-popup>Sub Nav</button>
 
-            <div class="c-nav-primary__sub  jsNavSub" id="item-4-sub" role="group" aria-label="sub navigation menu">
+            <nav class="c-nav-primary__sub  jsNavSub" id="item-4-sub" role="group" aria-label="sub navigation menu">
 
               <div class="o-wrapper">
 
-                <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
+                <div class="o-layout">
+                  <div class="o-layout__item  u-6/12@lg">
 
-                <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
-                within this dropdown menu.</small></p>
+                    <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
 
-                <p class="u-margin-bottom-small">
-                  <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
-                </p>
+                    <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
+                    within this dropdown menu.</small></p>
 
-                <ul class="c-nav-primary__sub-links">
-                  <li>
-                    <a href="#0">Sub Link 1</a>
-                  </li>
-                  <li>
-                    <a href="#0">Sub Link 2</a>
-                  </li>
-                  <li>
-                    <a href="#0">Sub Link 3</a>
-                  </li>
-                  <li>
-                    <a href="#0">Sub Link 4</a>
-                  </li>
-                </ul>
+                    <p class="u-margin-bottom-small">
+                      <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
+                    </p>
 
-              </div>
+                  </div><!-- /.o-layout__item -->
+                  <div class="o-layout__item  u-6/12@lg">
 
-            </div>
+                    <ul class="c-nav-primary__sub-links">
+                      <li>
+                        <a href="#0">Sub Link 1</a>
+                      </li>
+                      <li>
+                        <a href="#0">Sub Link 2</a>
+                      </li>
+                      <li>
+                        <a href="#0">Sub Link 3</a>
+                      </li>
+                      <li>
+                        <a href="#0">Sub Link 4</a>
+                      </li>
+                    </ul>
+
+                  </div><!-- /.o-layout__item -->
+                </div><!-- /.o-layout -->
+
+              </div><!-- /.o-wrapper -->
+
+            </nav>
 
           </li>
 
@@ -134,29 +181,132 @@
 
   <div class="o-wrapper">
 
-    <div class="o-layout">
+    <h1>Nightingale</h1>
+
+    <p>Welcome to the NHS Leadership Academy UI Toolkit and front-end
+    framework, codename <b>Nightingale</b>.</p>
+
+    <hr class="c-divider" />
+
+    <div class="o-layout  o-layout--wide">
 
       <main class="o-layout__item  u-8/12@lg">
 
-        <p class="c-progress-wheel" data-percent="33">
-          <b class="c-progress-wheel__text">33%</b>
-        </p>
+        <h2 id="ribbons">Ribbons</h2>
 
-        <div class="c-progress-bar">
+        <div class="c-ribbon  u-margin-bottom">
 
-          <h3 class="c-progress-bar__title">
-            <b class="c-progress-bar__%">75</b>% complete
-          </h3>
+          <div class="o-wrapper">
 
-          <div class="c-progress-bar__bar">
-            <span class="c-progress-bar__fill" style="left: -25%;"></span>
+            <strong class="c-ribbon__body">This website uses cookies.</strong>
+
           </div>
 
-          <h3 class="c-progress-bar__title-sub">5 units left</h3>
+        </div>
 
-          <p>Next up: Why does leadership matter?</p>
+        <div class="c-ribbon  c-ribbon--live  u-margin-bottom">
+
+          <div class="o-wrapper">
+
+            <strong class="c-ribbon__tag">Live</strong>
+
+            <strong class="c-ribbon__body">Pellentesque habitant morbi tristique
+            senectus et netus et malesuada.</strong>
+
+          </div>
 
         </div>
+
+        <div class="c-ribbon  c-ribbon--alpha  u-margin-bottom">
+
+          <div class="o-wrapper">
+
+            <strong class="c-ribbon__tag">Alpha</strong>
+
+            <strong class="c-ribbon__body">Pellentesque habitant morbi tristique
+            senectus et netus et malesuada.</strong>
+
+          </div>
+
+        </div>
+
+        <div class="c-ribbon  c-ribbon--beta  u-margin-bottom">
+
+          <div class="o-wrapper">
+
+            <strong class="c-ribbon__tag">Beta</strong>
+
+            <strong class="c-ribbon__body">Pellentesque habitant morbi tristique
+            senectus et netus et malesuada.</strong>
+
+          </div>
+
+        </div>
+
+        <div class="c-ribbon  c-ribbon--expandable  u-margin-bottom">
+
+          <div class="o-wrapper">
+
+            <details class="c-ribbon__body">
+              <summary><b>In partnership with:</b> NHS Health Education England – The Princess Alexandra Hospital NHS Trust – South Essex Partnership University NHS Foundation Trust – Virgin Health Care – Bupa – Simplyhealth – Pruhealth – Department of Health.</summary>
+            </details>
+
+          </div>
+
+        </div>
+
+        <hr class="c-divider" />
+
+        <h2 id="pagination">Pagination</h2>
+
+        <ol class="c-pagination">
+
+          <li class="c-pagination__item  c-pagination__prev">
+            <a href="#0" class="c-pagination__link">« <span class="u-hide-visually">Previous Page</span></a>
+          </li>
+
+          <li class="c-pagination__item">
+            <a href="#0" class="c-pagination__link"><span class="u-hide-visually">Page</span> 1</a>
+          </li>
+          <li class="c-pagination__item">
+            <a href="#0" class="c-pagination__link"><span class="u-hide-visually">Page</span> 2</a>
+          </li>
+          <li class="c-pagination__item">
+            <a href="#0" class="c-pagination__link"><span class="u-hide-visually">Page</span> 3</a>
+          </li>
+          <li class="c-pagination__item">
+            <a href="#0" class="c-pagination__link  is-current"><span class="u-hide-visually">Page</span> 4</a>
+          </li>
+          <li class="c-pagination__item">
+            <a href="#0" class="c-pagination__link"><span class="u-hide-visually">Page</span> 5</a>
+          </li>
+          <li class="c-pagination__item">
+            <a href="#0" class="c-pagination__link"><span class="u-hide-visually">Page</span> 6</a>
+          </li>
+
+          <li class="c-pagination__item  c-pagination__next">
+            <a href="#0" class="c-pagination__link"><span class="u-hide-visually">Next Page</span> »</a>
+          </li>
+
+        </ol>
+
+        <hr class="c-divider" />
+
+        <ol class="c-pagination">
+
+          <li class="c-pagination__item  c-pagination__prev">
+            <a href="#0" class="c-pagination__link  is-current">« Previous <span class="u-hide-visually">Page</span></a>
+          </li>
+
+          <li class="c-pagination__item  c-pagination__next">
+            <a href="#0" class="c-pagination__link">Next <span class="u-hide-visually">Page</span> »</a>
+          </li>
+
+        </ol>
+
+        <hr class="c-divider" />
+
+        <h2 id="forms">Forms</h2>
 
         <form>
 
@@ -267,9 +417,17 @@
 
             </li>
 
+            <li>
+              <button class="c-btn  c-btn--submit">Submit</button>
+            </li>
+
           </ul>
 
         </form>
+
+        <hr class="c-divider" />
+
+        <h2 id="headings">Headings</h2>
 
         <h1>Heading Level 1</h1>
 
@@ -301,6 +459,10 @@
         sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris
         placerat eleifend leo.</p>
 
+        <hr class="c-divider" />
+
+        <h2 id="colours">Colours</h2>
+
         <ul class="c-color-grid">
           <li class="u-color-bg-attention"></li>
           <li class="u-color-bg-error"></li>
@@ -321,16 +483,9 @@
           <li class="u-color-bg-white"></li>
         </ul>
 
-        <p>
-          <strong class="c-spinner">Loading…</strong>
-          <strong class="c-spinner  c-spinner--inverse">Loading…</strong>
-        </p>
+        <hr class="c-divider" />
 
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada <a
-          href="#u" target="_blank">fames ac turpis egestas</a>. <q>Vestibulum
-          tortor quam, feugiat vitae</q>, ultricies eget, tempor sit amet, ante.
-        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
-        Mauris placerat eleifend leo.</p>
+        <h2 id="buttons">Buttons</h2>
 
         <p>
           <a href="#0" class="c-btn  c-btn--submit">Click me!</a>
@@ -349,23 +504,10 @@
         <p><a href="#0" class="c-btn  c-btn--full  c-btn--secondary">Click me!</a></p>
 
         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
-          <a href="#u">fames ac turpis egestas</a>. <q>Vestibulum tortor quam,
+          <a href="#k">fames ac turpis egestas</a>. <q>Vestibulum tortor quam,
         feugiat vitae</q>, ultricies eget, tempor sit amet, ante. Donec eu libero
         sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
         eleifend leo.</p>
-
-        <details open>
-          <summary>Expandable Content – Open by Default</summary>
-
-          <div>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
-            fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-            ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-            egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-            leo.</p>
-          </div>
-
-        </details>
 
         <ul>
           <li>Item 1</li>
@@ -383,9 +525,59 @@
           <li>Item 5</li>
         </ol>
 
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies
+        eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
       </main><!-- /.o-layout__item -->
 
+
+
+
+
       <div class="o-layout__item  u-4/12@lg">
+
+        <h2 id="progress">Progress</h2>
+
+        <p class="c-progress-wheel" data-percent="33">
+          <b class="c-progress-wheel__text">33%</b>
+        </p>
+
+        <div class="c-progress-bar">
+
+          <h3 class="c-progress-bar__title">
+            <b class="c-progress-bar__%">75</b>% complete
+          </h3>
+
+          <div class="c-progress-bar__bar">
+            <span class="c-progress-bar__fill" style="left: -25%;"></span>
+          </div>
+
+          <h3 class="c-progress-bar__title-sub">5 units left</h3>
+
+          <p>Next up: Why does leadership matter?</p>
+
+        </div>
+
+        <hr class="c-divider" />
+
+        <h2 id="spinners">Spinners</h2>
+
+        <p>
+          <strong class="c-spinner">Loading…</strong>
+          <strong class="c-spinner  c-spinner--inverse">Loading…</strong>
+        </p>
+
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada <a
+          href="#u" target="_blank">fames ac turpis egestas</a>. <q>Vestibulum
+          tortor quam, feugiat vitae</q>, ultricies eget, tempor sit amet, ante.
+        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
+        Mauris placerat eleifend leo.</p>
+
+        <hr class="c-divider" />
+
+        <h2 id="quotes">Quotes</h2>
 
         <blockquote>
           <p>Pellentesque habitant morbi tristique senectus et netus et
@@ -394,10 +586,20 @@
 
         <hr class="c-divider" />
 
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies
-        eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
-        Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        <h2 id="reveal">Reveal</h2>
+
+        <details open>
+          <summary>Expandable Content – Open by Default</summary>
+
+          <div>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+            fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+            ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+            egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
+            leo.</p>
+          </div>
+
+        </details>
 
         <details>
           <summary>Expandable Content – Closed by Default</summary>
@@ -435,7 +637,7 @@
 
           <ul class="o-list-bare">
             <li><a href="#0">Item 1</a></li>
-            <li><a href="#0">Item 2</a></li>
+            <li><a href="#1">Item 2</a></li>
             <li><a href="#0">Item 3</a></li>
             <li><a href="#0">Item 4</a></li>
             <li><a href="#0">Item 5</a></li>
@@ -449,10 +651,10 @@
 
           <ul class="o-list-bare">
             <li><a href="#0">Item 1</a></li>
-            <li><a href="#0">Item 2</a></li>
-            <li><a href="#0">Item 3</a></li>
+            <li><a href="#4">Item 2</a></li>
+            <li><a href="#1">Item 3</a></li>
             <li><a href="#0">Item 4</a></li>
-            <li><a href="#0">Item 5</a></li>
+            <li><a href="#9">Item 5</a></li>
           </ul>
 
         </div>
@@ -462,7 +664,7 @@
           <h4>Footer Title</h4>
 
           <ul class="o-list-bare">
-            <li><a href="#0">Item 1</a></li>
+            <li><a href="#7">Item 1</a></li>
             <li><a href="#0">Item 2</a></li>
             <li><a href="#0">Item 3</a></li>
             <li><a href="#0">Item 4</a></li>
@@ -611,5 +813,17 @@
       })
     })()
   </script>
+
+<script>
+    var headings = document.querySelectorAll("h2[id], h3[id], h4[id], h5[id], h6[id]");
+
+    for (var i = 0; i < headings.length; i++) {
+      headings[i].innerHTML =
+        '<a href="#' + headings[i].id + '">' +
+        headings[i].innerText +
+        '</a>';
+    }
+</script>
+
 </body>
 </html>

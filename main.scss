@@ -49,12 +49,15 @@
  * Progress Bar.........Linear progress bar
  * Progress Wheel.......Circular progress indicator
  * Forms................All of our different form styles.
+ * Pagination...........Component for paging through items/views.
+ * Tabs.................Tabbed content switcher.
  *
  * UTILITIES
  * Colors...............Utility classes generated from our color map.
  * Spacing..............Nudge layouts around with our spacing classes.
  * Widths...............Generate width classes that can be used with our grid.
  * Z-Index..............A suite of stacking utility classes.
+ * Display..............Show/hide/etc. utility classes.
  */
 
 @import "settings/settings.definitions";
@@ -115,6 +118,8 @@
 @import "components/progress/components.progress-bar";
 @import "components/progress/components.progress-wheel";
 @import "components/forms/components.forms";
+@import "components/pagination/components.pagination";
+@import "components/tabs/components.tabs";
 
 
 
@@ -124,3 +129,4 @@
 @import "utilities/utilities.spacing";
 @import "utilities/utilities.widths";
 @import "utilities/utilities.z-index";
+@import "utilities/utilities.display";

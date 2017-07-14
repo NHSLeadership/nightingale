@@ -87,8 +87,15 @@
 
       }
 
+      /**
+       * 1. Reset styles when applied to a BUTTON for sub-navs.
+       */
       .c-nav-primary__link {
         @include _nav-link-style();
+        cursor: pointer; /* [1] */
+        padding: 0; /* [1] */
+        background: none; /* [1] */
+        border: none; /* [1] */
 
         /**
          * Colours invert on dark header backgrounds.
@@ -193,6 +200,12 @@
     padding-top: $global-spacing-unit;
     padding-bottom: $global-spacing-unit;
     margin-top: $global-spacing-unit;
+
+    .has-sub-nav & {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
   }
 
 }

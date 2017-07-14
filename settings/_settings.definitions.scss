@@ -7,6 +7,7 @@
 //
 // Typography...........Our most basic and global typographic settings.
 // Colors...............Load up a map with our color definitions.
+// Assets...............Asset paths for fonts, sprites, etc.
 // Responsive...........Define our breakpoint sizes and what they’re called.
 // Sizing...............Settings pertaining to various UI sizes.
  //
@@ -34,29 +35,40 @@ $global-font-size-h4: 19px !default;
 // ========================================================================== */
 
 $global-colors: (
-  'attention': '#7c2855',
-  'error': '#da291c',
-  'information': '#330072',
-  'nhs-aqua': '#00a499',
-  'nhs-black': '#231f20',
-  'nhs-blue': '#005eb8',
-  'nhs-grey-dark': '#425563',
-  'nhs-grey-mid': '#768692',
-  'nhs-grey-pale': '#e8edee',
-  'nhs-orange': '#ed8b00',
-  'nhs-pink': '#ae2573',
-  'nhs-purple': '#330072',
-  'nhs-purple-light': '#704c9c',
-  'pending': '#8a1538',
-  'success': '#78be20',
-  'warning': '#fae100',
-  'white': '#fff',
+  'attention': #7c2855,
+  'error': #da291c,
+  'information': #330072,
+  'nhs-aqua': #00a499,
+  'nhs-black': #231f20,
+  'nhs-blue': #005eb8,
+  'nhs-grey-dark': #425563,
+  'nhs-grey-mid': #768692,
+  'nhs-grey-pale': #e8edee,
+  'nhs-orange': #ed8b00,
+  'nhs-pink': #ae2573,
+  'nhs-purple-light': #704c9c,
+  'nhs-purple': #330072,
+  'pending': #8a1538,
+  'success': #78be20,
+  'warning': #fae100,
+  'white': #fff,
 ) !default;
 
 // Grab colors from the above map by calling `color(error)`.
 @function color($key) {
-  @return unquote(map-get($global-colors, $key));
+  @return map-get($global-colors, $key);
 }
+
+
+
+
+
+// Assets
+// ========================================================================== */
+
+$asset-path: '/assets/' !default;
+$font-path: '/assets/fonts/' !default;
+$image-path: '/assets/img/' !default;
 
 
 
@@ -79,6 +91,7 @@ $mq-breakpoints: (
 // Sizing
 // ========================================================================== */
 
+$global-spacing-unit: 30px !default;
 $global-border-heavy: 15px !default;
 $global-border-mid: 10px !default;
 
@@ -94,13 +107,6 @@ $global-border-mid: 10px !default;
 
 // Do not modify anything below this point: this is framework-only reassignment.
 
-$global-spacing-unit: $global-line-height;
 $global-spacing-unit-tiny: round(0.25 * $global-spacing-unit);
 $global-spacing-unit-small: round(0.5 * $global-spacing-unit);
 $global-spacing-unit-large: round(2 * $global-spacing-unit);
-
-@if ($global-spacing-unit != $global-line-height) {
-
-  @error "Do not manually override the vlue of `$global-spacing-unit`.";
-
-}

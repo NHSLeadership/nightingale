@@ -1,0 +1,46 @@
+/* ==========================================================================
+   #PAGINATION
+   ========================================================================== */
+
+.c-pagination {
+  list-style: none;
+  margin-right: 4px;
+  margin-left: 4px;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  border: 0 solid $color-pagination-border;
+  border-width: 1px 0;
+  text-align: center;
+}
+
+  .c-pagination__item {
+    display: table-cell;
+  }
+
+  .c-pagination__prev {
+    text-align: left;
+  }
+
+  .c-pagination__next {
+    text-align: right;
+  }
+
+    .c-pagination__link {
+      display: block;
+      text-decoration: none;
+      padding: $global-spacing-unit $global-spacing-unit-small;
+
+      &,
+      &:visited,
+      &:hover,
+      &:active {
+        color: $color-links
+      }
+
+      &.is-current {
+        pointer-events: none;
+        color: $color-pagination-current;
+      }
+
+    }

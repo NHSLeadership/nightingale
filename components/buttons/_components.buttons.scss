@@ -10,6 +10,7 @@
  *    buttons).
  * 4. Reset/normalize some styles.
  * 5. Force all button-styled elements to appear clickable.
+ * 6. Hard-coded value to ensure uniform heights (as per designs).
    ========================================================================== */
 
 .c-btn {
@@ -21,7 +22,7 @@
   margin: 0; /* [4] */
   cursor: pointer; /* [5] */
   text-decoration: none;
-  padding: $global-spacing-unit-tiny $global-spacing-unit-large;
+  padding: 4px $global-spacing-unit-large; /* [6] */
   border: 1px solid transparent;
 
   &:focus {

@@ -41,10 +41,10 @@ $color-warning:     color('warning')     !default;
 // Links
 // ========================================================================== */
 
-$color-links:         color('nhs-purple') !default;
+$color-links:         color('nhs-blue')   !default;
 $color-links-hover:   #8060a7             !default;
 $color-links-active:  color('nhs-blue')   !default;
-$color-links-visited: color('nhs-blue')   !default;
+$color-links-visited: color('nhs-purple') !default;
 
 $color-links-headings:       color('nhs-black') !default;
 $color-links-headings-hover: #646162            !default;
@@ -134,15 +134,17 @@ $color-checkbox-bg-checked: color('success') !default;
 // Ribbons
 // ========================================================================== */
 
-$color-ribbon:          color('white')      !default;
-$color-ribbon-bg:       color('nhs-black')  !default;
-$color-ribbon-alpha-bg: color('nhs-pink')   !default;
-$color-ribbon-beta:     color('nhs-black')  !default;
-$color-ribbon-beta-bg:  color('nhs-orange') !default;
-$color-ribbon-live-bg:  color('nhs-aqua')   !default;
-$color-ribbon-tag:      color('white')      !default;
-$color-ribbon-tag-bg:   color('nhs-black')  !default;
-$color-ribbon-btn-bg:   color('white')      !default;
+$color-ribbon:                color('white')     !default;
+$color-ribbon-bg:             color('nhs-black') !default;
+$color-ribbon-alpha-bg:       color('nhs-pink')  !default;
+$color-ribbon-beta:           color('nhs-black') !default;
+$color-ribbon-beta-bg:        color('nhs-orange')!default;
+$color-ribbon-live-bg:        color('nhs-aqua')  !default;
+$color-ribbon-tag:            color('white')     !default;
+$color-ribbon-tag-bg:         color('nhs-black') !default;
+$color-ribbon-btn-bg:         color('white')     !default;
+$color-ribbon-expandable:     color('nhs-black') !default;
+$color-ribbon-expandable-bg:  #ccdff1            !default;
 
 
 
@@ -191,3 +193,25 @@ $color-progress-bar-fill:  color('nhs-aqua')      !default;
 
 $color-progress-wheel-bar:   color('nhs-purple')       !default;
 $color-progress-wheel-fill:  color('nhs-purple-light') !default;
+
+
+
+
+
+// Pagination
+// ========================================================================== */
+
+$color-pagination-border:  color('nhs-grey-mid') !default;
+$color-pagination-current: color('nhs-grey-pale') !default;
+
+
+
+
+
+// Tabs
+// ========================================================================== */
+
+$color-tabs:                color('nhs-grey-mid')  !default;
+$color-tabs-current:        color('nhs-blue')      !default;
+$color-tabs-border:         color('nhs-grey-pale') !default;
+$color-tabs-border-current: color('nhs-blue')      !default;
