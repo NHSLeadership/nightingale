@@ -7,6 +7,7 @@
 //
 // Typography...........Our most basic and global typographic settings.
 // Colors...............Load up a map with our color definitions.
+// Assets...............Asset paths for fonts, sprites, etc.
 // Responsive...........Define our breakpoint sizes and what they’re called.
 // Sizing...............Settings pertaining to various UI sizes.
  //
@@ -57,6 +58,17 @@ $global-colors: (
 @function color($key) {
   @return unquote(map-get($global-colors, $key));
 }
+
+
+
+
+
+// Assets
+// ========================================================================== */
+
+$asset-path: '/assets/' !default;
+$font-path: '/assets/fonts/' !default;
+$image-path: '/assets/img/' !default;
 
 
 

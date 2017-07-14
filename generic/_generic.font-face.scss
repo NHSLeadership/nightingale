@@ -5,23 +5,23 @@
 @font-face {
   font-family: "Frutiger";
   font-weight: 200;
-  src: url("/assets/fonts/81e3653a-53bd-49d9-a1f8-f924811b6f02.eot?#iefix") format("embedded-opentype"),
-       url("/assets/fonts/087d8a95-3f25-4bae-a1d1-db9ddffd72f5.woff2") format("woff2"),
-       url("/assets/fonts/ab1bcdf7-9570-4cba-a8e3-3e39ddd861db.woff") format("woff");
+  src: url("#{$font-path}81e3653a-53bd-49d9-a1f8-f924811b6f02.eot?#iefix") format("embedded-opentype"),
+       url("#{$font-path}087d8a95-3f25-4bae-a1d1-db9ddffd72f5.woff2") format("woff2"),
+       url("#{$font-path}ab1bcdf7-9570-4cba-a8e3-3e39ddd861db.woff") format("woff");
 }
 
 @font-face {
   font-family: "Frutiger";
   font-weight: normal;
-  src: url("/assets/fonts/fe232554-5489-4874-bb45-bd966c8c5932.eot?#iefix") format("embedded-opentype"),
-       url("/assets/fonts/0811514e-6660-4043-92c1-23d0b8caaa2f.woff2") format("woff2"),
-       url("/assets/fonts/aeae8cac-ba4d-40d2-bbcf-936f2c7dcfe6.woff") format("woff");
+  src: url("#{$font-path}fe232554-5489-4874-bb45-bd966c8c5932.eot?#iefix") format("embedded-opentype"),
+       url("#{$font-path}0811514e-6660-4043-92c1-23d0b8caaa2f.woff2") format("woff2"),
+       url("#{$font-path}aeae8cac-ba4d-40d2-bbcf-936f2c7dcfe6.woff") format("woff");
 }
 
 @font-face {
   font-family: "Frutiger";
   font-weight: bold;
-  src: url("/assets/fonts/eb06b4c3-c0fd-4cd0-a9d9-a2954f6839a7.eot?#iefix") format("embedded-opentype"),
-       url("/assets/fonts/8c92eb68-ce37-4962-a9f4-5b47d336bd1c.woff2") format("woff2"),
-       url("/assets/fonts/9bdfdcac-bbd4-46a9-9280-056c9a4438a2.woff") format("woff");
+  src: url("#{$font-path}eb06b4c3-c0fd-4cd0-a9d9-a2954f6839a7.eot?#iefix") format("embedded-opentype"),
+       url("#{$font-path}8c92eb68-ce37-4962-a9f4-5b47d336bd1c.woff2") format("woff2"),
+       url("#{$font-path}9bdfdcac-bbd4-46a9-9280-056c9a4438a2.woff") format("woff");
 }
