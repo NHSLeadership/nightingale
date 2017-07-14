@@ -27,8 +27,7 @@
 
   @supports (animation: 0.5s spinner) { /* [1] */
 
-    overflow: hidden; /* [2] */
-    text-indent: 100%; /* [2] */
+    @include kellum();
     vertical-align: middle;
 
   }
