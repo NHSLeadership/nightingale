@@ -63,6 +63,148 @@ $global-colors: (
 
 
 
+// Sprite
+//
+// This map holds the names, x/y coordinates, and optional dimensions of the
+// icons found in our sprite image. Entries that do not have dimensions will
+// fall back to the default icon size.
+// ========================================================================== */
+
+$global-sprite:(
+  'arrow-down': (
+    x: 0,
+    y: -10px,
+  ),
+  'arrow-up': (
+    x: -20px,
+    y: -10px,
+  ),
+  'arrow-left': (
+    x: -40px,
+    y: -10px,
+  ),
+  'arrow-right': (
+    x: -60px,
+    y: -10px,
+  ),
+  'arrow-down-rev': (
+    x: -80px,
+    y: -10px,
+  ),
+  'arrow-up-rev': (
+    x: -100px,
+    y: -10px,
+  ),
+  'arrow-left-rev': (
+    x: -120px,
+    y: -10px,
+  ),
+  'arrow-right-rev': (
+    x: -140px,
+    y: -10px,
+  ),
+  'new-window': (
+    x: -20px,
+    y: 0,
+    width: 10px,
+    height: 10px,
+  ),
+  'new-window-rev': (
+    x: -30px,
+    y: 0,
+    width: 10px,
+    height: 10px,
+  ),
+  'pencil': (
+    x: 0,
+    y: -30px,
+  ),
+  'currency': (
+    x: -20px,
+    y: -30px,
+  ),
+  'speaker': (
+    x: -40px,
+    y: -30px,
+  ),
+  'info': (
+    x: -60px,
+    y: -30px,
+  ),
+  'user': (
+    x: -80px,
+    y: -30px,
+  ),
+  'menu': (
+    x: -100px,
+    y: -30px,
+  ),
+  'pencil-rev': (
+    x: -120px,
+    y: -30px,
+  ),
+  'currency-rev': (
+    x: -140px,
+    y: -30px,
+  ),
+  'speaker-rev': (
+    x: -160px,
+    y: -30px,
+  ),
+  'info-rev': (
+    x: -180px,
+    y: -30px,
+  ),
+  'user-rev': (
+    x: -200px,
+    y: -30px,
+  ),
+  'menu-rev': (
+    x: -220px,
+    y: -30px,
+  ),
+  'home': (
+    x: 0,
+    y: -50px,
+  ),
+  'close': (
+    x: -20px,
+    y: -50px,
+  ),
+  'close-rev': (
+    x: -40px,
+    y: -50px,
+  ),
+  'prev-grey': (
+    x: -252px,
+    y: -70px,
+    width: 36px,
+    height: 36px,
+  ),
+  'next-grey': (
+    x: -288px,
+    y: -70px,
+    width: 36px,
+    height: 36px,
+  ),
+  'prev-blue': (
+    x: -324px,
+    y: -70px,
+    width: 36px,
+    height: 36px,
+  ),
+  'next-blue': (
+    x: -360px,
+    y: -70px,
+    width: 36px,
+    height: 36px,
+  ),
+) !default;
+
+
+
+
+
 // Assets
 // ========================================================================== */
 
