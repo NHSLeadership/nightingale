@@ -4,12 +4,13 @@
 
 .c-pagination {
   list-style: none;
-  margin-left: 0;
+  margin-right: 4px;
+  margin-left: 4px;
   display: table;
   table-layout: fixed;
   width: 100%;
-  border-top: 2px solid $color-pagination-border;
-  border-bottom: 2px solid $color-pagination-border;
+  border: 0 solid $color-pagination-border;
+  border-width: 1px 0;
   text-align: center;
 }
 
