@@ -34,6 +34,54 @@ $global-font-size-h4: 19px !default;
 // Colors
 // ========================================================================== */
 
+$primary-colors: (
+  'nhs-black': #231f20,
+  'nhs-blue': #005eb8,
+  'nhs-grey-dark': #425563,
+  'nhs-grey-mid': #768692,
+  'nhs-grey-pale': #e8edee,
+  'white': #fff,
+) !default;
+
+$secondary-colors: (
+  'nhs-orange': #ed8b00,
+  'nhs-pink': #ae2573,
+  'nhs-purple-light': #704c9c,
+  'nhs-purple': #330072,
+  'nhs-blue-dark': #003087,
+  'nhs-blue-bright': #0072CE,
+  'nhs-blue-light': #41B6E6,
+  'nhs-blue-aqua': #00A9CE,
+  'nhs-aqua': #00a499,
+  'nhs-green-dark': #006747,
+  'nhs-green': #009639,
+  'nhs-green-light': #78BE20,
+  'nhs-pink-dark': #7C2855,
+  'nhs-red-dark': #8A1538,
+  'nhs-red-emergency': #DA291C,
+  'nhs-yellow': #FAE100,
+  'nhs-yellow-warm': #FFB81C,
+) !default;
+
+
+$accent-colors: (
+  // to-do: does this work?
+  // 'accent-1': $,
+  // 'accent-2': $,
+  // 'accent-3': $,
+) !default;
+
+$message-colors: (
+  'attention': #7c2855,
+  'error': #da291c,
+  'information': #330072,
+  'pending': #8a1538,
+  'success': #78be20,
+  'warning': #fae100,
+) !default;
+
+// ^ will replace $global-colors
+
 $global-colors: (
   'attention': #7c2855,
   'error': #da291c,
