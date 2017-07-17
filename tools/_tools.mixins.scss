@@ -115,6 +115,7 @@
 // 1. Where does the sprite actually live?
 // 2. The default kinda size for most icons.
 // 3. How big is the regular sprite image?
+// 4. Remove residual styles from other elements (e.g. BUTTONs).
 // ========================================================================== */
 
 @mixin _sprite-setup() {
@@ -123,6 +124,9 @@
   background-image: url(#{$image-path}sprite/icons.png); // 1
   width: 20px; // 2
   height: 20px; // 2
+  background-color: transparent; // 4
+  border: none; // 4
+  padding: 0; // 4
 
   // Retina screens get a nicer sprite
   @media only screen and (-webkit-min-device-pixel-ratio: 2),
