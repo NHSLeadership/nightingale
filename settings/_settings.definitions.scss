@@ -71,6 +71,18 @@ $global-colors: (
 // ========================================================================== */
 
 $global-sprite:(
+  'dot-inactive': (
+    x: 0,
+    y: 0,
+    width: 10px,
+    height: 10px,
+  ),
+  'dot': (
+    x: -10px,
+    y: 0,
+    width: 10px,
+    height: 10px,
+  ),
   'arrow-down': (
     x: 0,
     y: -10px,
