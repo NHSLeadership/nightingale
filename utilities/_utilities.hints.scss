@@ -5,14 +5,45 @@
 @if ($global-hints == true) {
 
 /**
+ * List items outside of lists are definitely errors.
+ */
+
+:not(ol):not(ul) {
+
+  > li {
+    --error: "List items need to live inside of lists!";
+    outline: 1px solid red;
+  }
+
+}
+
+/**
  * Layout Items must be nested directly within an `.o-layout` parent.
  */
-.o-layout__item {
+
+:not(.o-layout) > .o-layout__item {
   --error: "Yikes! This needs to live inside of an `.o-layout` parent.";
   outline: 1px solid red;
+}
 
-  .o-layout > & {
-    outline: none;
+
+
+
+
+/**
+ * Certain elements without any additional classes are very unlikely to be
+ * correct.
+ */
+
+%_missing-modifier-error {
+  --error: "You probably need a Modifier on this elements’s Block.";
+  outline: 1px solid red;
+}
+
+@each $class in c-btn, c-sprite {
+
+  .#{$class}:not([class*="#{$class}--"]) {
+    @extend %_missing-modifier-error;
   }
 
 }
