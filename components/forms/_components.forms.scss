@@ -110,17 +110,11 @@ select.c-form-input {
   display: inline-block;
 
   &::after {
-    content: "";
+    @include sprite(arrow-down, true);
     position: absolute;
     top: 50%;
     right: 10px;
-    margin-top: -8px;
-    width: 10px;
-    height: 10px;
-    border: 2px solid transparent;
-    border-bottom-color: color('nhs-black');
-    border-left-color: color('nhs-black');
-    transform: rotate(-45deg);
+    margin-top: -10px;
   }
 
 }

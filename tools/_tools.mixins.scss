@@ -101,3 +101,88 @@
   position: absolute $important;
   width: 1px $important;
 }
+
+
+
+
+
+// Spriting setup mixin
+//
+// This mixin simply holds some shared styles for sprites; it doesn’t actually
+// create anything yet. It’s a private mixin because, currently, it’s not much
+// use on its own so can’t really be used arbitrarily.
+//
+// 1. Where does the sprite actually live?
+// 2. The default kinda size for most icons.
+// 3. How big is the regular sprite image?
+// 4. Remove residual styles from other elements (e.g. BUTTONs).
+// ========================================================================== */
+
+@mixin _sprite-setup() {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(#{$image-path}sprite/icons.png); // 1
+  width: 20px; // 2
+  height: 20px; // 2
+  background-color: transparent; // 4
+  border: none; // 4
+  padding: 0; // 4
+
+  // Retina screens get a nicer sprite
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+         only screen and (   min--moz-device-pixel-ratio: 2),
+         only screen and (     -o-min-device-pixel-ratio: 2/1),
+         only screen and (        min-device-pixel-ratio: 2),
+         only screen and (                min-resolution: 192dpi),
+         only screen and (                min-resolution: 2dppx) {
+    background-image: url(#{$image-path}sprite/icons@2x.png); // 1
+    background-size: 396px 266px; // 3
+  }
+
+}
+
+// Sprite creation mixin
+//
+// This mixin is used to actually create sprites. Pass in a named sprite (found
+// in `$global-sprite`) and optionally whether or not the sprite will be held in
+// generated content (i.e. `::before` or `::after`).
+//
+// Usage:
+//
+//     .foo {
+//       @include sprite(arrow-down);
+//     }
+//
+//     .bar::after {
+//       @include sprite(info, true)
+//     }
+//
+// ========================================================================== */
+
+@mixin sprite($image, $generated: false) {
+
+  @if ($generated != false) {
+    content: "";
+    @include _sprite-setup();
+  }
+
+  background-position: map-deep-get($global-sprite, $image, x) map-deep-get($global-sprite, $image, y);
+  width: map-deep-get($global-sprite, $image, width);
+  height: map-deep-get($global-sprite, $image, height);
+}
+
+
+
+
+
+// Kellum
+//
+// The Kellum method for image replacement is beautifully simple:
+// zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+// ========================================================================== */
+//
+@mixin kellum() {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
