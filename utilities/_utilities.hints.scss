@@ -4,6 +4,11 @@
 
 @if ($global-hints == true) {
 
+@mixin _hint-error-styles() {
+  cursor:help;
+  outline: 1px solid red;
+}
+
 /**
  * List items outside of lists are definitely errors.
  */
@@ -12,7 +17,7 @@
 
   > li {
     --error: "List items need to live inside of lists!";
-    outline: 1px solid red;
+    @include _hint-error-styles();
   }
 
 }
@@ -27,7 +32,7 @@
 
 :not(.o-layout) > .o-layout__item {
   --error: "Yikes! This needs to live inside of an `.o-layout` parent.";
-  outline: 1px solid red;
+  @include _hint-error-styles();
 }
 
 
@@ -41,7 +46,7 @@
 
 %_missing-modifier-error {
   --error: "You probably need a Modifier on this elements’s Block.";
-  outline: 1px solid red;
+  @include _hint-error-styles();
 }
 
 @each $class in c-btn, c-sprite {
