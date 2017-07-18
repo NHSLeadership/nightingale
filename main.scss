@@ -6,14 +6,10 @@
  * CONTENTS
  *
  * SETTINGS
- * Definitions..........Define constants such as font-sizes, etc.
- * Colors...............Apply our colors against variables.
- * Z-Index..............Set up an array of z-index values for developers to use.
+ * All..................Grab all of our settings files in one go.
  *
  * TOOLS
- * Functions............Simple functions to help us out with math, etc.
- * Mixins...............Basic, global mixins.
- * Sass MQ..............Elegant little mixins library.
+ * All..................Grab all of our tools files in one go.
  *
  * GENERIC
  * Box-sizing...........Better default box-sizing rules.
@@ -61,17 +57,13 @@
  * Display..............Show/hide/etc. utility classes.
  */
 
-@import "settings/settings.definitions";
-@import "settings/settings.colors";
-@import "settings/settings.z-index";
+@import "settings/all";
 
 
 
 
 
-@import "tools/tools.functions";
-@import "tools/tools.mixins";
-@import "sass-mq/mq";
+@import "tools/all";
 
 
 
