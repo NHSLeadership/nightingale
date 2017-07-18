@@ -11,6 +11,6 @@
 // By importing all of our tools here, we can utilise them directly in ITCSS
 // Isolated components later on much more easily.
 
-@import "tools/tools.functions";
-@import "tools/tools.mixins";
+@import "tools.functions";
+@import "tools.mixins";
 @import "sass-mq/mq";
