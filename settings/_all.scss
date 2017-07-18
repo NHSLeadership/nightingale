@@ -1,0 +1,16 @@
+// ==========================================================================
+// #SETTINGS
+// ========================================================================== */
+
+// CONTENTS
+//
+// Definitions..........Define constants such as font-sizes, etc.
+// Colors...............Apply our colors against variables.
+// Z-Index..............Set up an array of z-index values for developers to use.
+
+// By importing all of our settings here, we can utilise them directly in ITCSS
+// Isolated components later on much more easily.
+
+@import "settings/settings.definitions";
+@import "settings/settings.colors";
+@import "settings/settings.z-index";
