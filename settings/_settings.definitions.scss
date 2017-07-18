@@ -5,12 +5,22 @@
 ///
 // CONTENTS
 //
+// Config...............Feature switches, etc.
 // Typography...........Our most basic and global typographic settings.
 // Colors...............Load up a map with our color definitions.
 // Assets...............Asset paths for fonts, sprites, etc.
 // Responsive...........Define our breakpoint sizes and what they’re called.
 // Sizing...............Settings pertaining to various UI sizes.
  //
+
+
+
+
+
+// Config
+// ========================================================================== */
+
+$global-training-wheels: true !default;
 
 
 

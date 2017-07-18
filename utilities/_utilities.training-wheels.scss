@@ -1,0 +1,20 @@
+/* ==========================================================================
+   #TRAINING-WHEELS
+   ========================================================================== */
+
+@if ($global-training-wheels == true) {
+
+/**
+ * Layout Items must be nested directly within an `.o-layout` parent.
+ */
+.o-layout__item {
+  --error: "Yikes! This needs to live inside of an `.o-layout` parent.";
+  outline: 1px solid red;
+
+  .o-layout > & {
+    outline: none;
+  }
+
+}
+
+} // endif
