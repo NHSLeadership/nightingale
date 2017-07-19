@@ -11,6 +11,6 @@
 // By importing all of our settings here, we can utilise them directly in ITCSS
 // Isolated components later on much more easily.
 
-@import "settings/settings.definitions";
-@import "settings/settings.colors";
-@import "settings/settings.z-index";
+@import "settings.definitions";
+@import "settings.colors";
+@import "settings.z-index";

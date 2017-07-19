@@ -55,6 +55,7 @@
  * Widths...............Generate width classes that can be used with our grid.
  * Z-Index..............A suite of stacking utility classes.
  * Display..............Show/hide/etc. utility classes.
+ * Hints................Helpful pointers to prevent developers misusing things.
  */
 
 @import "settings/all";
@@ -124,3 +125,4 @@
 @import "utilities/utilities.widths";
 @import "utilities/utilities.z-index";
 @import "utilities/utilities.display";
+@import "utilities/utilities.hints";
