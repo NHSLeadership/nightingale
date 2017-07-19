@@ -85,9 +85,9 @@
           </li>
 
           <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link" data-expands="#item-4-sub" data-popup>Item Four</a>
+            <a href="#0" class="c-nav-primary__link">Item Four</a>
 
-            <div class="c-nav-primary__sub" id="item-4-sub" role="group" aria-label="sub navigation menu">
+            <div class="c-nav-primary__sub">
 
               <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
 
@@ -482,130 +482,163 @@
   </footer>
   <script>
 
-    (function() {
+    // Submenus script
 
-      var setupToggles = function() {
+    function toggleSubmenu(expander) {
+      var expanded = expander.getAttribute('aria-expanded') === 'true';
+      expanded = !expanded;
+      expander.setAttribute('aria-expanded', expanded);
+      var target = document.getElementById(expander.getAttribute('data-expands'));
+      target.style.display = target.style.display === 'none' ? 'block' : 'none';
+
+      var header = document.querySelector('.c-page-header');
+      var headerClasses = header.getAttribute('class');
+
+      if (expanded) {
+        header.setAttribute('class', headerClasses + ' has-submenu');
+      } else {
+        header.setAttribute('class', headerClasses.replace(' has-submenu', ''));
+      }
+
+      // Get the first and last focusable elements
+      var first = target.querySelector('a[href], button, input, textarea, select, [tabindex="0"]');
+      var all = target.querySelectorAll('a[href], button, input, textarea, select, [tabindex="0"]');
+      var last = all[all.length - 1];
+
+      // Focus the first focusable elem
+      first.focus();
+
+      // Refocus `toggleButton` if the user
+      // presses Shift + Tab on first focusable elem
+      first.addEventListener('keydown', function(e) {
+        var key = 'which' in e ? e.which : e.keyCode;
+        if (key === 9 && e.shiftKey) {
+          e.preventDefault();
+          expander.focus();
+        }
+      });
+
+      // Refocus `toggleButton` if the user
+      // presses Tab on last focusable elem
+      last.addEventListener('keydown', function(e) {
+        var key = 'which' in e ? e.which : e.keyCode;
+        if (key === 9 && !e.shiftKey) {
+          e.preventDefault();
+          expander.focus();
+        }
+      });
+    }
+
+    function setupNav() {
+      var nav = document.getElementById('jsNav');
+      var navItems = document.querySelectorAll('#jsNav > li');
+      Array.prototype.forEach.call(navItems, function (item) {
+        var ul = item.parentNode;
+        var index = Array.prototype.indexOf.call(ul.children, item);
+        item.setAttribute('data-nav-index', index + 1);
+        var sub = item.querySelector('.c-nav-primary__sub');
+        if (sub) {
+          sub.setAttribute('id', 'sub-menu-' + (index + 1));
+          sub.setAttribute('role', 'group');
+          sub.setAttribute('aria-label', 'sub menu');
+          sub.style.display = 'none';
+
+          var expander = item.querySelector('a');
+          expander.setAttribute('data-expands', 'sub-menu-' + (index + 1));
+          expander.setAttribute('aria-expanded', 'false');
+          expander.setAttribute('aria-haspopup', 'true');
+
+          expander.addEventListener('click', function () {
+            toggleSubmenu(expander);
+          })
+        }
+      })
+    }
+
+    function moveSubmenus() {
+      // Get all the submenus
+      var submenus = document.querySelectorAll('.c-nav-primary__sub');
+
+      Array.prototype.forEach.call(submenus, function(submenu) {
         if (window.innerWidth > 720) {
-          // Get all the submenus
-          var submenus = document.querySelectorAll('.c-nav-primary__sub')
-
-          Array.prototype.forEach.call(submenus, function(submenu) {
-            var clone = submenu.cloneNode(true)
-            var wrapper = document.querySelector('.c-page-header')
-            wrapper.appendChild(clone)
-            submenu.parentNode.removeChild(submenu)
-          })
-        }
-      }
-
-      setupToggles()
-
-      function getDisplayMode(target) {
-        var displayMode = target.currentStyle ? target.currentStyle.display : window.getComputedStyle(target, null).display
-        return displayMode
-      }
-
-      function toggle(toggleButton, target, popupMode, displayMode) {
-        var expanded = toggleButton.getAttribute('aria-expanded') === 'true'
-        expanded = !expanded
-        toggleButton.setAttribute('aria-expanded', expanded)
-        target.style.display = target.style.display === 'none' ? displayMode : 'none'
-
-        // Get header class value
-        var header = document.querySelector('.c-page-header')
-        var headerClasses = header.getAttribute('class')
-
-        // Do header class
-        // if it's a submenu that's been opened
-        if (expanded && target.getAttribute('aria-label') === 'submenu') {
-          header.setAttribute('class', headerClasses + ' has-submenu')
-        } else {
-          header.setAttribute('class', headerClasses.replace(' has-submenu', ''))
-        }
-
-        if (expanded && popupMode) {
-          // Get the first and last focusable elements
-          var first = target.querySelector('a[href], button, input, textarea, select, [tabindex="0"]')
-          var all = target.querySelectorAll('a[href], button, input, textarea, select, [tabindex="0"]')
-          var last = all[all.length - 1]
-
-          // Focus the first focusable elem
-          first.focus()
-
-          // Refocus `toggleButton` if the user
-          // presses Shift + Tab on first focusable elem
-          first.addEventListener('keydown', function(e) {
-            var key = 'which' in e ? e.which : e.keyCode;
-            if (key === 9 && e.shiftKey) {
-              e.preventDefault()
-              toggleButton.focus()
-            }
-          })
-
-          // Refocus `toggleButton` if the user
-          // presses Tab on last focusable elem
-          last.addEventListener('keydown', function(e) {
-            var key = 'which' in e ? e.which : e.keyCode;
-            if (key === 9 && !e.shiftKey) {
-              e.preventDefault()
-              toggleButton.focus()
-            }
-          })
-        }
-      }
-
-      // Get all the toggle button nodes in the document
-      var toggleButtons = document.querySelectorAll('[data-expands]')
-
-      // Iterate over those buttons
-      Array.prototype.forEach.call(toggleButtons, function(toggleButton) {
-        // Give the element the button role
-        toggleButton.setAttribute('role', 'button')
-
-        // Set the aria-expanded value to false to begin with
-        toggleButton.setAttribute('aria-expanded', 'false')
-
-        // Define the target element via the selector supplied
-        // as the `data-expands` value
-        var target = document.querySelector(toggleButton.getAttribute('data-expands'))
-
-        // If it has `data-popup` give it `aria-haspopup`
-        // and set it to popupMode
-        if (toggleButton.getAttribute('data-popup') !== null) {
-          toggleButton.setAttribute('aria-haspopup', 'true')
-          var popupMode = true
-
-          // Give the target the right semantics too
-          target.setAttribute('role', 'group')
-          target.setAttribute('aria-label', 'submenu')
-        }
-
-        // Get and set displayMode
-        var displayMode = getDisplayMode(target)
-        if (displayMode === 'none') {
-          target.style.display = 'none'
-          displayMode = 'block'
-        }
-
-        toggleButton.addEventListener('click', function() {
-          // Do the toggling
-          toggle(toggleButton, target, popupMode, displayMode)
-        })
-
-        // Close menu on outside click
-        document.addEventListener('click', function(e) {
-          if ((!target.contains(e.target) && toggleButton !== e.target) && toggleButton.getAttribute('aria-expanded') === 'true') {
-            toggleButton.click()
+          if (document.querySelector('#jsNav > li .c-nav-primary__sub')) {
+            var clone = submenu.cloneNode(true);
+            var wrapper = document.querySelector('.c-page-header');
+            wrapper.appendChild(clone);
+            submenu.parentNode.removeChild(submenu);
           }
-        })
+        } else {
+          if (document.querySelector('.c-page-header > .c-nav-primary__sub')) {
+            var clone = submenu.cloneNode(true);
+            var id = submenu.getAttribute('id');
+            var index = id.substr(id.length - 1);
+            var wrapper = document.querySelector('[data-nav-index="' + index + '"]');
+            wrapper.appendChild(clone);
+            submenu.parentNode.removeChild(submenu);
+          }
+        }
       })
+    }
 
-      // Hamburger menu text node toggle
-      var navTrigger = document.getElementById('jsNavTrigger');
-      navTrigger.addEventListener('click', function() {
-        this.innerHTML = this.innerHTML === '×' ? '☰' : '×'
-      })
-    })()
+    setupNav();
+
+    moveSubmenus();
+
+    // Main JS Menu script
+
+    var navExpander = document.getElementById('jsNavTrigger');
+    var nav = document.getElementById('jsNav');
+
+    if (window.innerWidth < 720) {
+      closeJsMenu();
+    }
+
+    function openJsMenu() {
+      navExpander.setAttribute('aria-expanded', 'true');
+      nav.style.display = 'block';
+      navExpander.innerHTML = '×';
+    }
+
+    function closeJsMenu() {
+      navExpander.setAttribute('aria-expanded', 'false');
+      nav.style.display = 'none';
+      navExpander.innerHTML = '☰';
+    }
+
+    navExpander.addEventListener('click', function() {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      expanded = !expanded;
+      if (expanded) {
+        openJsMenu();
+      } else {
+        closeJsMenu();
+      }
+    });
+
+    function dimensionChange() {
+      var nav = document.getElementById('jsNav');
+      if (window.innerWidth < 720) {
+        if (nav.style.display === 'none') {
+          closeJsMenu();
+        } else {
+          openJsMenu();
+        }
+      } else {
+        nav.style.display = 'block';
+      }
+      moveSubmenus();
+    }
+
+    var resizeFunction;
+
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeFunction);
+      resizeFunction = setTimeout(function() {
+        dimensionChange();
+      }, 50);
+    })
+
+    window.addEventListener('orientationchange', dimensionChange);
   </script>
 </body>
 </html>
