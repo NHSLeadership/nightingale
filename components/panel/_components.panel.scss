@@ -1,0 +1,111 @@
+/* ==========================================================================
+   #PANEL
+   ========================================================================== */
+
+/**
+ * Panels
+ *
+ * 1. Leave a solid background colour so that nothing shows up underneath
+ *    translucent media (defined later).
+ */
+
+.c-panel {
+  display: block;
+  margin-bottom: $global-spacing-unit;
+  background-color: $color-panel-bg; /* [1] */
+}
+
+  /**
+   * Panels with mastheads that contain media (e.g. an image).
+   */
+  .c-panel__masthead {
+    position: relative;
+    display: block;
+    border: 1px solid $color-panel-border;
+
+    /**
+     * Translucent overlay covering the media.
+     */
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba($color-panel-tint, 0.1);
+    }
+
+  }
+
+    /**
+     * Panel media itself needs dimming.
+     */
+    .c-panel__media {
+      opacity: 0.3;
+    }
+
+  /**
+   * Textual content in Panels lives in its own container.
+   */
+  .c-panel__content {
+    border: 1px solid $color-panel-border;
+    border-top: none;
+    padding: $global-spacing-unit-small;
+  }
+
+    /**
+     * Show/hide content in Panels extends the DETAILS and SUMMARY elements.
+     */
+    .c-panel__reveal {
+      margin-bottom: 0;
+
+      & > :last-child {
+        margin-bottom: 0;
+      }
+
+    }
+
+      /**
+       * The title/trigger for the revealable content.
+       *
+       * 1. Hide the DETAILS dropdown marker in Firefox.
+       */
+      .c-panel__reveal-title {
+        @include font-size($global-font-size-h4);
+        position: relative;
+        font-weight: bold;
+        display: block; /* [1] */
+
+        /**
+         * Specificity bump to circumvent `:hover` etc. states.
+         */
+        &#{&} {
+          color: color(nhs-black);
+          text-decoration: none;
+        }
+
+        /**
+         * Remove the native DETAILS arrow…
+         */
+        &::-webkit-details-marker {
+          display: none;
+        }
+
+        /**
+         * …and replace it with our sprited icon.
+         */
+        &::after {
+          @include sprite(arrow-down, true);
+          position: absolute;
+          top: 50%;
+          right: 0;
+          margin-top: -10px;
+
+          .c-panel__reveal[open] & {
+            @include sprite(arrow-up, true);
+          }
+
+        }
+
+      }
