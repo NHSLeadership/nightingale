@@ -270,12 +270,12 @@
 
         <h2 id="ribbons">Ribbons</h2>
 
-        <div class="c-ribbon  u-margin-bottom">
+        <div class="c-ribbon  u-margin-bottom" id="jsCookieRibbon">
 
           <div class="o-wrapper">
 
             <div class="c-ribbon__actions">
-              <button class="c-sprite  c-sprite--close-rev">Close</button>
+              <button class="c-sprite  c-sprite--close-rev" id="jsCookieBtn">Close</button>
             </div>
 
             <strong class="c-ribbon__body">This website uses cookies.</strong>
@@ -283,6 +283,19 @@
           </div>
 
         </div>
+
+        <script>
+          (function(){
+
+            var cookieRibbon = document.getElementById('jsCookieRibbon');
+            var cookieBtn = document.getElementById('jsCookieBtn');
+
+            cookieBtn.addEventListener('click', function () {
+              cookieRibbon.parentNode.removeChild(cookieRibbon);
+            });
+
+          }());
+        </script>
 
         <div class="c-ribbon  c-ribbon--live  u-margin-bottom">
 
