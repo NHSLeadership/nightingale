@@ -180,9 +180,27 @@
 // The Kellum method for image replacement is beautifully simple:
 // zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
 // ========================================================================== */
-//
+
 @mixin kellum() {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
+}
+
+
+
+
+
+// Opacity
+//
+// In older browsers we need better fallbacks for opacity.
+
+@mixin opacity($value) {
+
+  @if ($global-oldIE == true) {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$value * 100})";
+    filter: alpha(opacity=#{$value * 100});
+  }
+
+  opacity: $value;
 }
