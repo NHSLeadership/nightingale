@@ -56,6 +56,7 @@
  * Z-Index..............A suite of stacking utility classes.
  * Display..............Show/hide/etc. utility classes.
  * Hints................Helpful pointers to prevent developers misusing things.
+ * IE8..................Yep. You read that correctly.
  */
 
 @import "settings/all";
@@ -126,3 +127,4 @@
 @import "utilities/utilities.z-index";
 @import "utilities/utilities.display";
 @import "utilities/utilities.hints";
+@import "utilities/utilities.ie8";

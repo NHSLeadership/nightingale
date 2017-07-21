@@ -1,0 +1,30 @@
+/* ==========================================================================
+   #IE8
+   ========================================================================== */
+
+@if ($global-oldIE == true) {
+
+.ie8 {
+
+  /**
+   * Because IE8 doesn’t support media queries, let’s just single-column it all
+   * at a reasonable width.
+   */
+  .o-wrapper {
+    max-width: 720px;
+  }
+
+  /**
+   * No DETAILS in IE8 means we should just let the expandable ribbons act like
+   * a DIV.
+   */
+  .c-ribbon--expandable summary {
+    white-space: normal;
+    overflow: visible;
+    text-indent: 0;
+    padding-left: 0;
+  }
+
+}
+
+}
