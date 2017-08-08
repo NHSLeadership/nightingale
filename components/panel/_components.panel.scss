@@ -57,6 +57,29 @@
 
 
 
+    /**
+     * Panels that can be paged through.
+     */
+    .c-panel__controls {
+      margin: 0;
+      list-style: none;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: z-index(1);
+    }
+
+      .c-panel__control {
+        float: left;
+        padding: $global-spacing-unit-small;
+        line-height: 1;
+      }
+
+
+
+
+
   /**
    * Textual content in Panels lives in its own container.
    */
