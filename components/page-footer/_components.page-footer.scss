@@ -25,3 +25,38 @@
   }
 
 }
+
+  .c-page-footer__nav {
+    margin: 0;
+    list-style: none;
+  }
+
+  .c-page-footer__nav-item {
+    display: inline-block;
+    padding-right: $global-spacing-unit-small;
+    padding-left: $global-spacing-unit-small;
+    border-right: 1px solid $color-page-footer-nav;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      border-right: none;
+    }
+
+    /**
+     * I feel like just targeting the A element will be sufficient for now.
+     */
+    a {
+      color: $color-page-footer-nav;
+      display: block;
+      line-height: 1;
+    }
+
+  }
+
+  .c-page-footer__smallprint {
+    color: $color-page-footer-small;
+  }
