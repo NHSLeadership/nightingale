@@ -34,16 +34,13 @@
   .c-page-footer__nav-item {
     display: inline-block;
     padding-right: $global-spacing-unit-small;
-    padding-left: $global-spacing-unit-small;
+    margin-right: $global-spacing-unit-small;
     border-right: 1px solid $color-page-footer-nav;
 
-    &:first-child {
-      padding-left: 0;
-    }
-
     &:last-child {
-      padding-right: 0;
+      margin-right: 0;
       border-right: none;
+      padding-right: 0;
     }
 
     /**
