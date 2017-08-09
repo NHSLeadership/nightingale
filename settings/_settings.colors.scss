@@ -82,9 +82,11 @@ $color-nav-primary-trigger-bg-invert: color('nhs-white')     !default;
 // Page Footer
 // ========================================================================== */
 
-$color-page-footer-border: color('nhs-purple');
-$color-page-footer-bg:     color('nhs-grey-pale');
-$color-page-footer-links:  color('nhs-grey-mid');
+$color-page-footer-border: color('nhs-purple')    !default;
+$color-page-footer-bg:     color('nhs-grey-pale') !default;
+$color-page-footer-links:  color('nhs-grey-mid')  !default;
+$color-page-footer-nav:    color('nhs-black')     !default;
+$color-page-footer-small:  color('nhs-grey-mid')  !default;
 
 
 
