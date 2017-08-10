@@ -194,6 +194,7 @@
         overflow: scroll;
         overflow-x: auto;
         overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
 
         > :last-child {
           margin-bottom: 0;
