@@ -1,27 +1,27 @@
 /* ==========================================================================
-   #PANEL
+   #MEDIA
    ========================================================================== */
 
 /**
- * Panels
+ * Media
  *
  * 1. Leave a solid background colour so that nothing shows up underneath
  *    translucent media (defined later).
  */
 
-.c-panel {
+.c-media {
   display: block;
   margin-bottom: $global-spacing-unit;
-  background-color: $color-panel-bg; /* [1] */
+  background-color: $color-media-bg; /* [1] */
 }
 
   /**
-   * Panels with mastheads that contain media (e.g. an image).
+   * Media with mastheads that contain media (e.g. an image).
    */
-  .c-panel__masthead {
+  .c-media__masthead {
     position: relative;
     display: block;
-    border: 1px solid $color-panel-border;
+    border: 1px solid $color-media-border;
 
     /**
      * Translucent overlay covering the media.
@@ -33,12 +33,12 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: rgba($color-panel-tint, 0.1);
+      background-color: rgba($color-media-tint, 0.1);
 
       /**
-       * Hide overlay if Panel is active (e.g. video is playing).
+       * Hide overlay if Media is active (e.g. video is playing).
        */
-      .c-panel.is-active & {
+      .c-media.is-active & {
         display: none;
       }
 
@@ -47,22 +47,22 @@
   }
 
     /**
-     * Panel media itself needs dimming.
+     * Media media itself needs dimming.
      */
-    .c-panel__media {
+    .c-media__media {
       opacity: 0.3;
       width: 100%;
 
       /**
-       * Undo dimming effect if Panel is active (e.g. video is playing).
+       * Undo dimming effect if Media is active (e.g. video is playing).
        */
-      .c-panel.is-active & {
+      .c-media.is-active & {
         opacity: 1;
       }
 
     }
 
-    .c-panel__emblem {
+    .c-media__emblem {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -75,9 +75,9 @@
 
 
     /**
-     * Panels that can be paged through.
+     * Media that can be paged through.
      */
-    .c-panel__controls {
+    .c-media__controls {
       margin: 0;
       list-style: none;
       position: absolute;
@@ -87,7 +87,7 @@
       z-index: z-index(1);
     }
 
-      .c-panel__control {
+      .c-media__control {
         float: left;
         padding: $global-spacing-unit-small;
         line-height: 1;
@@ -98,20 +98,20 @@
 
 
   /**
-   * Textual content in Panels lives in its own container.
+   * Textual content in Media lives in its own container.
    */
-  .c-panel__content {
+  .c-media__content {
     @include font-size(14px);
-    border: 1px solid $color-panel-border;
+    border: 1px solid $color-media-border;
     border-top: none;
     padding: $global-spacing-unit-small;
-    color: $color-panel-content;
+    color: $color-media-content;
   }
 
     /**
-     * Show/hide content in Panels extends the DETAILS and SUMMARY elements.
+     * Show/hide content in Media extends the DETAILS and SUMMARY elements.
      */
-    .c-panel__reveal {
+    .c-media__reveal {
       margin-bottom: 0;
 
       /**
@@ -137,7 +137,7 @@
        * 1. Hide the DETAILS dropdown marker in Firefox.
        * 2. Remove indents leftover from regular DETAILS elements.
        */
-      .c-panel__reveal-title {
+      .c-media__reveal-title {
         @include font-size($global-font-size-h4);
         position: relative;
         font-weight: bold;
@@ -170,7 +170,7 @@
           right: 0;
           margin-top: -10px;
 
-          .c-panel__reveal[open] & {
+          .c-media__reveal[open] & {
             @include sprite(arrow-up, true);
           }
 
@@ -179,9 +179,9 @@
       }
 
       /**
-       * Scrolling content in Panels.
+       * Scrolling content in Media.
        */
-      .c-panel__scroller {
+      .c-media__scroller {
         max-height: 5 * $global-spacing-unit;
         overflow: scroll;
         overflow-x: auto;
