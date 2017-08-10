@@ -10,7 +10,9 @@
  *    using `display: block;`.
  */
 
-img {
+img,
+video,
+audio {
   max-width: 100%; /* [1] */
   font-style: italic; /* [2] */
   vertical-align: middle; /* [3] */

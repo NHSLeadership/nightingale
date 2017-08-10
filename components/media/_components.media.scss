@@ -68,6 +68,14 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: z-index(1);
+
+      /**
+       * Hide emblem if Media is active (e.g. video is playing).
+       */
+      .c-media.is-active & {
+        display: none;
+      }
+
     }
 
 
