@@ -1,0 +1,43 @@
+/* ==========================================================================
+   #BREADCRUMB
+   ========================================================================== */
+
+.c-breadcrumb {
+  @include clearfix();
+  @include font-size(14px);
+  margin-left: 0;
+  list-style: none;
+  background-color: $color-breadcrumb-bg;
+  padding: $global-spacing-unit-tiny;
+}
+
+  .c-breadcrumb__item {
+    float: left;
+    word-spacing: 2em;
+
+    & + & {
+      margin-left: 4px;
+    }
+
+    & + &::before {
+      @include sprite('arrow-right', generated);
+      margin-right: 4px;
+    }
+
+  }
+
+    .c-breadcrumb__link {
+      text-decoration: none;
+      word-spacing: initial;
+
+      &#{&} {
+        color: $color-breadcrumb;
+      }
+
+      &.is-active {
+        text-decoration: underline;
+        cursor: default;
+        pointer-events: none;
+      }
+
+    }
