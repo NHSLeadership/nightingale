@@ -89,7 +89,7 @@
       margin: 0;
       list-style: none;
       position: absolute;
-      bottom: 0;
+      bottom: $global-spacing-unit-tiny;
       left: 50%;
       transform: translateX(-50%);
       z-index: z-index(1);
@@ -97,7 +97,7 @@
 
       .c-media__control {
         float: left;
-        padding: $global-spacing-unit-small;
+        padding: $global-spacing-unit-tiny;
         line-height: 1;
       }
 
