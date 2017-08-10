@@ -84,9 +84,11 @@
    * Textual content in Panels lives in its own container.
    */
   .c-panel__content {
+    @include font-size(14px);
     border: 1px solid $color-panel-border;
     border-top: none;
     padding: $global-spacing-unit-small;
+    color: $color-panel-content;
   }
 
     /**
