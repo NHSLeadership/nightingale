@@ -1,0 +1,202 @@
+/* ==========================================================================
+   #MEDIA
+   ========================================================================== */
+
+/**
+ * Media
+ *
+ * 1. Leave a solid background colour so that nothing shows up underneath
+ *    translucent media (defined later).
+ */
+
+.c-media {
+  display: block;
+  margin-bottom: $global-spacing-unit;
+  background-color: $color-media-bg; /* [1] */
+}
+
+  /**
+   * Media with mastheads that contain media (e.g. an image).
+   */
+  .c-media__masthead {
+    position: relative;
+    display: block;
+    border: 1px solid $color-media-border;
+
+    /**
+     * Translucent overlay covering the media.
+     */
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba($color-media-tint, 0.1);
+
+      /**
+       * Hide overlay if Media is active (e.g. video is playing).
+       */
+      .c-media.is-active & {
+        display: none;
+      }
+
+    }
+
+  }
+
+    /**
+     * Media media itself needs dimming.
+     */
+    .c-media__media {
+      opacity: 0.3;
+      width: 100%;
+
+      /**
+       * Undo dimming effect if Media is active (e.g. video is playing).
+       */
+      .c-media.is-active & {
+        opacity: 1;
+      }
+
+    }
+
+    .c-media__emblem {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: z-index(1);
+
+      /**
+       * Hide emblem if Media is active (e.g. video is playing).
+       */
+      .c-media.is-active & {
+        display: none;
+      }
+
+    }
+
+
+
+
+
+    /**
+     * Media that can be paged through.
+     */
+    .c-media__controls {
+      margin: 0;
+      list-style: none;
+      position: absolute;
+      bottom: $global-spacing-unit-tiny;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: z-index(1);
+    }
+
+      .c-media__control {
+        float: left;
+        padding: $global-spacing-unit-tiny;
+        line-height: 1;
+      }
+
+
+
+
+
+  /**
+   * Textual content in Media lives in its own container.
+   */
+  .c-media__content {
+    @include font-size(14px);
+    border: 1px solid $color-media-border;
+    border-top: none;
+    padding: $global-spacing-unit-small;
+    color: $color-media-content;
+  }
+
+    /**
+     * Show/hide content in Media extends the DETAILS and SUMMARY elements.
+     */
+    .c-media__reveal {
+      margin-bottom: 0;
+
+      /**
+       * Kinda gross, but… we need to remove leftover style from nested DIVs
+       * in regular DETAILS elements (_elements.details.scss).
+       */
+      > div {
+        margin-top: 0;
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+      }
+
+      & > :last-child {
+        margin-bottom: 0;
+      }
+
+    }
+
+      /**
+       * The title/trigger for the revealable content.
+       *
+       * 1. Hide the DETAILS dropdown marker in Firefox.
+       * 2. Remove indents leftover from regular DETAILS elements.
+       */
+      .c-media__reveal-title {
+        @include font-size($global-font-size-h4);
+        position: relative;
+        font-weight: bold;
+        display: block; /* [1] */
+        padding-left: 0; /* [2] */
+        text-indent: 0; /* [2] */
+
+        /**
+         * Specificity bump to circumvent `:hover` etc. states.
+         */
+        &#{&} {
+          color: color(nhs-black);
+          text-decoration: none;
+        }
+
+        /**
+         * Remove the native DETAILS arrow…
+         */
+        &::-webkit-details-marker {
+          display: none;
+        }
+
+        /**
+         * …and replace it with our sprited icon.
+         */
+        &::after {
+          @include sprite(arrow-down, true);
+          position: absolute;
+          top: 50%;
+          right: 0;
+          margin-top: -10px;
+
+          .c-media__reveal[open] & {
+            @include sprite(arrow-up, true);
+          }
+
+        }
+
+      }
+
+      /**
+       * Scrolling content in Media.
+       */
+      .c-media__scroller {
+        max-height: 5 * $global-spacing-unit;
+        overflow: scroll;
+        overflow-x: auto;
+        overflow-y: scroll;
+
+        > :last-child {
+          margin-bottom: 0;
+        }
+
+      }
