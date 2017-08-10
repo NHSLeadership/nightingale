@@ -2,42 +2,52 @@
    #BREADCRUMB
    ========================================================================== */
 
+/**
+ * Breadcrumb’s main parent simply contains and scrolls the breadcrumb list.
+ */
 .c-breadcrumb {
-  @include clearfix();
   @include font-size(14px);
-  margin-left: 0;
-  list-style: none;
+  margin-bottom: $global-spacing-unit;
+  white-space: nowrap;
+  overflow-x: scroll;
   background-color: $color-breadcrumb-bg;
   padding: $global-spacing-unit-tiny;
 }
 
-  .c-breadcrumb__item {
-    float: left;
-    word-spacing: 2em;
-
-    & + & {
-      margin-left: 4px;
-    }
-
-    & + &::before {
-      @include sprite('arrow-right', generated);
-      margin-right: 4px;
-    }
-
+  .c-breadcrumb__list {
+    margin-left: 0;
+    margin-bottom: 0;
+    list-style: none;
   }
 
-    .c-breadcrumb__link {
-      text-decoration: none;
-      word-spacing: initial;
+    .c-breadcrumb__item {
+      display: inline-block;
 
-      &#{&} {
-        color: $color-breadcrumb;
-      }
-
-      &.is-active {
-        text-decoration: underline;
-        cursor: default;
-        pointer-events: none;
+      & + &::before {
+        @include sprite('arrow-right', generated);
+        margin-right: 4px;
       }
 
     }
+
+      .c-breadcrumb__link {
+        text-decoration: none;
+        word-spacing: initial;
+
+        /**
+         * Specificity bump to get around `:visited` issues.
+         */
+        &#{&} {
+          color: $color-breadcrumb;
+        }
+
+        /**
+         * The current page is underlined and uninteractive.
+         */
+        &.is-current {
+          text-decoration: underline;
+          cursor: default;
+          pointer-events: none;
+        }
+
+      }
