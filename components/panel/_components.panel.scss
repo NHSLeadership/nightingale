@@ -177,3 +177,18 @@
         }
 
       }
+
+      /**
+       * Scrolling content in Panels.
+       */
+      .c-panel__scroller {
+        max-height: 5 * $global-spacing-unit;
+        overflow: scroll;
+        overflow-x: auto;
+        overflow-y: scroll;
+
+        > :last-child {
+          margin-bottom: 0;
+        }
+
+      }
