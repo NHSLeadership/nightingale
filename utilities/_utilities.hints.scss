@@ -40,6 +40,19 @@
 
 
 /**
+ * Images need `alt` attributes.
+ */
+
+img:not([alt]) {
+  --error: "All `img` elements need an `alt` attribute, even it it’S left empty.";
+  @include _hint-error-styles();
+}
+
+
+
+
+
+/**
  * Certain elements without any additional classes are very unlikely to be
  * correct.
  */
