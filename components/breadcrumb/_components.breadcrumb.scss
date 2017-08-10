@@ -4,12 +4,18 @@
 
 /**
  * Breadcrumb’s main parent simply contains and scrolls the breadcrumb list.
+ *
+ * 1. Make sure all browsers scroll to the best of their abilities.
+ * 2. Native-like scrolling on touch devices.
  */
 .c-breadcrumb {
   @include font-size(14px);
   margin-bottom: $global-spacing-unit;
   white-space: nowrap;
-  overflow-x: scroll;
+  overflow: scroll; /* [1] */
+  overflow-x: scroll; /* [1] */
+  overflow-y: auto; /* [1] */
+  -webkit-overflow-scrolling: touch; /* [2] */
   background-color: $color-breadcrumb-bg;
   padding: $global-spacing-unit-tiny;
 }
