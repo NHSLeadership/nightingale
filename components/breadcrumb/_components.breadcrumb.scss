@@ -34,6 +34,14 @@
         margin-right: 4px;
       }
 
+      /**
+       * Ensure that the last item (in a scrolling Breadcrumb) doesn’t sit flush
+       * to the edge of the breadcrumb parent.
+       */
+      &:last-of-type {
+        padding-right: $global-spacing-unit-tiny;
+      }
+
     }
 
       .c-breadcrumb__link {
