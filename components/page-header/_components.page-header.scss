@@ -93,7 +93,6 @@
 
   .c-page-header__logo {
     float: left;
-    margin-bottom: $global-spacing-unit-tiny;
 
     @include mq($from: md) {
       float: none;
