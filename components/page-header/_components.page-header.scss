@@ -74,12 +74,31 @@
 
 
 
+  /* Inner
+     ======================================================================== */
+
+  .c-page-header__inner {
+    @include mq($from: md) {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+
+
+
+
   /* Logos
      ======================================================================== */
 
   .c-page-header__logo {
     float: left;
     margin-bottom: $global-spacing-unit-tiny;
+
+    @include mq($from: md) {
+      float: none;
+    }
+
   }
 
 
@@ -91,9 +110,15 @@
 
   .c-page-header__title {
     @include font-size(21px);
-    float: left;
     display: block;
+    float: left;
     clear: both;
+
+    @include mq($from: md) {
+      float: none;
+      clear: none;
+    }
+
   }
 
 
@@ -103,5 +128,9 @@
   /* Nav
      ======================================================================== */
 
+  .c-page-header__lockup,
   .c-page-header__nav {
+    @include mq($from: md) {
+      flex-grow: 1;
+    }
   }

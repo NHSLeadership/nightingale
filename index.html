@@ -103,82 +103,85 @@
 
   <header class="c-page-header" id="jsPageHeader">
 
-    <div class="o-wrapper">
+    <div class="o-wrapper  c-page-header__inner">
 
-      <img src="./assets/img/logo-nhs.png" alt="NHS" width="89" height="36" class="c-page-header__logo" />
+      <div class="c-page-header__lockup">
+        <img src="./assets/img/logo-nhs.png" alt="NHS" width="89" height="36" class="c-page-header__logo" />
+        <strong class="c-page-header__title"><img src="./assets/img/logo-sub.png" alt="Leadership Academy" width="241" height="25" /></strong>
+      </div>
 
-      <strong class="c-page-header__title"><img src="./assets/img/logo-sub.png" alt="Leadership Academy" width="241" height="25" /></strong>
+      <div class="c-page-header__nav">
+        <button class="c-nav-trigger" id="jsNavTrigger" aria-label="menu" data-expands="#jsNav">☰</button>
 
-      <button class="c-nav-trigger" id="jsNavTrigger" aria-label="menu" data-expands="#jsNav">☰</button>
+        <nav class="c-nav-primary" id="primaryNav">
 
-      <nav class="c-nav-primary  c-page-header__nav" id="primaryNav">
+          <ul class="c-nav-primary__list" id="jsNav">
 
-        <ul class="c-nav-primary__list" id="jsNav">
+            <li class="c-nav-primary__item">
+              <a href="#0" class="c-nav-primary__link">Item One</a>
+            </li>
 
-          <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link">Item One</a>
-          </li>
+            <li class="c-nav-primary__item">
+              <a href="#0" class="c-nav-primary__link">Item Two</a>
+            </li>
 
-          <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link">Item Two</a>
-          </li>
+            <li class="c-nav-primary__item">
+              <a href="#0" class="c-nav-primary__link">Item Three</a>
+            </li>
 
-          <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link">Item Three</a>
-          </li>
+            <li class="c-nav-primary__item">
+              <button class="c-nav-primary__link" data-expands="#item-4-sub" data-popup>Sub Nav</button>
 
-          <li class="c-nav-primary__item">
-            <button class="c-nav-primary__link" data-expands="#item-4-sub" data-popup>Sub Nav</button>
+              <nav class="c-nav-primary__sub  jsNavSub" id="item-4-sub" role="group" aria-label="sub navigation menu">
 
-            <nav class="c-nav-primary__sub  jsNavSub" id="item-4-sub" role="group" aria-label="sub navigation menu">
+                <div class="o-wrapper">
 
-              <div class="o-wrapper">
+                  <div class="o-layout">
+                    <div class="o-layout__item  u-6/12@lg">
 
-                <div class="o-layout">
-                  <div class="o-layout__item  u-6/12@lg">
+                      <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
 
-                    <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
+                      <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
+                      within this dropdown menu.</small></p>
 
-                    <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
-                    within this dropdown menu.</small></p>
+                      <p class="u-margin-bottom-small">
+                        <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
+                      </p>
 
-                    <p class="u-margin-bottom-small">
-                      <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
-                    </p>
+                    </div><!-- /.o-layout__item -->
+                    <div class="o-layout__item  u-6/12@lg">
 
-                  </div><!-- /.o-layout__item -->
-                  <div class="o-layout__item  u-6/12@lg">
+                      <ul class="c-nav-primary__sub-links">
+                        <li>
+                          <a href="#0">Sub Link 1</a>
+                        </li>
+                        <li>
+                          <a href="#0">Sub Link 2</a>
+                        </li>
+                        <li>
+                          <a href="#0">Sub Link 3</a>
+                        </li>
+                        <li>
+                          <a href="#0">Sub Link 4</a>
+                        </li>
+                      </ul>
 
-                    <ul class="c-nav-primary__sub-links">
-                      <li>
-                        <a href="#0">Sub Link 1</a>
-                      </li>
-                      <li>
-                        <a href="#0">Sub Link 2</a>
-                      </li>
-                      <li>
-                        <a href="#0">Sub Link 3</a>
-                      </li>
-                      <li>
-                        <a href="#0">Sub Link 4</a>
-                      </li>
-                    </ul>
+                    </div><!-- /.o-layout__item -->
+                  </div><!-- /.o-layout -->
 
-                  </div><!-- /.o-layout__item -->
-                </div><!-- /.o-layout -->
+                </div><!-- /.o-wrapper -->
 
-              </div><!-- /.o-wrapper -->
+              </nav>
 
-            </nav>
+            </li>
 
-          </li>
+            <li class="c-nav-primary__item">
+              <a href="#0" class="c-nav-primary__link">Item Five</a>
+            </li>
 
-          <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link">Item Five</a>
-          </li>
-
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      </div>
 
     </div>
 
