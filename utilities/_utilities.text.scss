@@ -1,0 +1,15 @@
+/* ==========================================================================
+   #TEXT
+   ========================================================================== */
+
+/**
+ * A series of utility classes for manipulating text (alignments, etc.).
+ */
+
+@each $direction in left, right, center {
+
+  .u-text-#{$direction} {
+    text-align: $direction !important;
+  }
+
+}

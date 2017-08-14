@@ -74,34 +74,32 @@
 
 
 
-  /* Logos
+  /* Inner
+   *
+   * Internal wrapper that constrains header’s content. Extends `.o-wrapper`.
      ======================================================================== */
 
-  .c-page-header__logo {
-    float: left;
-    margin-bottom: $global-spacing-unit-tiny;
+  .c-page-header__inner {
+    @include mq($from: md) {
+      display: flex;
+      align-items: flex-end;
+    }
   }
 
 
 
 
 
-  /* Title
-     ======================================================================== */
+    /* Componentry
+     *
+     * Inside the header, we have two main sections of components. On the left,
+     * we have logos (`.c-page-header__lockup`), and to the right we have navs
+     * and search boxes (`c-page-header__controls`).
+       ====================================================================== */
 
-  .c-page-header__title {
-    @include font-size(21px);
-    float: left;
-    display: block;
-    clear: both;
-  }
-
-
-
-
-
-  /* Nav
-     ======================================================================== */
-
-  .c-page-header__nav {
-  }
+    .c-page-header__lockup,
+    .c-page-header__controls {
+      @include mq($from: md) {
+        flex-grow: 1;
+      }
+    }
