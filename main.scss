@@ -49,6 +49,7 @@
  * Tabs.................Tabbed content switcher.
  * Sprite...............Icon spriting component
  * Media................Image and video containers
+ * Breadcrumb...........Breadcrumb-trail navigation.
  *
  * UTILITIES
  * Colors...............Utility classes generated from our color map.
@@ -117,6 +118,7 @@
 @import "components/tabs/components.tabs";
 @import "components/sprite/components.sprite";
 @import "components/media/components.media";
+@import "components/breadcrumb/components.breadcrumb";
 
 
 
