@@ -19,7 +19,7 @@
  */
 
 html {
-  font-family: "Frutiger", "Frutiger LT Pro", sans-serif;
+  font-family: "Frutiger", "Frutiger LT Pro", Arial, sans-serif;
   font-size: ($global-font-size / 16px) * 1em; /* [1] */
   line-height: $global-line-height / $global-font-size; /* [1] */
   overflow-y: scroll; /* [2] */

@@ -16,7 +16,6 @@
  * Normalize.css........Snapshot of Normalize.css as of v5.0.0.
  * Reset................Small reset on top of Normalize.css.
  * Shared...............Share vertical rhythm etc. across multiple elements.
- * Font-face............Custom web-front declarations.
  *
  * ELEMENTS
  * Page.................HTML and BODY element styles.
@@ -76,7 +75,6 @@
 @import "normalize.css/normalize";
 @import "generic/generic.reset";
 @import "generic/generic.shared";
-@import "generic/generic.font-face";
 
 
 
