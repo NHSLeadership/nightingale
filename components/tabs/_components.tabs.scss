@@ -9,6 +9,7 @@
   table-layout: fixed;
   width: 100%;
   text-align: center;
+  font-weight: bold;
 }
 
   .c-tabs__item {
@@ -16,21 +17,37 @@
   }
 
     .c-tabs__link {
+
+      &, &:visited {
+        color: $color-tabs;
+        text-decoration: none;
+      }
+
       display: block;
       border: 1px solid $color-tabs-border;
-      text-decoration: none;
-      padding: 4px;
-
-      &#{&} {
-        color: $color-tabs;
-      }
+      background-color: $color-tabs-bg;
+      padding: $global-spacing-unit-tiny;
 
       &.is-current {
         color: $color-tabs-current;
-        border: none;
-        border-bottom: 5px solid $color-tabs-border-current;
-        padding-bottom: 0;
+        background-color: $color-tabs-bg-current;
+        border-color: $color-tabs-border-current;
+        position: relative;
         pointer-events: none;
+
+        /**
+         * Faux heavy border underneath current tab links.
+         */
+        &::after {
+          content: "";
+          position: absolute;
+          right: -1px;
+          bottom: -1px;
+          left: -1px;
+          height: 4px;
+          background-color: $color-tabs-hilite-current;
+        }
+
       }
 
     }
