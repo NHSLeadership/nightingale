@@ -23,11 +23,21 @@ $_form-height: 36px;
 .c-form-list {
   list-style: none;
   margin-left: 0;
+
+  .c-form-region > &:last-child {
+    margin-bottom: 0;
+  }
+
 }
 
   .c-form-list__item,
   .c-form-list > li {
     margin-bottom: $global-spacing-unit-small;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
   }
 
 
