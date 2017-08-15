@@ -1163,14 +1163,26 @@
   </script>
 
 <script>
-    var headings = document.querySelectorAll("h2[id], h3[id], h4[id], h5[id], h6[id]");
+  var headings = document.querySelectorAll("h2[id], h3[id], h4[id], h5[id], h6[id]");
 
-    for (var i = 0; i < headings.length; i++) {
-      headings[i].innerHTML =
-        '<a href="#' + headings[i].id + '">' +
-        headings[i].innerText +
-        '</a>';
-    }
+  for (var i = 0; i < headings.length; i++) {
+    headings[i].innerHTML =
+      '<a href="#' + headings[i].id + '">' +
+      headings[i].innerText +
+      '</a>';
+  }
+</script>
+
+<script>
+
+  // Eww, eww, eww, ewwww! Forcing a repaint to get around a really, really odd
+  // Safari bug: https://twitter.com/csswizardry/status/897110955448029184
+  function ready() {
+    var page = document.getElementById('jsPage');
+    page.style.color = '#231f21';
+  };
+  document.addEventListener("DOMContentLoaded", ready);
+
 </script>
 
 </body>
