@@ -14,6 +14,22 @@ $_form-height: 36px;
 
 
 
+
+/* Regions
+ *
+ * Regions (usually FIELDSETs) are discrete chunks of a form.
+   ========================================================================== */
+
+.c-form-region {
+  border: none;
+  padding: $global-spacing-unit-small;
+  background-color: color('nhs-grey-pale');
+}
+
+
+
+
+
 /* Lists
  *
  * In order to display neat lists of form elements, wrap them in
