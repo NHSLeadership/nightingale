@@ -215,6 +215,8 @@
 
         <h2 id="comments">Comments</h2>
 
+        <p>Default Comment form style:</p>
+
         <form>
           <fieldset class="c-form-region">
 
@@ -227,14 +229,14 @@
                 <textarea rows="5" cols="50" class="c-form-input c-form-comment" id="comments2" placeholder="Enter your comment here…"></textarea>
               </li>
 
-              <li>
+              <li class="c-form-region__reveal">
                 <label for="name2">
                   Full Name (Required)
                 </label>
                 <input type="text" class="c-form-input" id="name2" placeholder="Jane Smith">
               </li>
 
-              <li>
+              <li class="c-form-region__reveal">
                 <label for="email2">
                   Email Address
                   <small>Email is used only for verification and will not be published</small>
@@ -242,11 +244,54 @@
                 <input type="email" class="c-form-input" id="email2" placeholder="name@domain.com" />
               </li>
 
-              <li>
+              <li class="c-form-region__reveal">
                 <button class="c-btn  c-btn--submit  c-btn--full">Submit</button>
               </li>
 
+              <li class="c-form-region__reveal">
+                <button class="c-btn  c-btn--secondary  c-btn--full">Cancel</button>
+              </li>
+
+            </ul>
+          </fieldset>
+        </form>
+
+        <p>Once <code>.is-active</code> class is added to the regions and
+        <code>textarea</code> (needs applying on a per-implementation
+        basis):</p>
+
+        <form>
+          <fieldset class="c-form-region  is-active">
+
+            <ul class="c-form-list">
+
               <li>
+                <label for="comments3">
+                  Leave a Comment
+                </label>
+                <textarea rows="5" cols="50" class="c-form-input  c-form-comment is-active" id="comments3" placeholder="Enter your comment here…">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</textarea>
+              </li>
+
+              <li class="c-form-region__reveal">
+                <label for="name3">
+                  Full Name (Required)
+                </label>
+                <input type="text" class="c-form-input" id="name3" placeholder="Jane Smith">
+              </li>
+
+              <li class="c-form-region__reveal">
+                <label for="email3">
+                  Email Address
+                  <small>Email is used only for verification and will not be published</small>
+                </label>
+                <input type="email" class="c-form-input" id="email3" placeholder="name@domain.com" />
+              </li>
+
+              <li class="c-form-region__reveal">
+                <button class="c-btn  c-btn--submit  c-btn--full">Submit</button>
+              </li>
+
+              <li class="c-form-region__reveal">
                 <button class="c-btn  c-btn--secondary  c-btn--full">Cancel</button>
               </li>
 

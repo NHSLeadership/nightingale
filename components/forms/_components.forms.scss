@@ -26,6 +26,19 @@ $_form-height: 36px;
   background-color: color('nhs-grey-pale');
 }
 
+  /**
+   * Sections of regions might need displaying only when we’re filling out the
+   * form. Apply the `.c-form-region__reveal` in order to toggle the display.
+   */
+  .c-form-region__reveal {
+    display: none;
+
+    .c-form-region.is-active & {
+      display: list-item;
+    }
+
+  }
+
 
 
 
@@ -249,6 +262,24 @@ select.c-form-input {
     }
 
   }
+
+
+
+
+
+/* Comments
+   ========================================================================== */
+
+.c-form-comment {
+  height: $_form-height;
+
+  &:active,
+  &:focus,
+  &.is-active {
+    height: auto;
+  }
+
+}
 
 
 
