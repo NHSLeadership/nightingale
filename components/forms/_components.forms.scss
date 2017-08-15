@@ -9,6 +9,7 @@
  * feel manageable.
  */
 
+$_form-height: 36px;
 
 
 
@@ -91,7 +92,7 @@
  * `select` elements need their height setting a little more explicitly.
  */
 select.c-form-input {
-  height: 36px;
+  height: $_form-height;
 }
 
 
