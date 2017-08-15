@@ -6,7 +6,6 @@
   margin-left: 0;
   list-style: none;
   display: table;
-  table-layout: fixed;
   width: 100%;
   text-align: center;
   font-weight: bold;
@@ -52,22 +51,42 @@
 
     }
 
+      /**
+       * 1. Hide tabs’ text on small screens…
+       * 2. …but show it when we have enough room…
+       * 3. …but always show the text on the current tab.
+       */
       .c-tabs__text {
-        display: none;
+        display: none; /* [1] */
 
         @include mq($from: md) {
-          display: inline;
+          display: inline; /* [2] */
+        }
+
+       .c-tabs__link.is-current > & {
+          display: inline; /* [3] */
         }
 
       }
 
+      /**
+       * 1. Show only tabs’ icons on smaller screens…
+       * 2. …but hide them on larger screens…
+       * 3. …and never show them on current tabs.
+       */
       .c-tabs__icon {
 
+        // Specificity bump to override the natural display of our spriting
+        // element/icons.
         &#{&} {
-          display: inline-block;
+          display: inline-block; /* [1] */
 
           @include mq($from: md) {
-            display: none;
+            display: none; /* [2] */
+          }
+
+          .c-tabs__link.is-current > & {
+            display: none; /* [3] */
           }
 
         }
