@@ -9,6 +9,7 @@
   width: 100%;
   text-align: center;
   font-weight: bold;
+  @include font-size(16px);
 }
 
   .c-tabs__item {
@@ -47,6 +48,12 @@
           background-color: $color-tabs-hilite-current;
         }
 
+      }
+
+      &.is-disabled,
+      &[disabled] {
+        pointer-events: none;
+        opacity: 0.5;
       }
 
     }
