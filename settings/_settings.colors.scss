@@ -213,10 +213,13 @@ $color-pagination-current: color('nhs-grey-pale') !default;
 // Tabs
 // ========================================================================== */
 
-$color-tabs:                color('nhs-grey-mid')  !default;
+$color-tabs:                color('nhs-grey-dark') !default;
+$color-tabs-bg:             color('nhs-grey-pale') !default;
 $color-tabs-current:        color('nhs-blue')      !default;
-$color-tabs-border:         color('nhs-grey-pale') !default;
-$color-tabs-border-current: color('nhs-blue')      !default;
+$color-tabs-bg-current:     color('white')         !default;
+$color-tabs-border:         color('white')         !default;
+$color-tabs-border-current: color('nhs-grey-pale') !default;
+$color-tabs-hilite-current: color('nhs-blue')      !default;
 
 
 
