@@ -132,6 +132,7 @@ select.c-form-input {
   .c-form-dropdown__select {
     cursor: pointer;
     background: none;
+    background-color: $color-form-bg;
     -webkit-appearance: none;
        -moz-appearance: none;
         -ms-appearance: none;
