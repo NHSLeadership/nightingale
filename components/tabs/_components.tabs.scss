@@ -51,3 +51,25 @@
       }
 
     }
+
+      .c-tabs__text {
+        display: none;
+
+        @include mq($from: md) {
+          display: inline;
+        }
+
+      }
+
+      .c-tabs__icon {
+
+        &#{&} {
+          display: inline-block;
+
+          @include mq($from: md) {
+            display: none;
+          }
+
+        }
+
+      }
