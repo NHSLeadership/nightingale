@@ -1,0 +1,56 @@
+/* ==========================================================================
+   #COMMENTS
+   ========================================================================== */
+
+.c-comments {
+  margin-left: 0;
+  list-style: none;
+  @include font-size(14px);
+}
+
+  .c-comments__item {
+    margin-bottom: $global-spacing-unit-small;
+  }
+
+    .c-comment__meta {
+      @include clearfix();
+    }
+
+      .c-comment__author {
+
+        &#{&} {
+          color: $color-comments-link;
+        }
+
+        float: left;
+      }
+
+      .c-comment__date {
+        float: right;
+      }
+
+    .c-comments__content {
+
+      > :last-child {
+        margin-bottom: 0;
+      }
+
+    }
+
+    .c-comments__footer {
+      text-align: right;
+    }
+
+      .c-comments__reply {
+
+        &#{&} {
+          color: $color-comments-link;
+        }
+
+      }
+
+.c-comments--replies {
+  margin-top: $global-spacing-unit;
+  padding-left: $global-spacing-unit-small - 4px;
+  border-left: 4px solid $color-comments-border;
+}
