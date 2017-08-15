@@ -1,0 +1,43 @@
+/* ==========================================================================
+   #TABLES
+   ========================================================================== */
+
+$_table-border: 1px solid #231f20;
+
+.c-table-data {
+  @include font-size(14px);
+  color: #425563;
+  border-bottom: $_table-border;
+
+  thead th {
+    @include font-size($global-font-size-h4);
+    font-weight: bold;
+    color: #231f20;
+    text-align: left;
+  }
+
+  tbody tr {
+    border-top: $_table-border;
+  }
+
+  th, td {
+    padding: $global-spacing-unit-tiny;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+  }
+
+}
+
+  .c-table-data__title {
+    &#{&} {
+      @include font-size($global-font-size-h3);
+      padding: 0;
+    }
+  }
