@@ -2,6 +2,8 @@
    #COMMENTS
    ========================================================================== */
 
+$_comment-border-width: 4px;
+
 /**
  * Full lists of comments (nestable for nested comment threads).
  */
@@ -72,7 +74,25 @@
    ========================================================================== */
 
 .c-comments--replies {
+  position: relative;
   margin-top: $global-spacing-unit;
-  padding-left: $global-spacing-unit-small - 4px;
-  border-left: 4px solid $color-comments-border;
+  padding-left: $global-spacing-unit-small - $_comment-border-width;
+  border-left: $_comment-border-width solid $color-comments-border;
+
+  /**
+   * Create a faux mask that will blot out the left-border or parent-replies,
+   * giving the illusion of a tree of comments.
+   *
+   * 1. Change this to red to see exactly what’s going on.
+   */
+  & &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -($global-spacing-unit-small + $_comment-border-width);
+    width: $_comment-border-width;
+    background-color: #fff; /* [1] */
+  }
+
 }
