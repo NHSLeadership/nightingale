@@ -23,6 +23,7 @@
  * Links................Basic hyperlink styles.
  * Lists................UL, OL element styles.
  * Images...............Sensible defaults for IMG elements.
+ * Bold.................Normalise bold styling.
  * Quotes...............Pared back quotation styling.
  * Small................Smallprint and legalese.
  * Details..............Basic details element for revealed content.
@@ -88,6 +89,7 @@
 @import "elements/elements.links";
 @import "elements/elements.lists";
 @import "elements/elements.images";
+@import "elements/elements.bold";
 @import "elements/elements.quotes";
 @import "elements/elements.small";
 @import "elements/elements.details";
