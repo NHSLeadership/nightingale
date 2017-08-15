@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
 
-  <link rel="preload" href="/assets/fonts/0811514e-6660-4043-92c1-23d0b8caaa2f.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/assets/fonts/8c92eb68-ce37-4962-a9f4-5b47d336bd1c.woff2" as="font" type="font/woff2" crossorigin />
-
   <title>Nightingale</title>
 
   <link rel="stylesheet" href="./dist/main.css" />
@@ -103,82 +100,84 @@
 
   <header class="c-page-header" id="jsPageHeader">
 
-    <div class="o-wrapper">
+    <div class="o-wrapper  c-page-header__inner">
 
-      <img src="./assets/img/logo-nhs.png" alt="NHS" width="89" height="36" class="c-page-header__logo" />
+      <a href="#0" class="c-page-header__lockup">
+        <img src="./assets/img/logos/nhs-leadership-academy.png" alt="NHS Leadership Academy" width="204" height="62" class="c-page-header__logo" />
+      </a>
 
-      <strong class="c-page-header__title"><img src="./assets/img/logo-sub.png" alt="Leadership Academy" width="241" height="25" /></strong>
+      <div class="c-page-header__controls">
+        <button class="c-nav-trigger" id="jsNavTrigger" aria-label="menu" data-expands="#jsNav">☰</button>
 
-      <button class="c-nav-trigger" id="jsNavTrigger" aria-label="menu" data-expands="#jsNav">☰</button>
+        <nav class="c-nav-primary" id="primaryNav">
 
-      <nav class="c-nav-primary  c-page-header__nav" id="primaryNav">
+          <ul class="c-nav-primary__list" id="jsNav">
 
-        <ul class="c-nav-primary__list" id="jsNav">
+            <li class="c-nav-primary__item">
+              <a href="#0" class="c-nav-primary__link">Item One</a>
+            </li>
 
-          <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link">Item One</a>
-          </li>
+            <li class="c-nav-primary__item">
+              <a href="#0" class="c-nav-primary__link">Item Two</a>
+            </li>
 
-          <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link">Item Two</a>
-          </li>
+            <li class="c-nav-primary__item">
+              <a href="#0" class="c-nav-primary__link">Item Three</a>
+            </li>
 
-          <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link">Item Three</a>
-          </li>
+            <li class="c-nav-primary__item">
+              <button class="c-nav-primary__link" data-expands="#item-4-sub" data-popup>Sub Nav</button>
 
-          <li class="c-nav-primary__item">
-            <button class="c-nav-primary__link" data-expands="#item-4-sub" data-popup>Sub Nav</button>
+              <nav class="c-nav-primary__sub  jsNavSub" id="item-4-sub" role="group" aria-label="sub navigation menu">
 
-            <nav class="c-nav-primary__sub  jsNavSub" id="item-4-sub" role="group" aria-label="sub navigation menu">
+                <div class="o-wrapper">
 
-              <div class="o-wrapper">
+                  <div class="o-layout">
+                    <div class="o-layout__item  u-6/12@lg">
 
-                <div class="o-layout">
-                  <div class="o-layout__item  u-6/12@lg">
+                      <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
 
-                    <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
+                      <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
+                      within this dropdown menu.</small></p>
 
-                    <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
-                    within this dropdown menu.</small></p>
+                      <p class="u-margin-bottom-small">
+                        <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
+                      </p>
 
-                    <p class="u-margin-bottom-small">
-                      <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
-                    </p>
+                    </div><!-- /.o-layout__item -->
+                    <div class="o-layout__item  u-6/12@lg">
 
-                  </div><!-- /.o-layout__item -->
-                  <div class="o-layout__item  u-6/12@lg">
+                      <ul class="c-nav-primary__sub-links">
+                        <li>
+                          <a href="#0">Sub Link 1</a>
+                        </li>
+                        <li>
+                          <a href="#0">Sub Link 2</a>
+                        </li>
+                        <li>
+                          <a href="#0">Sub Link 3</a>
+                        </li>
+                        <li>
+                          <a href="#0">Sub Link 4</a>
+                        </li>
+                      </ul>
 
-                    <ul class="c-nav-primary__sub-links">
-                      <li>
-                        <a href="#0">Sub Link 1</a>
-                      </li>
-                      <li>
-                        <a href="#0">Sub Link 2</a>
-                      </li>
-                      <li>
-                        <a href="#0">Sub Link 3</a>
-                      </li>
-                      <li>
-                        <a href="#0">Sub Link 4</a>
-                      </li>
-                    </ul>
+                    </div><!-- /.o-layout__item -->
+                  </div><!-- /.o-layout -->
 
-                  </div><!-- /.o-layout__item -->
-                </div><!-- /.o-layout -->
+                </div><!-- /.o-wrapper -->
 
-              </div><!-- /.o-wrapper -->
+              </nav>
 
-            </nav>
+            </li>
 
-          </li>
+            <li class="c-nav-primary__item">
+              <a href="#0" class="c-nav-primary__link">Item Five</a>
+            </li>
 
-          <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link">Item Five</a>
-          </li>
-
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      </div>
 
     </div>
 
@@ -664,6 +663,115 @@
 
         <hr class="c-divider" />
 
+        <h2 id="tables">Tables</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Lorem</th>
+              <th>Ipsum</th>
+              <th>Dolor</th>
+              <th>Sit</th>
+              <th>Amet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>Dolor</td>
+              <td>Sit</td>
+              <td>Amet</td>
+            </tr>
+            <tr>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>Dolor</td>
+              <td>Sit</td>
+              <td>Amet</td>
+            </tr>
+            <tr>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>Dolor</td>
+              <td>Sit</td>
+              <td>Amet</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="c-table-data">
+          <thead>
+            <tr>
+              <th class="c-table-data__title" colspan="100%">Table Title</th>
+            </tr>
+            <tr>
+              <td colspan="100%">Copy for brief explanation of table, which can span two to three lines maximum.</td>
+            </tr>
+            <tr>
+              <th>Lorem</th>
+              <th>Ipsum</th>
+              <th>Dolor</th>
+              <th>Sit</th>
+              <th class="u-text-right">Amet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>Dolor</td>
+              <td>Sit</td>
+              <td class="u-text-right">947,593,174</td>
+            </tr>
+            <tr>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>Dolor</td>
+              <td>Sit</td>
+              <td class="u-text-right">947,593,174</td>
+            </tr>
+            <tr>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>Dolor</td>
+              <td>Sit</td>
+              <td class="u-text-right">947,593,174</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="c-table-data">
+          <thead>
+            <tr>
+              <th class="c-table-data__title" colspan="100%">Table Title</th>
+            </tr>
+            <tr>
+              <td colspan="100%">Copy for brief explanation of table, which can span two to three lines maximum.</td>
+            </tr>
+            <tr>
+              <th>Lorem</th>
+              <td class="u-text-right"><a href="#84">Refresh data</a></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lorem</td>
+              <td class="u-text-right">947,593,174</td>
+            </tr>
+            <tr>
+              <td>Lorem</td>
+              <td class="u-text-right">947,593,174</td>
+            </tr>
+            <tr>
+              <td>Lorem</td>
+              <td class="u-text-right">947,593,174</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="c-divider" />
+
         <h2 id="headings">Headings</h2>
 
         <h1>Heading Level 1</h1>
@@ -1075,14 +1183,26 @@
   </script>
 
 <script>
-    var headings = document.querySelectorAll("h2[id], h3[id], h4[id], h5[id], h6[id]");
+  var headings = document.querySelectorAll("h2[id], h3[id], h4[id], h5[id], h6[id]");
 
-    for (var i = 0; i < headings.length; i++) {
-      headings[i].innerHTML =
-        '<a href="#' + headings[i].id + '">' +
-        headings[i].innerText +
-        '</a>';
-    }
+  for (var i = 0; i < headings.length; i++) {
+    headings[i].innerHTML =
+      '<a href="#' + headings[i].id + '">' +
+      headings[i].innerText +
+      '</a>';
+  }
+</script>
+
+<script>
+
+  // Eww, eww, eww, ewwww! Forcing a repaint to get around a really, really odd
+  // Safari bug: https://twitter.com/csswizardry/status/897110955448029184
+  function ready() {
+    var page = document.getElementById('jsPage');
+    page.style.color = '#231f21';
+  };
+  document.addEventListener("DOMContentLoaded", ready);
+
 </script>
 
 </body>

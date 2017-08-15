@@ -16,7 +16,6 @@
  * Normalize.css........Snapshot of Normalize.css as of v5.0.0.
  * Reset................Small reset on top of Normalize.css.
  * Shared...............Share vertical rhythm etc. across multiple elements.
- * Font-face............Custom web-front declarations.
  *
  * ELEMENTS
  * Page.................HTML and BODY element styles.
@@ -24,10 +23,12 @@
  * Links................Basic hyperlink styles.
  * Lists................UL, OL element styles.
  * Images...............Sensible defaults for IMG elements.
+ * Bold.................Normalise bold styling.
  * Quotes...............Pared back quotation styling.
  * Small................Smallprint and legalese.
  * Details..............Basic details element for revealed content.
  * Forms................Element-only form styles.
+ * Tables...............Table elements for tabular data.
  *
  * OBJECTS
  * Wrappers.............Page-constraints.
@@ -50,6 +51,7 @@
  * Sprite...............Icon spriting component
  * Media................Image and video containers
  * Breadcrumb...........Breadcrumb-trail navigation.
+ * Tables...............More complex styles for data tables
  *
  * UTILITIES
  * Colors...............Utility classes generated from our color map.
@@ -58,6 +60,7 @@
  * Z-Index..............A suite of stacking utility classes.
  * Display..............Show/hide/etc. utility classes.
  * Hints................Helpful pointers to prevent developers misusing things.
+ * Text.................Text and font utility classes.
  */
 
 @import "settings/all";
@@ -76,7 +79,6 @@
 @import "normalize.css/normalize";
 @import "generic/generic.reset";
 @import "generic/generic.shared";
-@import "generic/generic.font-face";
 
 
 
@@ -87,10 +89,12 @@
 @import "elements/elements.links";
 @import "elements/elements.lists";
 @import "elements/elements.images";
+@import "elements/elements.bold";
 @import "elements/elements.quotes";
 @import "elements/elements.small";
 @import "elements/elements.details";
 @import "elements/elements.forms";
+@import "elements/elements.tables";
 
 
 
@@ -119,6 +123,7 @@
 @import "components/sprite/components.sprite";
 @import "components/media/components.media";
 @import "components/breadcrumb/components.breadcrumb";
+@import "components/tables/components.tables";
 
 
 
@@ -130,3 +135,4 @@
 @import "utilities/utilities.z-index";
 @import "utilities/utilities.display";
 @import "utilities/utilities.hints";
+@import "utilities/utilities.text";
