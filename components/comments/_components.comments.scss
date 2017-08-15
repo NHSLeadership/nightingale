@@ -2,16 +2,25 @@
    #COMMENTS
    ========================================================================== */
 
+/**
+ * Full lists of comments (nestable for nested comment threads).
+ */
 .c-comments {
   margin-left: 0;
   list-style: none;
   @include font-size(14px);
 }
 
+  /**
+   * Scope for each individual comment.
+   */
   .c-comments__item {
     margin-bottom: $global-spacing-unit-small;
   }
 
+    /**
+     * Header area of a user comment.
+     */
     .c-comment__meta {
       @include clearfix();
     }
@@ -29,6 +38,9 @@
         float: right;
       }
 
+    /**
+     * User input is simply contained in a content wrapper.
+     */
     .c-comments__content {
 
       > :last-child {
@@ -37,6 +49,9 @@
 
     }
 
+    /**
+     * Any relevant footer-like information (currently just a ‘reply’ link).
+     */
     .c-comments__footer {
       text-align: right;
     }
@@ -48,6 +63,13 @@
         }
 
       }
+
+/* Nested Comments
+ *
+ * Comment threads/replies reuse and extend the regular comment listing style.
+ * These are, in theory, infinitely nestable, but I imagine the depth will be
+ * limited at platform level (ie. WordPress, Moodle).
+   ========================================================================== */
 
 .c-comments--replies {
   margin-top: $global-spacing-unit;
