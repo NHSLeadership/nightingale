@@ -218,6 +218,167 @@
 
         <hr class="c-divider" />
 
+        <h2 id="comments">Comments</h2>
+
+        <p>Default Comment form style:</p>
+
+        <form>
+          <fieldset class="c-form-region">
+
+            <ul class="c-form-list">
+
+              <li>
+                <label for="comments2">
+                  Leave a Comment
+                </label>
+                <textarea rows="5" cols="50" class="c-form-input c-form-comment" id="comments2" placeholder="Enter your comment here…"></textarea>
+              </li>
+
+              <li class="c-form-region__reveal">
+                <label for="name2">
+                  Full Name (Required)
+                </label>
+                <input type="text" class="c-form-input" id="name2" placeholder="Jane Smith">
+              </li>
+
+              <li class="c-form-region__reveal">
+                <label for="email2">
+                  Email Address
+                  <small>Email is used only for verification and will not be published</small>
+                </label>
+                <input type="email" class="c-form-input" id="email2" placeholder="name@domain.com" />
+              </li>
+
+              <li class="c-form-region__reveal">
+                <button class="c-btn  c-btn--submit  c-btn--full">Submit</button>
+              </li>
+
+              <li class="c-form-region__reveal">
+                <button class="c-btn  c-btn--secondary  c-btn--full">Cancel</button>
+              </li>
+
+            </ul>
+          </fieldset>
+        </form>
+
+        <p>Once <code>.is-active</code> class is added to the regions and
+        <code>textarea</code> (needs applying on a per-implementation
+        basis):</p>
+
+        <form>
+          <fieldset class="c-form-region  is-active">
+
+            <ul class="c-form-list">
+
+              <li>
+                <label for="comments3">
+                  Leave a Comment
+                </label>
+                <textarea rows="5" cols="50" class="c-form-input  c-form-comment is-active" id="comments3" placeholder="Enter your comment here…">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</textarea>
+              </li>
+
+              <li class="c-form-region__reveal">
+                <label for="name3">
+                  Full Name (Required)
+                </label>
+                <input type="text" class="c-form-input" id="name3" placeholder="Jane Smith">
+              </li>
+
+              <li class="c-form-region__reveal">
+                <label for="email3">
+                  Email Address
+                  <small>Email is used only for verification and will not be published</small>
+                </label>
+                <input type="email" class="c-form-input" id="email3" placeholder="name@domain.com" />
+              </li>
+
+              <li class="c-form-region__reveal">
+                <button class="c-btn  c-btn--submit  c-btn--full">Submit</button>
+              </li>
+
+              <li class="c-form-region__reveal">
+                <button class="c-btn  c-btn--secondary  c-btn--full">Cancel</button>
+              </li>
+
+            </ul>
+          </fieldset>
+        </form>
+
+        <h3>4 Comments</h3>
+
+        <ol class="c-comments">
+
+          <li class="c-comments__item">
+            <header class="c-comment__meta">
+              <a href="#0" class="c-comment__author">Paul Design</a>
+              <time class="c-comment__date">2017-08-15</time>
+            </header>
+            <div class="c-comments__content">
+              <p>There are number of instructions to be followed at the time of
+              refilling an inkjet cartridge. So whenever your printer ink runs
+              dry you need to follow the below steps for inkjet cartridge
+              refill.</p>
+            </div>
+            <footer class="c-comments__footer">
+              <a href="#0" class="c-comments__reply">Reply to comment</a>
+            </footer>
+
+            <ol class="c-comments  c-comments--replies">
+
+              <li class="c-comments__item">
+                <header class="c-comment__meta">
+                  <a href="#0" class="c-comment__author">Paul Design</a>
+                  <time class="c-comment__date">2017-08-15</time>
+                </header>
+                <div class="c-comments__content">
+                  <p>Many centuries ago, man was able to tell the time by
+                  looking at the sun and its position in the sky. Then came the
+                  sundial and finally the clocks and watches.</p>
+                </div>
+                <footer class="c-comments__footer">
+                  <a href="#0" class="c-comments__reply">Reply to comment</a>
+                </footer>
+
+                  <ol class="c-comments  c-comments--replies">
+
+                    <li class="c-comments__item">
+                      <header class="c-comment__meta">
+                        <a href="#0" class="c-comment__author">Paul Design</a>
+                        <time class="c-comment__date">2017-08-15</time>
+                      </header>
+                      <div class="c-comments__content">
+                        <p>I’m a little teapot short and stout. Here is my
+                        handle. Here is my spout. When I get all steamed up,
+                        Hear me shout! Just tip me over And pour me out.</p>
+                        <p>I’m a clever teapot, yes it’s true. Here’s an example
+                        of what I can do. I can turn my handle to a spout. Just
+                        tip me over and pour me out</p>
+                      </div>
+                    </li>
+
+                  </ol>
+              </li>
+
+              <li class="c-comments__item">
+                <header class="c-comment__meta">
+                  <a href="#0" class="c-comment__author">Paul Design</a>
+                  <time class="c-comment__date">2017-08-15</time>
+                </header>
+                <div class="c-comments__content">
+                  <p>Successful businesses can have many things in common, today
+                  we’ll look at the big ‘R’of recognition and how a digital
+                  advertising may help.</p>
+                </div>
+              </li>
+
+            </ol>
+
+          </li>
+
+        </ol>
+
+        <hr class="c-divider" />
+
         <h2 id="tabs">Tabs</h2>
 
         <ul class="c-tabs">
@@ -883,7 +1044,7 @@
         <li>List item</li>
 
         <p>
-          <a href-"#0" class="c-btn">Button</a>
+          <a href="#0" class="c-btn">Button</a>
           <span class="c-sprite"></span>
         </p>
 
