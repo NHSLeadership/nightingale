@@ -18,11 +18,15 @@ general:
     - "package.json"
 
 test:
-  override:
-    - yarn deploy
+  pre:
+    - yarn circle
 
 deployment:
   production:
     commands:
-      - aws s3 sync dist/ s3://nhs-nightingale/${CIRCLE_BRANCH}/${CIRCLE_BUILD_NUM}
-      - aws s3 sync dist/ s3://nhs-nightingale/latest --delete
+      - |
+        if [ "${CIRCLE_PROJECT_REPONAME}" == "develop" ]; then
+          aws s3 sync dist/ s3://nhs-nightingale/latest --delete
+        else
+          aws s3 sync dist/ s3://nhs-nightingale/${CIRCLE_BRANCH}/${CIRCLE_BUILD_NUM}
+        fi
