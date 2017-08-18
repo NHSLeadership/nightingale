@@ -22,11 +22,11 @@ test:
     - yarn circle
 
 deployment:
-  development:
-    branch: /tkt-*/
+  versioned:
+    branch: /tkt-.*/
     commands:
       - aws s3 sync dist/ s3://${BUCKET}/${CIRCLE_BRANCH}/${CIRCLE_BUILD_NUM}
-  production:
+  develop:
     branch: develop
     commands:
       - aws s3 sync dist/ s3://${BUCKET}/latest --delete
