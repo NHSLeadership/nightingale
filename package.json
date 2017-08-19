@@ -12,6 +12,8 @@
   },
   "scripts": {
     "deploy": "mkdir -p ./dist && cat ./main.scss | node_modules/.bin/node-sass --precision 9 --include-path node_modules/ --output-style expanded > dist/main.css",
+    "assets": "cp -R ./assets/ dist/assets/",
+    "circle": "npm run deploy && npm run assets",
     "lint": "stylelint '**/*.scss' --syntax scss",
     "watch": "node_modules/.bin/node-sass --precision 9 --watch main.scss --include-path node_modules/ --output-style expanded --output dist"
   },

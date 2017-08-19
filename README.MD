@@ -1,5 +1,7 @@
 # Nightingale
 
+[![CircleCI](https://circleci.com/gh/NHSLeadership/nightingale/tree/develop.svg?style=svg)](https://circleci.com/gh/NHSLeadership/nightingale/tree/develop)
+
 ## Building the CSS
 
 1. Ensure you’re on the correct branch and that your copy is up-to-date with the
