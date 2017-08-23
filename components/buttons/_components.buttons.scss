@@ -24,10 +24,18 @@
   text-decoration: none;
   padding: 4px $global-spacing-unit-large; /* [6] */
   border: 1px solid transparent;
+  box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.1),
+              0 2px 2px 0 rgba($color-btn-shadow, 0.8);
+
+  &:hover {
+    box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.1),
+                0 8px 8px 0 rgba($color-btn-shadow, 0.45);
+  }
 
   &:focus {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) inset;
-    border-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba($color-btn-shadow, 0.1) inset,
+                0 2px 2px 0 rgba($color-btn-shadow, 0.3) inset;
+    border-color: transparent;
   }
 
 }
@@ -59,6 +67,7 @@
 
 .c-btn--primary {
   background-color: $color-btn-primary-bg;
+  border-color: rgba($color-btn-primary-border, 0.5);
 
   /**
    * Our global `:visited` state overrides the button’s color, so we use this
@@ -75,12 +84,17 @@
 
 }
 
+
+
+
+
 .c-btn--secondary {
   background-color: $color-btn-secondary-bg;
+  border-color: rgba($color-btn-secondary-border, 0.1);
 
-  &,
+  &:hover,
   &:focus {
-    border-color: $color-btn-secondary-border;
+    background-color: $color-btn-secondary-bg-hover;
   }
 
   /**
@@ -108,8 +122,8 @@
 .c-btn.is-disabled,
 .c-btn[disabled] {
   pointer-events: none;
-  background-color: $color-btn-disabled-bg;
-  color: $color-btn-disabled;
+  opacity: 0.5;
+  border-color: transparent;
 }
 
 
