@@ -108,11 +108,11 @@
          * Dropdown toggle arrow. This is , completely bodged in for now; there
          * will be a separate task to actually swap this out for a proper icon.
          */
-        &[aria-expanded="false"]::after {
+        &[aria-expanded="false"]:after {
           @include sprite(arrow-down, true);
         }
 
-        &[aria-expanded="true"]::after {
+        &[aria-expanded="true"]:after {
           @include sprite(arrow-up, true);
         }
 

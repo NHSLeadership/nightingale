@@ -28,7 +28,7 @@ a {
 
   /* stylelint-disable selector-no-qualifying-type */
 
-    &[target="_blank"]::after {
+    &[target="_blank"]:after {
       @include sprite(new-window, true)
       margin-left: 2px;
       position: relative;

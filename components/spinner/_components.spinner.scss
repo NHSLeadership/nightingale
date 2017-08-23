@@ -41,7 +41,7 @@
      * 1. Center the spinner in its bounding box.
      * 2. The size of the actual spinner is governed by its font-size.
      */
-    &::after {
+    &:after {
       content: "";
       position: absolute;
       top: 50%; /* [1] */
@@ -74,7 +74,7 @@
 
   @supports (animation: 0.5s spinner) {
 
-    &::after {
+    &:after {
       border-color: $color-spinner-light;
       border-top-color: transparent;
     }

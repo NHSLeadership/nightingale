@@ -148,7 +148,7 @@ select.c-form-input {
 .c-form-dropdown {
   position: relative;
 
-  &::after {
+  &:after {
     @include sprite(arrow-down, true);
     position: absolute;
     top: 50%;
@@ -217,7 +217,7 @@ select.c-form-input {
       position: relative;
       border-color: transparent;
 
-      &::after {
+      &:after {
         content: "";
         position: absolute;
         top: 5px;
@@ -250,7 +250,7 @@ select.c-form-input {
     /**
      * Checked radio boxes look very different to their checkbox counterparts.
      */
-    .c-form-checkbox--radio > .c-form-checkbox__input:checked + &::after {
+    .c-form-checkbox--radio > .c-form-checkbox__input:checked + &:after {
       top: 5px;
       left: 5px;
       border: none;

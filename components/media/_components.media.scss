@@ -26,7 +26,7 @@
     /**
      * Translucent overlay covering the media.
      */
-    &::after {
+    &:after {
       content: "";
       position: absolute;
       top: 0;
@@ -171,7 +171,7 @@
         /**
          * …and replace it with our sprited icon.
          */
-        &::after {
+        &:after {
           @include sprite(arrow-down, true);
           position: absolute;
           top: 50%;

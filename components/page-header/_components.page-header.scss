@@ -30,7 +30,7 @@
    * Create a faux double border effect by dropping an absolutely positioned
    * pseudo-element after the header.
    */
-  &::after {
+  &:after {
     content: "";
     position: absolute;
     right: 0;
@@ -63,7 +63,7 @@
    * because it also doubles up as our clearfix. If we can ever drop the
    * clearfix from the parent element we can just destroy this pseudo-element.
    */
-  &::after {
+  &:after {
     position: static;
     border-bottom: none;
   }

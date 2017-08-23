@@ -29,7 +29,7 @@
     .c-breadcrumb__item {
       display: inline-block;
 
-      & + &::before {
+      & + &:before {
         @include sprite('arrow-right', generated);
         margin-right: 4px;
       }

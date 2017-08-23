@@ -38,7 +38,7 @@
         /**
          * Faux heavy border underneath current tab links.
          */
-        &::after {
+        &:after {
           content: "";
           position: absolute;
           right: -1px;

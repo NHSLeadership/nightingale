@@ -85,7 +85,7 @@ $_comment-border-width: 4px;
    *
    * 1. Change this to red to see exactly what’s going on.
    */
-  & &::after {
+  & &:after {
     content: "";
     position: absolute;
     top: 0;

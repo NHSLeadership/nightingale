@@ -145,7 +145,7 @@
 //
 // This mixin is used to actually create sprites. Pass in a named sprite (found
 // in `$global-sprite`) and optionally whether or not the sprite will be held in
-// generated content (i.e. `::before` or `::after`).
+// generated content (i.e. `:before` or `:after`).
 //
 // Usage:
 //
@@ -153,7 +153,7 @@
 //       @include sprite(arrow-down);
 //     }
 //
-//     .bar::after {
+//     .bar:after {
 //       @include sprite(info, true)
 //     }
 //
