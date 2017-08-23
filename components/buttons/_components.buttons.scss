@@ -136,3 +136,12 @@
 .c-btn--full {
   width: 100%;
 }
+
+/**
+ * Natural buttons only take up as little content as they need to, with one
+ * character’s worth of padding either side.
+ */
+.c-btn--natural {
+  padding-right: 1ch;
+  padding-left: 1ch;
+}
