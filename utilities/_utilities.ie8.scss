@@ -6,6 +6,17 @@
 
 .ie8 {
 
+  summary,
+  details[open] > summary {
+    text-decoration: none;
+    color: inherit;
+    cursor: text;
+  }
+
+
+
+
+
   /**
    * Because IE8 doesn’t support media queries, let’s just single-column it all
    * at a reasonable width.
