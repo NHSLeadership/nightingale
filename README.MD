@@ -20,5 +20,3 @@
 Nightingale is developed using BrowserStack for cross-browser testing.
 
 ![screen shot 2017-08-21 at 11 44 15](https://user-images.githubusercontent.com/23170050/29515891-23e80f46-8666-11e7-9a35-1136d498d61c.png)
-
-

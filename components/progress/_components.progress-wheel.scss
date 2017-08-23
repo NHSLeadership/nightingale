@@ -25,16 +25,16 @@ $_wheel-increments: 1;
   margin-left:  auto;
 
   &,
-  &::before,
-  &::after {
+  &:before,
+  &:after {
     width:  $_wheel-size;
     height: $_wheel-size;
     border: $_wheel-thickness solid transparent;
     border-radius: 100%;
   }
 
-  &::before,
-  &::after {
+  &:before,
+  &:after {
     content: "";
     position: absolute;
     top:  -$_wheel-thickness;
@@ -52,7 +52,7 @@ $_wheel-increments: 1;
   /**
    * This element forms the actual progress bar…
    */
-  &::before {
+  &:before {
     border-bottom-color: $color-progress-wheel-bar;
     border-left-color: $color-progress-wheel-bar;
     transform: rotate(45deg);
@@ -61,7 +61,7 @@ $_wheel-increments: 1;
   /**
    * …and this element is its mask
    */
-  &::after {
+  &:after {
     border-left-color: $color-progress-wheel-fill;
     border-bottom-color: $color-progress-wheel-fill;
     transform: rotate(45deg);
@@ -92,7 +92,7 @@ $_wheel-increments: 1;
  */
 @for $i from 1 through (100 / $_wheel-increments) {
 
-  [data-percent="#{$i * $_wheel-increments}"]::before {
+  [data-percent="#{$i * $_wheel-increments}"]:before {
     transform: rotate(45 + (($i * $_wheel-increments) * 3.6) + deg);
 
     @if (($i * $_wheel-increments) >= 50) {
@@ -103,7 +103,7 @@ $_wheel-increments: 1;
 
   }
 
-  [data-percent="#{$i * $_wheel-increments}"]::after {
+  [data-percent="#{$i * $_wheel-increments}"]:after {
 
     // Beyond 50% complete, the mask needs to start chasing the bar and
     // actually begin to form its beginnings…
