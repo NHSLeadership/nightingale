@@ -29,6 +29,25 @@
     padding-left: 0;
   }
 
+
+
+
+
+  /**
+   * Custom checkboxes ain’t gonna work in IE8.
+   */
+  .c-form-checkbox__input {
+    position: static;
+  }
+
+  .c-form-checkbox__faux {
+    font-size: inherit;
+    width: auto;
+    height: auto;
+    border: none;
+    margin-right: 0;
+  }
+
 }
 
 }

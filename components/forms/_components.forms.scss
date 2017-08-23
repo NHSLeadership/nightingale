@@ -194,7 +194,7 @@ select.c-form-input {
    * 2. …and remove it from document flow.
    */
   .c-form-checkbox__input {
-    @include opacity(0); /* [1] */
+    opacity: 0; /* [1] */
     position: absolute; /* [2] */
   }
 
