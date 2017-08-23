@@ -26,8 +26,10 @@
   border: 1px solid transparent;
   box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.1),
               0 2px 2px 0 rgba($color-btn-shadow, 0.8);
+  transition: 0.2s;
 
   &:hover {
+    transform: translateY(-1px);
     box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.1),
                 0 8px 8px 0 rgba($color-btn-shadow, 0.45);
   }
