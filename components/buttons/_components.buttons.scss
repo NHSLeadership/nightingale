@@ -24,14 +24,12 @@
   text-decoration: none;
   padding: 4px $global-spacing-unit-large; /* [6] */
   border: 1px solid transparent;
-  box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.1),
-              0 2px 2px 0 rgba($color-btn-shadow, 0.8);
   transition: 0.2s;
 
   &:hover {
     transform: translateY(-1px);
-    box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.1),
-                0 8px 8px 0 rgba($color-btn-shadow, 0.45);
+    box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.2),
+                0 8px 10px 0 rgba($color-btn-shadow, 0.4);
   }
 
   &:focus {
@@ -51,6 +49,8 @@
 
 .c-btn--submit {
   background-color: $color-btn-submit-bg;
+	border-color: rgba($color-btn-primary-border, 0.5);
+	box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.7);
 
   /**
    * Our global `:visited` state overrides the button’s color, so we use this
@@ -59,8 +59,8 @@
   &#{&} {
     color: $color-btn-submit;
   }
-
-  &:hover,
+ 
+  &:hover,	
   &:focus {
     background-color: $color-btn-submit-bg-hover;
   }
@@ -70,6 +70,7 @@
 .c-btn--primary {
   background-color: $color-btn-primary-bg;
   border-color: rgba($color-btn-primary-border, 0.5);
+	box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.8);
 
   /**
    * Our global `:visited` state overrides the button’s color, so we use this
@@ -93,10 +94,12 @@
 .c-btn--secondary {
   background-color: $color-btn-secondary-bg;
   border-color: rgba($color-btn-secondary-border, 0.1);
+	box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.5);
 
   &:hover,
   &:focus {
     background-color: $color-btn-secondary-bg-hover;
+	  
   }
 
   /**
