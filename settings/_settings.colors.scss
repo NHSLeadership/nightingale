@@ -99,10 +99,10 @@ $color-btn-submit:          color('white')   !default;
 $color-btn-submit-bg:       color('success') !default;
 $color-btn-submit-bg-hover: darken(color('success'), 5%)    !default;
 
-$color-btn-primary:          color('white')                 !default;
-$color-btn-primary-bg:       color('nhs-blue')              !default;
+$color-btn-primary:          color('white')                !default;
+$color-btn-primary-bg:       color('nhs-blue')             !default;
 $color-btn-primary-bg-hover: darken(color('nhs-blue'), 5%) !default;
-$color-btn-primary-border:   color('white')                 !default;
+$color-btn-primary-border:   color('white')                !default;
 
 $color-btn-secondary:          color('nhs-blue')           !default;
 $color-btn-secondary-bg:       color('white')              !default;
