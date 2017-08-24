@@ -133,7 +133,7 @@
             <li class="c-nav-primary__item">
               <button class="c-nav-primary__link">Sub nav</button>
 
-              <nav class="c-nav-primary__sub">
+              <nav class="c-nav-primary__sub  jsNavSub">
 
                 <div class="o-wrapper">
 
@@ -1247,7 +1247,7 @@
       var target = document.getElementById(expander.getAttribute('data-expands'));
       target.style.display = target.style.display === 'none' ? 'block' : 'none';
 
-      var header = document.querySelector('.c-page-header');
+      var header = document.querySelector('#jsPageHeader');
       var headerClasses = header.getAttribute('class');
 
       if (expanded) {
@@ -1292,7 +1292,7 @@
         var ul = item.parentNode;
         var index = Array.prototype.indexOf.call(ul.children, item);
         item.setAttribute('data-nav-index', index + 1);
-        var sub = item.querySelector('.c-nav-primary__sub');
+        var sub = item.querySelector('.jsNavSub');
         if (sub) {
           sub.setAttribute('id', 'sub-menu-' + (index + 1));
           sub.setAttribute('role', 'group');
@@ -1313,18 +1313,18 @@
 
     function moveSubmenus() {
       // Get all the submenus
-      var submenus = document.querySelectorAll('.c-nav-primary__sub');
+      var submenus = document.querySelectorAll('.jsNavSub');
 
       Array.prototype.forEach.call(submenus, function(submenu) {
         if (window.innerWidth > 720) {
-          if (document.querySelector('#jsNav > li .c-nav-primary__sub')) {
+          if (document.querySelector('#jsNav > li .jsNavSub')) {
             var clone = submenu.cloneNode(true);
-            var wrapper = document.querySelector('.c-page-header');
+            var wrapper = document.querySelector('#jsPageHeader');
             wrapper.appendChild(clone);
             submenu.parentNode.removeChild(submenu);
           }
         } else {
-          if (document.querySelector('.c-page-header > .c-nav-primary__sub')) {
+          if (document.querySelector('.jsPageHeader > .jsNavSub')) {
             var clone = submenu.cloneNode(true);
             var id = submenu.getAttribute('id');
             var index = id.substr(id.length - 1);
