@@ -32,7 +32,7 @@
                 0 8px 10px 0 rgba($color-btn-shadow, 0.4);
   }
 
-  &:focus {
+  &:active {
     box-shadow: 0 4px 4px 0 rgba($color-btn-shadow, 0.1) inset,
                 0 2px 2px 0 rgba($color-btn-shadow, 0.3) inset;
     border-color: transparent;
@@ -61,7 +61,7 @@
   }
 
   &:hover,
-  &:focus {
+  &:active {
     background-color: $color-btn-submit-bg-hover;
   }
 
@@ -81,7 +81,7 @@
   }
 
   &:hover,
-  &:focus {
+  &:active {
     background-color: $color-btn-primary-bg-hover;
   }
 
@@ -97,7 +97,7 @@
   box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.5);
 
   &:hover,
-  &:focus {
+  &:active {
     background-color: $color-btn-secondary-bg-hover;
   }
 
@@ -110,7 +110,7 @@
   }
 
   &:hover,
-  &:focus {
+  &:active {
     background-color: $color-btn-secondary-bg-hover;
   }
 
