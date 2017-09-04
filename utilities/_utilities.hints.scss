@@ -48,26 +48,4 @@ img:not([alt]) {
   @include _hint-error-styles();
 }
 
-
-
-
-
-/**
- * Certain elements without any additional classes are very unlikely to be
- * correct.
- */
-
-%_missing-modifier-error {
-  --error: "You probably need a Modifier on this elements’s Block.";
-  @include _hint-error-styles();
-}
-
-@each $class in c-btn, c-sprite {
-
-  .#{$class}:not([class*="#{$class}--"]) {
-    @extend %_missing-modifier-error;
-  }
-
-}
-
 } // endif
