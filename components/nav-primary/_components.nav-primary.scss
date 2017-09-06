@@ -47,7 +47,7 @@
 
     .c-nav-primary__item {
       @include font-size(16px);
-      vertical-align: top;
+      vertical-align: middle;
 
       @include mq($from: md) {
         display: inline-block;
