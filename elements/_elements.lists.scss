@@ -9,3 +9,11 @@
 ul, ol {
   color: $color-lists;
 }
+
+ul ul {
+  list-style-type: circle;
+}
+
+ol ol {
+  list-style-type: lower-alpha;
+}
