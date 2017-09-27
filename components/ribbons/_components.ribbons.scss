@@ -11,8 +11,8 @@
   @include font-size(14px);
   background-color: $color-ribbon-bg;
   color: $color-ribbon;
-  padding-top: $global-spacing-unit-small;
-  padding-bottom: $global-spacing-unit-small;
+  padding-top: $global-spacing-unit-tiny;
+  padding-bottom: $global-spacing-unit-tiny;
 
   /**
    * Links want to be the same colour as the content.
