@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #DATA
+   ========================================================================== */
+
+/**
+ * The Data component is typically a wrapper for the Progress Bar component.
+ */
+
+.c-data {
+  margin-bottom: $global-spacing-unit;
+}
+
+  .c-data__title {
+    @include font-size($global-font-size-h1);
+    font-weight: bold;
+    margin-bottom: 0;
+  }

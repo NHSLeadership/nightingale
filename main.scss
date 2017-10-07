@@ -45,6 +45,7 @@
  * Page Footer..........Large footer area at the very bottom of the page.
  * Progress Bar.........Linear progress bar
  * Progress Wheel.......Circular progress indicator
+ * Data.................Display numerical data.
  * Forms................All of our different form styles.
  * Comments.............Comment and discussion threads.
  * Pagination...........Component for paging through items/views.
@@ -119,6 +120,7 @@
 @import "components/page-footer/components.page-footer";
 @import "components/progress/components.progress-bar";
 @import "components/progress/components.progress-wheel";
+@import "components/data/components.data";
 @import "components/forms/components.forms";
 @import "components/comments/components.comments";
 @import "components/pagination/components.pagination";
