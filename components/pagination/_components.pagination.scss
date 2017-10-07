@@ -28,7 +28,7 @@
 
     .c-pagination__link {
       display: block;
-      text-decoration: none;
+      text-decoration: underline;
       padding: $global-spacing-unit $global-spacing-unit-small;
 
       &,
@@ -40,7 +40,16 @@
 
       &.is-current {
         pointer-events: none;
-        color: $color-pagination-current;
+        @include opacity(0.5);
+      }
+
+    }
+
+    .c-pagination__skip {
+      text-decoration: none;
+
+      &:after {
+        content: " …";
       }
 
     }
