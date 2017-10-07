@@ -1,0 +1,72 @@
+/* ==========================================================================
+   #QUOTES
+   ========================================================================== */
+
+/* Long-form quotations
+ *
+ * 1. The defined line-height for quotes elements is 32px, therefore we need to
+ *    grab the unitless line-height by calculating the ratio.
+ * 2. Remove leftover styling from BLOCKQUOTE element.
+   ========================================================================== */
+
+.c-quote {
+  $font-size: 24; // 1
+  position: relative;
+  @include font-size($font-size * 1px, 32/$font-size); // [1]
+  font-style: italic;
+  color: $color-quote;
+  padding-left: $global-spacing-unit-small;
+  margin-right: 0; /* [2] */
+  margin-left: 0; /* [2] */
+
+  /**
+   * 1. Slightly tighter spacing between quoted paragraphs.
+   */
+  > p {
+    margin-bottom: $global-spacing-unit-small; /* [1] */
+  }
+
+  /**
+   * This forms a faux `border-left`. Because we need the border to be
+   * effectively inset on reversed quotes, we remove it from document flow.
+   */
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4px;
+    background-color: $color-quote-border;
+  }
+
+}
+
+  .c-quote__meta {
+    $font-size: 14;
+    @include font-size($font-size * 1px, 20/$font-size);
+    display: block;
+    text-align: right;
+    color: $color-quote-meta;
+    font-style: normal;
+
+    .c-quote--rev & {
+      color: $color-quote-alt;
+    }
+
+  }
+
+.c-quote--rev {
+  color: $color-quote-alt;
+  background-color: color('nhs-purple');
+  padding: $global-spacing-unit-small;
+  padding-left: $global-spacing-unit;
+
+  &:before {
+    border-color: $color-quote-alt;
+    top: $global-spacing-unit-small;
+    bottom: $global-spacing-unit-small;
+    left: $global-spacing-unit-small;
+  }
+
+}
