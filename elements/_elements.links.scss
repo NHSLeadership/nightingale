@@ -35,6 +35,10 @@ a {
       top: -1px;
     }
 
+    &.u-links-darkbg:after {
+      @include sprite(new-window-rev, true)
+    }
+
   /* stylelint-enable */
 
 }
