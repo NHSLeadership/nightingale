@@ -14,7 +14,7 @@
 
   @include mq($from: md) {
     font-size: 0; /* [1] */
-    float: right;
+    float: left;
     clear: none;
   }
 
@@ -88,6 +88,13 @@
       }
 
       /**
+      * Right-float login button in header
+      */
+      .c-nav-primary--btn {
+        float:right;
+      }
+
+      /**
        * 1. Reset styles when applied to a BUTTON for sub-navs.
        */
       .c-nav-primary__link {
@@ -96,6 +103,7 @@
         padding: 0; /* [1] */
         background: none; /* [1] */
         border: none; /* [1] */
+        
 
         /**
          * Colours invert on dark header backgrounds.
