@@ -23,7 +23,7 @@
 
   @include mq($from: md) {
     padding-top:    $global-spacing-unit;
-    padding-bottom: $global-spacing-unit;
+    padding-bottom: $global-spacing-unit/2;
   }
 
   /**
