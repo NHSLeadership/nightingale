@@ -14,7 +14,7 @@
    }
    .c-search__btn {
      @include sprite('magnifying-glass-rev', generated);
-     margin-left: -42px;
+     margin-left: -40px;
      border: none;
      border-radius: 0;
      background-color: $color-nav-primary-trigger-bg;
