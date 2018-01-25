@@ -82,7 +82,7 @@
   .c-page-header__inner {
     @include mq($from: md) {
       display: flex;
-      align-items: flex-end;
+      align-items: flex-start;
     }
   }
 
