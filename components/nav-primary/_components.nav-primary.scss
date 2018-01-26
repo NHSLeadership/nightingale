@@ -16,7 +16,7 @@
     font-size: 0; /* [1] */
     float: left;
     clear: none;
-    margin-top: $global-spacing-unit-small;
+    margin-top: $global-border-mid;
   }
 
 }
@@ -93,7 +93,7 @@
       */
       .c-nav-primary--btn {
         float:right;
-        margin-top: $global-border-mid;
+        margin-top: $global-border-mid/2;
       }
 
       /**
