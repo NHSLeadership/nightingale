@@ -103,3 +103,9 @@
         flex-grow: 1;
       }
     }
+    
+    .c-page-header__logo {
+      @include mq($from: md) {
+        padding-right: $global-spacing-unit-small;
+      }
+    }
