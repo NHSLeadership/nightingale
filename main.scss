@@ -46,6 +46,7 @@
  * Progress Bar.........Linear progress bar
  * Progress Wheel.......Circular progress indicator
  * Forms................All of our different form styles.
+ * Quotes...............Quotations.
  * Comments.............Comment and discussion threads.
  * Pagination...........Component for paging through items/views.
  * Tabs.................Tabbed content switcher.
@@ -121,6 +122,7 @@
 @import "components/progress/components.progress-bar";
 @import "components/progress/components.progress-wheel";
 @import "components/forms/components.forms";
+@import "components/quotes/components.quotes";
 @import "components/comments/components.comments";
 @import "components/pagination/components.pagination";
 @import "components/tabs/components.tabs";
