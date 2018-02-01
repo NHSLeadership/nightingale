@@ -1,0 +1,25 @@
+/* ==========================================================================
+   #ARTICLES
+   ========================================================================== */
+
+/**
+ * Styling for articles, also known as blog posts.
+ */
+.c-article {
+  margin-bottom: $global-spacing-unit;
+}
+.c-article__header {
+  margin-bottom: $global-border-mid;
+}
+.c-article__header--titles-only {
+  margin-bottom: $global-border-mid/2;
+}
+.c-article__content {
+  margin-top: $global-border-mid;
+}
+.c-article__content > p {
+  margin-bottom: $global-border-mid;
+}
+.c-article__content > img {
+  margin-bottom: $global-border-mid;
+}
