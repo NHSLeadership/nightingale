@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .c-search {
+  @include clearfix();
   white-space: nowrap;
 }
 
@@ -10,14 +11,28 @@
    * 1. Height should match NHS lozenge in logo.
    */
   .c-search__input {
+    float: left;
+    width: auto;
     height: $global-lozenge-height; /* [1] */
     padding-left: 5px;
+    border-right: none;
+    width: calc(100% - #{$global-lozenge-height});
   }
 
   .c-search__btn {
-    @include sprite('magnifying-glass-rev', generated);
-    margin-left: -40px;
-    border: none;
+    width: $global-lozenge-height; /* [1] */
+    height: $global-lozenge-height; /* [1] */
+    padding: 0;
+    border: 1px solid transparent;
+    border-left: none;
     border-radius: 0;
     background-color: $color-nav-primary-trigger-bg;
+
+    .c-search__input:active + &,
+    .c-search__input:focus + & {
+      border-top-color: $color-form-border-focus;
+      border-right-color: $color-form-border-focus;
+      border-bottom-color: $color-form-border-focus;
+    }
+
   }
