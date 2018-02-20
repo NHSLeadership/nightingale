@@ -3,8 +3,6 @@
    ========================================================================== */
 
    .c-search {
-     padding: 0;
-     margin: 0;
      white-space: nowrap;
    }
    .c-search__input {
@@ -19,12 +17,4 @@
      border-radius: 0;
      background-color: $color-nav-primary-trigger-bg;
    }
-   
-   /* Apply negative bottom margin to search bar in header
-   so that, when it is present, it doesn't push the menu bar down
-   */
-   .c-page-header__controls > .c-search {
-     @include mq($from: md) {
-       margin-bottom: -36px;
-     }
-   }
+

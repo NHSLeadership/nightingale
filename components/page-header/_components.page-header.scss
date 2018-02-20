@@ -103,9 +103,26 @@
         flex-grow: 1;
       }
     }
-    
+
     .c-page-header__logo {
       @include mq($from: md) {
         padding-right: $global-spacing-unit-small;
+      }
+    }
+
+
+
+
+
+    /* Search
+     *
+       ====================================================================== */
+
+    /* Apply negative bottom margin to search bar in header
+    so that, when it is present, it doesn't push the menu bar down
+    */
+    .c-page-header__search {
+      @include mq($from: md) {
+        margin-bottom: -36px;
       }
     }
