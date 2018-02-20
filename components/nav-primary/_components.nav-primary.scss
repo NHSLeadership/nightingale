@@ -14,7 +14,6 @@
 
   @include mq($from: md) {
     font-size: 0; /* [1] */
-    float: left;
     clear: none;
   }
 
@@ -33,6 +32,7 @@
 
     @include mq($from: md) {
       display: block; /* [1] */
+      float: left;
     }
 
     .no-js &,

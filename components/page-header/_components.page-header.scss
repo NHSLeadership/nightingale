@@ -125,3 +125,14 @@
         }
       }
     }
+
+
+    /* Login button
+    *
+       ====================================================================== */
+    .c-page-header__login {
+      font-size: 1rem;
+      @include mq($from: md) {
+        float: right;
+      }
+    }
