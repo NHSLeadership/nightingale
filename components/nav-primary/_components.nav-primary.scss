@@ -16,7 +16,6 @@
     font-size: 0; /* [1] */
     float: left;
     clear: none;
-    margin-top: $global-border-mid+36;  // Allow for 36px high search bar above
   }
 
 }
@@ -105,7 +104,7 @@
         padding: 0; /* [1] */
         background: none; /* [1] */
         border: none; /* [1] */
-        
+
 
         /**
          * Colours invert on dark header backgrounds.

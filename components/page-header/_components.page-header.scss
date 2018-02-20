@@ -114,15 +114,14 @@
 
 
 
-    /* Search
-     *
+    /* Nav
+    *
        ====================================================================== */
-
-    /* Apply negative bottom margin to search bar in header
-    so that, when it is present, it doesn't push the menu bar down
-    */
-    .c-page-header__search {
+    .c-page-header__nav {
       @include mq($from: md) {
-        margin-bottom: -36px;
+        margin-top: $global-border-mid+36;  // Allow for 36px high search bar above
+        .c-page-header__search ~ & {
+          margin-top: 10px;
+        }
       }
     }
