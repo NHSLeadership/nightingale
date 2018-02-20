@@ -115,24 +115,39 @@
 
 
     /* Nav
-    *
+     *
+     * The header’s nav needs quite a lot of careful positioning and adjustment.
+     *
+     * 1. Push the nav down far enough that its bottom lines up with the bottom
+     *    of the site’s main logo.
+     * 2. If the header also has a search bar, the nav needs pushing down
+     *    a little less.
        ====================================================================== */
+
     .c-page-header__nav {
+
       @include mq($from: md) {
-        margin-top: $global-border-mid+36;  // Allow for 36px high search bar above
+        margin-top: $global-border-mid+36;  /* [1] */
+
         .c-page-header__search ~ & {
-          margin-top: 10px;
+          margin-top: 10px; /* [2] */
         }
+
       }
+
     }
 
 
-    /* Login button
-    *
+    /* Login Button
+     *
+     * A specific, but optional, login button needs to sit alongside the nav.
+     * Here we’re just giving it location-specific styles: all other styling
+     * should be handled by the Button component.
        ====================================================================== */
     .c-page-header__login {
 
       @include mq($from: md) {
         float: right;
       }
+
     }

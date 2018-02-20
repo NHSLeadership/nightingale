@@ -1,19 +1,23 @@
 /* ==========================================================================
-   #SEARCH BAR
+   #SEARCH
    ========================================================================== */
 
-   .c-search {
-     white-space: nowrap;
-   }
-   .c-search__input {
-     height: 36px;  // Height should match NHS lozenge in logo
-     padding-left: 5px;
-   }
-   .c-search__btn {
-     @include sprite('magnifying-glass-rev', generated);
-     margin-left: -40px;
-     border: none;
-     border-radius: 0;
-     background-color: $color-nav-primary-trigger-bg;
-   }
+.c-search {
+  white-space: nowrap;
+}
 
+  /**
+   * 1. Height should match NHS lozenge in logo.
+   */
+  .c-search__input {
+    height: 36px; /* [1] */
+    padding-left: 5px;
+  }
+
+  .c-search__btn {
+    @include sprite('magnifying-glass-rev', generated);
+    margin-left: -40px;
+    border: none;
+    border-radius: 0;
+    background-color: $color-nav-primary-trigger-bg;
+  }
