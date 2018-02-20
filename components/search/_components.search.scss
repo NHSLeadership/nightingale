@@ -10,7 +10,7 @@
    * 1. Height should match NHS lozenge in logo.
    */
   .c-search__input {
-    height: 36px; /* [1] */
+    height: $global-lozenge-height; /* [1] */
     padding-left: 5px;
   }
 
