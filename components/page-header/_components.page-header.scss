@@ -104,7 +104,7 @@
       }
     }
 
-    .c-page-header__logo {
+    .c-page-header__lockup {
       @include mq($from: md) {
         padding-right: $global-spacing-unit-small;
       }
