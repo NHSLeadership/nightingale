@@ -1,0 +1,18 @@
+/* ==========================================================================
+   #ALERT-CARD
+   ========================================================================== */
+
+/**
+ * Styling for alert cards.
+ *
+ */
+
+.c-alert-card {
+  border-style: solid;
+  border-width: $global-border-light;
+  border-color: $color-alert;
+  padding: $global-border-mid;
+}
+.c-alert-card > h6 {
+  margin-bottom: 0;
+}
