@@ -1,5 +1,5 @@
 /* ==========================================================================
-   #ALERT-CARD
+   #CARDS
    ========================================================================== */
 
 /**
@@ -7,12 +7,12 @@
  *
  */
 
-.c-alert-card {
+.c-card--alert {
   border-style: solid;
   border-width: $global-border-light;
   border-color: $color-alert;
   padding: $global-border-mid;
 }
-.c-alert-card > h6 {
+.c-card--alert > h6 {
   margin-bottom: 0;
 }
