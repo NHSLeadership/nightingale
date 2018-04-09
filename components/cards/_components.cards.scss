@@ -2,17 +2,30 @@
    #CARDS
    ========================================================================== */
 
+ .c-card {
+   border-style: solid;
+   border-width: $global-border-light;
+   padding: $global-border-mid;
+   margin-bottom: $global-border-mid;
+ }
+ .c-card > h6 {
+   margin-bottom: 0;
+ }
+
 /**
  * Styling for alert cards.
  *
  */
 
 .c-card--alert {
-  border-style: solid;
-  border-width: $global-border-light;
   border-color: $color-alert;
-  padding: $global-border-mid;
 }
-.c-card--alert > h6 {
-  margin-bottom: 0;
+
+/**
+ * Styling for information cards.
+ *
+ */
+
+.c-card--information {
+  border-color: $color-information;
 }
