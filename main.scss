@@ -57,6 +57,7 @@
  * Search...............Search box for header.
  * Articles.............Styling for blog posts/articles.
  * Cards................Information cards, alert cards, etc.
+ * Leading Paragraph....Larger font size for leading paragraphs.
  *
  * UTILITIES
  * Colors...............Utility classes generated from our color map.
@@ -135,7 +136,7 @@
 @import "components/search/components.search";
 @import "components/articles/components.articles";
 @import "components/cards/components.cards";
-
+@import "components/paragraphs/components.leading-paragraph";
 
 
 
