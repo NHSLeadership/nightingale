@@ -4,8 +4,6 @@
 
 /**
  * The primary nav sits within the main header area. It’s fully responsive.
- *
- * 1. `font-size: 0;` hack to collapse whitespace.
  */
 
 .c-nav-primary {
@@ -13,8 +11,6 @@
   clear: both;
 
   @include mq($from: md) {
-    font-size: 0; /* [1] */
-    float: right;
     clear: none;
   }
 
@@ -23,7 +19,8 @@
 
 
   /**
-   * 1. We definitely need a more accessible way of showing/hiding this content.
+   * 1. `font-size: 0;` hack to collapse whitespace.
+   * 2. We definitely need a more accessible way of showing/hiding this content.
    */
   .c-nav-primary__list {
     display: none; /* [1] */
@@ -32,7 +29,9 @@
     list-style: none;
 
     @include mq($from: md) {
-      display: block; /* [1] */
+      font-size: 0; /* [1] */
+      display: block; /* [2] */
+      float: left;
     }
 
     .no-js &,
@@ -96,6 +95,7 @@
         padding: 0; /* [1] */
         background: none; /* [1] */
         border: none; /* [1] */
+
 
         /**
          * Colours invert on dark header backgrounds.

@@ -104,20 +104,22 @@
     <div class="o-wrapper  c-page-header__inner">
 
       <a href="#0" class="c-page-header__lockup">
-        <img src="./assets/img/logos/nhs-la-logo--blue.png" alt="NHS Leadership Academy" width="245" height="72" class="c-page-header__logo" />
+        <img src="./assets/img/logos/NHS_LA_Logo_Blue@2x.png" alt="NHS Leadership Academy" width="245" height="72" class="c-page-header__logo" />
       </a>
 
       <div class="c-page-header__controls">
 
         <!-- Search box -->
-        <form class="c-search" role="search" method="get" action="/">
-          <input type="search" class="c-search c-search__input" placeholder="Search" value="" name="s">
-          <input type="submit" class="c-search c-search__btn" alt="Search" value="">
+        <form class="c-search c-page-header__search" role="search" method="get" action="/">
+          <input type="search" class="c-form-input c-search__input" placeholder="Search" value="" name="s">
+          <button class="c-search__btn">
+            <span class="c-sprite  c-sprite--magnifying-glass-rev">Search</span>
+          </button>
         </form>
-                        
+
         <button class="c-nav-trigger" id="jsNavTrigger" aria-label="menu" data-expands="#jsNav">☰</button>
 
-        <nav class="c-nav-primary" id="primaryNav">
+        <nav class="c-nav-primary c-page-header__nav" id="primaryNav">
 
           <ul class="c-nav-primary__list" id="jsNav">
 
@@ -184,7 +186,12 @@
             </li>
 
           </ul>
+
+          <!-- login/out button -->
+          <a class="c-btn c-btn--primary c-btn--natural c-page-header__login" href="/">Log out</a>
+
         </nav>
+
       </div>
 
     </div>
@@ -197,6 +204,22 @@
 
     <p>Welcome to the NHS Leadership Academy UI Toolkit and front-end
     framework, codename <b>Nightingale</b>.</p>
+
+    <hr class="c-divider" />
+    <div class="o-layout  o-layout--wide">
+      <div class="o-layout__item  u-4/12@lg">
+        <h3><a href="/">Open now</a></h3>
+        <p>For every level of leadership</p>
+      </div><!-- o-layout__item -->
+      <div class="o-layout__item  u-4/12@lg">
+        <h3><a href="/">Share your story</a></h3>
+        <p>From our Participants</p>
+      </div><!-- o-layout__item -->
+      <div class="o-layout__item  u-4/12@lg">
+        <h3><a href="/">Our programmes</a></h3>
+        <p>Academies nationwide</p>
+      </div><!-- o-layout__item -->
+    </div><!-- o-layout -->
 
     <hr class="c-divider" />
 
@@ -695,8 +718,8 @@
         <h2 id="articles">Articles (Excerpts)</h2>
 
           <article class="c-article">
-          	<header>
-          		<h2 class="c-article__header"><a href="/">Trumping Care</a></h2>
+            <header>
+              <h2 class="c-article__header"><a href="/">Trumping Care</a></h2>
               <div class="o-layout">
                 <div class="o-layout__item u-9/12@lg">
                   <div class="o-layout--left">
@@ -709,18 +732,18 @@
                   </div><!--o-layout--right-->
                 </div><!--o-layout__item-->
               </div><!--o-layout-->
-      			</header>
+            </header>
 
-          	<div class="c-article__content">
+            <div class="c-article__content">
               <img src="./assets/img/content/photo.jpg" alt="" class="c-media__media">
-          		<p>The NHS Leadership Academy works with a world-class expert faculty of global business leaders, educators and practitioners. Our programme [...]</p>
-          	</div><!-- .c-article__content -->
+              <p>The NHS Leadership Academy works with a world-class expert faculty of global business leaders, educators and practitioners. Our programme [...]</p>
+            </div><!-- .c-article__content -->
 
             <footer>
               <div class="o-layout">
                 <div class="o-layout__item u-9/12@lg">
                   <div class="o-layout--left">
-                    <a href="/">5 Comments</a>	
+                    <a href="/">5 Comments</a>
                   </div><!--o-layout--left-->
                 </div><!--o-layout__item-->
                 <div class="o-layout__item  u-3/12@lg">
@@ -732,12 +755,12 @@
               <a href="/">Edit "Trumping Care"</a>
             </footer>
           </article><!-- .c-article -->
-          
+
           <hr class="c-divider" />
-                  
+
           <article class="c-article">
-          	<header>
-          		<h2 class="c-article__header"><a href="/">Junior doctors should start leadership development</a></h2>
+            <header>
+              <h2 class="c-article__header"><a href="/">Junior doctors should start leadership development</a></h2>
               <div class="o-layout">
                 <div class="o-layout__item u-9/12@lg">
                   <div class="o-layout--left">
@@ -750,17 +773,17 @@
                   </div><!--o-layout--right-->
                 </div><!--o-layout__item-->
               </div><!--o-layout-->
-      			</header>
+            </header>
 
-          	<div class="c-article__content">
-          		<p>Junior doctor Rebecca Crosby discusses why leadership is so crucial in critical situations [...]</p>
-          	</div><!-- .c-article__content -->
+            <div class="c-article__content">
+              <p>Junior doctor Rebecca Crosby discusses why leadership is so crucial in critical situations [...]</p>
+            </div><!-- .c-article__content -->
 
             <footer>
               <div class="o-layout">
                 <div class="o-layout__item u-9/12@lg">
                   <div class="o-layout--left">
-                    <a href="/">3 Comments</a>	
+                    <a href="/">3 Comments</a>
                   </div><!--o-layout--left-->
                 </div><!--o-layout__item-->
                 <div class="o-layout__item  u-3/12@lg">
@@ -771,14 +794,14 @@
               </div><!--o-layout-->
             </footer>
           </article><!-- .c-article -->
-        
+
         <hr class="c-divider" />
-                
+
         <h2 id="articles">Articles (Titles only)</h2>
 
           <article class="c-article">
-          	<header>
-          		<h2 class="c-article__header--titles-only"><a href="/">Trumping Care</a></h2>
+            <header>
+              <h2 class="c-article__header--titles-only"><a href="/">Trumping Care</a></h2>
               <div class="o-layout">
                 <div class="o-layout__item u-9/12@lg">
                   <div class="o-layout--left">
@@ -791,13 +814,13 @@
                   </div><!--o-layout--right-->
                 </div><!--o-layout__item-->
               </div><!--o-layout-->
-      			</header>
+            </header>
 
             <footer>
               <div class="o-layout">
                 <div class="o-layout__item u-9/12@lg">
                   <div class="o-layout--left">
-                    <a href="/">5 Comments</a>	
+                    <a href="/">5 Comments</a>
                   </div><!--o-layout--left-->
                 </div><!--o-layout__item-->
                 <div class="o-layout__item  u-3/12@lg">
@@ -809,12 +832,12 @@
               <a href="/">Edit "Trumping Care"</a>
             </footer>
           </article><!-- .c-article -->
-          
+
           <hr class="c-divider" />
-                  
+
           <article class="c-article">
-          	<header>
-          		<h2 class="c-article__header--titles-only"><a href="/">Junior doctors should start leadership development</a></h2>
+            <header>
+              <h2 class="c-article__header--titles-only"><a href="/">Junior doctors should start leadership development</a></h2>
               <div class="o-layout">
                 <div class="o-layout__item u-9/12@lg">
                   <div class="o-layout--left">
@@ -827,13 +850,13 @@
                   </div><!--o-layout--right-->
                 </div><!--o-layout__item-->
               </div><!--o-layout-->
-      			</header>
+            </header>
 
             <footer>
               <div class="o-layout">
                 <div class="o-layout__item u-9/12@lg">
                   <div class="o-layout--left">
-                    <a href="/">3 Comments</a>	
+                    <a href="/">3 Comments</a>
                   </div><!--o-layout--left-->
                 </div><!--o-layout__item-->
                 <div class="o-layout__item  u-3/12@lg">
@@ -844,9 +867,9 @@
               </div><!--o-layout-->
             </footer>
           </article><!-- .c-article -->
-        
+
         <hr class="c-divider" />
-                
+
         <h2 id="pagination">Pagination</h2>
 
         <ol class="c-pagination">

@@ -1,0 +1,58 @@
+/* ==========================================================================
+   #SEARCH
+   ========================================================================== */
+
+.c-search {
+  @include clearfix();
+  white-space: nowrap;
+}
+
+  /**
+   * 1. Height should match NHS lozenge in logo.
+   */
+  .c-search__input {
+    float: left;
+    width: auto;
+    height: $global-lozenge-height; /* [1] */
+    padding-left: 5px;
+    border-right: none;
+    width: 100%;
+
+    @supports (width: calc(10px + 10px)) {
+      width: calc(100% - #{$global-lozenge-height});
+    }
+
+  }
+
+  /**
+   * Search Button
+   *
+   * 1. Height should match NHS lozenge in logo.
+   * 2. In browsers that don’t support `calc()`, we need to drag the search
+   *    button into place.
+   * 3. But in browsers that do support `calc()`, let’s do things the nice way!
+   */
+  .c-search__btn {
+    width: $global-lozenge-height; /* [1] */
+    height: $global-lozenge-height; /* [1] */
+    padding: 0;
+    border: 1px solid transparent;
+    border-left: none;
+    border-radius: 0;
+    background-color: $color-nav-primary-trigger-bg;
+    position: relative; /* [2] */
+    left: -$global-lozenge-height; /* [2] */
+
+    @supports (width: calc(10px + 10px)) {
+      position: static; /* [3] */
+    }
+
+
+    .c-search__input:active + &,
+    .c-search__input:focus + & {
+      border-top-color: $color-form-border-focus;
+      border-right-color: $color-form-border-focus;
+      border-bottom-color: $color-form-border-focus;
+    }
+
+  }
