@@ -37,6 +37,7 @@
     bottom: -($global-border-mid + $global-border-heavy);
     left: 0;
     border-bottom: $global-border-mid solid color('nhs-purple');
+    display: block;
   }
 
   @include mq($from: md) {
