@@ -7,6 +7,7 @@
  *
  * 1. Make sure all browsers scroll to the best of their abilities.
  * 2. Native-like scrolling on touch devices.
+ * 3. Use negative top margin to negate bottom margin of header this is under.
  */
 .c-breadcrumb {
   @include font-size(14px);
@@ -18,6 +19,11 @@
   -webkit-overflow-scrolling: touch; /* [2] */
   background-color: $color-breadcrumb-bg;
   padding: $global-spacing-unit-tiny;
+  margin-top: -($global-spacing-unit + $global-border-mid); /* [3] */
+  margin-left: -$global-spacing-unit;
+  margin-right: -$global-spacing-unit;
+  padding-left: $global-spacing-unit;
+  padding-right: $global-spacing-unit;
 }
 
   .c-breadcrumb__list {
