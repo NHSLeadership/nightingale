@@ -36,6 +36,14 @@
   margin-bottom: $global-spacing-unit + $global-border-mid; /* [1] */
   margin-left: -$global-spacing-unit;
   margin-right: -$global-spacing-unit;
+  padding-right: $global-spacing-unit-small;
+  padding-left: $global-spacing-unit-small;
+
+  @include mq($from: sm) {
+    padding-right: $global-spacing-unit-tiny;
+    padding-left: $global-spacing-unit-tiny;
+  }
+
 }
 
   /**
