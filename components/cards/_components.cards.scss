@@ -29,3 +29,14 @@
 .c-card--information {
   border-color: $color-information;
 }
+
+.c-card--information > h4 {
+	line-height: 1;
+	margin-bottom: $global-border-mid;
+}
+.c-card--information small {
+	margin-bottom: $global-border-mid;
+}
+.c-card--information p {
+	margin-bottom: 0;
+}
