@@ -39,8 +39,8 @@ $global-font-size-h3: 27px !default;
 $global-font-size-h4: 19px !default;
 $global-font-size-h5: 14px !default;
 
-
-
+$global-font-size-leading-paragraph: 24px !default;
+$global-line-height-leading-paragraph: 32px !default;
 
 
 // Colors
@@ -314,6 +314,7 @@ $mq-breakpoints: (
 $global-spacing-unit: 30px !default;
 $global-border-heavy: 15px !default;
 $global-border-mid: 10px !default;
+$global-border-light: 5px !default;
 $global-lozenge-height: 36px !default;
 
 

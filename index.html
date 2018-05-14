@@ -198,11 +198,37 @@
 
   </header>
 
+
   <div class="o-wrapper">
+
+    <div class="c-ribbon  c-ribbon--page-specific  c-ribbon--expandable">
+
+      <div class="o-wrapper">
+
+        <details class="c-ribbon__body">
+          <summary><b>In partnership with:</b> NHS Health Education England – The Princess Alexandra Hospital NHS Trust – South Essex Partnership University NHS Foundation Trust – Virgin Health Care – Bupa – Simplyhealth – Pruhealth – Department of Health.</summary>
+        </details>
+
+      </div>
+
+    </div>
+
+    <nav class="c-breadcrumb">
+      <ol class="c-breadcrumb__list">
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link  c-sprite c-sprite--home">Home</a></li>
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 01</a></li>
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link is-current">Breadcrumb 02</a></li>
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 03</a></li>
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 04</a></li>
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 05</a></li>
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 06</a></li>
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 07</a></li>
+      </ol>
+    </nav>
 
     <h1>Nightingale</h1>
 
-    <p>Welcome to the NHS Leadership Academy UI Toolkit and front-end
+    <p class="c-leading-paragraph">Welcome to the NHS Leadership Academy UI Toolkit and front-end
     framework, codename <b>Nightingale</b>.</p>
 
     <hr class="c-divider" />
@@ -227,20 +253,17 @@
 
       <main class="o-layout__item  u-8/12@lg">
 
-        <h2 id="breadcrumb">Breadcrumb</h2>
+        <h2 id="cards">Cards</h2>
 
-        <nav class="c-breadcrumb">
-          <ol class="c-breadcrumb__list">
-            <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link  c-sprite c-sprite--home">Home</a></li>
-            <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 01</a></li>
-            <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link is-current">Breadcrumb 02</a></li>
-            <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 03</a></li>
-            <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 04</a></li>
-            <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 05</a></li>
-            <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 06</a></li>
-            <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 07</a></li>
-          </ol>
-        </nav>
+          <div class="c-card  c-card--information">
+            <h6>This is an information card</h6>
+            <small>I hope you find it informative</small>
+          </div>
+
+          <div class="c-card  c-card--alert">
+            <h6>This is an alert!</h6>
+            <small>I hope you're paying attention</small>
+          </div>
 
         <hr class="c-divider" />
 
@@ -1250,11 +1273,16 @@
 
         <hr class="c-divider" />
 
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
-          <a href="#k">fames ac turpis egestas</a>. <q>Vestibulum tortor quam,
-        feugiat vitae</q>, ultricies eget, tempor sit amet, ante. Donec eu libero
-        sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-        eleifend leo.</p>
+        <h2 id="typography">Typography</h2>
+
+        <p><b>Default body copy</b> is the style that should be used in all instances when
+          not accentuating the copy content. Style should be set as <b>Frutiger 55
+          Roman 18px #231F20</b> <q>(line height 26px)</q> <a href="#k">example link style</a></p>
+
+          <small><b>Supporting body copy</b> is the style that should only be used in certain
+            instances such as when copy need not distract or draw away attention from
+            default body copy. Style should be set as <b>Frutiger 55 Roman 14px #231F20</b> <q>
+            (line height 20px)</q> <a href="#k">example link style</a> </small>
 
         <ul>
           <li>Item 1</li>
