@@ -37,6 +37,10 @@
 .c-card--information small {
 	margin-bottom: $global-border-mid;
 }
+.c-card--information p:first-of-type {
+	margin-bottom: 0;
+}
 .c-card--information p {
+	margin-top: $global-border-mid;
 	margin-bottom: 0;
 }
