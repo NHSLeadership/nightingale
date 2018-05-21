@@ -24,8 +24,21 @@
 /**
  * Styling for information cards.
  *
+ * H4 headers are used in Call to Action cards, which are a variant.
+ * They have no bottom margin.
+ * All paragraphs have no top margin but a standard bottom margin.
+ * This creates no space at the top and a small space before the button.
+ *
  */
 
 .c-card--information {
   border-color: $color-information;
+}
+
+.c-card--information > h4 {
+  margin-bottom: 0;
+}
+.c-card--information p {
+  margin-top: 0;
+  margin-bottom: $global-border-mid;
 }
