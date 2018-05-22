@@ -18,11 +18,13 @@
   /**
    * Media with mastheads that contain media (e.g. an image).
    */
-  .c-media__masthead {
-    position: relative;
-    display: block;
-    border: 1px solid $color-media-border;
+   .c-media__masthead {
+     position: relative;
+     display: block;
+     border: 1px solid $color-media-border;
+   }
 
+  .c-media__masthead--overlay {
     /**
      * Translucent overlay covering the media.
      */
@@ -47,9 +49,9 @@
   }
 
     /**
-     * Media media itself needs dimming.
+     * If overlay is applied media itself needs dimming.
      */
-    .c-media__media {
+    .c-media__media--overlay {
       opacity: 0.3;
       width: 100%;
 
