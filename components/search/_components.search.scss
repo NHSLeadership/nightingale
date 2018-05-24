@@ -56,25 +56,3 @@
     }
 
   }
-
-  /**
-  *
-  * Search results page
-  *
-  */
-  .c-search__header {
-  	margin-bottom: $global-border-mid;
-  }
-  .c-search__meta {
-  	margin-bottom: ($global-border-mid*2);
-  }
-  .c-search-results__header {
-  	margin-top: $global-border-mid;
-  }
-  .c-search-results__content > p {
-  	margin-bottom: 0;
-  }
-  .c-search-results__footer {
-  	margin-top: 0;
-  	margin-bottom: $global-spacing-unit;
-  }
