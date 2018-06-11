@@ -16,14 +16,12 @@
   @include clearfix();
   position: relative;
   padding-top:    $global-spacing-unit-small;
-  padding-bottom: $global-spacing-unit-small;
   margin-bottom: $global-spacing-unit + $global-border-mid; /* [1] */
   border-bottom: $global-border-heavy solid color('nhs-blue');
   background-color: $color-page-head-bg;
 
   @include mq($from: md) {
     padding-top:    $global-spacing-unit;
-    padding-bottom: $global-spacing-unit-small;
   }
 
   /**
