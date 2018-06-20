@@ -54,8 +54,10 @@
  * Media................Image and video containers
  * Breadcrumb...........Breadcrumb-trail navigation.
  * Tables...............More complex styles for data tables
- * Search Bar...........Search box for header.
+ * Search...............Search box for header.
  * Articles.............Styling for blog posts/articles.
+ * Cards................Information cards, alert cards, etc.
+ * Leading Paragraph....Larger font size for leading paragraphs.
  *
  * UTILITIES
  * Colors...............Utility classes generated from our color map.
@@ -131,9 +133,10 @@
 @import "components/media/components.media";
 @import "components/breadcrumb/components.breadcrumb";
 @import "components/tables/components.tables";
-@import "components/search-bar/components.search-bar";
+@import "components/search/components.search";
 @import "components/articles/components.articles";
-
+@import "components/cards/components.cards";
+@import "components/paragraphs/components.leading-paragraph";
 
 
 
@@ -143,6 +146,6 @@
 @import "utilities/utilities.widths";
 @import "utilities/utilities.z-index";
 @import "utilities/utilities.display";
-@import "utilities/utilities.hints";
+//@import "utilities/utilities.hints";
 @import "utilities/utilities.text";
 @import "utilities/utilities.ie8";

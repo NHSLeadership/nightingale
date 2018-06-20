@@ -23,6 +23,30 @@
 
 }
 
+/**
+* Some ribbons are page-specific and site at the top of certain pages
+* rather than above the main content like other ribbons.
+* They need to jut out 30px either side of the main content.
+* 1. The top and bottom margins are adjusted so that the ribbon sits directy
+* under the header stripe.
+*/
+
+.c-ribbon--page-specific {
+  margin-top: -($global-spacing-unit + $global-border-mid); /* [1] */
+  margin-top: -$global-spacing-unit; /* [1] */
+  margin-bottom: $global-spacing-unit + $global-border-mid; /* [1] */
+  margin-left: -$global-spacing-unit;
+  margin-right: -$global-spacing-unit;
+  padding-right: $global-spacing-unit-small;
+  padding-left: $global-spacing-unit-small;
+
+  @include mq($from: sm) {
+    padding-right: $global-spacing-unit-tiny;
+    padding-left: $global-spacing-unit-tiny;
+  }
+
+}
+
   /**
    * The Alpha, Beta, Live tag.
    */
@@ -94,6 +118,7 @@
 
 .c-ribbon--alpha {
   background-color: $color-ribbon-alpha-bg;
+  color: $color-ribbon-alpha;
 }
 
 .c-ribbon--beta {
@@ -101,9 +126,6 @@
   color: $color-ribbon-beta;
 }
 
-.c-ribbon--live {
-  background-color: $color-ribbon-live-bg;
-}
 
 .c-ribbon--expandable {
   background-color: $color-ribbon-expandable-bg;

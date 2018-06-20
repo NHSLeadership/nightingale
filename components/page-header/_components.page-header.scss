@@ -23,7 +23,7 @@
 
   @include mq($from: md) {
     padding-top:    $global-spacing-unit;
-    padding-bottom: $global-spacing-unit;
+    padding-bottom: $global-spacing-unit-small;
   }
 
   /**
@@ -37,6 +37,7 @@
     bottom: -($global-border-mid + $global-border-heavy);
     left: 0;
     border-bottom: $global-border-mid solid color('nhs-purple');
+    display: block; // Temporary fix. See Nightingale issue #229
   }
 
   @include mq($from: md) {
@@ -82,7 +83,7 @@
   .c-page-header__inner {
     @include mq($from: md) {
       display: flex;
-      align-items: flex-end;
+      align-items: flex-start;
     }
   }
 
@@ -102,4 +103,52 @@
       @include mq($from: md) {
         flex-grow: 1;
       }
+    }
+
+    .c-page-header__lockup {
+      @include mq($from: md) {
+        padding-right: $global-spacing-unit-small;
+      }
+    }
+
+
+
+
+
+    /* Nav
+     *
+     * The header’s nav needs quite a lot of careful positioning and adjustment.
+     *
+     * 1. Push the nav down far enough that its bottom lines up with the bottom
+     *    of the site’s main logo.
+     * 2. If the header also has a search bar, the nav needs pushing down
+     *    a little less.
+       ====================================================================== */
+
+    .c-page-header__nav {
+
+      @include mq($from: md) {
+        margin-top: $global-border-mid+36;  /* [1] */
+
+        .c-page-header__search ~ & {
+          margin-top: 10px; /* [2] */
+        }
+
+      }
+
+    }
+
+
+    /* Login Button
+     *
+     * A specific, but optional, login button needs to sit alongside the nav.
+     * Here we’re just giving it location-specific styles: all other styling
+     * should be handled by the Button component.
+       ====================================================================== */
+    .c-page-header__login {
+
+      @include mq($from: md) {
+        float: right;
+      }
+
     }

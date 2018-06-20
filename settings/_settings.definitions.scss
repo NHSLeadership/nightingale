@@ -39,8 +39,8 @@ $global-font-size-h3: 27px !default;
 $global-font-size-h4: 19px !default;
 $global-font-size-h5: 14px !default;
 
-
-
+$global-font-size-leading-paragraph: 24px !default;
+$global-line-height-leading-paragraph: 32px !default;
 
 
 // Colors
@@ -49,7 +49,7 @@ $global-font-size-h5: 14px !default;
 $global-colors: (
   'attention': #7c2855,
   'error': #da291c,
-  'information': #330072,
+  'information': #005eb8,
   'nhs-aqua': #00a499,
   'nhs-black': #231f20,
   'nhs-blue': #005eb8,
@@ -262,8 +262,8 @@ $global-sprite:(
   'magnifying-glass-rev': (
     x: -108px,
     y: -70px,
-    width: 36px,
-    height: 36px,
+    width: 34px,
+    height: 34px,
   ),
   'add': (
     x: 0,
@@ -314,6 +314,8 @@ $mq-breakpoints: (
 $global-spacing-unit: 30px !default;
 $global-border-heavy: 15px !default;
 $global-border-mid: 10px !default;
+$global-border-light: 5px !default;
+$global-lozenge-height: 36px !default;
 
 
 
