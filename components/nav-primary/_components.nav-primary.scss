@@ -178,6 +178,7 @@
   padding-top: $global-spacing-unit-small;
   padding-bottom: $global-spacing-unit-small;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
+  margin-bottom: -$global-spacing-unit-small;
 
   @include mq($from: md) {
     padding-top: $global-spacing-unit;
