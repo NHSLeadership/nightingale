@@ -7,6 +7,14 @@
 
   <title>Nightingale</title>
 
+  <script>
+    // Check JavaScript
+    (function(){
+      var page = document.getElementById('jsPage');
+      page.classList.remove('no-js');
+    }());
+  </script>
+
   <link rel="stylesheet" href="./dist/main.css" />
 
   <link rel="shortcut icon" href="/favicon.png">
@@ -15,8 +23,8 @@
     <script src="js/html5shiv.js"></script>
   <![endif]-->
 
-  <!-- Check JavaScript -->
-  <script type="text/javascript" src="js/javascript-check.js"></script>
+  <!-- Menus, sub-menus, burger-menu, etc. -->
+  <script type="text/javascript" src="js/menus.js" async></script>
 
   <style>
 
@@ -714,7 +722,7 @@
         </div>
 
         <!-- Cookies Ribbon -->
-        <script type="text/javascript" src="js/cookies.js"></script>
+        <script type="text/javascript" src="js/cookies.js" async></script>
 
         <div class="c-ribbon  c-ribbon--live  u-margin-bottom">
 
@@ -1593,11 +1601,23 @@
 
   </footer>
 
-  <!-- Menus, sub-menus, burger-menu, etc. -->
-  <script type="text/javascript" src="js/menus.js"></script>
-
-  <!-- Force repaint to fix obscure Safari bug -->
-  <script type="text/javascript" src="js/safari-bug-fix.js"></script>
+  <script>
+    // Eww, eww, ewwww! Forcing a repaint to get around a really, really odd
+    // Safari bug: https://twitter.com/csswizardry/status/897110955448029184
+    (function(){
+      var ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf('safari') != -1) {
+        if (ua.indexOf('chrome') > -1) {
+        } else {
+          function ready() {
+            var page = document.getElementById('jsPage');
+            page.style.color = '#231f21';
+          };
+          document.addEventListener("DOMContentLoaded", ready);
+        }
+      }
+    }());
+  </script>
 
 </body>
 </html>
