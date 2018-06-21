@@ -11,11 +11,12 @@
   border-top: $global-border-mid solid $color-page-footer-border;
   background-color: $color-page-footer-bg;
   padding: $global-spacing-unit;
-  @include font-size(14px);
+  @include font-size($global-font-size-footer);
 
   a {
     color: $color-page-footer-links;
     text-decoration: none;
+    @include font-size($global-font-size-footer);
 
     &:hover,
     &:focus {
