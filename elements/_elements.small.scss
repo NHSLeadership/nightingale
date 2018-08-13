@@ -12,6 +12,6 @@
  */
 
 small {
-  @include font-size(14px, 20/14); /* [1] */
+  @include font-size(14px, 20px); /* [1] */
   display: inline-block; /* [2] */
 }
