@@ -51,13 +51,22 @@
   font-size: $font-size;
   font-size: ($font-size / $global-font-size) * 1rem;
 
+  // If we haven’t specified a line-height explicitly, let’s automatically
+  // create one that sits on the next closest unit of our baseline grid.
   @if ($line-height == auto) {
     line-height: ceil($font-size / $global-line-height) * ($global-line-height / $font-size);
   }
 
   @else {
 
-    @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+    // If we pass in a hard-coded pixel value for our line-height, let’s convert
+    // it to the unitless equivalent.
+    @if (type-of($line-height) == number) {
+      line-height: strip-unit($line-height) / strip-unit($font-size);
+    }
+
+    // If we pass in `inherit` or `normal`, treat it as literal.
+    @if (type-of($line-height) == "inherit" or $line-height == "normal") {
       line-height: $line-height;
     }
 
