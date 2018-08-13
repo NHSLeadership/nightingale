@@ -29,6 +29,9 @@
   /**
    * Create a faux double border effect by dropping an absolutely positioned
    * pseudo-element after the header.
+   *
+   * 1. Set explicitly to override leftover `display: table;` from our
+   *    micro-clearfix.
    */
   &:after {
     content: "";
@@ -36,8 +39,8 @@
     right: 0;
     bottom: -($global-border-mid + $global-border-heavy);
     left: 0;
+    display: block; /* [1] */
     border-bottom: $global-border-mid solid color('nhs-purple');
-    display: block; // Temporary fix. See Nightingale issue #229
   }
 
   @include mq($from: md) {
