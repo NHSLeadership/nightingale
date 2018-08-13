@@ -4,20 +4,18 @@
 
 /* Long-form quotations
  *
- * 1. The defined line-height for quotes elements is 32px, therefore we need to
- *    grab the unitless line-height by calculating the ratio.
- * 2. Remove leftover styling from BLOCKQUOTE element.
+ * 1. Remove leftover styling from BLOCKQUOTE element.
    ========================================================================== */
 
 .c-quote {
-  $font-size: 24; // 1
+  $font-size: 24px;
   position: relative;
-  @include font-size($font-size * 1px, 32/$font-size); // [1]
+  @include font-size($font-size, 32px);
   font-style: italic;
   color: $color-quote;
   padding-left: $global-spacing-unit-small;
-  margin-right: 0; /* [2] */
-  margin-left: 0; /* [2] */
+  margin-right: 0; /* [1] */
+  margin-left: 0; /* [1] */
 
   /**
    * 1. Slightly tighter spacing between quoted paragraphs.
