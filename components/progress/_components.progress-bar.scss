@@ -31,41 +31,17 @@
 
 
 .c-progress-bar {
-  text-align: center;
-  color: $color-progress-bar;
+  position: relative;
+  overflow: hidden;
+  background-color: $color-progress-bar-bar;
+  height: 10px;
+  margin-bottom: $global-spacing-unit-small;
 }
 
-
-
-  .c-progress-bar__title {
-    @include font-size(36px);
-    color: $color-progress-bar-title;
-    margin-bottom: $global-spacing-unit-tiny;
+  .c-progress-bar__fill {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $color-progress-bar-fill;
+    animation: _progress-bar 1s cubic-bezier(0.65, 0.05, 0.36, 1);
   }
-
-    .c-progress-bar__\% {
-      @include font-size(48px);
-    }
-
-  .c-progress-bar__title-sub {
-    @include font-size(24px);
-    margin-bottom: $global-spacing-unit-small;
-  }
-
-
-
-  .c-progress-bar__bar {
-    position: relative;
-    overflow: hidden;
-    background-color: $color-progress-bar-bar;
-    height: 10px;
-    margin-bottom: $global-spacing-unit-small;
-  }
-
-    .c-progress-bar__fill {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: $color-progress-bar-fill;
-      animation: _progress-bar 1s cubic-bezier(0.65, 0.05, 0.36, 1);
-    }
