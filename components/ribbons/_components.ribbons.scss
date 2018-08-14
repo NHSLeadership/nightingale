@@ -11,14 +11,39 @@
   @include font-size(14px);
   background-color: $color-ribbon-bg;
   color: $color-ribbon;
-  padding-top: $global-spacing-unit-small;
-  padding-bottom: $global-spacing-unit-small;
+  padding-top: $global-spacing-unit-tiny;
+  padding-bottom: $global-spacing-unit-tiny;
 
   /**
    * Links want to be the same colour as the content.
    */
   a {
     color: inherit;
+  }
+
+}
+
+/**
+ * Some ribbons are page-specific and site at the top of certain pages rather
+ * than above the main content like other ribbons. They need to jut out 30px
+ * either side of the main content.
+ *
+ * 1. The top and bottom margins are adjusted so that the ribbon sits directly
+ *    under the header stripe.
+ */
+
+.c-ribbon--page-specific {
+  margin-top: -($global-spacing-unit + $global-border-mid); /* [1] */
+  margin-top: -$global-spacing-unit; /* [1] */
+  margin-bottom: $global-spacing-unit + $global-border-mid; /* [1] */
+  margin-left: -$global-spacing-unit;
+  margin-right: -$global-spacing-unit;
+  padding-right: $global-spacing-unit-small;
+  padding-left: $global-spacing-unit-small;
+
+  @include mq($from: sm) {
+    padding-right: $global-spacing-unit-tiny;
+    padding-left: $global-spacing-unit-tiny;
   }
 
 }
@@ -78,19 +103,11 @@
   }
 
   /**
-   * Dismiss the ribbon.
+   * Control container for dismiss buttons, etc.
    */
-  .c-ribbon__close {
-    border: none;
-    padding: 0;
+  .c-ribbon__actions {
     float: right;
     margin-left: $global-spacing-unit-small;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    text-align: center;
-    border-radius: 100%;
-    background-color: $color-ribbon-btn-bg;
   }
 
 
@@ -102,15 +119,12 @@
 
 .c-ribbon--alpha {
   background-color: $color-ribbon-alpha-bg;
+  color: $color-ribbon-alpha;
 }
 
 .c-ribbon--beta {
   background-color: $color-ribbon-beta-bg;
   color: $color-ribbon-beta;
-}
-
-.c-ribbon--live {
-  background-color: $color-ribbon-live-bg;
 }
 
 .c-ribbon--expandable {

@@ -9,6 +9,36 @@
  * feel manageable.
  */
 
+$_form-height: 36px;
+
+
+
+
+
+/* Regions
+ *
+ * Regions (usually FIELDSETs) are discrete chunks of a form.
+   ========================================================================== */
+
+.c-form-region {
+  border: none;
+  padding: $global-spacing-unit-small;
+  background-color: color('nhs-grey-pale');
+}
+
+  /**
+   * Sections of regions might need displaying only when we’re filling out the
+   * form. Apply the `.c-form-region__reveal` in order to toggle the display.
+   */
+  .c-form-region__reveal {
+    display: none;
+
+    .c-form-region.is-active & {
+      display: list-item;
+    }
+
+  }
+
 
 
 
@@ -22,11 +52,21 @@
 .c-form-list {
   list-style: none;
   margin-left: 0;
+
+  .c-form-region > &:last-child {
+    margin-bottom: 0;
+  }
+
 }
 
   .c-form-list__item,
   .c-form-list > li {
     margin-bottom: $global-spacing-unit-small;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
   }
 
 
@@ -61,7 +101,7 @@
   color: $color-form;
   padding: 4px 10px;
   border: 1px solid $color-form-border;
-  width: 345px;
+  width: 100%;
   max-width: 100%;
   background-color: $color-form-bg;
   border-radius: 0; /* [1] */
@@ -91,7 +131,7 @@
  * `select` elements need their height setting a little more explicitly.
  */
 select.c-form-input {
-  height: 36px;
+  height: $_form-height;
 }
 
 
@@ -107,20 +147,13 @@ select.c-form-input {
 
 .c-form-dropdown {
   position: relative;
-  display: inline-block;
 
-  &::after {
-    content: "";
+  &:after {
+    @include sprite(arrow-down, true);
     position: absolute;
     top: 50%;
     right: 10px;
-    margin-top: -8px;
-    width: 10px;
-    height: 10px;
-    border: 2px solid transparent;
-    border-bottom-color: color('nhs-black');
-    border-left-color: color('nhs-black');
-    transform: rotate(-45deg);
+    margin-top: -10px;
   }
 
 }
@@ -128,6 +161,7 @@ select.c-form-input {
   .c-form-dropdown__select {
     cursor: pointer;
     background: none;
+    background-color: $color-form-bg;
     -webkit-appearance: none;
        -moz-appearance: none;
         -ms-appearance: none;
@@ -183,7 +217,7 @@ select.c-form-input {
       position: relative;
       border-color: transparent;
 
-      &::after {
+      &:after {
         content: "";
         position: absolute;
         top: 5px;
@@ -216,7 +250,7 @@ select.c-form-input {
     /**
      * Checked radio boxes look very different to their checkbox counterparts.
      */
-    .c-form-checkbox--radio > .c-form-checkbox__input:checked + &::after {
+    .c-form-checkbox--radio > .c-form-checkbox__input:checked + &:after {
       top: 5px;
       left: 5px;
       border: none;
@@ -228,6 +262,24 @@ select.c-form-input {
     }
 
   }
+
+
+
+
+
+/* Comments
+   ========================================================================== */
+
+.c-form-comment {
+  height: $_form-height;
+
+  &:active,
+  &:focus,
+  &.is-active {
+    height: auto;
+  }
+
+}
 
 
 

@@ -24,10 +24,18 @@
   text-decoration: none;
   padding: 4px $global-spacing-unit-large; /* [6] */
   border: 1px solid transparent;
+  transition: 0.2s;
 
-  &:focus {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) inset;
-    border-color: #fff;
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.2),
+                0 8px 10px 0 rgba($color-btn-shadow, 0.4);
+  }
+
+  &:active {
+    box-shadow: 0 4px 4px 0 rgba($color-btn-shadow, 0.1) inset,
+                0 2px 2px 0 rgba($color-btn-shadow, 0.3) inset;
+    border-color: transparent;
   }
 
 }
@@ -41,6 +49,8 @@
 
 .c-btn--submit {
   background-color: $color-btn-submit-bg;
+  border-color: rgba($color-btn-primary-border, 0.5);
+  box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.7);
 
   /**
    * Our global `:visited` state overrides the button’s color, so we use this
@@ -51,7 +61,7 @@
   }
 
   &:hover,
-  &:focus {
+  &:active {
     background-color: $color-btn-submit-bg-hover;
   }
 
@@ -59,6 +69,8 @@
 
 .c-btn--primary {
   background-color: $color-btn-primary-bg;
+  border-color: rgba($color-btn-primary-border, 0.5);
+  box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.8);
 
   /**
    * Our global `:visited` state overrides the button’s color, so we use this
@@ -69,18 +81,24 @@
   }
 
   &:hover,
-  &:focus {
+  &:active {
     background-color: $color-btn-primary-bg-hover;
   }
 
 }
 
+
+
+
+
 .c-btn--secondary {
   background-color: $color-btn-secondary-bg;
+  border-color: rgba($color-btn-secondary-border, 0.1);
+  box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.5);
 
-  &,
-  &:focus {
-    border-color: $color-btn-secondary-border;
+  &:hover,
+  &:active {
+    background-color: $color-btn-secondary-bg-hover;
   }
 
   /**
@@ -92,7 +110,7 @@
   }
 
   &:hover,
-  &:focus {
+  &:active {
     background-color: $color-btn-secondary-bg-hover;
   }
 
@@ -108,8 +126,8 @@
 .c-btn.is-disabled,
 .c-btn[disabled] {
   pointer-events: none;
-  background-color: $color-btn-disabled-bg;
-  color: $color-btn-disabled;
+  opacity: 0.5;
+  border-color: transparent;
 }
 
 
@@ -121,4 +139,13 @@
 
 .c-btn--full {
   width: 100%;
+}
+
+/**
+ * Natural buttons only take up as little content as they need to, with one
+ * character’s worth of padding either side.
+ */
+.c-btn--natural {
+  padding-right: 1ch;
+  padding-left: 1ch;
 }

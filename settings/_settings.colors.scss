@@ -82,9 +82,11 @@ $color-nav-primary-trigger-bg-invert: color('nhs-white')     !default;
 // Page Footer
 // ========================================================================== */
 
-$color-page-footer-border: color('nhs-purple');
-$color-page-footer-bg:     color('nhs-grey-pale');
-$color-page-footer-links:  color('nhs-grey-mid');
+$color-page-footer-border: color('nhs-purple')    !default;
+$color-page-footer-bg:     color('nhs-grey-pale') !default;
+$color-page-footer-links:  color('nhs-grey-mid')  !default;
+$color-page-footer-nav:    color('nhs-black')     !default;
+$color-page-footer-small:  color('nhs-grey-mid')  !default;
 
 
 
@@ -95,19 +97,22 @@ $color-page-footer-links:  color('nhs-grey-mid');
 
 $color-btn-submit:          color('white')   !default;
 $color-btn-submit-bg:       color('success') !default;
-$color-btn-submit-bg-hover: #9bcf5a          !default;
+$color-btn-submit-bg-hover: darken(color('success'), 5%)    !default;
 
-$color-btn-primary:          color('white')      !default;
-$color-btn-primary-bg:       color('nhs-purple') !default;
-$color-btn-primary-bg-hover: #5d348f             !default;
+$color-btn-primary:          color('white')                !default;
+$color-btn-primary-bg:       color('nhs-blue')             !default;
+$color-btn-primary-bg-hover: darken(color('nhs-blue'), 5%) !default;
+$color-btn-primary-border:   color('white')                !default;
 
-$color-btn-secondary:          color('nhs-purple')    !default;
-$color-btn-secondary-bg:       color('white')         !default;
-$color-btn-secondary-bg-hover: #f4f4f4                !default;
-$color-btn-secondary-border:   color('nhs-grey-pale') !default;
+$color-btn-secondary:          color('nhs-blue')           !default;
+$color-btn-secondary-bg:       color('white')              !default;
+$color-btn-secondary-bg-hover: darken(color('white'), 15%) !default;
+$color-btn-secondary-border:   color('nhs-black')          !default;
 
 $color-btn-disabled:    color('white')         !default;
 $color-btn-disabled-bg: color('nhs-grey-pale') !default;
+
+$color-btn-shadow: color('nhs-black') !default;
 
 
 
@@ -136,10 +141,10 @@ $color-checkbox-bg-checked: color('success') !default;
 
 $color-ribbon:                color('white')     !default;
 $color-ribbon-bg:             color('nhs-black') !default;
-$color-ribbon-alpha-bg:       color('nhs-pink')  !default;
+$color-ribbon-alpha:          color('nhs-black') !default;
+$color-ribbon-alpha-bg:       color('nhs-grey-pale')  !default;
 $color-ribbon-beta:           color('nhs-black') !default;
-$color-ribbon-beta-bg:        color('nhs-orange')!default;
-$color-ribbon-live-bg:        color('nhs-aqua')  !default;
+$color-ribbon-beta-bg:        color('nhs-grey-pale')!default;
 $color-ribbon-tag:            color('white')     !default;
 $color-ribbon-tag-bg:         color('nhs-black') !default;
 $color-ribbon-btn-bg:         color('white')     !default;
@@ -186,13 +191,8 @@ $color-divider-large: color('nhs-grey-pale') !default;
 // Progress
 // ========================================================================== */
 
-$color-progress-bar:       color('nhs-grey-dark') !default;
-$color-progress-bar-title: color('nhs-grey-mid')  !default;
-$color-progress-bar-bar:   color('nhs-grey-pale') !default;
-$color-progress-bar-fill:  color('nhs-aqua')      !default;
-
-$color-progress-wheel-bar:   color('nhs-purple')       !default;
-$color-progress-wheel-fill:  color('nhs-purple-light') !default;
+$color-progress-bar:       color('nhs-grey-pale') !default;
+$color-progress-bar-fill:  color('nhs-purple')    !default;
 
 
 
@@ -201,7 +201,7 @@ $color-progress-wheel-fill:  color('nhs-purple-light') !default;
 // Pagination
 // ========================================================================== */
 
-$color-pagination-border:  color('nhs-grey-mid') !default;
+$color-pagination-border:  color('nhs-grey-mid')  !default;
 $color-pagination-current: color('nhs-grey-pale') !default;
 
 
@@ -211,7 +211,65 @@ $color-pagination-current: color('nhs-grey-pale') !default;
 // Tabs
 // ========================================================================== */
 
-$color-tabs:                color('nhs-grey-mid')  !default;
+$color-tabs:                color('nhs-grey-dark') !default;
+$color-tabs-bg:             color('nhs-grey-pale') !default;
 $color-tabs-current:        color('nhs-blue')      !default;
-$color-tabs-border:         color('nhs-grey-pale') !default;
-$color-tabs-border-current: color('nhs-blue')      !default;
+$color-tabs-bg-current:     color('white')         !default;
+$color-tabs-border:         color('white')         !default;
+$color-tabs-border-current: color('nhs-grey-pale') !default;
+$color-tabs-hilite-current: color('nhs-blue')      !default;
+
+
+
+
+
+// Media
+// ========================================================================== */
+
+$color-media-bg:      color('white')         !default;
+$color-media-border:  color('nhs-grey-pale') !default;
+$color-media-tint:    color('nhs-purple')    !default;
+$color-media-content: color('nhs-grey-dark') !default;
+
+
+
+
+
+// Breadcrumb
+// ========================================================================== */
+
+$color-breadcrumb-bg: #eae5f0 !default;
+$color-breadcrumb:    color('nhs-black') !default;
+
+
+
+
+
+// Comments
+// ========================================================================== */
+
+$color-comments-border: color('nhs-grey-pale') !default;
+$color-comments-link: color('nhs-blue') !default;
+
+
+
+
+
+// Quotes
+// ========================================================================== */
+
+$color-quote:        color('nhs-grey-dark') !default;
+$color-quote-meta:   color('nhs-black')     !default;
+$color-quote-border: color('nhs-grey-pale') !default;
+$color-quote-alt:    color('white')         !default;
+$color-quote-alt-bg: color('nhs-purple')    !default;
+
+
+
+
+
+// File-Upload
+// ========================================================================== */
+
+$color-file-upload-bg:     color('nhs-grey-pale');
+$color-file-upload-border: color('nhs-grey-mid');

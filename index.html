@@ -1,24 +1,30 @@
 <!DOCTYPE html>
+<!--[if IE 8 ]><html lang="en" id="jsPage" class="no-js  ie8"><![endif]-->
 <html lang="en" id="jsPage" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
 
-  <link rel="preload" href="/assets/fonts/0811514e-6660-4043-92c1-23d0b8caaa2f.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/assets/fonts/8c92eb68-ce37-4962-a9f4-5b47d336bd1c.woff2" as="font" type="font/woff2" crossorigin />
-
   <title>Nightingale</title>
 
-  <link rel="stylesheet" href="./dist/main.css" />
-
-  <link rel="shortcut icon" href="/favicon.png">
-
   <script>
+    // Check JavaScript
     (function(){
       var page = document.getElementById('jsPage');
       page.classList.remove('no-js');
     }());
   </script>
+
+  <link rel="stylesheet" href="./dist/main.css" />
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Menus, sub-menus, burger-menu, etc. -->
+  <script type="text/javascript" src="js/menus.js" async></script>
 
   <style>
 
@@ -67,6 +73,11 @@
       background-color: #ff8;
     }
 
+    .u-demo-sprite {
+      padding: 15px;
+      background-color: #e8edee;
+    }
+
   </style>
 
 </head>
@@ -90,7 +101,7 @@
 
       <strong class="c-ribbon__tag">Beta</strong>
 
-      <strong class="c-ribbon__body">This page is part of a new service – your <a href="#0">feedback</a> will help us to improve it.</strong>
+      <strong class="c-ribbon__body">This page is part of a new service – your <a href="#0" target="_blank">feedback</a> will help us to improve it.</strong>
 
     </div>
 
@@ -98,93 +109,182 @@
 
   <header class="c-page-header" id="jsPageHeader">
 
-    <div class="o-wrapper">
+    <div class="o-wrapper  c-page-header__inner">
 
-      <img src="./assets/img/logo-nhs.png" alt="NHS" width="89" height="36" class="c-page-header__logo" />
+      <a href="#0" class="c-page-header__lockup">
+        <img src="./assets/img/logos/NHS_LA_Logo_Blue@2x.png" alt="NHS Leadership Academy" width="245" height="72" class="c-page-header__logo" />
+      </a>
 
-      <strong class="c-page-header__title"><img src="./assets/img/logo-sub.png" alt="Leadership Academy" width="241" height="25" /></strong>
+      <div class="c-page-header__controls">
 
-      <button class="c-nav-trigger" id="jsNavTrigger" aria-label="menu" data-expands="#jsNav">☰</button>
+        <!-- Search box -->
+        <form class="c-search c-page-header__search" role="search" method="get" action="/">
+          <input type="search" class="c-form-input c-search__input" placeholder="Search" value="" name="s">
+          <button class="c-search__btn">
+            <span class="c-sprite  c-sprite--magnifying-glass-rev">Search</span>
+          </button>
+        </form>
 
-      <nav class="c-nav-primary  c-page-header__nav" id="primaryNav">
+        <button class="c-nav-trigger" id="jsNavTrigger" aria-label="menu" data-expands="#jsNav">☰</button>
 
-        <ul class="c-nav-primary__list" id="jsNav">
+        <nav class="c-nav-primary c-page-header__nav" id="primaryNav">
 
-          <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link">Item One</a>
-          </li>
+          <ul class="c-nav-primary__list" id="jsNav">
 
-          <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link">Item Two</a>
-          </li>
+            <li class="c-nav-primary__item">
+              <a href="#0" class="c-nav-primary__link">Item One</a>
+            </li>
 
-          <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link">Item Three</a>
-          </li>
+            <li class="c-nav-primary__item">
+              <a href="#0" class="c-nav-primary__link">Item Two</a>
+            </li>
 
-          <li class="c-nav-primary__item">
-            <button class="c-nav-primary__link" data-expands="#item-4-sub" data-popup>Sub Nav</button>
+            <li class="c-nav-primary__item">
+              <a href="#0" class="c-nav-primary__link">Item Three</a>
+            </li>
 
-            <nav class="c-nav-primary__sub  jsNavSub" id="item-4-sub" role="group" aria-label="sub navigation menu">
+            <li class="c-nav-primary__item">
+              <button class="c-nav-primary__link">Sub nav</button>
 
-              <div class="o-wrapper">
+              <nav class="c-nav-primary__sub  jsNavSub">
 
-                <div class="o-layout">
-                  <div class="o-layout__item  u-6/12@lg">
+                <div class="o-wrapper">
 
-                    <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
+                  <div class="o-layout">
+                    <div class="o-layout__item  u-6/12@lg">
 
-                    <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
-                    within this dropdown menu.</small></p>
+                      <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
 
-                    <p class="u-margin-bottom-small">
-                      <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
-                    </p>
+                      <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
+                      within this dropdown menu.</small></p>
 
-                  </div><!-- /.o-layout__item -->
-                  <div class="o-layout__item  u-6/12@lg">
+                      <p class="u-margin-bottom-small">
+                        <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
+                      </p>
 
-                    <ul class="c-nav-primary__sub-links">
-                      <li>
-                        <a href="#0">Sub Link 1</a>
-                      </li>
-                      <li>
-                        <a href="#0">Sub Link 2</a>
-                      </li>
-                      <li>
-                        <a href="#0">Sub Link 3</a>
-                      </li>
-                      <li>
-                        <a href="#0">Sub Link 4</a>
-                      </li>
-                    </ul>
+                    </div><!-- /.o-layout__item -->
+                    <div class="o-layout__item  u-6/12@lg">
 
-                  </div><!-- /.o-layout__item -->
-                </div><!-- /.o-layout -->
+                      <ul class="c-nav-primary__sub-links">
+                        <li>
+                          <a href="#0">Sub Link 1</a>
+                        </li>
+                        <li>
+                          <a href="#0">Sub Link 2</a>
+                        </li>
+                        <li>
+                          <a href="#0">Sub Link 3</a>
+                        </li>
+                        <li>
+                          <a href="#0">Sub Link 4</a>
+                        </li>
+                      </ul>
 
-              </div><!-- /.o-wrapper -->
+                    </div><!-- /.o-layout__item -->
+                  </div><!-- /.o-layout -->
 
-            </nav>
+                </div><!-- /.o-wrapper -->
 
-          </li>
+              </nav>
 
-          <li class="c-nav-primary__item">
-            <a href="#0" class="c-nav-primary__link">Item Five</a>
-          </li>
+            </li>
 
-        </ul>
-      </nav>
+            <li class="c-nav-primary__item">
+              <a href="#0" class="c-nav-primary__link">Item Five</a>
+            </li>
+
+          </ul>
+
+          <!-- login/out button -->
+          <a class="c-btn c-btn--primary c-btn--natural c-page-header__login" href="/">Log out</a>
+
+        </nav>
+
+      </div>
 
     </div>
 
   </header>
 
+
   <div class="o-wrapper">
+
+    <div class="c-ribbon  c-ribbon--page-specific  c-ribbon--expandable">
+
+      <div class="o-wrapper">
+
+        <details class="c-ribbon__body">
+          <summary><b>In partnership with:</b> NHS Health Education England – The Princess Alexandra Hospital NHS Trust – South Essex Partnership University NHS Foundation Trust – Virgin Health Care – Bupa – Simplyhealth – Pruhealth – Department of Health.</summary>
+        </details>
+
+      </div>
+
+    </div>
+
+    <nav class="c-breadcrumb">
+      <ol class="c-breadcrumb__list">
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link  c-sprite c-sprite--home">Home</a></li>
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 01</a></li>
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link is-current">Breadcrumb 02</a></li>
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 03</a></li>
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 04</a></li>
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 05</a></li>
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 06</a></li>
+        <li class="c-breadcrumb__item"><a href="#0" class="c-breadcrumb__link">Breadcrumb 07</a></li>
+      </ol>
+    </nav>
 
     <h1>Nightingale</h1>
 
-    <p>Welcome to the NHS Leadership Academy UI Toolkit and front-end
+    <p class="c-leading-paragraph">Welcome to the NHS Leadership Academy UI Toolkit and front-end
     framework, codename <b>Nightingale</b>.</p>
+
+    <hr class="c-divider" />
+    <div class="o-layout  o-layout--wide">
+      <div class="o-layout__item  u-4/12@lg">
+        <h3><a href="/">Header Link</a></h3>
+        <p>With some supporting text</p>
+      </div><!-- o-layout__item -->
+      <div class="o-layout__item  u-4/12@lg">
+        <h3><a href="/">Header Link</a></h3>
+        <p>With some supporting text</p>
+      </div><!-- o-layout__item -->
+      <div class="o-layout__item  u-4/12@lg">
+        <h3><a href="/">Header Link</a></h3>
+        <p>With some supporting text</p>
+      </div><!-- o-layout__item -->
+    </div><!-- o-layout -->
+
+    <hr class="c-divider" />
+
+    <div class="o-layout  o-layout--wide">
+      <div class="o-layout__item  u-4/12@lg">
+        <div class="c-card  c-card--information">
+            <h4>Call to Action Card</h4>
+            <small><p>This is your chance<br>
+            Don't miss out</p>
+            <p>Another paragraph of text to test the layout.</p>
+            <p>And another.</p></small>
+            <p><a href="Array" class="c-btn c-btn--primary c-btn--full">Apply Now!</a></p>
+        </div><!-- c-card -->
+      </div><!-- o-layout__item -->
+      <div class="o-layout__item  u-4/12@lg">
+        <div class="c-card  c-card--information">
+            <h4>Call to Action Card</h4>
+            <small><p>This is your chance<br>
+            Don't miss out</p></small>
+            <p><a href="Array" class="c-btn c-btn--primary c-btn--full">Apply Now!</a></p>
+        </div><!-- c-card -->
+      </div><!-- o-layout__item -->
+      <div class="o-layout__item  u-4/12@lg">
+        <div class="c-card  c-card--information">
+            <h4>Call to Action Card</h4>
+            <small><p>This is your chance<br>
+            Don't miss out</p></small>
+            <p><a href="Array" class="c-btn c-btn--primary c-btn--full">Apply Now!</a></p>
+        </div><!-- c-card -->
+      </div><!-- o-layout__item -->
+    </div><!-- o-layout -->
 
     <hr class="c-divider" />
 
@@ -192,11 +292,454 @@
 
       <main class="o-layout__item  u-8/12@lg">
 
+        <h2 id="drag-and-drop">Drag &amp; Drop</h2>
+
+        <form class="c-file-upload">
+
+          <h3 class="c-file-upload__title">Drag and Drop Files Here…</h3>
+
+          <small class="c-file-upload__or">or</small>
+
+          <label class="c-btn  c-btn--submit  c-file-upload__btn" for="file-upload">Browse Files</label>
+          <input type="file" id="file-upload" class="c-file-upload__input" />
+
+        </form>
+
+        <h2 id="drag-and-drop">Drag &amp; Drop</h2>
+
+        <form class="c-file-upload  is-active">
+
+          <h3 class="c-file-upload__title">Drag and Drop Files Here…</h3>
+
+          <small class="c-file-upload__or">or</small>
+
+          <label class="c-btn  c-btn--submit  c-file-upload__btn" for="file-upload">Browse Files</label>
+          <input type="file" id="file-upload" class="c-file-upload__input" />
+
+        </form>
+
+        <h2 id="cards">Cards</h2>
+
+          <div class="c-card  c-card--information">
+            <h6>This is an information card</h6>
+            <small>I hope you find it informative</small>
+          </div>
+
+          <div class="c-card  c-card--alert">
+            <h6>This is an alert!</h6>
+            <small>I hope you're paying attention</small>
+          </div>
+
+        <hr class="c-divider" />
+
+        <h2 id="comments">Comments</h2>
+
+        <p>Default Comment form style:</p>
+
+        <form>
+          <fieldset class="c-form-region">
+
+            <ul class="c-form-list">
+
+              <li>
+                <label for="comments2">
+                  Leave a Comment
+                </label>
+                <textarea rows="5" cols="50" class="c-form-input c-form-comment" id="comments2" placeholder="Enter your comment here…"></textarea>
+              </li>
+
+              <li class="c-form-region__reveal">
+                <label for="name2">
+                  Full Name (Required)
+                </label>
+                <input type="text" class="c-form-input" id="name2" placeholder="Jane Smith">
+              </li>
+
+              <li class="c-form-region__reveal">
+                <label for="email2">
+                  Email Address
+                  <small>Email is used only for verification and will not be published</small>
+                </label>
+                <input type="email" class="c-form-input" id="email2" placeholder="name@domain.com" />
+              </li>
+
+              <li class="c-form-region__reveal">
+                <button class="c-btn  c-btn--submit  c-btn--full">Submit</button>
+              </li>
+
+              <li class="c-form-region__reveal">
+                <button class="c-btn  c-btn--secondary  c-btn--full">Cancel</button>
+              </li>
+
+            </ul>
+          </fieldset>
+        </form>
+
+        <p>Once <code>.is-active</code> class is added to the regions and
+        <code>textarea</code> (needs applying on a per-implementation
+        basis):</p>
+
+        <form>
+          <fieldset class="c-form-region  is-active">
+
+            <ul class="c-form-list">
+
+              <li>
+                <label for="comments3">
+                  Leave a Comment
+                </label>
+                <textarea rows="5" cols="50" class="c-form-input  c-form-comment is-active" id="comments3" placeholder="Enter your comment here…">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</textarea>
+              </li>
+
+              <li class="c-form-region__reveal">
+                <label for="name3">
+                  Full Name (Required)
+                </label>
+                <input type="text" class="c-form-input" id="name3" placeholder="Jane Smith">
+              </li>
+
+              <li class="c-form-region__reveal">
+                <label for="email3">
+                  Email Address
+                  <small>Email is used only for verification and will not be published</small>
+                </label>
+                <input type="email" class="c-form-input" id="email3" placeholder="name@domain.com" />
+              </li>
+
+              <li class="c-form-region__reveal">
+                <button class="c-btn  c-btn--submit  c-btn--full">Submit</button>
+              </li>
+
+              <li class="c-form-region__reveal">
+                <button class="c-btn  c-btn--secondary  c-btn--full">Cancel</button>
+              </li>
+
+            </ul>
+          </fieldset>
+        </form>
+
+        <h3>4 Comments</h3>
+
+        <ol class="c-comments">
+
+          <li class="c-comments__item">
+            <header class="c-comment__meta">
+              <a href="#0" class="c-comment__author">Paul Design</a>
+              <time class="c-comment__date">2017-08-15</time>
+            </header>
+            <div class="c-comments__content">
+              <p>There are number of instructions to be followed at the time of
+              refilling an inkjet cartridge. So whenever your printer ink runs
+              dry you need to follow the below steps for inkjet cartridge
+              refill.</p>
+            </div>
+            <footer class="c-comments__footer">
+              <a href="#0" class="c-comments__reply">Reply to comment</a>
+            </footer>
+
+            <ol class="c-comments  c-comments--replies">
+
+              <li class="c-comments__item">
+                <header class="c-comment__meta">
+                  <a href="#0" class="c-comment__author">Paul Design</a>
+                  <time class="c-comment__date">2017-08-15</time>
+                </header>
+                <div class="c-comments__content">
+                  <p>Many centuries ago, man was able to tell the time by
+                  looking at the sun and its position in the sky. Then came the
+                  sundial and finally the clocks and watches.</p>
+                </div>
+                <footer class="c-comments__footer">
+                  <a href="#0" class="c-comments__reply">Reply to comment</a>
+                </footer>
+
+                  <ol class="c-comments  c-comments--replies">
+
+                    <li class="c-comments__item">
+                      <header class="c-comment__meta">
+                        <a href="#0" class="c-comment__author">Paul Design</a>
+                        <time class="c-comment__date">2017-08-15</time>
+                      </header>
+                      <div class="c-comments__content">
+                        <p>I’m a little teapot short and stout. Here is my
+                        handle. Here is my spout. When I get all steamed up,
+                        Hear me shout! Just tip me over And pour me out.</p>
+                        <p>I’m a clever teapot, yes it’s true. Here’s an example
+                        of what I can do. I can turn my handle to a spout. Just
+                        tip me over and pour me out</p>
+                      </div>
+                    </li>
+
+                  </ol>
+              </li>
+
+              <li class="c-comments__item">
+                <header class="c-comment__meta">
+                  <a href="#0" class="c-comment__author">Paul Design</a>
+                  <time class="c-comment__date">2017-08-15</time>
+                </header>
+                <div class="c-comments__content">
+                  <p>Successful businesses can have many things in common, today
+                  we’ll look at the big ‘R’of recognition and how a digital
+                  advertising may help.</p>
+                </div>
+              </li>
+
+            </ol>
+
+          </li>
+
+        </ol>
+
+        <hr class="c-divider" />
+
+        <h2 id="tabs">Tabs</h2>
+
+        <ul class="c-tabs">
+          <li class="c-tabs__item">
+            <a href="#0" class="c-tabs__link">
+              <span class="c-sprite  c-sprite--menu  c-tabs__icon"></span>
+              <span class="c-tabs__text">Overview</span>
+            </a>
+          </li>
+          <li class="c-tabs__item">
+            <a href="#0" class="c-tabs__link  is-current">
+              <span class="c-sprite  c-sprite--info  c-tabs__icon"></span>
+              <span class="c-tabs__text">Structure</span>
+            </a>
+          </li>
+          <li class="c-tabs__item">
+            <a href="#0" class="c-tabs__link">
+              <span class="c-sprite  c-sprite--currency  c-tabs__icon"></span>
+              <span class="c-tabs__text">Faculty</span>
+            </a>
+          </li>
+          <li class="c-tabs__item">
+            <a href="#0" class="c-tabs__link  is-disabled">
+              <span class="c-sprite  c-sprite--user  c-tabs__icon"></span>
+              <span class="c-tabs__text">Details</span>
+            </a>
+          </li>
+          <li class="c-tabs__item">
+            <a href="#0" class="c-tabs__link">
+              <span class="c-sprite  c-sprite--home  c-tabs__icon"></span>
+              <span class="c-tabs__text">Apply</span>
+            </a>
+          </li>
+        </ul>
+
+        <hr class="c-divider" />
+
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
+        leo.</p>
+
+        <blockquote class="uote">
+          <p>Many centuries ago, man was able to tell the time by looking at the
+          sun and its position in the sky. Then came the sundial and finally
+          clocks and watches.</p>
+          <span class="uote__meta">
+            <b>Quote author</b><br />
+            Author role<br />
+            Organisation
+          </span>
+        </blockquote>
+
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
+        leo.</p>
+
+        <h2 id="media">Media</h2>
+
+        <figure class="c-media">
+
+          <div class="c-media__masthead">
+            <img src="./assets/img/content/photo.jpg" alt="" class="c-media__media" />
+          </div>
+
+        </figure>
+
+        <hr class="c-divider" />
+
+        <figure class="c-media">
+
+          <div class="c-media__masthead">
+            <img src="./assets/img/content/photo.jpg" alt="" class="c-media__media" />
+
+            <nav class="c-media__controls">
+              <a href="#0" class="c-media__control"><span class="c-sprite  c-sprite--dot-inactive">Slide 1</span></a>
+              <a href="#0" class="c-media__control"><span class="c-sprite  c-sprite--dot-inactive">Slide 2</span></a>
+              <a href="#0" class="c-media__control"><span class="c-sprite  c-sprite--dot">Slide 3</span></a>
+              <a href="#0" class="c-media__control"><span class="c-sprite  c-sprite--dot-inactive">Slide 4</span></a>
+              <a href="#0" class="c-media__control"><span class="c-sprite  c-sprite--dot-inactive">Slide 5</span></a>
+            </nav>
+
+          </div>
+
+        </figure>
+
+        <hr class="c-divider" />
+
+        <figure class="c-media">
+
+          <div class="c-media__masthead  c-media__masthead--overlay">
+            <img src="./assets/img/content/photo.jpg" alt="" class="c-media__media--overlay" />
+          </div>
+
+          <figcaption class="c-media__content">Image with overlay</figcaption>
+
+        </figure>
+
+        <hr class="c-divider" />
+
+        <aside class="c-media">
+
+          <div class="c-media__masthead">
+            <img src="./assets/img/content/photo.jpg" alt="" class="c-media__media" />
+            <img src="./assets/img/logos/logo-jenner.png" alt="Edward Jenner Programme" class="c-media__emblem" />
+          </div>
+
+        </aside>
+
+        <hr class="c-divider" />
+
+        <aside class="c-media">
+
+          <div class="c-media__masthead">
+            <img src="./assets/img/content/photo.jpg" alt="" class="c-media__media" />
+            <button class="c-sprite  c-sprite--play  c-media__emblem"></button>
+          </div>
+
+          <div class="c-media__content">
+
+            <details class="c-media__reveal" open>
+              <summary class="c-media__reveal-title">Transcript</summary>
+
+              <div class="c-media__scroller">
+
+                <p>In today’s net-savvy world it has become common for any
+                business to have a website which they use mostly for advertising
+                their products and services. With the advent of search engines
+                it has become even easier for the customers to search for the
+                stuff online.</p>
+
+                <p>For a website to be successful its link should land in the
+                first three pages which the search engine brings and the rank of
+                the page should be high which means many visitors come to the
+                site. This can be achieved by applying search engine
+                optimization or popularly known as SEO. This is a marketing
+                strategy which increases the quality and quantity of traffic
+                flow to a particular website via search engines. SEO not only
+                affects the search engine results, but also image search, video
+                search and industry specific vertical search engines. It
+                determines how a search for it. This is a point of controversy,
+                as only the big businesses will be able to increase the number
+                of hits of their page but not the small business who might be
+                having a better quality page.</p>
+
+                <p>Google Ad Words explores ads which have words typed in the
+                search box by the surfer. The Million Dollar Homepage started
+                the concept of Pixel advertising, which is a graphical kind of
+                advertising. Depending on the pixels, the space is sold to the
+                advertiser. Keyword advertising involves advertisers who buy
+                URLs of a site and place their ads at that location. Thus SEO is
+                a market in its own which is yielding great results for
+                businesses on Internet.</p>
+
+              </div>
+
+            </details>
+
+          </div>
+
+        </aside>
+
+        <hr class="c-divider" />
+
+        <h2 id="icons">Icons</h2>
+
+        <p class="u-demo-sprite">
+
+          <span class="c-sprite  c-sprite--dot"></span>
+          <span class="c-sprite  c-sprite--dot-inactive"></span>
+
+          <br />
+
+          <span class="c-sprite  c-sprite--new-window"></span>
+          <span class="c-sprite  c-sprite--new-window-rev"></span>
+
+          <br />
+
+          <span class="c-sprite  c-sprite--arrow-down"></span>
+          <span class="c-sprite  c-sprite--arrow-up"></span>
+          <span class="c-sprite  c-sprite--arrow-left"></span>
+          <span class="c-sprite  c-sprite--arrow-right"></span>
+          <span class="c-sprite  c-sprite--arrow-down-rev"></span>
+          <span class="c-sprite  c-sprite--arrow-up-rev"></span>
+          <span class="c-sprite  c-sprite--arrow-left-rev"></span>
+          <span class="c-sprite  c-sprite--arrow-right-rev"></span>
+
+          <br />
+
+          <span class="c-sprite  c-sprite--pencil"></span>
+          <span class="c-sprite  c-sprite--currency"></span>
+          <span class="c-sprite  c-sprite--speaker"></span>
+          <span class="c-sprite  c-sprite--info"></span>
+          <span class="c-sprite  c-sprite--user"></span>
+          <span class="c-sprite  c-sprite--menu"></span>
+          <span class="c-sprite  c-sprite--home"></span>
+          <span class="c-sprite  c-sprite--close"></span>
+          <span class="c-sprite  c-sprite--pencil-rev"></span>
+          <span class="c-sprite  c-sprite--currency-rev"></span>
+          <span class="c-sprite  c-sprite--speaker-rev"></span>
+          <span class="c-sprite  c-sprite--info-rev"></span>
+          <span class="c-sprite  c-sprite--user-rev"></span>
+          <span class="c-sprite  c-sprite--menu-rev"></span>
+          <span class="c-sprite  c-sprite--close-rev"></span>
+
+          <br />
+
+          <span class="c-sprite  c-sprite--prev-blue"></span>
+          <span class="c-sprite  c-sprite--next-blue"></span>
+
+          <span class="c-sprite  c-sprite--prev-grey"></span>
+          <span class="c-sprite  c-sprite--next-grey"></span>
+
+          <br />
+
+          <span class="c-sprite  c-sprite--close-large"></span>
+          <span class="c-sprite  c-sprite--hamburger"></span>
+          <span class="c-sprite  c-sprite--magnifying-glass"></span>
+          <span class="c-sprite  c-sprite--magnifying-glass-rev"></span>
+
+          <br />
+
+          <span class="c-sprite  c-sprite--facebook"></span>
+          <span class="c-sprite  c-sprite--twitter"></span>
+          <span class="c-sprite  c-sprite--linkedin"></span>
+
+          <br />
+
+          <span class="c-sprite  c-sprite--add"></span>
+          <span class="c-sprite  c-sprite--play"></span>
+
+        </p>
+
+        <hr class="c-divider" />
+
         <h2 id="ribbons">Ribbons</h2>
 
-        <div class="c-ribbon  u-margin-bottom">
+        <div class="c-ribbon  u-margin-bottom" id="jsCookieRibbon">
 
           <div class="o-wrapper">
+
+            <div class="c-ribbon__actions">
+              <button class="c-sprite  c-sprite--close-rev" id="jsCookieBtn">Close</button>
+            </div>
 
             <strong class="c-ribbon__body">This website uses cookies.</strong>
 
@@ -204,18 +747,8 @@
 
         </div>
 
-        <div class="c-ribbon  c-ribbon--live  u-margin-bottom">
-
-          <div class="o-wrapper">
-
-            <strong class="c-ribbon__tag">Live</strong>
-
-            <strong class="c-ribbon__body">Pellentesque habitant morbi tristique
-            senectus et netus et malesuada.</strong>
-
-          </div>
-
-        </div>
+        <!-- Cookies Ribbon -->
+        <script type="text/javascript" src="js/cookies.js" async></script>
 
         <div class="c-ribbon  c-ribbon--alpha  u-margin-bottom">
 
@@ -237,7 +770,7 @@
             <strong class="c-ribbon__tag">Beta</strong>
 
             <strong class="c-ribbon__body">Pellentesque habitant morbi tristique
-            senectus et netus et malesuada.</strong>
+            senectus <a href="#0" target="_blank">netus</a> et malesuada.</strong>
 
           </div>
 
@@ -257,12 +790,234 @@
 
         <hr class="c-divider" />
 
+        <h2 id="articles">Articles (Excerpts)</h2>
+
+          <article class="c-article">
+            <header>
+              <h2 class="c-article__header"><a href="/">Trumping Care</a></h2>
+              <div class="o-layout">
+                <div class="o-layout__item u-9/12@lg">
+                  <div class="o-layout--left">
+                    <a class="c-comment__author" href="/">John Deffenbaugh</a>
+                  </div><!--o-layout--left-->
+                </div><!--o-layout__item-->
+                <div class="o-layout__item  u-3/12@lg">
+                  <div class="o-layout--right">
+                    <time class="c-comment__date" datetime="2017-07-24T20:15:40+00:00">24/7/2017</time>
+                  </div><!--o-layout--right-->
+                </div><!--o-layout__item-->
+              </div><!--o-layout-->
+            </header>
+
+            <div class="c-article__content">
+              <img src="./assets/img/content/photo.jpg" alt="" class="c-media__media">
+              <p>The NHS Leadership Academy works with a world-class expert faculty of global business leaders, educators and practitioners. Our programme [...]</p>
+            </div><!-- .c-article__content -->
+
+            <footer>
+              <div class="o-layout">
+                <div class="o-layout__item u-9/12@lg">
+                  <div class="o-layout--left">
+                    <a href="/">5 Comments</a>
+                  </div><!--o-layout--left-->
+                </div><!--o-layout__item-->
+                <div class="o-layout__item  u-3/12@lg">
+                  <div class="o-layout--right">
+                    <a href="/">Read More</a>
+                  </div><!--o-layout--right-->
+                </div><!--o-layout__item-->
+              </div><!--o-layout-->
+              <a href="/">Edit "Trumping Care"</a>
+            </footer>
+          </article><!-- .c-article -->
+
+          <hr class="c-divider" />
+
+          <article class="c-article">
+            <header>
+              <h2 class="c-article__header"><a href="/">Junior doctors should start leadership development</a></h2>
+              <div class="o-layout">
+                <div class="o-layout__item u-9/12@lg">
+                  <div class="o-layout--left">
+                    <a class="c-comment__author" href="/">Rebecca Crosby</a>
+                  </div><!--o-layout--left-->
+                </div><!--o-layout__item-->
+                <div class="o-layout__item  u-3/12@lg">
+                  <div class="o-layout--right">
+                    <time class="c-comment__date" datetime="2017-07-24T20:15:40+00:00">24/7/2017</time>
+                  </div><!--o-layout--right-->
+                </div><!--o-layout__item-->
+              </div><!--o-layout-->
+            </header>
+
+            <div class="c-article__content">
+              <p>Junior doctor Rebecca Crosby discusses why leadership is so crucial in critical situations [...]</p>
+            </div><!-- .c-article__content -->
+
+            <footer>
+              <div class="o-layout">
+                <div class="o-layout__item u-9/12@lg">
+                  <div class="o-layout--left">
+                    <a href="/">3 Comments</a>
+                  </div><!--o-layout--left-->
+                </div><!--o-layout__item-->
+                <div class="o-layout__item  u-3/12@lg">
+                  <div class="o-layout--right">
+                    <a href="/">Read More</a>
+                  </div><!--o-layout--right-->
+                </div><!--o-layout__item-->
+              </div><!--o-layout-->
+            </footer>
+          </article><!-- .c-article -->
+
+        <hr class="c-divider" />
+
+        <h2 id="articles">Articles (Titles only)</h2>
+
+          <article class="c-article">
+            <header>
+              <h2 class="c-article__header--titles-only"><a href="/">Trumping Care</a></h2>
+              <div class="o-layout">
+                <div class="o-layout__item u-9/12@lg">
+                  <div class="o-layout--left">
+                    <a class="c-comment__author" href="/">John Deffenbaugh</a>
+                  </div><!--o-layout--left-->
+                </div><!--o-layout__item-->
+                <div class="o-layout__item  u-3/12@lg">
+                  <div class="o-layout--right">
+                    <time class="c-comment__date" datetime="2017-07-24T20:15:40+00:00">24/7/2017</time>
+                  </div><!--o-layout--right-->
+                </div><!--o-layout__item-->
+              </div><!--o-layout-->
+            </header>
+
+            <footer>
+              <div class="o-layout">
+                <div class="o-layout__item u-9/12@lg">
+                  <div class="o-layout--left">
+                    <a href="/">5 Comments</a>
+                  </div><!--o-layout--left-->
+                </div><!--o-layout__item-->
+                <div class="o-layout__item  u-3/12@lg">
+                  <div class="o-layout--right">
+                    <a href="/">Read More</a>
+                  </div><!--o-layout--right-->
+                </div><!--o-layout__item-->
+              </div><!--o-layout-->
+              <a href="/">Edit "Trumping Care"</a>
+            </footer>
+          </article><!-- .c-article -->
+
+          <hr class="c-divider" />
+
+          <article class="c-article">
+            <header>
+              <h2 class="c-article__header--titles-only"><a href="/">Junior doctors should start leadership development</a></h2>
+              <div class="o-layout">
+                <div class="o-layout__item u-9/12@lg">
+                  <div class="o-layout--left">
+                    <a class="c-comment__author" href="/">Rebecca Crosby</a>
+                  </div><!--o-layout--left-->
+                </div><!--o-layout__item-->
+                <div class="o-layout__item  u-3/12@lg">
+                  <div class="o-layout--right">
+                    <time class="c-comment__date" datetime="2017-07-24T20:15:40+00:00">24/7/2017</time>
+                  </div><!--o-layout--right-->
+                </div><!--o-layout__item-->
+              </div><!--o-layout-->
+            </header>
+
+            <footer>
+              <div class="o-layout">
+                <div class="o-layout__item u-9/12@lg">
+                  <div class="o-layout--left">
+                    <a href="/">3 Comments</a>
+                  </div><!--o-layout--left-->
+                </div><!--o-layout__item-->
+                <div class="o-layout__item  u-3/12@lg">
+                  <div class="o-layout--right">
+                    <a href="/">Read More</a>
+                  </div><!--o-layout--right-->
+                </div><!--o-layout__item-->
+              </div><!--o-layout-->
+            </footer>
+          </article><!-- .c-article -->
+
+        <hr class="c-divider" />
+
+        <header class="page-header">
+          <h1>Search Results: <span>leader</span></h1>
+          <p>203 Results found</p>
+        </header><!-- .page-header -->
+
+        <hr class="c-divider">
+
+        <article>
+          <header>
+            <h2 class="c-article__header"><a href="#" rel="bookmark">“It’s about becoming the type of leader that can benefit patients and staff beyond your immediate portfolio”</a></h2>
+            <div class="entry-meta">
+              <div class="o-layout">
+                <div class="o-layout__item u-9/12@lg">
+                  <div class="o-layout--left">
+                    <a class="c-comment__author" href="#">Louise Thompson</a>
+                  </div>
+                </div>
+                <div class="o-layout__item  u-3/12@lg">
+                  <div class="o-layout--right">
+                    <a class="c-comment__date" href="#" rel="bookmark">31/01/2018</a>
+                  </div>
+                </div>
+             </div>
+           </div>
+          </header>
+
+          <div class="c-article__content">
+            <p>Nye Bevan programme graduate and director of communications at Burton Hospitals NHS Foundation Trust, Louise Thompson, tells us how the programme has helped her to recognise her own value as a leader while keeping front line staff and patient focus at the centre of her thinking.</p>
+          </div>
+
+          <footer class="o-layout--right">
+            <a href="#">Read more</a>
+          </footer>
+        </article>
+        <br />
+
+        <article>
+          <header>
+            <h2 class="c-article__header"><a href="#" rel="bookmark">“As a leader, you need to make sure you’re approachable by anyone at any level in any organisation.”</a></h2>
+            <div class="entry-meta">
+              <div class="o-layout">
+                <div class="o-layout__item u-9/12@lg">
+                  <div class="o-layout--left">
+                    <a class="c-comment__author" href="#">Chris Pointon</a>
+                  </div>
+                </div>
+                <div class="o-layout__item  u-3/12@lg">
+                  <div class="o-layout--right">
+                    <a class="c-comment__date" href="#" rel="bookmark">21/07/2017</a>
+                  </div>
+                </div>
+             </div>
+           </div>
+          </header>
+
+          <div class="c-article__content">
+            <p>The #hellomynameis campaign was created by Dr. Kate Granger MBE, a registrar in elderly medicine who had terminal cancer, and her husband Chris Pointon. They started the campaign in August 2013 after Kate became frustrated with the number of staff who failed to introduce themselves to her when she was an inpatient with post-operative sepsis. […]</p>
+          </div>
+
+          <footer class="o-layout--right">
+            <a href="#">Read more</a>
+          </footer>
+        </article>
+        <br />
+
+        <hr class="c-divider" />
+
         <h2 id="pagination">Pagination</h2>
 
         <ol class="c-pagination">
 
           <li class="c-pagination__item  c-pagination__prev">
-            <a href="#0" class="c-pagination__link">« <span class="u-hide-visually">Previous Page</span></a>
+            <a href="#0" class="c-pagination__link"><span class="c-sprite  c-sprite--prev-blue">Prev Page</span></a>
           </li>
 
           <li class="c-pagination__item">
@@ -285,7 +1040,7 @@
           </li>
 
           <li class="c-pagination__item  c-pagination__next">
-            <a href="#0" class="c-pagination__link"><span class="u-hide-visually">Next Page</span> »</a>
+            <a href="#0" class="c-pagination__link"><span class="c-sprite  c-sprite--next-blue">Next Page</span></a>
           </li>
 
         </ol>
@@ -295,11 +1050,11 @@
         <ol class="c-pagination">
 
           <li class="c-pagination__item  c-pagination__prev">
-            <a href="#0" class="c-pagination__link  is-current">« Previous <span class="u-hide-visually">Page</span></a>
+            <a href="#0" class="c-pagination__link  is-current"><span class="c-sprite c-sprite--prev-grey">Prev Page</span></a>
           </li>
 
           <li class="c-pagination__item  c-pagination__next">
-            <a href="#0" class="c-pagination__link">Next <span class="u-hide-visually">Page</span> »</a>
+            <a href="#0" class="c-pagination__link"><span class="c-sprite  c-sprite--next-blue">Next Page</span></a>
           </li>
 
         </ol>
@@ -427,19 +1182,164 @@
 
         <hr class="c-divider" />
 
+        <h2 id="tables">Tables</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Lorem</th>
+              <th>Ipsum</th>
+              <th>Dolor</th>
+              <th>Sit</th>
+              <th>Amet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>Dolor</td>
+              <td>Sit</td>
+              <td>Amet</td>
+            </tr>
+            <tr>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>Dolor</td>
+              <td>Sit</td>
+              <td>Amet</td>
+            </tr>
+            <tr>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>Dolor</td>
+              <td>Sit</td>
+              <td>Amet</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="c-table-data">
+          <thead>
+            <tr>
+              <th class="c-table-data__title" colspan="100%">Table Title</th>
+            </tr>
+            <tr>
+              <td colspan="100%">Copy for brief explanation of table, which can span two to three lines maximum.</td>
+            </tr>
+            <tr>
+              <th>Lorem</th>
+              <th>Ipsum</th>
+              <th>Dolor</th>
+              <th>Sit</th>
+              <th class="u-text-right">Amet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>Dolor</td>
+              <td>Sit</td>
+              <td class="u-text-right">947,593,174</td>
+            </tr>
+            <tr>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>Dolor</td>
+              <td>Sit</td>
+              <td class="u-text-right">947,593,174</td>
+            </tr>
+            <tr>
+              <td>Lorem</td>
+              <td>Ipsum</td>
+              <td>Dolor</td>
+              <td>Sit</td>
+              <td class="u-text-right">947,593,174</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="c-table-data">
+          <thead>
+            <tr>
+              <th class="c-table-data__title" colspan="100%">Table Title</th>
+            </tr>
+            <tr>
+              <td colspan="100%">Copy for brief explanation of table, which can span two to three lines maximum.</td>
+            </tr>
+            <tr>
+              <th>Lorem</th>
+              <td class="u-text-right"><a href="#84">Refresh data</a></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lorem</td>
+              <td class="u-text-right">947,593,174</td>
+            </tr>
+            <tr>
+              <td>Lorem</td>
+              <td class="u-text-right">947,593,174</td>
+            </tr>
+            <tr>
+              <td>Lorem</td>
+              <td class="u-text-right">947,593,174</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="c-divider" />
+
         <h2 id="headings">Headings</h2>
 
         <h1>Heading Level 1</h1>
 
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
+        leo.</p>
+
         <h2>Heading Level 2</h2>
+
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
+        leo.</p>
 
         <h3>Heading Level 3</h3>
 
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
+        leo.</p>
+
         <h4>Heading Level 4</h4>
+
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
+        leo.</p>
 
         <h5>Heading Level 5</h5>
 
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
+        leo.</p>
+
         <h6>Heading Level 6</h6>
+
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
+        leo.</p>
 
         <h1><a href="#0">Heading Level Link 1</a></h1>
 
@@ -488,30 +1388,66 @@
         <h2 id="buttons">Buttons</h2>
 
         <p>
-          <a href="#0" class="c-btn  c-btn--submit">Click me!</a>
-          <a href="#0" class="c-btn  c-btn--primary">Click me!</a>
-          <a href="#0" class="c-btn  c-btn--secondary">Click me!</a>
+          <a href="#0" class="c-btn  c-btn--submit">Submit</a>
+          <a href="#0" class="c-btn  c-btn--primary">Primary</a>
+          <a href="#0" class="c-btn  c-btn--secondary">Secondary</a>
         </p>
 
         <p>
-          <a href="#0" class="c-btn  c-btn--submit  is-disabled">Click me!</a>
-          <a href="#0" class="c-btn  c-btn--primary  is-disabled">Click me!</a>
-          <a href="#0" class="c-btn  c-btn--secondary  is-disabled">Click me!</a>
+          <a href="#0" class="c-btn  c-btn--submit  is-disabled">Submit</a>
+          <a href="#0" class="c-btn  c-btn--primary  is-disabled">Primary</a>
+          <a href="#0" class="c-btn  c-btn--secondary  is-disabled">Secondary</a>
         </p>
 
-        <p><a href="#0" class="c-btn  c-btn--full  c-btn--submit">Click me!</a></p>
-        <p><a href="#0" class="c-btn  c-btn--full  c-btn--primary">Click me!</a></p>
-        <p><a href="#0" class="c-btn  c-btn--full  c-btn--secondary">Click me!</a></p>
+        <p>
+          <a href="#0" class="c-btn  c-btn--submit  c-btn--natural">Natural Width</a>
+          <a href="#0" class="c-btn  c-btn--primary  c-btn--natural">Natural Width</a>
+          <a href="#0" class="c-btn  c-btn--secondary  c-btn--natural">Natural Width</a>
+        </p>
 
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
-          <a href="#k">fames ac turpis egestas</a>. <q>Vestibulum tortor quam,
-        feugiat vitae</q>, ultricies eget, tempor sit amet, ante. Donec eu libero
-        sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-        eleifend leo.</p>
+        <p><a href="#0" class="c-btn  c-btn--full  c-btn--submit">Full Width</a></p>
+        <p><a href="#0" class="c-btn  c-btn--full  c-btn--primary">Full Width</a></p>
+        <p><a href="#0" class="c-btn  c-btn--full  c-btn--secondary">Full Width</a></p>
+
+        <hr class="c-divider" />
+
+        <h2 id="hints">Hints</h2>
+
+        <p>Hints are development-mode helpers that notify developers when they
+        are potentially misusing a specific piece of code.</p>
+
+        <div class="o-layout__item"><p>Pellentesque habitant morbi tristique
+          senectus et netus et malesuada fames ac turpis egestas.</p></div>
+
+        <li>List item</li>
+
+        <p>
+          <a href="#0" class="c-btn">Button</a>
+          <span class="c-sprite"></span>
+        </p>
+
+        <hr class="c-divider" />
+
+        <h2 id="typography">Typography</h2>
+
+        <p><b>Default body copy</b> is the style that should be used in all instances when
+          not accentuating the copy content. Style should be set as <b>Frutiger 55
+          Roman 18px #231F20</b> <q>(line height 26px)</q> <a href="#k">example link style</a></p>
+
+          <small><b>Supporting body copy</b> is the style that should only be used in certain
+            instances such as when copy need not distract or draw away attention from
+            default body copy. Style should be set as <b>Frutiger 55 Roman 14px #231F20</b> <q>
+            (line height 20px)</q> <a href="#k">example link style</a> </small>
 
         <ul>
           <li>Item 1</li>
-          <li>Item 2</li>
+          <li>
+            Item 2
+            <ul>
+              <li>Sub-item 1</li>
+              <li>Sub-item 2</li>
+            </ul>
+          </li>
           <li>Item 3</li>
           <li>Item 4</li>
           <li>Item 5</li>
@@ -519,7 +1455,13 @@
 
         <ol>
           <li>Item 1</li>
-          <li>Item 2</li>
+          <li>
+            Item 2
+            <ol>
+              <li>Sub-item 1</li>
+              <li>Sub-item 2</li>
+            </ol>
+          </li>
           <li>Item 3</li>
           <li>Item 4</li>
           <li>Item 5</li>
@@ -540,24 +1482,8 @@
 
         <h2 id="progress">Progress</h2>
 
-        <p class="c-progress-wheel" data-percent="33">
-          <b class="c-progress-wheel__text">33%</b>
-        </p>
-
         <div class="c-progress-bar">
-
-          <h3 class="c-progress-bar__title">
-            <b class="c-progress-bar__%">75</b>% complete
-          </h3>
-
-          <div class="c-progress-bar__bar">
-            <span class="c-progress-bar__fill" style="left: -25%;"></span>
-          </div>
-
-          <h3 class="c-progress-bar__title-sub">5 units left</h3>
-
-          <p>Next up: Why does leadership matter?</p>
-
+          <span class="c-progress-bar__fill" style="left: -25%;"></span>
         </div>
 
         <hr class="c-divider" />
@@ -579,9 +1505,26 @@
 
         <h2 id="quotes">Quotes</h2>
 
-        <blockquote>
-          <p>Pellentesque habitant morbi tristique senectus et netus et
-          malesuada.</p>
+        <blockquote class="c-quote">
+          <p>Many centuries ago, man was able to tell the time by looking at the
+          sun and its position in the sky. Then came the sundial and finally
+          clocks and watches.</p>
+          <span class="c-quote__meta">
+            <b>Quote author</b><br />
+            Author role<br />
+            Organisation
+          </span>
+        </blockquote>
+
+        <blockquote class="c-quote  c-quote--rev">
+          <p>Many centuries ago, man was able to tell the time by looking at the
+          sun and its position in the sky. Then came the sundial and finally
+          clocks and watches.</p>
+          <span class="c-quote__meta">
+            <b>Quote author</b><br />
+            Author role<br />
+            Organisation
+          </span>
         </blockquote>
 
         <hr class="c-divider" />
@@ -677,153 +1620,51 @@
 
       <hr class="c-divider" />
 
-      <p><small>Pellentesque habitant morbi tristique senectus et netus et
-        malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat
-        vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
-        quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-        eleifend leo.</small></p>
+      <div class="o-layout">
+
+        <div class="o-layout__item  u-9/12@lg">
+
+          <ul class="c-page-footer__nav">
+            <li class="c-page-footer__nav-item"><a href="#0">Accessibility</a></li>
+            <li class="c-page-footer__nav-item"><a href="#0">Sitemap</a></li>
+            <li class="c-page-footer__nav-item"><a href="#0">Terms &amp; Conditions</a></li>
+            <li class="c-page-footer__nav-item"><a href="#0">Privacy</a></li>
+            <li class="c-page-footer__nav-item"><a href="#0">How we use Cookies</a></li>
+          </ul>
+
+          <p class="c-page-footer__smallprint"><small>Copyright © NHS Leadership Academy 2017. All rights reserved.</small></p>
+
+        </div><!-- o-layout__item -->
+
+        <div class="o-layout__item  o-layout--right  u-3/12@lg">
+            <a class="c-sprite  c-sprite--facebook" href="#0">Facebook</a>
+            <a class="c-sprite  c-sprite--twitter" href="#0">Twitter</a>
+            <a class="c-sprite  c-sprite--linkedin" href="#0">LinkedIn</a>
+        </div><!-- o-layout__item -->
+
+      </div><!-- o-layout -->
 
     </div>
 
   </footer>
+
   <script>
-
-    (function() {
-
-      var setupToggles = function() {
-        if (window.innerWidth > 720) {
-          // Get all the submenus
-          var submenus = document.querySelectorAll('.jsNavSub')
-
-          Array.prototype.forEach.call(submenus, function(submenu) {
-            var clone = submenu.cloneNode(true)
-            var wrapper = document.getElementById('jsPageHeader')
-            wrapper.appendChild(clone)
-            submenu.parentNode.removeChild(submenu)
-          })
-        }
-      }
-
-      setupToggles()
-
-      function getDisplayMode(target) {
-        var displayMode = target.currentStyle ? target.currentStyle.display : window.getComputedStyle(target, null).display
-        return displayMode
-      }
-
-      function toggle(toggleButton, target, popupMode, displayMode) {
-        var expanded = toggleButton.getAttribute('aria-expanded') === 'true'
-        expanded = !expanded
-        toggleButton.setAttribute('aria-expanded', expanded)
-        target.style.display = target.style.display === 'none' ? displayMode : 'none'
-
-        // Get header class value
-        var header = document.getElementById('jsPageHeader')
-        var headerClasses = header.getAttribute('class')
-
-        // Do header class
-        // if it's a submenu that's been opened
-        if (expanded && target.getAttribute('aria-label') === 'submenu') {
-          header.setAttribute('class', headerClasses + ' has-sub-nav')
+    // Eww, eww, ewwww! Forcing a repaint to get around a really, really odd
+    // Safari bug: https://twitter.com/csswizardry/status/897110955448029184
+    (function(){
+      var ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf('safari') != -1) {
+        if (ua.indexOf('chrome') > -1) {
         } else {
-          header.setAttribute('class', headerClasses.replace(' has-sub-nav', ''))
-        }
-
-        if (expanded && popupMode) {
-          // Get the first and last focusable elements
-          var first = target.querySelector('a[href], button, input, textarea, select, [tabindex="0"]')
-          var all = target.querySelectorAll('a[href], button, input, textarea, select, [tabindex="0"]')
-          var last = all[all.length - 1]
-
-          // Focus the first focusable elem
-          first.focus()
-
-          // Refocus `toggleButton` if the user
-          // presses Shift + Tab on first focusable elem
-          first.addEventListener('keydown', function(e) {
-            var key = 'which' in e ? e.which : e.keyCode;
-            if (key === 9 && e.shiftKey) {
-              e.preventDefault()
-              toggleButton.focus()
-            }
-          })
-
-          // Refocus `toggleButton` if the user
-          // presses Tab on last focusable elem
-          last.addEventListener('keydown', function(e) {
-            var key = 'which' in e ? e.which : e.keyCode;
-            if (key === 9 && !e.shiftKey) {
-              e.preventDefault()
-              toggleButton.focus()
-            }
-          })
+          function ready() {
+            var page = document.getElementById('jsPage');
+            page.style.color = '#231f21';
+          };
+          document.addEventListener("DOMContentLoaded", ready);
         }
       }
-
-      // Get all the toggle button nodes in the document
-      var toggleButtons = document.querySelectorAll('[data-expands]')
-
-      // Iterate over those buttons
-      Array.prototype.forEach.call(toggleButtons, function(toggleButton) {
-        // Give the element the button role
-        toggleButton.setAttribute('role', 'button')
-
-        // Set the aria-expanded value to false to begin with
-        toggleButton.setAttribute('aria-expanded', 'false')
-
-        // Define the target element via the selector supplied
-        // as the `data-expands` value
-        var target = document.querySelector(toggleButton.getAttribute('data-expands'))
-
-        // If it has `data-popup` give it `aria-haspopup`
-        // and set it to popupMode
-        if (toggleButton.getAttribute('data-popup') !== null) {
-          toggleButton.setAttribute('aria-haspopup', 'true')
-          var popupMode = true
-
-          // Give the target the right semantics too
-          target.setAttribute('role', 'group')
-          target.setAttribute('aria-label', 'submenu')
-        }
-
-        // Get and set displayMode
-        var displayMode = getDisplayMode(target)
-        if (displayMode === 'none') {
-          target.style.display = 'none'
-          displayMode = 'block'
-        }
-
-        toggleButton.addEventListener('click', function() {
-          // Do the toggling
-          toggle(toggleButton, target, popupMode, displayMode)
-        })
-
-        // Close menu on outside click
-        document.addEventListener('click', function(e) {
-          if ((!target.contains(e.target) && toggleButton !== e.target) && toggleButton.getAttribute('aria-expanded') === 'true') {
-            toggleButton.click()
-          }
-        })
-      })
-
-      // Hamburger menu text node toggle
-      var navTrigger = document.getElementById('jsNavTrigger');
-      navTrigger.addEventListener('click', function() {
-        this.innerHTML = this.innerHTML === '×' ? '☰' : '×'
-      })
-    })()
+    }());
   </script>
-
-<script>
-    var headings = document.querySelectorAll("h2[id], h3[id], h4[id], h5[id], h6[id]");
-
-    for (var i = 0; i < headings.length; i++) {
-      headings[i].innerHTML =
-        '<a href="#' + headings[i].id + '">' +
-        headings[i].innerText +
-        '</a>';
-    }
-</script>
 
 </body>
 </html>

@@ -1,0 +1,51 @@
+/* ==========================================================================
+   #HINTS
+   ========================================================================== */
+
+@if ($global-hints == true) {
+
+@mixin _hint-error-styles() {
+  cursor:help;
+  outline: 1px solid red;
+}
+
+/**
+ * List items outside of lists are definitely errors.
+ */
+
+:not(ol):not(ul) {
+
+  > li {
+    --error: "List items need to live inside of lists!";
+    @include _hint-error-styles();
+  }
+
+}
+
+
+
+
+
+/**
+ * Layout Items must be nested directly within an `.o-layout` parent.
+ */
+
+:not(.o-layout) > .o-layout__item {
+  --error: "Yikes! This needs to live inside of an `.o-layout` parent.";
+  @include _hint-error-styles();
+}
+
+
+
+
+
+/**
+ * Images need `alt` attributes.
+ */
+
+img:not([alt]) {
+  --error: "All `img` elements need an `alt` attribute, even it it’S left empty.";
+  @include _hint-error-styles();
+}
+
+} // endif

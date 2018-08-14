@@ -19,10 +19,14 @@ general:
 
 test:
   override:
-    - yarn deploy
+    - yarn circle
 
 deployment:
-  production:
+  versioned:
+    branch: /tkt-.*/
     commands:
-      - aws s3 sync dist/ s3://nhs-nightingale/${CIRCLE_BRANCH}/${CIRCLE_BUILD_NUM}
-      - aws s3 sync dist/ s3://nhs-nightingale/latest --delete
+      - aws s3 sync dist/ s3://${BUCKET}/${CIRCLE_BRANCH}/${CIRCLE_BUILD_NUM}
+  develop:
+    branch: develop
+    commands:
+      - aws s3 sync dist/ s3://${BUCKET}/latest --delete

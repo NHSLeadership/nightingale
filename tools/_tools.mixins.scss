@@ -11,10 +11,31 @@
 
 @mixin clearfix() {
 
+  /**
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    contenteditable attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that are clearfixed.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   */
+  &:before,
   &:after {
-    content: "" !important;
-    display: block !important;
-    clear: both !important;
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  @if ($global-oldIE == true) {
+    /**
+     * For IE 6/7 only
+     * Include this rule to trigger hasLayout and contain floats.
+     */
+    *zoom: 1;
   }
 
 }
@@ -30,13 +51,22 @@
   font-size: $font-size;
   font-size: ($font-size / $global-font-size) * 1rem;
 
+  // If we haven’t specified a line-height explicitly, let’s automatically
+  // create one that sits on the next closest unit of our baseline grid.
   @if ($line-height == auto) {
     line-height: ceil($font-size / $global-line-height) * ($global-line-height / $font-size);
   }
 
   @else {
 
-    @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+    // If we pass in a hard-coded pixel value for our line-height, let’s convert
+    // it to the unitless equivalent.
+    @if (type-of($line-height) == number) {
+      line-height: strip-unit($line-height) / strip-unit($font-size);
+    }
+
+    // If we pass in `inherit` or `normal`, treat it as literal.
+    @if (type-of($line-height) == "inherit" or $line-height == "normal") {
       line-height: $line-height;
     }
 
@@ -100,4 +130,107 @@
   padding: 0 $important;
   position: absolute $important;
   width: 1px $important;
+}
+
+
+
+
+
+// Spriting setup mixin
+//
+// This mixin simply holds some shared styles for sprites; it doesn’t actually
+// create anything yet. It’s a private mixin because, currently, it’s not much
+// use on its own so can’t really be used arbitrarily.
+//
+// 1. Where does the sprite actually live?
+// 2. The default kinda size for most icons.
+// 3. How big is the regular sprite image?
+// 4. Remove residual styles from other elements (e.g. BUTTONs).
+// ========================================================================== */
+
+@mixin _sprite-setup() {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(#{$image-path}sprite/icons.png); // 1
+  width: 20px; // 2
+  height: 20px; // 2
+  background-color: transparent; // 4
+  border: none; // 4
+  padding: 0; // 4
+
+  // Retina screens get a nicer sprite
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+         only screen and (   min--moz-device-pixel-ratio: 2),
+         only screen and (     -o-min-device-pixel-ratio: 2/1),
+         only screen and (        min-device-pixel-ratio: 2),
+         only screen and (                min-resolution: 192dpi),
+         only screen and (                min-resolution: 2dppx) {
+    background-image: url(#{$image-path}sprite/icons@2x.png); // 1
+    background-size: 396px 266px; // 3
+  }
+
+}
+
+// Sprite creation mixin
+//
+// This mixin is used to actually create sprites. Pass in a named sprite (found
+// in `$global-sprite`) and optionally whether or not the sprite will be held in
+// generated content (i.e. `:before` or `:after`).
+//
+// Usage:
+//
+//     .foo {
+//       @include sprite(arrow-down);
+//     }
+//
+//     .bar:after {
+//       @include sprite(info, true)
+//     }
+//
+// ========================================================================== */
+
+@mixin sprite($image, $generated: false) {
+
+  @if ($generated != false) {
+    content: "";
+    @include _sprite-setup();
+  }
+
+  background-position: map-deep-get($global-sprite, $image, x) map-deep-get($global-sprite, $image, y);
+  width: map-deep-get($global-sprite, $image, width);
+  height: map-deep-get($global-sprite, $image, height);
+}
+
+
+
+
+
+// Kellum
+//
+// The Kellum method for image replacement is beautifully simple:
+// zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+// ========================================================================== */
+
+@mixin kellum() {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+
+
+
+// Opacity
+//
+// In older browsers we need better fallbacks for opacity.
+
+@mixin opacity($value) {
+
+  @if ($global-oldIE == true) {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$value * 100})";
+    filter: alpha(opacity=#{$value * 100});
+  }
+
+  opacity: $value;
 }

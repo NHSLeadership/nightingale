@@ -4,8 +4,6 @@
 
 /**
  * The primary nav sits within the main header area. It’s fully responsive.
- *
- * 1. `font-size: 0;` hack to collapse whitespace.
  */
 
 .c-nav-primary {
@@ -13,8 +11,6 @@
   clear: both;
 
   @include mq($from: md) {
-    font-size: 0; /* [1] */
-    float: right;
     clear: none;
   }
 
@@ -23,7 +19,8 @@
 
 
   /**
-   * 1. We definitely need a more accessible way of showing/hiding this content.
+   * 1. `font-size: 0;` hack to collapse whitespace.
+   * 2. We definitely need a more accessible way of showing/hiding this content.
    */
   .c-nav-primary__list {
     display: none; /* [1] */
@@ -32,7 +29,9 @@
     list-style: none;
 
     @include mq($from: md) {
-      display: block; /* [1] */
+      font-size: 0; /* [1] */
+      display: block; /* [2] */
+      float: left;
     }
 
     .no-js &,
@@ -47,7 +46,7 @@
 
     .c-nav-primary__item {
       @include font-size(16px);
-      vertical-align: top;
+      vertical-align: middle;
 
       @include mq($from: md) {
         display: inline-block;
@@ -97,6 +96,7 @@
         background: none; /* [1] */
         border: none; /* [1] */
 
+
         /**
          * Colours invert on dark header backgrounds.
          */
@@ -108,29 +108,12 @@
          * Dropdown toggle arrow. This is , completely bodged in for now; there
          * will be a separate task to actually swap this out for a proper icon.
          */
-        &[aria-haspopup="true"] {
-          position: relative;
-          padding-right: 15px;
-
-          &::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            right: 0;
-            width: 10px;
-            height: 10px;
-            margin-top: -8px;
-            border: 2px solid transparent;
-            border-right-color: currentColor;
-            border-bottom-color: currentColor;
-            transform: rotate(45deg);
-          }
-
+        &[aria-expanded="false"]:after {
+          @include sprite(arrow-down, true);
         }
 
-        &[aria-expanded="true"]::after {
-          transform: rotate(225deg);
-          margin-top: -2px;
+        &[aria-expanded="true"]:after {
+          @include sprite(arrow-up, true);
         }
 
       }
@@ -195,6 +178,7 @@
   padding-top: $global-spacing-unit-small;
   padding-bottom: $global-spacing-unit-small;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
+  margin-bottom: -$global-spacing-unit-small;
 
   @include mq($from: md) {
     padding-top: $global-spacing-unit;

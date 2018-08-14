@@ -1,0 +1,70 @@
+/* ==========================================================================
+   #QUOTES
+   ========================================================================== */
+
+/* Long-form quotations
+ *
+ * 1. Remove leftover styling from BLOCKQUOTE element.
+   ========================================================================== */
+
+.c-quote {
+  $font-size: 24px;
+  position: relative;
+  @include font-size($font-size, 32px);
+  font-style: italic;
+  color: $color-quote;
+  padding-left: $global-spacing-unit-small;
+  margin-right: 0; /* [1] */
+  margin-left: 0; /* [1] */
+
+  /**
+   * 1. Slightly tighter spacing between quoted paragraphs.
+   */
+  > p {
+    margin-bottom: $global-spacing-unit-small; /* [1] */
+  }
+
+  /**
+   * This forms a faux `border-left`. Because we need the border to be
+   * effectively inset on reversed quotes, we remove it from document flow.
+   */
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4px;
+    background-color: $color-quote-border;
+  }
+
+}
+
+  .c-quote__meta {
+    $font-size: 14px;
+    @include font-size($font-size, 20px);
+    display: block;
+    text-align: right;
+    color: $color-quote-meta;
+    font-style: normal;
+
+    .c-quote--rev & {
+      color: $color-quote-alt;
+    }
+
+  }
+
+.c-quote--rev {
+  color: $color-quote-alt;
+  background-color: color('nhs-purple');
+  padding: $global-spacing-unit-small;
+  padding-left: $global-spacing-unit;
+
+  &:before {
+    border-color: $color-quote-alt;
+    top: $global-spacing-unit-small;
+    bottom: $global-spacing-unit-small;
+    left: $global-spacing-unit-small;
+  }
+
+}

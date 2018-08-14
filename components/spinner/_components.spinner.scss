@@ -27,8 +27,7 @@
 
   @supports (animation: 0.5s spinner) { /* [1] */
 
-    overflow: hidden; /* [2] */
-    text-indent: 100%; /* [2] */
+    @include kellum();
     vertical-align: middle;
 
   }
@@ -42,7 +41,7 @@
      * 1. Center the spinner in its bounding box.
      * 2. The size of the actual spinner is governed by its font-size.
      */
-    &::after {
+    &:after {
       content: "";
       position: absolute;
       top: 50%; /* [1] */
@@ -75,7 +74,7 @@
 
   @supports (animation: 0.5s spinner) {
 
-    &::after {
+    &:after {
       border-color: $color-spinner-light;
       border-top-color: transparent;
     }

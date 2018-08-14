@@ -23,20 +23,21 @@
 
   @include mq($from: md) {
     padding-top:    $global-spacing-unit;
-    padding-bottom: $global-spacing-unit;
+    padding-bottom: $global-spacing-unit-small;
   }
 
   /**
    * Create a faux double border effect by dropping an absolutely positioned
    * pseudo-element after the header.
    */
-  &::after {
+  &:after {
     content: "";
     position: absolute;
     right: 0;
     bottom: -($global-border-mid + $global-border-heavy);
     left: 0;
     border-bottom: $global-border-mid solid color('nhs-purple');
+    display: block; // Temporary fix. See Nightingale issue #229
   }
 
   @include mq($from: md) {
@@ -63,7 +64,7 @@
    * because it also doubles up as our clearfix. If we can ever drop the
    * clearfix from the parent element we can just destroy this pseudo-element.
    */
-  &::after {
+  &:after {
     position: static;
     border-bottom: none;
   }
@@ -74,34 +75,80 @@
 
 
 
-  /* Logos
+  /* Inner
+   *
+   * Internal wrapper that constrains header’s content. Extends `.o-wrapper`.
      ======================================================================== */
 
-  .c-page-header__logo {
-    float: left;
-    margin-bottom: $global-spacing-unit-tiny;
+  .c-page-header__inner {
+    @include mq($from: md) {
+      display: flex;
+      align-items: flex-start;
+    }
   }
 
 
 
 
 
-  /* Title
-     ======================================================================== */
+    /* Componentry
+     *
+     * Inside the header, we have two main sections of components. On the left,
+     * we have logos (`.c-page-header__lockup`), and to the right we have navs
+     * and search boxes (`c-page-header__controls`).
+       ====================================================================== */
 
-  .c-page-header__title {
-    @include font-size(21px);
-    float: left;
-    display: block;
-    clear: both;
-  }
+    .c-page-header__lockup,
+    .c-page-header__controls {
+      @include mq($from: md) {
+        flex-grow: 1;
+      }
+    }
+
+    .c-page-header__lockup {
+      @include mq($from: md) {
+        padding-right: $global-spacing-unit-small;
+      }
+    }
 
 
 
 
 
-  /* Nav
-     ======================================================================== */
+    /* Nav
+     *
+     * The header’s nav needs quite a lot of careful positioning and adjustment.
+     *
+     * 1. Push the nav down far enough that its bottom lines up with the bottom
+     *    of the site’s main logo.
+     * 2. If the header also has a search bar, the nav needs pushing down
+     *    a little less.
+       ====================================================================== */
 
-  .c-page-header__nav {
-  }
+    .c-page-header__nav {
+
+      @include mq($from: md) {
+        margin-top: $global-border-mid+36;  /* [1] */
+
+        .c-page-header__search ~ & {
+          margin-top: 10px; /* [2] */
+        }
+
+      }
+
+    }
+
+
+    /* Login Button
+     *
+     * A specific, but optional, login button needs to sit alongside the nav.
+     * Here we’re just giving it location-specific styles: all other styling
+     * should be handled by the Button component.
+       ====================================================================== */
+    .c-page-header__login {
+
+      @include mq($from: md) {
+        float: right;
+      }
+
+    }

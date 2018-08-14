@@ -28,15 +28,11 @@ a {
 
   /* stylelint-disable selector-no-qualifying-type */
 
-    &[target="_blank"]::after {
-      content: "⇱";
-      display: inline-block;
-      font: menu;
-      font-size: inherit;
-      vertical-align: text-top;
-      text-decoration: none;
+    &[target="_blank"]:after {
+      @include sprite(new-window, true)
       margin-left: 2px;
-      transform: scaleX(-1) translateY(-2px);
+      position: relative;
+      top: -1px;
     }
 
   /* stylelint-enable */

@@ -1,0 +1,13 @@
+/* ==========================================================================
+   #BOLD
+   ========================================================================== */
+
+/**
+ * Normalize.css sets `b` and `strong` to `bolder`, which has undesired
+ * behaviour when nesting bold components. Set them both to always be `bold`.
+ */
+
+b,
+strong {
+  font-weight: bold;
+}

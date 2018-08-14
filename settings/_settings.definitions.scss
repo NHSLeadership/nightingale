@@ -5,6 +5,7 @@
 ///
 // CONTENTS
 //
+// Config...............Feature switches, etc.
 // Typography...........Our most basic and global typographic settings.
 // Colors...............Load up a map with our color definitions.
 // Assets...............Asset paths for fonts, sprites, etc.
@@ -16,19 +17,45 @@
 
 
 
+// Config
+// ========================================================================== */
+
+$global-hints: true !default;
+$global-oldIE: true !default;
+
+
+
+
+
 // Typography
 // ========================================================================== */
 
-$global-font-size: 18px !default;
-$global-line-height: 26px !default;
+$global-font-size:        18px !default;
+$global-line-height:      26px !default;
 
-$global-font-size-h1: 48px !default;
-$global-font-size-h2: 36px !default;
-$global-font-size-h3: 27px !default;
-$global-font-size-h4: 19px !default;
+$global-font-size-h1:     48px !default;
+$global-line-height-h1:   58px !default;
+
+$global-font-size-h2:     36px !default;
+$global-line-height-h2:   44px !default;
+
+$global-font-size-h3:     24px !default;
+$global-line-height-h3:   29px !default;
+
+$global-font-size-h4:     18px !default;
+$global-line-height-h4:   22px !default;
+
+$global-font-size-h5:     16px !default;
+$global-line-height-h5:   19px !default;
+
+$global-font-size-h6:     14px !default;
+$global-line-height-h6:   17px !default;
 
 
+$global-font-size-leading-paragraph:   24px !default;
+$global-line-height-leading-paragraph: 32px !default;
 
+$global-font-size-footer: 14px !default;
 
 
 // Colors
@@ -85,7 +112,7 @@ $message-colors: (
 $global-colors: (
   'attention': #7c2855,
   'error': #da291c,
-  'information': #330072,
+  'information': #005eb8,
   'nhs-aqua': #00a499,
   'nhs-black': #231f20,
   'nhs-blue': #005eb8,
@@ -106,6 +133,214 @@ $global-colors: (
 @function color($key) {
   @return map-get($global-colors, $key);
 }
+
+
+
+
+
+// Sprite
+//
+// This map holds the names, x/y coordinates, and optional dimensions of the
+// icons found in our sprite image. Entries that do not have dimensions will
+// fall back to the default icon size.
+// ========================================================================== */
+
+$global-sprite:(
+  'dot-inactive': (
+    x: 0,
+    y: 0,
+    width: 10px,
+    height: 10px,
+  ),
+  'dot': (
+    x: -10px,
+    y: 0,
+    width: 10px,
+    height: 10px,
+  ),
+  'arrow-down': (
+    x: 0,
+    y: -10px,
+  ),
+  'arrow-up': (
+    x: -20px,
+    y: -10px,
+  ),
+  'arrow-left': (
+    x: -40px,
+    y: -10px,
+  ),
+  'arrow-right': (
+    x: -60px,
+    y: -10px,
+  ),
+  'arrow-down-rev': (
+    x: -80px,
+    y: -10px,
+  ),
+  'arrow-up-rev': (
+    x: -100px,
+    y: -10px,
+  ),
+  'arrow-left-rev': (
+    x: -120px,
+    y: -10px,
+  ),
+  'arrow-right-rev': (
+    x: -140px,
+    y: -10px,
+  ),
+  'new-window': (
+    x: -20px,
+    y: 0,
+    width: 10px,
+    height: 10px,
+  ),
+  'new-window-rev': (
+    x: -30px,
+    y: 0,
+    width: 10px,
+    height: 10px,
+  ),
+  'pencil': (
+    x: 0,
+    y: -30px,
+  ),
+  'currency': (
+    x: -20px,
+    y: -30px,
+  ),
+  'speaker': (
+    x: -40px,
+    y: -30px,
+  ),
+  'info': (
+    x: -60px,
+    y: -30px,
+  ),
+  'user': (
+    x: -80px,
+    y: -30px,
+  ),
+  'menu': (
+    x: -100px,
+    y: -30px,
+  ),
+  'pencil-rev': (
+    x: -120px,
+    y: -30px,
+  ),
+  'currency-rev': (
+    x: -140px,
+    y: -30px,
+  ),
+  'speaker-rev': (
+    x: -160px,
+    y: -30px,
+  ),
+  'info-rev': (
+    x: -180px,
+    y: -30px,
+  ),
+  'user-rev': (
+    x: -200px,
+    y: -30px,
+  ),
+  'menu-rev': (
+    x: -220px,
+    y: -30px,
+  ),
+  'home': (
+    x: 0,
+    y: -50px,
+  ),
+  'close': (
+    x: -20px,
+    y: -50px,
+  ),
+  'close-rev': (
+    x: -40px,
+    y: -50px,
+  ),
+  'prev-grey': (
+    x: -252px,
+    y: -70px,
+    width: 36px,
+    height: 36px,
+  ),
+  'next-grey': (
+    x: -288px,
+    y: -70px,
+    width: 36px,
+    height: 36px,
+  ),
+  'prev-blue': (
+    x: -324px,
+    y: -70px,
+    width: 36px,
+    height: 36px,
+  ),
+  'next-blue': (
+    x: -360px,
+    y: -70px,
+    width: 36px,
+    height: 36px,
+  ),
+  'facebook': (
+    x: -144px,
+    y: -70px,
+    width: 36px,
+    height: 36px,
+  ),
+  'twitter': (
+    x: -180px,
+    y: -70px,
+    width: 36px,
+    height: 36px,
+  ),
+  'linkedin': (
+    x: -216px,
+    y: -70px,
+    width: 36px,
+    height: 36px,
+  ),
+  'close-large': (
+    x: 0,
+    y: -70px,
+    width: 36px,
+    height: 36px,
+  ),
+  'hamburger': (
+    x: -36px,
+    y: -70px,
+    width: 36px,
+    height: 36px,
+  ),
+  'magnifying-glass': (
+    x: -72px,
+    y: -70px,
+    width: 36px,
+    height: 36px,
+  ),
+  'magnifying-glass-rev': (
+    x: -108px,
+    y: -70px,
+    width: 34px,
+    height: 34px,
+  ),
+  'add': (
+    x: 0,
+    y: -106px,
+    width: 60px,
+    height: 60px,
+  ),
+  'play': (
+    x: 0,
+    y: -166px,
+    width: 100px,
+    height: 100px,
+  ),
+) !default;
 
 
 
@@ -142,6 +377,8 @@ $mq-breakpoints: (
 $global-spacing-unit: 30px !default;
 $global-border-heavy: 15px !default;
 $global-border-mid: 10px !default;
+$global-border-light: 5px !default;
+$global-lozenge-height: 36px !default;
 
 
 
