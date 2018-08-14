@@ -58,6 +58,7 @@
  * Articles.............Styling for blog posts/articles.
  * Cards................Information cards, alert cards, etc.
  * Leading Paragraph....Larger font size for leading paragraphs.
+ * File-Upload..........Drag-and-drop style file-uploader
  *
  * UTILITIES
  * Colors...............Utility classes generated from our color map.
@@ -137,6 +138,7 @@
 @import "components/articles/components.articles";
 @import "components/cards/components.cards";
 @import "components/paragraphs/components.leading-paragraph";
+@import "components/forms/components.file-upload";
 
 
 
