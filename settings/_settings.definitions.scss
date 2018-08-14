@@ -30,14 +30,22 @@ $global-oldIE: true !default;
 // Typography
 // ========================================================================== */
 
-$global-font-size: 18px !default;
-$global-line-height: 26px !default;
+$global-font-size:        18px !default;
+$global-line-height:      26px !default;
 
-$global-font-size-h1: 48px !default;
-$global-font-size-h2: 36px !default;
-$global-font-size-h3: 27px !default;
-$global-font-size-h4: 19px !default;
-$global-font-size-h5: 14px !default;
+$global-font-size-h1:     48px !default;
+$global-line-height-h1:   58px !default;
+$global-font-size-h2:     36px !default;
+$global-line-height-h2:   44px !default;
+$global-font-size-h3:     24px !default;
+$global-line-height-h3:   29px !default;
+$global-font-size-h4:     18px !default;
+$global-line-height-h4:   22px !default;
+$global-font-size-h5:     16px !default;
+$global-line-height-h5:   19px !default;
+$global-font-size-h6:     14px !default;
+$global-line-height-h6:   17px !default;
+
 
 $global-font-size-leading-paragraph: 24px !default;
 $global-line-height-leading-paragraph: 32px !default;
