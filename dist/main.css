@@ -714,7 +714,7 @@ a[target="_blank"]:after {
   content: "";
   display: inline-block;
   vertical-align: middle;
-  background-image: url(/assets/img/sprite/icons.png);
+  background-image: url(../assets/img/sprite/icons.png);
   width: 20px;
   height: 20px;
   background-color: transparent;
@@ -730,7 +730,7 @@ a[target="_blank"]:after {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   a[target="_blank"]:after {
-    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-image: url(../assets/img/sprite/icons@2x.png);
     background-size: 396px 266px;
   }
 }
@@ -1887,7 +1887,7 @@ table {
   content: "";
   display: inline-block;
   vertical-align: middle;
-  background-image: url(/assets/img/sprite/icons.png);
+  background-image: url(../assets/img/sprite/icons.png);
   width: 20px;
   height: 20px;
   background-color: transparent;
@@ -1898,7 +1898,7 @@ table {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .c-nav-primary__link[aria-expanded="false"]:after {
-    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-image: url(../assets/img/sprite/icons@2x.png);
     background-size: 396px 266px;
   }
 }
@@ -1907,7 +1907,7 @@ table {
   content: "";
   display: inline-block;
   vertical-align: middle;
-  background-image: url(/assets/img/sprite/icons.png);
+  background-image: url(../assets/img/sprite/icons.png);
   width: 20px;
   height: 20px;
   background-color: transparent;
@@ -1918,7 +1918,7 @@ table {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .c-nav-primary__link[aria-expanded="true"]:after {
-    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-image: url(../assets/img/sprite/icons@2x.png);
     background-size: 396px 266px;
   }
 }
@@ -2243,7 +2243,7 @@ select.c-form-input {
   content: "";
   display: inline-block;
   vertical-align: middle;
-  background-image: url(/assets/img/sprite/icons.png);
+  background-image: url(../assets/img/sprite/icons.png);
   width: 20px;
   height: 20px;
   background-color: transparent;
@@ -2258,7 +2258,7 @@ select.c-form-input {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .c-form-dropdown:after {
-    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-image: url(../assets/img/sprite/icons@2x.png);
     background-size: 396px 266px;
   }
 }
@@ -2734,7 +2734,7 @@ select.c-form-input {
 .c-sprite {
   display: inline-block;
   vertical-align: middle;
-  background-image: url(/assets/img/sprite/icons.png);
+  background-image: url(../assets/img/sprite/icons.png);
   width: 20px;
   height: 20px;
   background-color: transparent;
@@ -2747,7 +2747,7 @@ select.c-form-input {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .c-sprite {
-    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-image: url(../assets/img/sprite/icons@2x.png);
     background-size: 396px 266px;
   }
 }
@@ -3122,7 +3122,7 @@ select.c-form-input {
   content: "";
   display: inline-block;
   vertical-align: middle;
-  background-image: url(/assets/img/sprite/icons.png);
+  background-image: url(../assets/img/sprite/icons.png);
   width: 20px;
   height: 20px;
   background-color: transparent;
@@ -3137,7 +3137,7 @@ select.c-form-input {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .c-media__reveal-title:after {
-    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-image: url(../assets/img/sprite/icons@2x.png);
     background-size: 396px 266px;
   }
 }
@@ -3146,7 +3146,7 @@ select.c-form-input {
   content: "";
   display: inline-block;
   vertical-align: middle;
-  background-image: url(/assets/img/sprite/icons.png);
+  background-image: url(../assets/img/sprite/icons.png);
   width: 20px;
   height: 20px;
   background-color: transparent;
@@ -3157,7 +3157,7 @@ select.c-form-input {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .c-media__reveal[open] .c-media__reveal-title:after {
-    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-image: url(../assets/img/sprite/icons@2x.png);
     background-size: 396px 266px;
   }
 }
@@ -3235,7 +3235,7 @@ select.c-form-input {
   content: "";
   display: inline-block;
   vertical-align: middle;
-  background-image: url(/assets/img/sprite/icons.png);
+  background-image: url(../assets/img/sprite/icons.png);
   width: 20px;
   height: 20px;
   background-color: transparent;
@@ -3247,7 +3247,7 @@ select.c-form-input {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .c-breadcrumb__item + .c-breadcrumb__item:before {
-    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-image: url(../assets/img/sprite/icons@2x.png);
     background-size: 396px 266px;
   }
 }
@@ -3530,7 +3530,7 @@ select.c-form-input {
   content: "";
   display: inline-block;
   vertical-align: middle;
-  background-image: url(/assets/img/sprite/icons.png);
+  background-image: url(../assets/img/sprite/icons.png);
   width: 20px;
   height: 20px;
   background-color: transparent;
@@ -3549,7 +3549,7 @@ select.c-form-input {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .c-file-upload.is-active:after {
-    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-image: url(../assets/img/sprite/icons@2x.png);
     background-size: 396px 266px;
   }
 }
