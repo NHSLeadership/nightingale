@@ -1,0 +1,5958 @@
+@charset "UTF-8";
+/* ==========================================================================
+   #NIGHTINGALE
+   ========================================================================== */
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * All..................Grab all of our settings files in one go.
+ *
+ * TOOLS
+ * All..................Grab all of our tools files in one go.
+ *
+ * GENERIC
+ * Box-sizing...........Better default box-sizing rules.
+ * Normalize.css........Snapshot of Normalize.css as of v5.0.0.
+ * Reset................Small reset on top of Normalize.css.
+ * Shared...............Share vertical rhythm etc. across multiple elements.
+ *
+ * ELEMENTS
+ * Page.................HTML and BODY element styles.
+ * Headings.............H1–6 elements.
+ * Links................Basic hyperlink styles.
+ * Lists................UL, OL element styles.
+ * Images...............Sensible defaults for IMG elements.
+ * Bold.................Normalise bold styling.
+ * Quotes...............Pared back quotation styling.
+ * Small................Smallprint and legalese.
+ * Details..............Basic details element for revealed content.
+ * Forms................Element-only form styles.
+ * Tables...............Table elements for tabular data.
+ *
+ * OBJECTS
+ * Wrappers.............Page-constraints.
+ * Layout...............Grid-like layout system.
+ * List Bare............Lists with no indents or bullet points.
+ *
+ * COMPONENTS
+ * Buttons..............Button component.
+ * Spinner..............Waiting-state spinner.
+ * Divider..............Dividing element (`HR`).
+ * Ribbons..............Info messages that sit at the top of a page.
+ * Page Header..........Main page header component
+ * Nav Primary..........Main navigation menu
+ * Page Footer..........Large footer area at the very bottom of the page.
+ * Progress Bar.........Linear progress bar
+ * Forms................All of our different form styles.
+ * Quotes...............Quotations.
+ * Comments.............Comment and discussion threads.
+ * Pagination...........Component for paging through items/views.
+ * Tabs.................Tabbed content switcher.
+ * Sprite...............Icon spriting component
+ * Media................Image and video containers
+ * Breadcrumb...........Breadcrumb-trail navigation.
+ * Tables...............More complex styles for data tables
+ * Search...............Search box for header.
+ * Articles.............Styling for blog posts/articles.
+ * Cards................Information cards, alert cards, etc.
+ * Leading Paragraph....Larger font size for leading paragraphs.
+ * File-Upload..........Drag-and-drop style file-uploader
+ *
+ * UTILITIES
+ * Colors...............Utility classes generated from our color map.
+ * Spacing..............Nudge layouts around with our spacing classes.
+ * Widths...............Generate width classes that can be used with our grid.
+ * Z-Index..............A suite of stacking utility classes.
+ * Display..............Show/hide/etc. utility classes.
+ * Hints................Helpful pointers to prevent developers misusing things.
+ * Text.................Text and font utility classes.
+ * IE8..................Yep. You read that correctly.
+ */
+/* ==========================================================================
+   #BOX-SIZING
+   ========================================================================== */
+/**
+ * More sensible default box-sizing:
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details,
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   #RESET
+   ========================================================================== */
+/**
+ * A very simple reset that sits on top of Normalize.css.
+ */
+body,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, pre,
+dl, dd, ol, ul,
+figure,
+hr,
+fieldset, legend {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Remove trailing margins from nested lists.
+ */
+li > ol,
+li > ul {
+  margin-bottom: 0;
+}
+
+/**
+ * Remove default table spacing.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+ * Form styles
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+}
+
+/* ==========================================================================
+   #SHARED
+   ========================================================================== */
+/**
+ * Let’s set some shared/global properties in one go.
+ */
+/* Vertical-rhythm
+   ========================================================================== */
+address,
+details,
+blockquote, p, pre,
+dl, ol, ul,
+figure,
+hr,
+table,
+fieldset {
+  margin-bottom: 30px;
+  margin-bottom: 1.666666667rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 15px;
+  margin-bottom: 0.833333333rem;
+}
+
+ul, ol,
+dd {
+  margin-left: 30px;
+  margin-left: 1.666666667rem;
+}
+
+/* ==========================================================================
+   #PAGE
+   ========================================================================== */
+/**
+ * Here we’re styling page-level elements that will cascade down into
+ * everything. Define body copy sizes and colors, etc.
+ *
+ * 1. Set the default `font-size` and `line-height` for the entire project,
+ *    sourced from our default variables. The `font-size` is calculated to exist
+ *    in ems, the `line-height` is calculated to exist unitlessly.
+ * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 3. Ensure the page always fills at least the entire height of the viewport.
+ * 4. Prevent certain mobile browsers from automatically zooming fonts.
+ * 5. Fonts on OSX will look more consistent with other systems that do not
+ *    render text using sub-pixel anti-aliasing.
+ */
+html {
+  font-family: "Frutiger", "Frutiger LT Pro", Arial, sans-serif;
+  font-size: 1.125em;
+  /* [1] */
+  line-height: 1.444444444;
+  /* [1] */
+  overflow-y: scroll;
+  /* [2] */
+  min-height: 100%;
+  /* [3] */
+  -webkit-text-size-adjust: 100%;
+  /* [4] */
+  -ms-text-size-adjust: 100%;
+  /* [4] */
+  -moz-osx-font-smoothing: grayscale;
+  /* [5] */
+  -webkit-font-smoothing: antialiased;
+  /* [5] */
+  color: #231f20;
+  background-color: #fff;
+}
+
+/* ==========================================================================
+   #HEADINGS
+   ========================================================================== */
+/**
+ * Simple, element-based headings 1 through 6
+ */
+h1 {
+  font-size: 48px;
+  font-size: 2.666666667rem;
+  line-height: 1.208333333;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 36px;
+  font-size: 2rem;
+  line-height: 1.222222222;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 24px;
+  font-size: 1.333333333rem;
+  line-height: 1.208333333;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 18px;
+  font-size: 1rem;
+  line-height: 1.222222222;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 16px;
+  font-size: 0.888888889rem;
+  line-height: 1.1875;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 14px;
+  font-size: 0.777777778rem;
+  line-height: 1.214285714;
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   #LINKS
+   ========================================================================== */
+/**
+ * This is simply to style bare A elements. Anything more complex should
+ * probably become a Component.
+ *
+ * 1. Ensure that underlines don’t pass through descenders. Nice!
+ */
+a {
+  color: #005eb8;
+  text-decoration-skip: ink;
+  /* [1] */
+  /* stylelint-disable selector-no-qualifying-type */
+  /* stylelint-enable */
+}
+
+a:visited {
+  color: #330072;
+}
+
+a:hover {
+  color: #8060a7;
+}
+
+a:active, a:focus {
+  color: #005eb8;
+}
+
+a[target="_blank"]:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(/assets/img/sprite/icons.png);
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  background-position: -20px 0;
+  width: 10px;
+  height: 10px;
+  margin-left: 2px;
+  position: relative;
+  top: -1px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  a[target="_blank"]:after {
+    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-size: 396px 266px;
+  }
+}
+
+/* Heading links
+ *
+ * Links in headings look a little different
+   ========================================================================== */
+h1 > a:link, h2 > a:link, h3 > a:link, h4 > a:link, h5 > a:link, h6 > a:link {
+  text-decoration: none;
+  color: #231f20;
+}
+
+h1 > a:visited, h2 > a:visited, h3 > a:visited, h4 > a:visited, h5 > a:visited, h6 > a:visited {
+  text-decoration: underline;
+  color: #231f20;
+}
+
+h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hover {
+  text-decoration: underline;
+  color: #646162;
+}
+
+h1 > a:focus, h2 > a:focus, h3 > a:focus, h4 > a:focus, h5 > a:focus, h6 > a:focus {
+  text-decoration: underline;
+  color: #231f20;
+}
+
+/* ==========================================================================
+   #LISTS
+   ========================================================================== */
+/**
+ * Lists are relatively simple, but they do follow different color rules.
+ */
+ul, ol {
+  color: #425563;
+}
+
+ul ul {
+  list-style-type: circle;
+}
+
+ol ol {
+  list-style-type: lower-alpha;
+}
+
+/* ==========================================================================
+   #IMAGES
+   ========================================================================== */
+/**
+ * 1. Fluid images for responsive purposes.
+ * 2. Offset `alt` text from surrounding copy.
+ * 3. Setting `vertical-align` removes the whitespace that appears under `img`
+ *    elements when they are dropped into a page as-is. Safer alternative to
+ *    using `display: block;`.
+ */
+img,
+video,
+audio {
+  max-width: 100%;
+  /* [1] */
+  font-style: italic;
+  /* [2] */
+  vertical-align: middle;
+  /* [3] */
+}
+
+/**
+ * 1. If a `width` and/or `height` attribute have been explicitly defined, let’s
+ *    not make the image fluid.
+ */
+img[width],
+img[height] {
+  /* [1] */
+  max-width: none;
+}
+
+/* ==========================================================================
+   #BOLD
+   ========================================================================== */
+/**
+ * Normalize.css sets `b` and `strong` to `bolder`, which has undesired
+ * behaviour when nesting bold components. Set them both to always be `bold`.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   #QUOTES
+   ========================================================================== */
+/**
+ * Basic styles for quotations. For anything more specific please build a new
+ * component.
+ */
+/* Inline quotes in runs of text
+   ========================================================================== */
+q {
+  font-style: italic;
+  quotes: '‘' '’' "“" "”";
+}
+
+q:before {
+  content: open-quote;
+}
+
+q:after {
+  content: close-quote;
+}
+
+/* Blockquotes
+   ========================================================================== */
+blockquote {
+  font-style: italic;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+/* ==========================================================================
+   #SMALL
+   ========================================================================== */
+/**
+ * There’s a standard, set size for smallprint (i.e. it’s not relative to its
+ * context) so we can set that up very easily.
+ *
+ * 1. The defined line-height for SMALL elements is 20px, therefore we need to
+ *    grab the unitless line-height by calculating the ratio.
+ * 2. Needed to make SMALL elements honour the defined line-height.
+ */
+small {
+  font-size: 14px;
+  font-size: 0.777777778rem;
+  line-height: 1.428571429;
+  /* [1] */
+  display: inline-block;
+  /* [2] */
+}
+
+/* ==========================================================================
+   #DETAILS
+   ========================================================================== */
+/**
+ * Native browser DETAILS element used to toggle content.
+ */
+details {
+  color: #425563;
+  /**
+   * This is really far from ideal, but if we drop a DIV directly into the
+   * DETAILS element, we get a nice grouping element. Nearly all of the values
+   * below are eyeballed, so they’re pretty subjective.
+   */
+}
+
+details > div {
+  margin-top: 10px;
+  margin-left: 1.055555556em;
+  padding-left: 15px;
+  border-left: 4px solid #e8edee;
+}
+
+/**
+   * 1. Has the effect of hanging the ‘status arrow’.
+   */
+summary {
+  color: #005eb8;
+  cursor: pointer;
+  outline: none;
+  text-decoration: underline;
+  text-decoration-skip: ink;
+  padding-left: 1.055555556em;
+  /* [1] */
+  text-indent: -1.055555556em;
+  /* [1] */
+  /* stylelint-disable selector-no-qualifying-type */
+  /* stylelint-enable */
+}
+
+summary:hover {
+  color: #8060a7;
+}
+
+summary:active, summary:focus {
+  text-decoration: underline;
+}
+
+details[open] > summary {
+  color: #8060a7;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   #FORMS
+   ========================================================================== */
+label {
+  display: block;
+  font-weight: bold;
+  color: #231f20;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+label > small {
+  display: block;
+  color: #425563;
+  font-weight: normal;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   #TABLES
+   ========================================================================== */
+table {
+  width: 100%;
+}
+
+/* ==========================================================================
+   #WRAPPERS
+   ========================================================================== */
+/**
+ * Page-constraining wrapper elements
+ */
+.o-wrapper {
+  /**
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    contenteditable attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that are clearfixed.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   */
+  /**
+     * For IE 6/7 only
+     * Include this rule to trigger hasLayout and contain floats.
+     */
+  *zoom: 1;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  max-width: 1024px;
+}
+
+.o-wrapper:before, .o-wrapper:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.o-wrapper:after {
+  clear: both;
+}
+
+@media (min-width: 45em) {
+  .o-wrapper {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+/* ==========================================================================
+   #LAYOUT
+   ========================================================================== */
+/**
+ * Grid-like layout system.
+ *
+ * The Layout object provides us with a column-style layout system. This file
+ * contains the basic structural elements, but classes should be complemented
+ * with width Utilities, for example:
+ *
+ *   <div class="o-layout">
+ *     <div class="o-layout__item  u-1/2">
+ *     </div>
+ *     <div class="o-layout__item  u-1/2">
+ *     </div>
+ *   </div>
+ *
+ * The above will create a two-column structure in which each column will
+ * fluidly fill half of the width of the parent. We can have more complex
+ * systems:
+ *
+ *   <div class="o-layout">
+ *     <div class="o-layout__item  u-1/1  u-1/3@medium">
+ *     </div>
+ *     <div class="o-layout__item  u-1/2  u-1/3@medium">
+ *     </div>
+ *     <div class="o-layout__item  u-1/2  u-1/3@medium">
+ *     </div>
+ *   </div>
+ *
+ * The above will create a system in which the first item will be 100% width
+ * until we enter our medium breakpoint, when it will become 33.333% width. The
+ * second and third items will be 50% of their parent, until they also become
+ * 33.333% width at the medium breakpoint.
+ *
+ * We can also manipulate entire layout systems by adding a series of Modifiers
+ * to the `.o-layout` Block. For example:
+ *
+ *   <div class="o-layout  o-layout--reverse">
+ *
+ * This will reverse the displayed order of the system so that it runs in the
+ * opposite order to our source, effectively flipping the system over.
+ *
+ *   <div class="o-layout  o-layout--[right|center]">
+ *
+ * This will cause the system to fill up from either the centre or the right
+ * hand side. Default behaviour is to fill up the layout system from the left.
+ *
+ * There are plenty more options available to us: explore them below.
+ */
+/* Default/mandatory classes.
+   ========================================================================== */
+/**
+ * 1. Use the font-size hack to get around whitespace issues caused by
+ *    `inline-block.`
+ * 2. No rems in IE8; use a pixel fallback as well as the rem value.
+ */
+.o-layout {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  margin-left: -30px;
+  font-size: 0;
+  /* [1] */
+}
+
+.o-layout__item {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 30px;
+  font-size: 18px;
+  /* [1][2] */
+  font-size: 1rem;
+  /* [1] */
+}
+
+/* Gutter size modifiers.
+   ========================================================================== */
+/**
+ * Smaller gutters between items.
+ */
+.o-layout--narrow {
+  margin-left: -15px;
+}
+
+.o-layout--narrow > .o-layout__item {
+  padding-left: 15px;
+}
+
+/**
+ * Larger gutters between items.
+ */
+.o-layout--wide {
+  margin-left: -60px;
+}
+
+.o-layout--wide > .o-layout__item {
+  padding-left: 60px;
+}
+
+/**
+ * No gutters between items.
+ */
+.o-layout--flush {
+  margin-left: 0;
+}
+
+.o-layout--flush > .o-layout__item {
+  padding-left: 0;
+}
+
+/* Vertical alignment modifiers.
+   ========================================================================== */
+/**
+ * Align all grid items to the middles of each other.
+ *
+ * Input:
+ *
+ *   1 2 3 4 5
+ *   1 2 - 4 5
+ *   1 2 - 4 5
+ *   - 2 - - 5
+ *   - 2 - - 5
+ *
+ * Output:
+ *
+ *   - 2 - - 5
+ *   1 2 - 4 5
+ *   1 2 3 4 5
+ *   1 2 - 4 5
+ *   - 2 - - 5
+ */
+.o-layout--middle > .o-layout__item {
+  vertical-align: middle;
+}
+
+/**
+ * Align all grid items to the bottoms of each other.
+ *
+ * Input:
+ *
+ *   1 2 3 4 5
+ *   1 2 - 4 5
+ *   1 2 - 4 5
+ *   - 2 - - 5
+ *   - 2 - - 5
+ *
+ * Output:
+ *
+ *   - 2 - - 5
+ *   - 2 - - 5
+ *   1 2 - 4 5
+ *   1 2 - 4 5
+ *   1 2 3 4 5
+ */
+.o-layout--bottom > .o-layout__item {
+  vertical-align: bottom;
+}
+
+/* Fill order modifiers.
+   ========================================================================== */
+/**
+ * Fill up the layout system from the centre.
+ *
+ * Input:
+ *
+ *   1 2 3 - -
+ *
+ * Output:
+ *
+ *   - 1 2 3 -
+ */
+.o-layout--center {
+  text-align: center;
+}
+
+.o-layout--center > .o-layout__item {
+  text-align: left;
+}
+
+/**
+ * Fill up the layout system from the right-hand side.
+ *
+ * Input:
+ *
+ *   1 2 3 - -
+ *
+ * Output:
+ *
+ *   - - 1 2 3
+ */
+.o-layout--right {
+  text-align: right;
+}
+
+.o-layout--right > .o-layout__item {
+  text-align: left;
+}
+
+/**
+ * Reverse the rendered order of the grid system.
+ *
+ * Input:
+ *
+ *   1 2 3 4 5
+ *
+ * Output:
+ *
+ *   5 4 3 2 1
+ */
+.o-layout--reverse {
+  direction: rtl;
+}
+
+.o-layout--reverse > .o-layout__item {
+  direction: ltr;
+  text-align: left;
+}
+
+/* ==========================================================================
+   #LIST-BARE
+   ========================================================================== */
+/**
+ * The List Bare object is a simple design pattern whereby we strip the list of
+ * its bullets and indents: stripping it bare.
+ */
+.o-list-bare {
+  margin-left: 0;
+  list-style: none;
+}
+
+/* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+/* Setup
+ *
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ * 6. Hard-coded value to ensure uniform heights (as per designs).
+   ========================================================================== */
+.c-btn {
+  display: inline-block;
+  /* [1] */
+  vertical-align: middle;
+  /* [2] */
+  font: inherit;
+  /* [3] */
+  font-weight: bold;
+  text-align: center;
+  /* [4] */
+  margin: 0;
+  /* [4] */
+  cursor: pointer;
+  /* [5] */
+  text-decoration: none;
+  padding: 4px 60px;
+  /* [6] */
+  border: 1px solid transparent;
+  transition: 0.2s;
+}
+
+.c-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 2px 0 rgba(35, 31, 32, 0.2), 0 8px 10px 0 rgba(35, 31, 32, 0.4);
+}
+
+.c-btn:active {
+  box-shadow: 0 4px 4px 0 rgba(35, 31, 32, 0.1) inset, 0 2px 2px 0 rgba(35, 31, 32, 0.3) inset;
+  border-color: transparent;
+}
+
+/* Style variants
+   ========================================================================== */
+.c-btn--submit {
+  background-color: #78be20;
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 2px 0 rgba(35, 31, 32, 0.7);
+  /**
+   * Our global `:visited` state overrides the button’s color, so we use this
+   * one weird trick to get around it.
+   */
+}
+
+.c-btn--submit.c-btn--submit {
+  color: #fff;
+}
+
+.c-btn--submit:hover, .c-btn--submit:active {
+  background-color: #6aa81c;
+}
+
+.c-btn--primary {
+  background-color: #005eb8;
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 2px 0 rgba(35, 31, 32, 0.8);
+  /**
+   * Our global `:visited` state overrides the button’s color, so we use this
+   * one weird trick to get around it.
+   */
+}
+
+.c-btn--primary.c-btn--primary {
+  color: #fff;
+}
+
+.c-btn--primary:hover, .c-btn--primary:active {
+  background-color: #00519f;
+}
+
+.c-btn--secondary {
+  background-color: #fff;
+  border-color: rgba(35, 31, 32, 0.1);
+  box-shadow: 0 2px 2px 0 rgba(35, 31, 32, 0.5);
+  /**
+   * Our global `:visited` state overrides the button’s color, so we use this
+   * one weird trick to get around it.
+   */
+}
+
+.c-btn--secondary:hover, .c-btn--secondary:active {
+  background-color: #d9d9d9;
+}
+
+.c-btn--secondary.c-btn--secondary {
+  color: #005eb8;
+}
+
+.c-btn--secondary:hover, .c-btn--secondary:active {
+  background-color: #d9d9d9;
+}
+
+/* Disabled state
+   ========================================================================== */
+.c-btn.is-disabled,
+.c-btn[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+  border-color: transparent;
+}
+
+/* Size variants
+   ========================================================================== */
+.c-btn--full {
+  width: 100%;
+}
+
+/**
+ * Natural buttons only take up as little content as they need to, with one
+ * character’s worth of padding either side.
+ */
+.c-btn--natural {
+  padding-right: 1ch;
+  padding-left: 1ch;
+}
+
+/* ==========================================================================
+   #SPINNER
+   ========================================================================== */
+/**
+ * We have two simple types of spinner. One sits on no background, and the
+ * inverse version sits on a coloured background.
+ *
+ * 1. Detect support for animations before we actually try animating.
+ * 2. This hides the accessible text (‘Loading…’) present in the HTML
+ */
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.c-spinner {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+
+@supports (animation: 0.5s spinner) {
+  .c-spinner {
+    /* [1] */
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+}
+
+@supports (animation: 0.5s spinner) {
+  .c-spinner {
+    /**
+     * The actual spinning part of the spinner is a pseudo-element that sits on
+     * top of the spinner’s main box.
+     *
+     * 1. Center the spinner in its bounding box.
+     * 2. The size of the actual spinner is governed by its font-size.
+     */
+  }
+  .c-spinner:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    /* [1] */
+    left: 50%;
+    /* [1] */
+    margin-top: -0.5em;
+    /* [1] */
+    margin-left: -0.5em;
+    /* [1] */
+    border: 8px solid #005eb8;
+    border-top-color: transparent;
+    border-radius: 100%;
+    font-size: 60px;
+    /* [2] */
+    width: 1em;
+    /* [2] */
+    height: 1em;
+    /* [2] */
+    animation: 0.5s spinner linear infinite;
+  }
+}
+
+/* Inverted Spinners
+   ========================================================================== */
+.c-spinner--inverse {
+  background-color: #005eb8;
+  color: #fff;
+}
+
+@supports (animation: 0.5s spinner) {
+  .c-spinner--inverse:after {
+    border-color: #fff;
+    border-top-color: transparent;
+  }
+}
+
+/* ==========================================================================
+   #DIVIDER
+   ========================================================================== */
+/**
+ * A divider is a simple splitting device for dividing up sections of content.
+ * Usually applied to an HR element.
+ *
+ * 1. To maintain vertical rhythm, we subtract the divider’s thickness from its
+ *    margin-bottom value.
+ */
+.c-divider {
+  margin-bottom: 29px;
+  margin-bottom: 1.611111111rem;
+  /* [1] */
+  border: none;
+  border-top: 1px solid #768692;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.c-divider--large {
+  border-top-color: #e8edee;
+  border-top-width: 4px;
+}
+
+/* ==========================================================================
+   #RIBBONS
+   ========================================================================== */
+/**
+ * Ribbons are informational banners that sit above the main content of the
+ * page.
+ */
+.c-ribbon {
+  font-size: 14px;
+  font-size: 0.777777778rem;
+  line-height: 1.857142857;
+  background-color: #231f20;
+  color: #fff;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  /**
+   * Links want to be the same colour as the content.
+   */
+}
+
+.c-ribbon a {
+  color: inherit;
+}
+
+/**
+ * Some ribbons are page-specific and site at the top of certain pages rather
+ * than above the main content like other ribbons. They need to jut out 30px
+ * either side of the main content.
+ *
+ * 1. The top and bottom margins are adjusted so that the ribbon sits directly
+ *    under the header stripe.
+ */
+.c-ribbon--page-specific {
+  margin-top: -40px;
+  /* [1] */
+  margin-top: -30px;
+  /* [1] */
+  margin-bottom: 40px;
+  /* [1] */
+  margin-left: -30px;
+  margin-right: -30px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 30em) {
+  .c-ribbon--page-specific {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
+
+/**
+   * The Alpha, Beta, Live tag.
+   */
+.c-ribbon__tag {
+  float: left;
+  margin-right: 15px;
+  display: inline-block;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 16px;
+  font-size: 0.888888889rem;
+  line-height: 1.625;
+  text-transform: uppercase;
+  background-color: #231f20;
+  color: #fff;
+}
+
+/**
+   * This houses the main content of the ribbon, usually text.
+   *
+   * 1. Block formatting context.
+   */
+.c-ribbon__body {
+  font-weight: normal;
+  display: block;
+  overflow: hidden;
+  /* [1] */
+  /**
+     * The ribbon’s text (a DETAILS element) needs to look pretty different if
+     * we’re inside of an expandable ribbon
+     */
+}
+
+.c-ribbon--expandable .c-ribbon__body {
+  margin-bottom: 0;
+  /**
+       * 1. Pure CSS truncation. Nice!
+       */
+  /**
+       * Remove truncation when we open the body text up fully.
+       */
+}
+
+.c-ribbon--expandable .c-ribbon__body > summary {
+  white-space: nowrap;
+  /* [1] */
+  text-overflow: ellipsis;
+  /* [1] */
+  overflow: hidden;
+  /* [1] */
+  text-decoration: none;
+  color: #231f20;
+}
+
+.c-ribbon--expandable .c-ribbon__body[open] > summary {
+  white-space: normal;
+}
+
+/**
+   * Control container for dismiss buttons, etc.
+   */
+.c-ribbon__actions {
+  float: right;
+  margin-left: 15px;
+}
+
+/* Style variants
+   ========================================================================== */
+.c-ribbon--alpha {
+  background-color: #e8edee;
+  color: #231f20;
+}
+
+.c-ribbon--beta {
+  background-color: #e8edee;
+  color: #231f20;
+}
+
+.c-ribbon--expandable {
+  background-color: #ccdff1;
+}
+
+/* ==========================================================================
+   #PAGE HEADER
+   ========================================================================== */
+/**
+ * The site’s main page header is relatively uncomplicated; its function is more
+ * to wrap the more complex sub-components. We do have some slightly unusual
+ * rules pertaining to double borders and colour inversion, but nothing that’s
+ * going to keep you up at night.
+ *
+ * 1. Create a larger margin to account for the fact we’re using an absolutely
+ *    positioned element to provide the faux double border.
+ */
+.c-page-header {
+  /**
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    contenteditable attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that are clearfixed.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   */
+  /**
+     * For IE 6/7 only
+     * Include this rule to trigger hasLayout and contain floats.
+     */
+  *zoom: 1;
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 40px;
+  /* [1] */
+  border-bottom: 15px solid #005eb8;
+  background-color: #fff;
+  /**
+   * Create a faux double border effect by dropping an absolutely positioned
+   * pseudo-element after the header.
+   */
+}
+
+.c-page-header:before, .c-page-header:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.c-page-header:after {
+  clear: both;
+}
+
+@media (min-width: 45em) {
+  .c-page-header {
+    padding-top: 30px;
+    padding-bottom: 15px;
+  }
+}
+
+.c-page-header:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -25px;
+  left: 0;
+  border-bottom: 10px solid #330072;
+  display: block;
+}
+
+@media (min-width: 45em) {
+  .c-page-header.has-sub-nav {
+    padding-bottom: 0;
+  }
+}
+
+/**
+ * Invert the colours of the header: light text on a dark background.
+ */
+.c-page-header--invert {
+  margin-bottom: 30px;
+  background-color: #005eb8;
+  color: #fff;
+  border-bottom: 10px solid #330072;
+  /**
+   * This effectively removes the double border, but we can’t delete it entirely
+   * because it also doubles up as our clearfix. If we can ever drop the
+   * clearfix from the parent element we can just destroy this pseudo-element.
+   */
+}
+
+.c-page-header--invert:after {
+  position: static;
+  border-bottom: none;
+}
+
+/* Inner
+   *
+   * Internal wrapper that constrains header’s content. Extends `.o-wrapper`.
+     ======================================================================== */
+@media (min-width: 45em) {
+  .c-page-header__inner {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+/* Componentry
+     *
+     * Inside the header, we have two main sections of components. On the left,
+     * we have logos (`.c-page-header__lockup`), and to the right we have navs
+     * and search boxes (`c-page-header__controls`).
+       ====================================================================== */
+@media (min-width: 45em) {
+  .c-page-header__lockup,
+  .c-page-header__controls {
+    flex-grow: 1;
+  }
+}
+
+@media (min-width: 45em) {
+  .c-page-header__lockup {
+    padding-right: 15px;
+  }
+}
+
+/* Nav
+     *
+     * The header’s nav needs quite a lot of careful positioning and adjustment.
+     *
+     * 1. Push the nav down far enough that its bottom lines up with the bottom
+     *    of the site’s main logo.
+     * 2. If the header also has a search bar, the nav needs pushing down
+     *    a little less.
+       ====================================================================== */
+@media (min-width: 45em) {
+  .c-page-header__nav {
+    margin-top: 46px;
+    /* [1] */
+  }
+  .c-page-header__search ~ .c-page-header__nav {
+    margin-top: 10px;
+    /* [2] */
+  }
+}
+
+/* Login Button
+     *
+     * A specific, but optional, login button needs to sit alongside the nav.
+     * Here we’re just giving it location-specific styles: all other styling
+     * should be handled by the Button component.
+       ====================================================================== */
+@media (min-width: 45em) {
+  .c-page-header__login {
+    float: right;
+  }
+}
+
+/* ==========================================================================
+   #NAV PRIMARY
+   ========================================================================== */
+/**
+ * The primary nav sits within the main header area. It’s fully responsive.
+ */
+.c-nav-primary {
+  /**
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    contenteditable attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that are clearfixed.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   */
+  /**
+     * For IE 6/7 only
+     * Include this rule to trigger hasLayout and contain floats.
+     */
+  *zoom: 1;
+  clear: both;
+}
+
+.c-nav-primary:before, .c-nav-primary:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.c-nav-primary:after {
+  clear: both;
+}
+
+@media (min-width: 45em) {
+  .c-nav-primary {
+    clear: none;
+  }
+}
+
+/**
+   * 1. `font-size: 0;` hack to collapse whitespace.
+   * 2. We definitely need a more accessible way of showing/hiding this content.
+   */
+.c-nav-primary__list {
+  display: none;
+  /* [1] */
+  margin-bottom: 0;
+  margin-left: 0;
+  list-style: none;
+}
+
+@media (min-width: 45em) {
+  .c-nav-primary__list {
+    font-size: 0;
+    /* [1] */
+    display: block;
+    /* [2] */
+    float: left;
+  }
+}
+
+.no-js .c-nav-primary__list, .c-nav-primary__list.is-open {
+  display: block;
+  /* [1] */
+  clear: both;
+}
+
+.c-nav-primary__item {
+  font-size: 16px;
+  font-size: 0.888888889rem;
+  line-height: 1.625;
+  vertical-align: middle;
+}
+
+@media (min-width: 45em) {
+  .c-nav-primary__item {
+    display: inline-block;
+    /**
+         * Insert spaces between items.
+         */
+  }
+  .c-nav-primary__item + .c-nav-primary__item {
+    margin-left: 30px;
+  }
+}
+
+/**
+       * 1. Reset styles when applied to a BUTTON for sub-navs.
+       */
+.c-nav-primary__link {
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  /**
+         * Specificity bump to circumvent `a:visited {}` styles.
+         */
+  cursor: pointer;
+  /* [1] */
+  padding: 0;
+  /* [1] */
+  background: none;
+  /* [1] */
+  border: none;
+  /* [1] */
+  /**
+         * Colours invert on dark header backgrounds.
+         */
+  /**
+         * Dropdown toggle arrow. This is , completely bodged in for now; there
+         * will be a separate task to actually swap this out for a proper icon.
+         */
+}
+
+.c-nav-primary__link, .c-nav-primary__link:visited {
+  color: #231f20;
+}
+
+.c-nav-primary__link:hover, .c-nav-primary__link:focus {
+  text-decoration: underline;
+}
+
+.c-page-header--invert .c-nav-primary__link {
+  color: #fff;
+}
+
+.c-nav-primary__link[aria-expanded="false"]:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(/assets/img/sprite/icons.png);
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  background-position: 0 -10px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .c-nav-primary__link[aria-expanded="false"]:after {
+    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-size: 396px 266px;
+  }
+}
+
+.c-nav-primary__link[aria-expanded="true"]:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(/assets/img/sprite/icons.png);
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  background-position: -20px -10px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .c-nav-primary__link[aria-expanded="true"]:after {
+    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-size: 396px 266px;
+  }
+}
+
+/* Triggers
+   ========================================================================== */
+.c-nav-trigger {
+  font-size: 18px;
+  font-size: 1rem;
+  line-height: 1.444444444;
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #231f20;
+  background: none;
+  background-color: #e8edee;
+  color: #005eb8;
+  cursor: pointer;
+  border: none;
+  float: right;
+  /**
+   * Colours invert on dark header backgrounds.
+   */
+}
+
+.c-nav-trigger.is-active {
+  color: #231f20;
+}
+
+@media (min-width: 45em) {
+  .c-nav-trigger {
+    display: none;
+  }
+}
+
+/* Sub-nav
+ *
+ * Large sub-navigation blocks can contain any arbitrary content (though most
+ * often it will be other links).
+ *
+ * 1. Pull the sub nav back out to be full-bleed.
+   ========================================================================== */
+.c-nav-primary__sub {
+  display: none;
+  background-color: #e8edee;
+  color: #425563;
+  margin-right: -15px;
+  /* [1] */
+  margin-left: -15px;
+  /* [1] */
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
+  margin-bottom: -15px;
+}
+
+@media (min-width: 45em) {
+  .c-nav-primary__sub {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 30px;
+  }
+  .has-sub-nav .c-nav-primary__sub {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+/**
+   * Specific link content in the subnav shares much of the same aesthetic as
+   * main links, hence the use of our mixin.
+   */
+.c-nav-primary__sub-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding: 15px;
+  background-color: white;
+}
+
+.c-nav-primary__sub-links a {
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  /**
+         * Specificity bump to circumvent `a:visited {}` styles.
+         */
+}
+
+.c-nav-primary__sub-links a, .c-nav-primary__sub-links a:visited {
+  color: #231f20;
+}
+
+.c-nav-primary__sub-links a:hover, .c-nav-primary__sub-links a:focus {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   #PAGE FOOTER
+   ========================================================================== */
+/**
+ * The page footer is a large area reserved at the very bottom of every page. It
+ * is largely composed of other components and sub-components.
+ */
+.c-page-footer {
+  border-top: 10px solid #330072;
+  background-color: #e8edee;
+  padding: 30px;
+  font-size: 14px;
+  font-size: 0.777777778rem;
+  line-height: 1.857142857;
+}
+
+.c-page-footer a {
+  color: #768692;
+  text-decoration: none;
+  font-size: 14px;
+  font-size: 0.777777778rem;
+  line-height: 1.857142857;
+}
+
+.c-page-footer a:hover, .c-page-footer a:focus {
+  text-decoration: underline;
+}
+
+.c-page-footer__nav {
+  margin: 0;
+  list-style: none;
+}
+
+.c-page-footer__nav-item {
+  display: inline-block;
+  padding-right: 15px;
+  margin-right: 15px;
+  border-right: 1px solid #231f20;
+  /**
+     * I feel like just targeting the A element will be sufficient for now.
+     */
+}
+
+.c-page-footer__nav-item:last-child {
+  margin-right: 0;
+  border-right: none;
+  padding-right: 0;
+}
+
+.c-page-footer__nav-item a {
+  color: #231f20;
+  display: block;
+  line-height: 1;
+}
+
+.c-page-footer__smallprint {
+  color: #768692;
+}
+
+/* ==========================================================================
+   #PROGRESS BAR
+   ========================================================================== */
+/**
+ * Simple progress bar component to show what percentage of a course is
+ * complete/incomplete.
+ */
+/**
+ * Small, private-scope keyframe declaration to smoothly animate the progress
+ * bar when it first loads. The bar starts off hidden off to the left of the
+ * container and then animates in from the left. Its final resting point is
+ * defined by an inline style in the HTML.
+ */
+@keyframes _progress-bar {
+  from {
+    left: -100%;
+  }
+}
+
+.c-progress-bar {
+  position: relative;
+  overflow: hidden;
+  background-color: #e8edee;
+  height: 10px;
+  margin-bottom: 15px;
+}
+
+.c-progress-bar__fill {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #330072;
+  animation: _progress-bar 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+/* ==========================================================================
+   #FORMS
+   ========================================================================== */
+/**
+ * This file holds a collection of various different styles of form component,
+ * from form fields to checkboxes, errors to labels. We may decide in future
+ * that we want to break this file out into smaller ones, but for now things
+ * feel manageable.
+ */
+/* Regions
+ *
+ * Regions (usually FIELDSETs) are discrete chunks of a form.
+   ========================================================================== */
+.c-form-region {
+  border: none;
+  padding: 15px;
+  background-color: #e8edee;
+}
+
+/**
+   * Sections of regions might need displaying only when we’re filling out the
+   * form. Apply the `.c-form-region__reveal` in order to toggle the display.
+   */
+.c-form-region__reveal {
+  display: none;
+}
+
+.c-form-region.is-active .c-form-region__reveal {
+  display: list-item;
+}
+
+/* Lists
+ *
+ * In order to display neat lists of form elements, wrap them in
+ * a `.c-form-list` element.
+   ========================================================================== */
+.c-form-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.c-form-region > .c-form-list:last-child {
+  margin-bottom: 0;
+}
+
+.c-form-list__item,
+.c-form-list > li {
+  margin-bottom: 15px;
+}
+
+.c-form-list__item:last-child,
+.c-form-list > li:last-child {
+  margin-bottom: 0;
+}
+
+/* Labels
+ *
+ * Sometimes we need to apply label styles to inert, non-label elements (e.g.
+ * meta-labels above groups of checkboxes). We can do that using the following
+ * class.
+   ========================================================================== */
+.c-form-label {
+  display: block;
+  font-weight: bold;
+  color: #231f20;
+}
+
+/* Inputs
+ *
+ * The `.c-form-input` class can be used on `input`s, `textarea`s, `select`s,
+ * etc.
+ *
+ * 1. Remove opinionated defaults (mainly in iOS).
+   ========================================================================== */
+.c-form-input {
+  font-size: 14px;
+  font-size: 0.777777778rem;
+  line-height: 1.857142857;
+  color: #231f20;
+  padding: 4px 10px;
+  border: 1px solid #e8edee;
+  width: 100%;
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 0;
+  /* [1] */
+  -webkit-appearance: none;
+  /* [1] */
+  -moz-appearance: none;
+  /* [1] */
+  -ms-appearance: none;
+  /* [1] */
+  appearance: none;
+  /* [1] */
+}
+
+.c-form-input:active, .c-form-input:focus {
+  outline: none;
+  border-color: #ffb81c;
+}
+
+.c-form-input:invalid, .c-form-input.is-error {
+  border-color: #da291c;
+}
+
+.c-form-input::placeholder {
+  font-style: italic;
+}
+
+/**
+ * `select` elements need their height setting a little more explicitly.
+ */
+select.c-form-input {
+  height: 36px;
+}
+
+/* Dropdowns
+ *
+ * In order to have semi-custom dropdowns, we have to wrap them in a DIV with
+ * a class of `c-form-dropdown`. This allows us to utilise a pseudo-element
+ * which acts as the dropdown arrow.
+   ========================================================================== */
+.c-form-dropdown {
+  position: relative;
+}
+
+.c-form-dropdown:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(/assets/img/sprite/icons.png);
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  background-position: 0 -10px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -10px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .c-form-dropdown:after {
+    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-size: 396px 266px;
+  }
+}
+
+.c-form-dropdown__select {
+  cursor: pointer;
+  background: none;
+  background-color: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+/* Checkboxes
+ *
+ * We make faux checkboxes (and radios) by using the `:checked` pseudo selector:
+ * when a hidden `input` is activated, we style an adjacent `span`.
+ *
+ * This technique comes with a few caveats and constraints: the `input` MUST be
+ * wrapped in a `label` element in order for it to be indirectly triggered, and
+ * we need an empty `span` in the HTML to which we actually apply our styles.
+   ========================================================================== */
+.c-form-checkbox {
+  font-size: 14px;
+  font-size: 0.777777778rem;
+  line-height: 1.857142857;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+/**
+   * 1. Hide the actual input…
+   * 2. …and remove it from document flow.
+   */
+.c-form-checkbox__input {
+  opacity: 0;
+  /* [1] */
+  position: absolute;
+  /* [2] */
+}
+
+.c-form-checkbox__faux {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 20px;
+  width: 1em;
+  height: 1em;
+  background-color: #fff;
+  vertical-align: middle;
+  border: 1px solid #e8edee;
+  transition: 0.2s;
+  /**
+     * Once the `input` is checked, let’s style up the faux input next to it.
+     */
+  /**
+     * When someone is interacting with the input, highlight them.
+     */
+  /**
+     * If it’s a radio button, let’s style it slightly differently.
+     */
+  /**
+     * Checked radio boxes look very different to their checkbox counterparts.
+     */
+}
+
+.c-form-checkbox__input:checked + .c-form-checkbox__faux {
+  background-color: #78be20;
+  position: relative;
+  border-color: transparent;
+}
+
+.c-form-checkbox__input:checked + .c-form-checkbox__faux:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  width: 10px;
+  height: 5px;
+  border: 1px solid transparent;
+  border-bottom-color: white;
+  border-left-color: white;
+  transform: rotate(-45deg);
+}
+
+.c-form-checkbox__input:active + .c-form-checkbox__faux,
+.c-form-checkbox__input:focus + .c-form-checkbox__faux {
+  border-color: #ffb81c;
+}
+
+.c-form-checkbox--radio > .c-form-checkbox__faux {
+  border-radius: 100%;
+}
+
+.c-form-checkbox--radio > .c-form-checkbox__input:checked + .c-form-checkbox__faux:after {
+  top: 5px;
+  left: 5px;
+  border: none;
+  border-radius: 100%;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  transform: none;
+}
+
+/* Comments
+   ========================================================================== */
+.c-form-comment {
+  height: 36px;
+}
+
+.c-form-comment:active, .c-form-comment:focus, .c-form-comment.is-active {
+  height: auto;
+}
+
+/* Errors
+ *
+ * This class extends the styles of regular DETAILS elements to provide expanded
+ * error messages.
+   ========================================================================== */
+.c-form-error {
+  font-size: 14px;
+  font-size: 0.777777778rem;
+  line-height: 1.857142857;
+  margin-bottom: 0;
+}
+
+.c-form-error[open] > summary,
+.c-form-error > summary {
+  color: #da291c;
+}
+
+/* ==========================================================================
+   #QUOTES
+   ========================================================================== */
+/* Long-form quotations
+ *
+ * 1. Remove leftover styling from BLOCKQUOTE element.
+   ========================================================================== */
+.c-quote {
+  position: relative;
+  font-size: 24px;
+  font-size: 1.333333333rem;
+  line-height: 1.333333333;
+  font-style: italic;
+  color: #425563;
+  padding-left: 15px;
+  margin-right: 0;
+  /* [1] */
+  margin-left: 0;
+  /* [1] */
+  /**
+   * 1. Slightly tighter spacing between quoted paragraphs.
+   */
+  /**
+   * This forms a faux `border-left`. Because we need the border to be
+   * effectively inset on reversed quotes, we remove it from document flow.
+   */
+}
+
+.c-quote > p {
+  margin-bottom: 15px;
+  /* [1] */
+}
+
+.c-quote:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background-color: #e8edee;
+}
+
+.c-quote__meta {
+  font-size: 14px;
+  font-size: 0.777777778rem;
+  line-height: 1.428571429;
+  display: block;
+  text-align: right;
+  color: #231f20;
+  font-style: normal;
+}
+
+.c-quote--rev .c-quote__meta {
+  color: #fff;
+}
+
+.c-quote--rev {
+  color: #fff;
+  background-color: #330072;
+  padding: 15px;
+  padding-left: 30px;
+}
+
+.c-quote--rev:before {
+  border-color: #fff;
+  top: 15px;
+  bottom: 15px;
+  left: 15px;
+}
+
+/* ==========================================================================
+   #COMMENTS
+   ========================================================================== */
+/**
+ * Full lists of comments (nestable for nested comment threads).
+ */
+.c-comments {
+  margin-left: 0;
+  list-style: none;
+  font-size: 14px;
+  font-size: 0.777777778rem;
+  line-height: 1.857142857;
+}
+
+/**
+   * Scope for each individual comment.
+   */
+.c-comments__item {
+  margin-bottom: 15px;
+}
+
+/**
+     * Header area of a user comment.
+     */
+.c-comment__meta {
+  /**
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    contenteditable attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that are clearfixed.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   */
+  /**
+     * For IE 6/7 only
+     * Include this rule to trigger hasLayout and contain floats.
+     */
+  *zoom: 1;
+}
+
+.c-comment__meta:before, .c-comment__meta:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.c-comment__meta:after {
+  clear: both;
+}
+
+.c-comment__author {
+  float: left;
+}
+
+.c-comment__author.c-comment__author {
+  color: #005eb8;
+}
+
+.c-comment__date {
+  float: right;
+}
+
+/**
+     * User input is simply contained in a content wrapper.
+     */
+.c-comments__content > :last-child {
+  margin-bottom: 0;
+}
+
+/**
+     * Any relevant footer-like information (currently just a ‘reply’ link).
+     */
+.c-comments__footer {
+  text-align: right;
+}
+
+.c-comments__reply.c-comments__reply {
+  color: #005eb8;
+}
+
+/* Nested Comments
+ *
+ * Comment threads/replies reuse and extend the regular comment listing style.
+ * These are, in theory, infinitely nestable, but I imagine the depth will be
+ * limited at platform level (ie. WordPress, Moodle).
+   ========================================================================== */
+.c-comments--replies {
+  position: relative;
+  margin-top: 30px;
+  padding-left: 11px;
+  border-left: 4px solid #e8edee;
+  /**
+   * Create a faux mask that will blot out the left-border or parent-replies,
+   * giving the illusion of a tree of comments.
+   *
+   * 1. Change this to red to see exactly what’s going on.
+   */
+}
+
+.c-comments--replies .c-comments--replies:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -19px;
+  width: 4px;
+  background-color: #fff;
+  /* [1] */
+}
+
+/* ==========================================================================
+   #PAGINATION
+   ========================================================================== */
+.c-pagination {
+  list-style: none;
+  margin-right: 4px;
+  margin-left: 4px;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  border: 0 solid #768692;
+  border-width: 1px 0;
+  text-align: center;
+}
+
+.c-pagination__item {
+  display: table-cell;
+}
+
+.c-pagination__prev {
+  text-align: left;
+}
+
+.c-pagination__next {
+  text-align: right;
+}
+
+.c-pagination__link {
+  display: block;
+  text-decoration: none;
+  padding: 30px 15px;
+}
+
+.c-pagination__link, .c-pagination__link:visited, .c-pagination__link:hover, .c-pagination__link:active {
+  color: #005eb8;
+}
+
+.c-pagination__link.is-current {
+  pointer-events: none;
+  color: #e8edee;
+}
+
+/* ==========================================================================
+   #TABS
+   ========================================================================== */
+.c-tabs {
+  margin-left: 0;
+  list-style: none;
+  display: table;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  font-size: 0.888888889rem;
+  line-height: 1.625;
+}
+
+.c-tabs__item {
+  display: table-cell;
+}
+
+.c-tabs__link {
+  display: block;
+  border: 1px solid #fff;
+  background-color: #e8edee;
+  padding: 8px;
+}
+
+.c-tabs__link, .c-tabs__link:visited {
+  color: #425563;
+  text-decoration: none;
+}
+
+.c-tabs__link.is-current {
+  color: #005eb8;
+  background-color: #fff;
+  border-color: #e8edee;
+  position: relative;
+  pointer-events: none;
+  /**
+         * Faux heavy border underneath current tab links.
+         */
+}
+
+.c-tabs__link.is-current:after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  height: 4px;
+  background-color: #005eb8;
+}
+
+.c-tabs__link.is-disabled, .c-tabs__link[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/**
+       * 1. Hide tabs’ text on small screens…
+       * 2. …but show it when we have enough room…
+       * 3. …but always show the text on the current tab.
+       */
+.c-tabs__text {
+  display: none;
+  /* [1] */
+}
+
+@media (min-width: 45em) {
+  .c-tabs__text {
+    display: inline;
+    /* [2] */
+  }
+}
+
+.c-tabs__link.is-current > .c-tabs__text {
+  display: inline;
+  /* [3] */
+}
+
+/**
+       * 1. Show only tabs’ icons on smaller screens…
+       * 2. …but hide them on larger screens…
+       * 3. …and never show them on current tabs.
+       */
+.c-tabs__icon.c-tabs__icon {
+  display: inline-block;
+  /* [1] */
+}
+
+@media (min-width: 45em) {
+  .c-tabs__icon.c-tabs__icon {
+    display: none;
+    /* [2] */
+  }
+}
+
+.c-tabs__link.is-current > .c-tabs__icon.c-tabs__icon {
+  display: none;
+  /* [3] */
+}
+
+/* ==========================================================================
+   #SPRITE
+   ========================================================================== */
+/**
+ * A simple sprite component creates a context through which to display our
+ * icon. We can leave this as an empty element, e.g.:
+ *
+ *     <i class="c-sprite  c-sprite--<icon>"></i>
+ *
+ * Or we can put hidden text inside of it, like so:
+ *
+ *     <a href="" class="c-sprite  c-sprite--<icon>">Click me!</a>
+ */
+.c-sprite {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(/assets/img/sprite/icons.png);
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .c-sprite {
+    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-size: 396px 266px;
+  }
+}
+
+/* Icons
+   ========================================================================== */
+.c-sprite--dot-inactive {
+  background-position: 0 0;
+  width: 10px;
+  height: 10px;
+}
+
+.c-sprite--dot {
+  background-position: -10px 0;
+  width: 10px;
+  height: 10px;
+}
+
+.c-sprite--arrow-down {
+  background-position: 0 -10px;
+}
+
+.c-sprite--arrow-up {
+  background-position: -20px -10px;
+}
+
+.c-sprite--arrow-left {
+  background-position: -40px -10px;
+}
+
+.c-sprite--arrow-right {
+  background-position: -60px -10px;
+}
+
+.c-sprite--arrow-down-rev {
+  background-position: -80px -10px;
+}
+
+.c-sprite--arrow-up-rev {
+  background-position: -100px -10px;
+}
+
+.c-sprite--arrow-left-rev {
+  background-position: -120px -10px;
+}
+
+.c-sprite--arrow-right-rev {
+  background-position: -140px -10px;
+}
+
+.c-sprite--new-window {
+  background-position: -20px 0;
+  width: 10px;
+  height: 10px;
+}
+
+.c-sprite--new-window-rev {
+  background-position: -30px 0;
+  width: 10px;
+  height: 10px;
+}
+
+.c-sprite--pencil {
+  background-position: 0 -30px;
+}
+
+.c-sprite--currency {
+  background-position: -20px -30px;
+}
+
+.c-sprite--speaker {
+  background-position: -40px -30px;
+}
+
+.c-sprite--info {
+  background-position: -60px -30px;
+}
+
+.c-sprite--user {
+  background-position: -80px -30px;
+}
+
+.c-sprite--menu {
+  background-position: -100px -30px;
+}
+
+.c-sprite--pencil-rev {
+  background-position: -120px -30px;
+}
+
+.c-sprite--currency-rev {
+  background-position: -140px -30px;
+}
+
+.c-sprite--speaker-rev {
+  background-position: -160px -30px;
+}
+
+.c-sprite--info-rev {
+  background-position: -180px -30px;
+}
+
+.c-sprite--user-rev {
+  background-position: -200px -30px;
+}
+
+.c-sprite--menu-rev {
+  background-position: -220px -30px;
+}
+
+.c-sprite--home {
+  background-position: 0 -50px;
+}
+
+.c-sprite--close {
+  background-position: -20px -50px;
+}
+
+.c-sprite--close-rev {
+  background-position: -40px -50px;
+}
+
+.c-sprite--prev-grey {
+  background-position: -252px -70px;
+  width: 36px;
+  height: 36px;
+}
+
+.c-sprite--next-grey {
+  background-position: -288px -70px;
+  width: 36px;
+  height: 36px;
+}
+
+.c-sprite--prev-blue {
+  background-position: -324px -70px;
+  width: 36px;
+  height: 36px;
+}
+
+.c-sprite--next-blue {
+  background-position: -360px -70px;
+  width: 36px;
+  height: 36px;
+}
+
+.c-sprite--facebook {
+  background-position: -144px -70px;
+  width: 36px;
+  height: 36px;
+}
+
+.c-sprite--twitter {
+  background-position: -180px -70px;
+  width: 36px;
+  height: 36px;
+}
+
+.c-sprite--linkedin {
+  background-position: -216px -70px;
+  width: 36px;
+  height: 36px;
+}
+
+.c-sprite--close-large {
+  background-position: 0 -70px;
+  width: 36px;
+  height: 36px;
+}
+
+.c-sprite--hamburger {
+  background-position: -36px -70px;
+  width: 36px;
+  height: 36px;
+}
+
+.c-sprite--magnifying-glass {
+  background-position: -72px -70px;
+  width: 36px;
+  height: 36px;
+}
+
+.c-sprite--magnifying-glass-rev {
+  background-position: -108px -70px;
+  width: 34px;
+  height: 34px;
+}
+
+.c-sprite--add {
+  background-position: 0 -106px;
+  width: 60px;
+  height: 60px;
+}
+
+.c-sprite--play {
+  background-position: 0 -166px;
+  width: 100px;
+  height: 100px;
+}
+
+/* ==========================================================================
+   #MEDIA
+   ========================================================================== */
+/**
+ * Media
+ *
+ * 1. Leave a solid background colour so that nothing shows up underneath
+ *    translucent media (defined later).
+ */
+.c-media {
+  display: block;
+  margin-bottom: 30px;
+  background-color: #fff;
+  /* [1] */
+}
+
+/**
+   * Media with mastheads that contain media (e.g. an image).
+   */
+.c-media__masthead {
+  position: relative;
+  display: block;
+  border: 1px solid #e8edee;
+}
+
+.c-media__masthead--overlay {
+  /**
+     * Translucent overlay covering the media.
+     */
+}
+
+.c-media__masthead--overlay:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(51, 0, 114, 0.1);
+  /**
+       * Hide overlay if Media is active (e.g. video is playing).
+       */
+}
+
+.c-media.is-active .c-media__masthead--overlay:after {
+  display: none;
+}
+
+/**
+     * If overlay is applied media itself needs dimming.
+     */
+.c-media__media--overlay {
+  opacity: 0.3;
+  width: 100%;
+  /**
+       * Undo dimming effect if Media is active (e.g. video is playing).
+       */
+}
+
+.c-media.is-active .c-media__media--overlay {
+  opacity: 1;
+}
+
+.c-media__emblem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  /**
+       * Hide emblem if Media is active (e.g. video is playing).
+       */
+}
+
+.c-media.is-active .c-media__emblem {
+  display: none;
+}
+
+/**
+     * Media that can be paged through.
+     */
+.c-media__controls {
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.c-media__control {
+  float: left;
+  padding: 8px;
+  line-height: 1;
+}
+
+/**
+   * Textual content in Media lives in its own container.
+   */
+.c-media__content {
+  font-size: 14px;
+  font-size: 0.777777778rem;
+  line-height: 1.857142857;
+  border: 1px solid #e8edee;
+  border-top: none;
+  padding: 15px;
+  color: #425563;
+}
+
+/**
+     * Show/hide content in Media extends the DETAILS and SUMMARY elements.
+     */
+.c-media__reveal {
+  margin-bottom: 0;
+  /**
+       * Kinda gross, but… we need to remove leftover style from nested DIVs
+       * in regular DETAILS elements (_elements.details.scss).
+       */
+}
+
+.c-media__reveal > div {
+  margin-top: 0;
+  margin-left: 0;
+  padding-left: 0;
+  border-left: none;
+}
+
+.c-media__reveal > :last-child {
+  margin-bottom: 0;
+}
+
+/**
+       * The title/trigger for the revealable content.
+       *
+       * 1. Hide the DETAILS dropdown marker in Firefox.
+       * 2. Remove indents leftover from regular DETAILS elements.
+       */
+.c-media__reveal-title {
+  font-size: 18px;
+  font-size: 1rem;
+  line-height: 1.444444444;
+  position: relative;
+  font-weight: bold;
+  display: block;
+  /* [1] */
+  padding-left: 0;
+  /* [2] */
+  text-indent: 0;
+  /* [2] */
+  /**
+         * Specificity bump to circumvent `:hover` etc. states.
+         */
+  /**
+         * Remove the native DETAILS arrow…
+         */
+  /**
+         * …and replace it with our sprited icon.
+         */
+}
+
+.c-media__reveal-title.c-media__reveal-title {
+  color: #231f20;
+  text-decoration: none;
+}
+
+.c-media__reveal-title::-webkit-details-marker {
+  display: none;
+}
+
+.c-media__reveal-title:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(/assets/img/sprite/icons.png);
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  background-position: 0 -10px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -10px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .c-media__reveal-title:after {
+    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-size: 396px 266px;
+  }
+}
+
+.c-media__reveal[open] .c-media__reveal-title:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(/assets/img/sprite/icons.png);
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  background-position: -20px -10px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .c-media__reveal[open] .c-media__reveal-title:after {
+    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-size: 396px 266px;
+  }
+}
+
+/**
+       * Scrolling content in Media.
+       */
+.c-media__scroller {
+  max-height: 150px;
+  overflow: scroll;
+  overflow-x: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c-media__scroller > :last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   #BREADCRUMB
+   ========================================================================== */
+/**
+ * Breadcrumb’s main parent simply contains and scrolls the breadcrumb list.
+ *
+ * 1. Make sure all browsers scroll to the best of their abilities.
+ * 2. Native-like scrolling on touch devices.
+ * 3. Use negative top margin to negate bottom margin of header this is under.
+ * 4. Use larger top margin if breacrumbs sit under page-specific ribbons.
+ */
+.c-breadcrumb {
+  font-size: 14px;
+  font-size: 0.777777778rem;
+  line-height: 1.857142857;
+  margin-bottom: 30px;
+  white-space: nowrap;
+  overflow: scroll;
+  /* [1] */
+  overflow-x: scroll;
+  /* [1] */
+  overflow-y: auto;
+  /* [1] */
+  -webkit-overflow-scrolling: touch;
+  /* [2] */
+  background-color: #eae5f0;
+  padding: 8px;
+  margin-top: -30px;
+  /* [3] */
+  margin-left: -30px;
+  margin-right: -30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.c-ribbon--page-specific + .c-breadcrumb {
+  margin-top: -40px;
+  /* [4] */
+}
+
+.c-breadcrumb__list {
+  margin-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.c-breadcrumb__item {
+  display: inline-block;
+  /**
+       * Ensure that the last item (in a scrolling Breadcrumb) doesn’t sit flush
+       * to the edge of the breadcrumb parent.
+       */
+}
+
+.c-breadcrumb__item + .c-breadcrumb__item:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(/assets/img/sprite/icons.png);
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  background-position: -60px -10px;
+  margin-right: 4px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .c-breadcrumb__item + .c-breadcrumb__item:before {
+    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-size: 396px 266px;
+  }
+}
+
+.c-breadcrumb__item:last-of-type {
+  padding-right: 30px;
+}
+
+.c-breadcrumb__link {
+  text-decoration: none;
+  word-spacing: initial;
+  /**
+         * Specificity bump to get around `:visited` issues.
+         */
+  /**
+         * The current page is underlined and uninteractive.
+         */
+}
+
+.c-breadcrumb__link.c-breadcrumb__link {
+  color: #231f20;
+}
+
+.c-breadcrumb__link.is-current {
+  text-decoration: underline;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   #TABLES
+   ========================================================================== */
+.c-table-data {
+  font-size: 14px;
+  font-size: 0.777777778rem;
+  line-height: 1.857142857;
+  color: #425563;
+  border-bottom: 1px solid #231f20;
+}
+
+.c-table-data thead th {
+  font-size: 18px;
+  font-size: 1rem;
+  line-height: 1.444444444;
+  font-weight: bold;
+  color: #231f20;
+  text-align: left;
+}
+
+.c-table-data tbody tr {
+  border-top: 1px solid #231f20;
+}
+
+.c-table-data th, .c-table-data td {
+  padding: 8px;
+}
+
+.c-table-data th:first-child, .c-table-data td:first-child {
+  padding-left: 0;
+}
+
+.c-table-data th:last-child, .c-table-data td:last-child {
+  padding-right: 0;
+}
+
+.c-table-data__title.c-table-data__title {
+  font-size: 24px;
+  font-size: 1.333333333rem;
+  line-height: 1.083333333;
+  padding: 0;
+}
+
+/* ==========================================================================
+   #SEARCH
+   ========================================================================== */
+.c-search {
+  /**
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    contenteditable attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that are clearfixed.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   */
+  /**
+     * For IE 6/7 only
+     * Include this rule to trigger hasLayout and contain floats.
+     */
+  *zoom: 1;
+  white-space: nowrap;
+}
+
+.c-search:before, .c-search:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.c-search:after {
+  clear: both;
+}
+
+/**
+   * 1. Height should match NHS lozenge in logo.
+   */
+.c-search__input {
+  float: left;
+  width: auto;
+  height: 36px;
+  /* [1] */
+  padding-left: 5px;
+  border-right: none;
+  width: 100%;
+}
+
+@supports (width: calc(10px + 10px)) {
+  .c-search__input {
+    width: calc(100% - 36px);
+  }
+}
+
+/**
+   * Search Button
+   *
+   * 1. Height should match NHS lozenge in logo.
+   * 2. In browsers that don’t support `calc()`, we need to drag the search
+   *    button into place.
+   * 3. But in browsers that do support `calc()`, let’s do things the nice way!
+   */
+.c-search__btn {
+  width: 36px;
+  /* [1] */
+  height: 36px;
+  /* [1] */
+  padding: 0;
+  border: 1px solid transparent;
+  border-left: none;
+  border-radius: 0;
+  background-color: #e8edee;
+  position: relative;
+  /* [2] */
+  left: -36px;
+  /* [2] */
+}
+
+@supports (width: calc(10px + 10px)) {
+  .c-search__btn {
+    position: static;
+    /* [3] */
+  }
+}
+
+.c-search__input:active + .c-search__btn,
+.c-search__input:focus + .c-search__btn {
+  border-top-color: #ffb81c;
+  border-right-color: #ffb81c;
+  border-bottom-color: #ffb81c;
+}
+
+/* ==========================================================================
+   #ARTICLES
+   ========================================================================== */
+/**
+ * Styling for articles, also known as blog posts.
+ */
+.c-article {
+  margin-bottom: 30px;
+}
+
+.c-article__header {
+  margin-bottom: 10px;
+}
+
+.c-article__header--titles-only {
+  margin-bottom: 5px;
+}
+
+.c-article__content {
+  margin-top: 10px;
+}
+
+.c-article__content > p {
+  margin-bottom: 10px;
+}
+
+.c-article__content > img {
+  margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   #CARDS
+   ========================================================================== */
+.c-card {
+  border-style: solid;
+  border-width: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.c-card > h6 {
+  margin-bottom: 0;
+}
+
+/**
+ * Styling for alert cards.
+ *
+ */
+.c-card--alert {
+  border-color: #da291c;
+}
+
+/**
+ * Styling for information cards.
+ *
+ * H4 headers are used in Call to Action cards, which are a variant.
+ * They have no bottom margin.
+ * All paragraphs have no top margin but a standard bottom margin.
+ * This creates no space at the top and a small space before the button.
+ *
+ */
+.c-card--information {
+  border-color: #005eb8;
+}
+
+.c-card--information > h4 {
+  margin-bottom: 0;
+}
+
+.c-card--information p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   #LEADING-PARAGRAPH
+   ========================================================================== */
+/**
+ * Larger font size for the first paragraph on a page/post.
+ *
+ */
+.c-leading-paragraph {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+/* ==========================================================================
+   #FILE-UPLOAD
+   ========================================================================== */
+/**
+ * Drag-and-drop compatible file-uploader component.
+ */
+.c-file-upload {
+  position: relative;
+  padding: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+  border: 4px dashed #768692;
+  background-color: #e8edee;
+  /**
+   * Add an `is-active` class to the uploader when a user is hovering a file
+   * over it.
+   */
+}
+
+.c-file-upload.is-active:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.c-file-upload.is-active:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(/assets/img/sprite/icons.png);
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  background-position: 0 -106px;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -30px;
+  z-index: 3;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .c-file-upload.is-active:after {
+    background-image: url(/assets/img/sprite/icons@2x.png);
+    background-size: 396px 266px;
+  }
+}
+
+.c-file-upload__title {
+  margin-bottom: 15px;
+}
+
+/**
+   * Stretch an `<input type="file" />` invisibly over the component to a)
+   * provide a full drop area for dragged files or b) a full click area for
+   * browse-to-upload.
+   */
+.c-file-upload__input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+.c-file-upload__btn {
+  position: relative;
+  z-index: 1;
+}
+
+.c-file-upload__or {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.c-file-upload__or:before, .c-file-upload__or:after {
+  content: " - ";
+}
+
+/* ==========================================================================
+   #COLORS
+   ========================================================================== */
+/**
+ * Generate a suite of utility classes that map directly to our colour palette.
+ */
+/* stylelint-disable declaration-no-important */
+.u-color-attention {
+  color: #7c2855 !important;
+}
+
+.u-color-bg-attention {
+  background-color: #7c2855 !important;
+}
+
+.u-color-attention\:hover:hover {
+  color: #7c2855 !important;
+}
+
+.u-color-bg-attention\:hover:hover {
+  background-color: #7c2855 !important;
+}
+
+.u-color-error {
+  color: #da291c !important;
+}
+
+.u-color-bg-error {
+  background-color: #da291c !important;
+}
+
+.u-color-error\:hover:hover {
+  color: #da291c !important;
+}
+
+.u-color-bg-error\:hover:hover {
+  background-color: #da291c !important;
+}
+
+.u-color-information {
+  color: #005eb8 !important;
+}
+
+.u-color-bg-information {
+  background-color: #005eb8 !important;
+}
+
+.u-color-information\:hover:hover {
+  color: #005eb8 !important;
+}
+
+.u-color-bg-information\:hover:hover {
+  background-color: #005eb8 !important;
+}
+
+.u-color-nhs-aqua {
+  color: #00a499 !important;
+}
+
+.u-color-bg-nhs-aqua {
+  background-color: #00a499 !important;
+}
+
+.u-color-nhs-aqua\:hover:hover {
+  color: #00a499 !important;
+}
+
+.u-color-bg-nhs-aqua\:hover:hover {
+  background-color: #00a499 !important;
+}
+
+.u-color-nhs-black {
+  color: #231f20 !important;
+}
+
+.u-color-bg-nhs-black {
+  background-color: #231f20 !important;
+}
+
+.u-color-nhs-black\:hover:hover {
+  color: #231f20 !important;
+}
+
+.u-color-bg-nhs-black\:hover:hover {
+  background-color: #231f20 !important;
+}
+
+.u-color-nhs-blue {
+  color: #005eb8 !important;
+}
+
+.u-color-bg-nhs-blue {
+  background-color: #005eb8 !important;
+}
+
+.u-color-nhs-blue\:hover:hover {
+  color: #005eb8 !important;
+}
+
+.u-color-bg-nhs-blue\:hover:hover {
+  background-color: #005eb8 !important;
+}
+
+.u-color-nhs-grey-dark {
+  color: #425563 !important;
+}
+
+.u-color-bg-nhs-grey-dark {
+  background-color: #425563 !important;
+}
+
+.u-color-nhs-grey-dark\:hover:hover {
+  color: #425563 !important;
+}
+
+.u-color-bg-nhs-grey-dark\:hover:hover {
+  background-color: #425563 !important;
+}
+
+.u-color-nhs-grey-mid {
+  color: #768692 !important;
+}
+
+.u-color-bg-nhs-grey-mid {
+  background-color: #768692 !important;
+}
+
+.u-color-nhs-grey-mid\:hover:hover {
+  color: #768692 !important;
+}
+
+.u-color-bg-nhs-grey-mid\:hover:hover {
+  background-color: #768692 !important;
+}
+
+.u-color-nhs-grey-pale {
+  color: #e8edee !important;
+}
+
+.u-color-bg-nhs-grey-pale {
+  background-color: #e8edee !important;
+}
+
+.u-color-nhs-grey-pale\:hover:hover {
+  color: #e8edee !important;
+}
+
+.u-color-bg-nhs-grey-pale\:hover:hover {
+  background-color: #e8edee !important;
+}
+
+.u-color-nhs-orange {
+  color: #ed8b00 !important;
+}
+
+.u-color-bg-nhs-orange {
+  background-color: #ed8b00 !important;
+}
+
+.u-color-nhs-orange\:hover:hover {
+  color: #ed8b00 !important;
+}
+
+.u-color-bg-nhs-orange\:hover:hover {
+  background-color: #ed8b00 !important;
+}
+
+.u-color-nhs-pink {
+  color: #ae2573 !important;
+}
+
+.u-color-bg-nhs-pink {
+  background-color: #ae2573 !important;
+}
+
+.u-color-nhs-pink\:hover:hover {
+  color: #ae2573 !important;
+}
+
+.u-color-bg-nhs-pink\:hover:hover {
+  background-color: #ae2573 !important;
+}
+
+.u-color-nhs-purple-light {
+  color: #704c9c !important;
+}
+
+.u-color-bg-nhs-purple-light {
+  background-color: #704c9c !important;
+}
+
+.u-color-nhs-purple-light\:hover:hover {
+  color: #704c9c !important;
+}
+
+.u-color-bg-nhs-purple-light\:hover:hover {
+  background-color: #704c9c !important;
+}
+
+.u-color-nhs-purple {
+  color: #330072 !important;
+}
+
+.u-color-bg-nhs-purple {
+  background-color: #330072 !important;
+}
+
+.u-color-nhs-purple\:hover:hover {
+  color: #330072 !important;
+}
+
+.u-color-bg-nhs-purple\:hover:hover {
+  background-color: #330072 !important;
+}
+
+.u-color-pending {
+  color: #8a1538 !important;
+}
+
+.u-color-bg-pending {
+  background-color: #8a1538 !important;
+}
+
+.u-color-pending\:hover:hover {
+  color: #8a1538 !important;
+}
+
+.u-color-bg-pending\:hover:hover {
+  background-color: #8a1538 !important;
+}
+
+.u-color-success {
+  color: #78be20 !important;
+}
+
+.u-color-bg-success {
+  background-color: #78be20 !important;
+}
+
+.u-color-success\:hover:hover {
+  color: #78be20 !important;
+}
+
+.u-color-bg-success\:hover:hover {
+  background-color: #78be20 !important;
+}
+
+.u-color-warning {
+  color: #fae100 !important;
+}
+
+.u-color-bg-warning {
+  background-color: #fae100 !important;
+}
+
+.u-color-warning\:hover:hover {
+  color: #fae100 !important;
+}
+
+.u-color-bg-warning\:hover:hover {
+  background-color: #fae100 !important;
+}
+
+.u-color-white {
+  color: #fff !important;
+}
+
+.u-color-bg-white {
+  background-color: #fff !important;
+}
+
+.u-color-white\:hover:hover {
+  color: #fff !important;
+}
+
+.u-color-bg-white\:hover:hover {
+  background-color: #fff !important;
+}
+
+/* stylelint-enable */
+/* ==========================================================================
+   #SPACING
+   ========================================================================== */
+/**
+ * A series of spacing utilities that we can use to nudge things around in the
+ * HTML. Classes are responsive and follow this sort of patter:
+ *
+ *   .u-margin-top {}
+ *   .u-padding-left-small@lg
+ *   .u-margin-bottom@xl
+ */
+/* stylelint-disable declaration-no-important */
+/* stylelint-enable */
+.u-margin {
+  margin: 30px !important;
+}
+
+.u-padding {
+  padding: 30px !important;
+}
+
+.u-margin-tiny {
+  margin: 8px !important;
+}
+
+.u-padding-tiny {
+  padding: 8px !important;
+}
+
+.u-margin-small {
+  margin: 15px !important;
+}
+
+.u-padding-small {
+  padding: 15px !important;
+}
+
+.u-margin-large {
+  margin: 60px !important;
+}
+
+.u-padding-large {
+  padding: 60px !important;
+}
+
+.u-margin-none {
+  margin: 0 !important;
+}
+
+.u-padding-none {
+  padding: 0 !important;
+}
+
+.u-margin-top {
+  margin-top: 30px !important;
+}
+
+.u-padding-top {
+  padding-top: 30px !important;
+}
+
+.u-margin-top-tiny {
+  margin-top: 8px !important;
+}
+
+.u-padding-top-tiny {
+  padding-top: 8px !important;
+}
+
+.u-margin-top-small {
+  margin-top: 15px !important;
+}
+
+.u-padding-top-small {
+  padding-top: 15px !important;
+}
+
+.u-margin-top-large {
+  margin-top: 60px !important;
+}
+
+.u-padding-top-large {
+  padding-top: 60px !important;
+}
+
+.u-margin-top-none {
+  margin-top: 0 !important;
+}
+
+.u-padding-top-none {
+  padding-top: 0 !important;
+}
+
+.u-margin-right {
+  margin-right: 30px !important;
+}
+
+.u-padding-right {
+  padding-right: 30px !important;
+}
+
+.u-margin-right-tiny {
+  margin-right: 8px !important;
+}
+
+.u-padding-right-tiny {
+  padding-right: 8px !important;
+}
+
+.u-margin-right-small {
+  margin-right: 15px !important;
+}
+
+.u-padding-right-small {
+  padding-right: 15px !important;
+}
+
+.u-margin-right-large {
+  margin-right: 60px !important;
+}
+
+.u-padding-right-large {
+  padding-right: 60px !important;
+}
+
+.u-margin-right-none {
+  margin-right: 0 !important;
+}
+
+.u-padding-right-none {
+  padding-right: 0 !important;
+}
+
+.u-margin-bottom {
+  margin-bottom: 30px !important;
+}
+
+.u-padding-bottom {
+  padding-bottom: 30px !important;
+}
+
+.u-margin-bottom-tiny {
+  margin-bottom: 8px !important;
+}
+
+.u-padding-bottom-tiny {
+  padding-bottom: 8px !important;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 15px !important;
+}
+
+.u-padding-bottom-small {
+  padding-bottom: 15px !important;
+}
+
+.u-margin-bottom-large {
+  margin-bottom: 60px !important;
+}
+
+.u-padding-bottom-large {
+  padding-bottom: 60px !important;
+}
+
+.u-margin-bottom-none {
+  margin-bottom: 0 !important;
+}
+
+.u-padding-bottom-none {
+  padding-bottom: 0 !important;
+}
+
+.u-margin-left {
+  margin-left: 30px !important;
+}
+
+.u-padding-left {
+  padding-left: 30px !important;
+}
+
+.u-margin-left-tiny {
+  margin-left: 8px !important;
+}
+
+.u-padding-left-tiny {
+  padding-left: 8px !important;
+}
+
+.u-margin-left-small {
+  margin-left: 15px !important;
+}
+
+.u-padding-left-small {
+  padding-left: 15px !important;
+}
+
+.u-margin-left-large {
+  margin-left: 60px !important;
+}
+
+.u-padding-left-large {
+  padding-left: 60px !important;
+}
+
+.u-margin-left-none {
+  margin-left: 0 !important;
+}
+
+.u-padding-left-none {
+  padding-left: 0 !important;
+}
+
+@media (min-width: 30em) {
+  .u-margin\@sm {
+    margin: 30px !important;
+  }
+  .u-padding\@sm {
+    padding: 30px !important;
+  }
+  .u-margin-tiny\@sm {
+    margin: 8px !important;
+  }
+  .u-padding-tiny\@sm {
+    padding: 8px !important;
+  }
+  .u-margin-small\@sm {
+    margin: 15px !important;
+  }
+  .u-padding-small\@sm {
+    padding: 15px !important;
+  }
+  .u-margin-large\@sm {
+    margin: 60px !important;
+  }
+  .u-padding-large\@sm {
+    padding: 60px !important;
+  }
+  .u-margin-none\@sm {
+    margin: 0 !important;
+  }
+  .u-padding-none\@sm {
+    padding: 0 !important;
+  }
+  .u-margin-top\@sm {
+    margin-top: 30px !important;
+  }
+  .u-padding-top\@sm {
+    padding-top: 30px !important;
+  }
+  .u-margin-top-tiny\@sm {
+    margin-top: 8px !important;
+  }
+  .u-padding-top-tiny\@sm {
+    padding-top: 8px !important;
+  }
+  .u-margin-top-small\@sm {
+    margin-top: 15px !important;
+  }
+  .u-padding-top-small\@sm {
+    padding-top: 15px !important;
+  }
+  .u-margin-top-large\@sm {
+    margin-top: 60px !important;
+  }
+  .u-padding-top-large\@sm {
+    padding-top: 60px !important;
+  }
+  .u-margin-top-none\@sm {
+    margin-top: 0 !important;
+  }
+  .u-padding-top-none\@sm {
+    padding-top: 0 !important;
+  }
+  .u-margin-right\@sm {
+    margin-right: 30px !important;
+  }
+  .u-padding-right\@sm {
+    padding-right: 30px !important;
+  }
+  .u-margin-right-tiny\@sm {
+    margin-right: 8px !important;
+  }
+  .u-padding-right-tiny\@sm {
+    padding-right: 8px !important;
+  }
+  .u-margin-right-small\@sm {
+    margin-right: 15px !important;
+  }
+  .u-padding-right-small\@sm {
+    padding-right: 15px !important;
+  }
+  .u-margin-right-large\@sm {
+    margin-right: 60px !important;
+  }
+  .u-padding-right-large\@sm {
+    padding-right: 60px !important;
+  }
+  .u-margin-right-none\@sm {
+    margin-right: 0 !important;
+  }
+  .u-padding-right-none\@sm {
+    padding-right: 0 !important;
+  }
+  .u-margin-bottom\@sm {
+    margin-bottom: 30px !important;
+  }
+  .u-padding-bottom\@sm {
+    padding-bottom: 30px !important;
+  }
+  .u-margin-bottom-tiny\@sm {
+    margin-bottom: 8px !important;
+  }
+  .u-padding-bottom-tiny\@sm {
+    padding-bottom: 8px !important;
+  }
+  .u-margin-bottom-small\@sm {
+    margin-bottom: 15px !important;
+  }
+  .u-padding-bottom-small\@sm {
+    padding-bottom: 15px !important;
+  }
+  .u-margin-bottom-large\@sm {
+    margin-bottom: 60px !important;
+  }
+  .u-padding-bottom-large\@sm {
+    padding-bottom: 60px !important;
+  }
+  .u-margin-bottom-none\@sm {
+    margin-bottom: 0 !important;
+  }
+  .u-padding-bottom-none\@sm {
+    padding-bottom: 0 !important;
+  }
+  .u-margin-left\@sm {
+    margin-left: 30px !important;
+  }
+  .u-padding-left\@sm {
+    padding-left: 30px !important;
+  }
+  .u-margin-left-tiny\@sm {
+    margin-left: 8px !important;
+  }
+  .u-padding-left-tiny\@sm {
+    padding-left: 8px !important;
+  }
+  .u-margin-left-small\@sm {
+    margin-left: 15px !important;
+  }
+  .u-padding-left-small\@sm {
+    padding-left: 15px !important;
+  }
+  .u-margin-left-large\@sm {
+    margin-left: 60px !important;
+  }
+  .u-padding-left-large\@sm {
+    padding-left: 60px !important;
+  }
+  .u-margin-left-none\@sm {
+    margin-left: 0 !important;
+  }
+  .u-padding-left-none\@sm {
+    padding-left: 0 !important;
+  }
+}
+
+@media (min-width: 45em) {
+  .u-margin\@md {
+    margin: 30px !important;
+  }
+  .u-padding\@md {
+    padding: 30px !important;
+  }
+  .u-margin-tiny\@md {
+    margin: 8px !important;
+  }
+  .u-padding-tiny\@md {
+    padding: 8px !important;
+  }
+  .u-margin-small\@md {
+    margin: 15px !important;
+  }
+  .u-padding-small\@md {
+    padding: 15px !important;
+  }
+  .u-margin-large\@md {
+    margin: 60px !important;
+  }
+  .u-padding-large\@md {
+    padding: 60px !important;
+  }
+  .u-margin-none\@md {
+    margin: 0 !important;
+  }
+  .u-padding-none\@md {
+    padding: 0 !important;
+  }
+  .u-margin-top\@md {
+    margin-top: 30px !important;
+  }
+  .u-padding-top\@md {
+    padding-top: 30px !important;
+  }
+  .u-margin-top-tiny\@md {
+    margin-top: 8px !important;
+  }
+  .u-padding-top-tiny\@md {
+    padding-top: 8px !important;
+  }
+  .u-margin-top-small\@md {
+    margin-top: 15px !important;
+  }
+  .u-padding-top-small\@md {
+    padding-top: 15px !important;
+  }
+  .u-margin-top-large\@md {
+    margin-top: 60px !important;
+  }
+  .u-padding-top-large\@md {
+    padding-top: 60px !important;
+  }
+  .u-margin-top-none\@md {
+    margin-top: 0 !important;
+  }
+  .u-padding-top-none\@md {
+    padding-top: 0 !important;
+  }
+  .u-margin-right\@md {
+    margin-right: 30px !important;
+  }
+  .u-padding-right\@md {
+    padding-right: 30px !important;
+  }
+  .u-margin-right-tiny\@md {
+    margin-right: 8px !important;
+  }
+  .u-padding-right-tiny\@md {
+    padding-right: 8px !important;
+  }
+  .u-margin-right-small\@md {
+    margin-right: 15px !important;
+  }
+  .u-padding-right-small\@md {
+    padding-right: 15px !important;
+  }
+  .u-margin-right-large\@md {
+    margin-right: 60px !important;
+  }
+  .u-padding-right-large\@md {
+    padding-right: 60px !important;
+  }
+  .u-margin-right-none\@md {
+    margin-right: 0 !important;
+  }
+  .u-padding-right-none\@md {
+    padding-right: 0 !important;
+  }
+  .u-margin-bottom\@md {
+    margin-bottom: 30px !important;
+  }
+  .u-padding-bottom\@md {
+    padding-bottom: 30px !important;
+  }
+  .u-margin-bottom-tiny\@md {
+    margin-bottom: 8px !important;
+  }
+  .u-padding-bottom-tiny\@md {
+    padding-bottom: 8px !important;
+  }
+  .u-margin-bottom-small\@md {
+    margin-bottom: 15px !important;
+  }
+  .u-padding-bottom-small\@md {
+    padding-bottom: 15px !important;
+  }
+  .u-margin-bottom-large\@md {
+    margin-bottom: 60px !important;
+  }
+  .u-padding-bottom-large\@md {
+    padding-bottom: 60px !important;
+  }
+  .u-margin-bottom-none\@md {
+    margin-bottom: 0 !important;
+  }
+  .u-padding-bottom-none\@md {
+    padding-bottom: 0 !important;
+  }
+  .u-margin-left\@md {
+    margin-left: 30px !important;
+  }
+  .u-padding-left\@md {
+    padding-left: 30px !important;
+  }
+  .u-margin-left-tiny\@md {
+    margin-left: 8px !important;
+  }
+  .u-padding-left-tiny\@md {
+    padding-left: 8px !important;
+  }
+  .u-margin-left-small\@md {
+    margin-left: 15px !important;
+  }
+  .u-padding-left-small\@md {
+    padding-left: 15px !important;
+  }
+  .u-margin-left-large\@md {
+    margin-left: 60px !important;
+  }
+  .u-padding-left-large\@md {
+    padding-left: 60px !important;
+  }
+  .u-margin-left-none\@md {
+    margin-left: 0 !important;
+  }
+  .u-padding-left-none\@md {
+    padding-left: 0 !important;
+  }
+}
+
+@media (min-width: 64em) {
+  .u-margin\@lg {
+    margin: 30px !important;
+  }
+  .u-padding\@lg {
+    padding: 30px !important;
+  }
+  .u-margin-tiny\@lg {
+    margin: 8px !important;
+  }
+  .u-padding-tiny\@lg {
+    padding: 8px !important;
+  }
+  .u-margin-small\@lg {
+    margin: 15px !important;
+  }
+  .u-padding-small\@lg {
+    padding: 15px !important;
+  }
+  .u-margin-large\@lg {
+    margin: 60px !important;
+  }
+  .u-padding-large\@lg {
+    padding: 60px !important;
+  }
+  .u-margin-none\@lg {
+    margin: 0 !important;
+  }
+  .u-padding-none\@lg {
+    padding: 0 !important;
+  }
+  .u-margin-top\@lg {
+    margin-top: 30px !important;
+  }
+  .u-padding-top\@lg {
+    padding-top: 30px !important;
+  }
+  .u-margin-top-tiny\@lg {
+    margin-top: 8px !important;
+  }
+  .u-padding-top-tiny\@lg {
+    padding-top: 8px !important;
+  }
+  .u-margin-top-small\@lg {
+    margin-top: 15px !important;
+  }
+  .u-padding-top-small\@lg {
+    padding-top: 15px !important;
+  }
+  .u-margin-top-large\@lg {
+    margin-top: 60px !important;
+  }
+  .u-padding-top-large\@lg {
+    padding-top: 60px !important;
+  }
+  .u-margin-top-none\@lg {
+    margin-top: 0 !important;
+  }
+  .u-padding-top-none\@lg {
+    padding-top: 0 !important;
+  }
+  .u-margin-right\@lg {
+    margin-right: 30px !important;
+  }
+  .u-padding-right\@lg {
+    padding-right: 30px !important;
+  }
+  .u-margin-right-tiny\@lg {
+    margin-right: 8px !important;
+  }
+  .u-padding-right-tiny\@lg {
+    padding-right: 8px !important;
+  }
+  .u-margin-right-small\@lg {
+    margin-right: 15px !important;
+  }
+  .u-padding-right-small\@lg {
+    padding-right: 15px !important;
+  }
+  .u-margin-right-large\@lg {
+    margin-right: 60px !important;
+  }
+  .u-padding-right-large\@lg {
+    padding-right: 60px !important;
+  }
+  .u-margin-right-none\@lg {
+    margin-right: 0 !important;
+  }
+  .u-padding-right-none\@lg {
+    padding-right: 0 !important;
+  }
+  .u-margin-bottom\@lg {
+    margin-bottom: 30px !important;
+  }
+  .u-padding-bottom\@lg {
+    padding-bottom: 30px !important;
+  }
+  .u-margin-bottom-tiny\@lg {
+    margin-bottom: 8px !important;
+  }
+  .u-padding-bottom-tiny\@lg {
+    padding-bottom: 8px !important;
+  }
+  .u-margin-bottom-small\@lg {
+    margin-bottom: 15px !important;
+  }
+  .u-padding-bottom-small\@lg {
+    padding-bottom: 15px !important;
+  }
+  .u-margin-bottom-large\@lg {
+    margin-bottom: 60px !important;
+  }
+  .u-padding-bottom-large\@lg {
+    padding-bottom: 60px !important;
+  }
+  .u-margin-bottom-none\@lg {
+    margin-bottom: 0 !important;
+  }
+  .u-padding-bottom-none\@lg {
+    padding-bottom: 0 !important;
+  }
+  .u-margin-left\@lg {
+    margin-left: 30px !important;
+  }
+  .u-padding-left\@lg {
+    padding-left: 30px !important;
+  }
+  .u-margin-left-tiny\@lg {
+    margin-left: 8px !important;
+  }
+  .u-padding-left-tiny\@lg {
+    padding-left: 8px !important;
+  }
+  .u-margin-left-small\@lg {
+    margin-left: 15px !important;
+  }
+  .u-padding-left-small\@lg {
+    padding-left: 15px !important;
+  }
+  .u-margin-left-large\@lg {
+    margin-left: 60px !important;
+  }
+  .u-padding-left-large\@lg {
+    padding-left: 60px !important;
+  }
+  .u-margin-left-none\@lg {
+    margin-left: 0 !important;
+  }
+  .u-padding-left-none\@lg {
+    padding-left: 0 !important;
+  }
+}
+
+@media (min-width: 80em) {
+  .u-margin\@xl {
+    margin: 30px !important;
+  }
+  .u-padding\@xl {
+    padding: 30px !important;
+  }
+  .u-margin-tiny\@xl {
+    margin: 8px !important;
+  }
+  .u-padding-tiny\@xl {
+    padding: 8px !important;
+  }
+  .u-margin-small\@xl {
+    margin: 15px !important;
+  }
+  .u-padding-small\@xl {
+    padding: 15px !important;
+  }
+  .u-margin-large\@xl {
+    margin: 60px !important;
+  }
+  .u-padding-large\@xl {
+    padding: 60px !important;
+  }
+  .u-margin-none\@xl {
+    margin: 0 !important;
+  }
+  .u-padding-none\@xl {
+    padding: 0 !important;
+  }
+  .u-margin-top\@xl {
+    margin-top: 30px !important;
+  }
+  .u-padding-top\@xl {
+    padding-top: 30px !important;
+  }
+  .u-margin-top-tiny\@xl {
+    margin-top: 8px !important;
+  }
+  .u-padding-top-tiny\@xl {
+    padding-top: 8px !important;
+  }
+  .u-margin-top-small\@xl {
+    margin-top: 15px !important;
+  }
+  .u-padding-top-small\@xl {
+    padding-top: 15px !important;
+  }
+  .u-margin-top-large\@xl {
+    margin-top: 60px !important;
+  }
+  .u-padding-top-large\@xl {
+    padding-top: 60px !important;
+  }
+  .u-margin-top-none\@xl {
+    margin-top: 0 !important;
+  }
+  .u-padding-top-none\@xl {
+    padding-top: 0 !important;
+  }
+  .u-margin-right\@xl {
+    margin-right: 30px !important;
+  }
+  .u-padding-right\@xl {
+    padding-right: 30px !important;
+  }
+  .u-margin-right-tiny\@xl {
+    margin-right: 8px !important;
+  }
+  .u-padding-right-tiny\@xl {
+    padding-right: 8px !important;
+  }
+  .u-margin-right-small\@xl {
+    margin-right: 15px !important;
+  }
+  .u-padding-right-small\@xl {
+    padding-right: 15px !important;
+  }
+  .u-margin-right-large\@xl {
+    margin-right: 60px !important;
+  }
+  .u-padding-right-large\@xl {
+    padding-right: 60px !important;
+  }
+  .u-margin-right-none\@xl {
+    margin-right: 0 !important;
+  }
+  .u-padding-right-none\@xl {
+    padding-right: 0 !important;
+  }
+  .u-margin-bottom\@xl {
+    margin-bottom: 30px !important;
+  }
+  .u-padding-bottom\@xl {
+    padding-bottom: 30px !important;
+  }
+  .u-margin-bottom-tiny\@xl {
+    margin-bottom: 8px !important;
+  }
+  .u-padding-bottom-tiny\@xl {
+    padding-bottom: 8px !important;
+  }
+  .u-margin-bottom-small\@xl {
+    margin-bottom: 15px !important;
+  }
+  .u-padding-bottom-small\@xl {
+    padding-bottom: 15px !important;
+  }
+  .u-margin-bottom-large\@xl {
+    margin-bottom: 60px !important;
+  }
+  .u-padding-bottom-large\@xl {
+    padding-bottom: 60px !important;
+  }
+  .u-margin-bottom-none\@xl {
+    margin-bottom: 0 !important;
+  }
+  .u-padding-bottom-none\@xl {
+    padding-bottom: 0 !important;
+  }
+  .u-margin-left\@xl {
+    margin-left: 30px !important;
+  }
+  .u-padding-left\@xl {
+    padding-left: 30px !important;
+  }
+  .u-margin-left-tiny\@xl {
+    margin-left: 8px !important;
+  }
+  .u-padding-left-tiny\@xl {
+    padding-left: 8px !important;
+  }
+  .u-margin-left-small\@xl {
+    margin-left: 15px !important;
+  }
+  .u-padding-left-small\@xl {
+    padding-left: 15px !important;
+  }
+  .u-margin-left-large\@xl {
+    margin-left: 60px !important;
+  }
+  .u-padding-left-large\@xl {
+    padding-left: 60px !important;
+  }
+  .u-margin-left-none\@xl {
+    margin-left: 0 !important;
+  }
+  .u-padding-left-none\@xl {
+    padding-left: 0 !important;
+  }
+}
+
+/* ==========================================================================
+   #WIDTHS
+   ========================================================================== */
+/* stylelint-disable declaration-no-important */
+/* stylelint-enable */
+.u-1\/12 {
+  width: 8.333333333% !important;
+}
+
+/**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+.u-push-1\/12 {
+  position: relative;
+  right: auto;
+  /* [1] */
+  left: 8.333333333% !important;
+}
+
+.u-pull-1\/12 {
+  position: relative;
+  right: 8.333333333% !important;
+  left: auto;
+  /* [1] */
+}
+
+.u-2\/12 {
+  width: 16.666666667% !important;
+}
+
+/**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+.u-push-2\/12 {
+  position: relative;
+  right: auto;
+  /* [1] */
+  left: 16.666666667% !important;
+}
+
+.u-pull-2\/12 {
+  position: relative;
+  right: 16.666666667% !important;
+  left: auto;
+  /* [1] */
+}
+
+.u-3\/12 {
+  width: 25% !important;
+}
+
+/**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+.u-push-3\/12 {
+  position: relative;
+  right: auto;
+  /* [1] */
+  left: 25% !important;
+}
+
+.u-pull-3\/12 {
+  position: relative;
+  right: 25% !important;
+  left: auto;
+  /* [1] */
+}
+
+.u-4\/12 {
+  width: 33.333333333% !important;
+}
+
+/**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+.u-push-4\/12 {
+  position: relative;
+  right: auto;
+  /* [1] */
+  left: 33.333333333% !important;
+}
+
+.u-pull-4\/12 {
+  position: relative;
+  right: 33.333333333% !important;
+  left: auto;
+  /* [1] */
+}
+
+.u-5\/12 {
+  width: 41.666666667% !important;
+}
+
+/**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+.u-push-5\/12 {
+  position: relative;
+  right: auto;
+  /* [1] */
+  left: 41.666666667% !important;
+}
+
+.u-pull-5\/12 {
+  position: relative;
+  right: 41.666666667% !important;
+  left: auto;
+  /* [1] */
+}
+
+.u-6\/12 {
+  width: 50% !important;
+}
+
+/**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+.u-push-6\/12 {
+  position: relative;
+  right: auto;
+  /* [1] */
+  left: 50% !important;
+}
+
+.u-pull-6\/12 {
+  position: relative;
+  right: 50% !important;
+  left: auto;
+  /* [1] */
+}
+
+.u-7\/12 {
+  width: 58.333333333% !important;
+}
+
+/**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+.u-push-7\/12 {
+  position: relative;
+  right: auto;
+  /* [1] */
+  left: 58.333333333% !important;
+}
+
+.u-pull-7\/12 {
+  position: relative;
+  right: 58.333333333% !important;
+  left: auto;
+  /* [1] */
+}
+
+.u-8\/12 {
+  width: 66.666666667% !important;
+}
+
+/**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+.u-push-8\/12 {
+  position: relative;
+  right: auto;
+  /* [1] */
+  left: 66.666666667% !important;
+}
+
+.u-pull-8\/12 {
+  position: relative;
+  right: 66.666666667% !important;
+  left: auto;
+  /* [1] */
+}
+
+.u-9\/12 {
+  width: 75% !important;
+}
+
+/**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+.u-push-9\/12 {
+  position: relative;
+  right: auto;
+  /* [1] */
+  left: 75% !important;
+}
+
+.u-pull-9\/12 {
+  position: relative;
+  right: 75% !important;
+  left: auto;
+  /* [1] */
+}
+
+.u-10\/12 {
+  width: 83.333333333% !important;
+}
+
+/**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+.u-push-10\/12 {
+  position: relative;
+  right: auto;
+  /* [1] */
+  left: 83.333333333% !important;
+}
+
+.u-pull-10\/12 {
+  position: relative;
+  right: 83.333333333% !important;
+  left: auto;
+  /* [1] */
+}
+
+.u-11\/12 {
+  width: 91.666666667% !important;
+}
+
+/**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+.u-push-11\/12 {
+  position: relative;
+  right: auto;
+  /* [1] */
+  left: 91.666666667% !important;
+}
+
+.u-pull-11\/12 {
+  position: relative;
+  right: 91.666666667% !important;
+  left: auto;
+  /* [1] */
+}
+
+.u-12\/12 {
+  width: 100% !important;
+}
+
+/**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+.u-push-12\/12 {
+  position: relative;
+  right: auto;
+  /* [1] */
+  left: 100% !important;
+}
+
+.u-pull-12\/12 {
+  position: relative;
+  right: 100% !important;
+  left: auto;
+  /* [1] */
+}
+
+@media (min-width: 30em) {
+  .u-1\/12\@sm {
+    width: 8.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-1\/12\@sm {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 8.333333333% !important;
+  }
+  .u-pull-1\/12\@sm {
+    position: relative;
+    right: 8.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-2\/12\@sm {
+    width: 16.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-2\/12\@sm {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 16.666666667% !important;
+  }
+  .u-pull-2\/12\@sm {
+    position: relative;
+    right: 16.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-3\/12\@sm {
+    width: 25% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-3\/12\@sm {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 25% !important;
+  }
+  .u-pull-3\/12\@sm {
+    position: relative;
+    right: 25% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-4\/12\@sm {
+    width: 33.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-4\/12\@sm {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 33.333333333% !important;
+  }
+  .u-pull-4\/12\@sm {
+    position: relative;
+    right: 33.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-5\/12\@sm {
+    width: 41.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-5\/12\@sm {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 41.666666667% !important;
+  }
+  .u-pull-5\/12\@sm {
+    position: relative;
+    right: 41.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-6\/12\@sm {
+    width: 50% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-6\/12\@sm {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 50% !important;
+  }
+  .u-pull-6\/12\@sm {
+    position: relative;
+    right: 50% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-7\/12\@sm {
+    width: 58.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-7\/12\@sm {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 58.333333333% !important;
+  }
+  .u-pull-7\/12\@sm {
+    position: relative;
+    right: 58.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-8\/12\@sm {
+    width: 66.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-8\/12\@sm {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 66.666666667% !important;
+  }
+  .u-pull-8\/12\@sm {
+    position: relative;
+    right: 66.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-9\/12\@sm {
+    width: 75% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-9\/12\@sm {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 75% !important;
+  }
+  .u-pull-9\/12\@sm {
+    position: relative;
+    right: 75% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-10\/12\@sm {
+    width: 83.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-10\/12\@sm {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 83.333333333% !important;
+  }
+  .u-pull-10\/12\@sm {
+    position: relative;
+    right: 83.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-11\/12\@sm {
+    width: 91.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-11\/12\@sm {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 91.666666667% !important;
+  }
+  .u-pull-11\/12\@sm {
+    position: relative;
+    right: 91.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-12\/12\@sm {
+    width: 100% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-12\/12\@sm {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 100% !important;
+  }
+  .u-pull-12\/12\@sm {
+    position: relative;
+    right: 100% !important;
+    left: auto;
+    /* [1] */
+  }
+}
+
+@media (min-width: 45em) {
+  .u-1\/12\@md {
+    width: 8.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-1\/12\@md {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 8.333333333% !important;
+  }
+  .u-pull-1\/12\@md {
+    position: relative;
+    right: 8.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-2\/12\@md {
+    width: 16.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-2\/12\@md {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 16.666666667% !important;
+  }
+  .u-pull-2\/12\@md {
+    position: relative;
+    right: 16.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-3\/12\@md {
+    width: 25% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-3\/12\@md {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 25% !important;
+  }
+  .u-pull-3\/12\@md {
+    position: relative;
+    right: 25% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-4\/12\@md {
+    width: 33.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-4\/12\@md {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 33.333333333% !important;
+  }
+  .u-pull-4\/12\@md {
+    position: relative;
+    right: 33.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-5\/12\@md {
+    width: 41.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-5\/12\@md {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 41.666666667% !important;
+  }
+  .u-pull-5\/12\@md {
+    position: relative;
+    right: 41.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-6\/12\@md {
+    width: 50% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-6\/12\@md {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 50% !important;
+  }
+  .u-pull-6\/12\@md {
+    position: relative;
+    right: 50% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-7\/12\@md {
+    width: 58.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-7\/12\@md {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 58.333333333% !important;
+  }
+  .u-pull-7\/12\@md {
+    position: relative;
+    right: 58.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-8\/12\@md {
+    width: 66.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-8\/12\@md {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 66.666666667% !important;
+  }
+  .u-pull-8\/12\@md {
+    position: relative;
+    right: 66.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-9\/12\@md {
+    width: 75% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-9\/12\@md {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 75% !important;
+  }
+  .u-pull-9\/12\@md {
+    position: relative;
+    right: 75% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-10\/12\@md {
+    width: 83.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-10\/12\@md {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 83.333333333% !important;
+  }
+  .u-pull-10\/12\@md {
+    position: relative;
+    right: 83.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-11\/12\@md {
+    width: 91.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-11\/12\@md {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 91.666666667% !important;
+  }
+  .u-pull-11\/12\@md {
+    position: relative;
+    right: 91.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-12\/12\@md {
+    width: 100% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-12\/12\@md {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 100% !important;
+  }
+  .u-pull-12\/12\@md {
+    position: relative;
+    right: 100% !important;
+    left: auto;
+    /* [1] */
+  }
+}
+
+@media (min-width: 64em) {
+  .u-1\/12\@lg {
+    width: 8.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-1\/12\@lg {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 8.333333333% !important;
+  }
+  .u-pull-1\/12\@lg {
+    position: relative;
+    right: 8.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-2\/12\@lg {
+    width: 16.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-2\/12\@lg {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 16.666666667% !important;
+  }
+  .u-pull-2\/12\@lg {
+    position: relative;
+    right: 16.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-3\/12\@lg {
+    width: 25% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-3\/12\@lg {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 25% !important;
+  }
+  .u-pull-3\/12\@lg {
+    position: relative;
+    right: 25% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-4\/12\@lg {
+    width: 33.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-4\/12\@lg {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 33.333333333% !important;
+  }
+  .u-pull-4\/12\@lg {
+    position: relative;
+    right: 33.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-5\/12\@lg {
+    width: 41.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-5\/12\@lg {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 41.666666667% !important;
+  }
+  .u-pull-5\/12\@lg {
+    position: relative;
+    right: 41.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-6\/12\@lg {
+    width: 50% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-6\/12\@lg {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 50% !important;
+  }
+  .u-pull-6\/12\@lg {
+    position: relative;
+    right: 50% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-7\/12\@lg {
+    width: 58.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-7\/12\@lg {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 58.333333333% !important;
+  }
+  .u-pull-7\/12\@lg {
+    position: relative;
+    right: 58.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-8\/12\@lg {
+    width: 66.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-8\/12\@lg {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 66.666666667% !important;
+  }
+  .u-pull-8\/12\@lg {
+    position: relative;
+    right: 66.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-9\/12\@lg {
+    width: 75% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-9\/12\@lg {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 75% !important;
+  }
+  .u-pull-9\/12\@lg {
+    position: relative;
+    right: 75% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-10\/12\@lg {
+    width: 83.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-10\/12\@lg {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 83.333333333% !important;
+  }
+  .u-pull-10\/12\@lg {
+    position: relative;
+    right: 83.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-11\/12\@lg {
+    width: 91.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-11\/12\@lg {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 91.666666667% !important;
+  }
+  .u-pull-11\/12\@lg {
+    position: relative;
+    right: 91.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-12\/12\@lg {
+    width: 100% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-12\/12\@lg {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 100% !important;
+  }
+  .u-pull-12\/12\@lg {
+    position: relative;
+    right: 100% !important;
+    left: auto;
+    /* [1] */
+  }
+}
+
+@media (min-width: 80em) {
+  .u-1\/12\@xl {
+    width: 8.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-1\/12\@xl {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 8.333333333% !important;
+  }
+  .u-pull-1\/12\@xl {
+    position: relative;
+    right: 8.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-2\/12\@xl {
+    width: 16.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-2\/12\@xl {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 16.666666667% !important;
+  }
+  .u-pull-2\/12\@xl {
+    position: relative;
+    right: 16.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-3\/12\@xl {
+    width: 25% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-3\/12\@xl {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 25% !important;
+  }
+  .u-pull-3\/12\@xl {
+    position: relative;
+    right: 25% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-4\/12\@xl {
+    width: 33.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-4\/12\@xl {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 33.333333333% !important;
+  }
+  .u-pull-4\/12\@xl {
+    position: relative;
+    right: 33.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-5\/12\@xl {
+    width: 41.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-5\/12\@xl {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 41.666666667% !important;
+  }
+  .u-pull-5\/12\@xl {
+    position: relative;
+    right: 41.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-6\/12\@xl {
+    width: 50% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-6\/12\@xl {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 50% !important;
+  }
+  .u-pull-6\/12\@xl {
+    position: relative;
+    right: 50% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-7\/12\@xl {
+    width: 58.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-7\/12\@xl {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 58.333333333% !important;
+  }
+  .u-pull-7\/12\@xl {
+    position: relative;
+    right: 58.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-8\/12\@xl {
+    width: 66.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-8\/12\@xl {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 66.666666667% !important;
+  }
+  .u-pull-8\/12\@xl {
+    position: relative;
+    right: 66.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-9\/12\@xl {
+    width: 75% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-9\/12\@xl {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 75% !important;
+  }
+  .u-pull-9\/12\@xl {
+    position: relative;
+    right: 75% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-10\/12\@xl {
+    width: 83.333333333% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-10\/12\@xl {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 83.333333333% !important;
+  }
+  .u-pull-10\/12\@xl {
+    position: relative;
+    right: 83.333333333% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-11\/12\@xl {
+    width: 91.666666667% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-11\/12\@xl {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 91.666666667% !important;
+  }
+  .u-pull-11\/12\@xl {
+    position: relative;
+    right: 91.666666667% !important;
+    left: auto;
+    /* [1] */
+  }
+  .u-12\/12\@xl {
+    width: 100% !important;
+  }
+  /**
+       * 1. Defensively reset any leftover or conflicting `left`/`right` values.
+       */
+  .u-push-12\/12\@xl {
+    position: relative;
+    right: auto;
+    /* [1] */
+    left: 100% !important;
+  }
+  .u-pull-12\/12\@xl {
+    position: relative;
+    right: 100% !important;
+    left: auto;
+    /* [1] */
+  }
+}
+
+/* ==========================================================================
+   #Z-INDEX
+   ========================================================================== */
+/**
+ * Quickly spit out some little utility classes to make use of our stacking
+ * values (can be used to nudge things up and down in the HTML is necessary).
+ */
+/* stylelint-disable declaration-no-important */
+.u-z-index-0 {
+  z-index: 0 !important;
+}
+
+.u-z-index-1 {
+  z-index: 10 !important;
+}
+
+.u-z-index-2 {
+  z-index: 20 !important;
+}
+
+.u-z-index-3 {
+  z-index: 30 !important;
+}
+
+.u-z-index-4 {
+  z-index: 40 !important;
+}
+
+.u-z-index-5 {
+  z-index: 50 !important;
+}
+
+.u-z-index-6 {
+  z-index: 60 !important;
+}
+
+.u-z-index-7 {
+  z-index: 70 !important;
+}
+
+.u-z-index-8 {
+  z-index: 80 !important;
+}
+
+.u-z-index-9 {
+  z-index: 90 !important;
+}
+
+.u-z-index-10 {
+  z-index: 100 !important;
+}
+
+/* stylelint-enable */
+/* ==========================================================================
+   #DISPLAY
+   ========================================================================== */
+.u-hide-visually {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+/* ==========================================================================
+   #TEXT
+   ========================================================================== */
+/**
+ * A series of utility classes for manipulating text (alignments, etc.).
+ */
+.u-text-left {
+  text-align: left !important;
+}
+
+.u-text-right {
+  text-align: right !important;
+}
+
+.u-text-center {
+  text-align: center !important;
+}
+
+/* ==========================================================================
+   #IE8
+   ========================================================================== */
+.ie8 {
+  /**
+   * Because IE8 doesn’t support media queries, let’s just single-column it all
+   * at a reasonable width.
+   */
+  /**
+   * No DETAILS in IE8 means we should just let the expandable ribbons act like
+   * a DIV.
+   */
+  /**
+   * Custom checkboxes ain’t gonna work in IE8.
+   */
+}
+
+.ie8 summary,
+.ie8 details[open] > summary {
+  text-decoration: none;
+  color: inherit;
+  cursor: text;
+}
+
+.ie8 .o-wrapper {
+  width: 960px;
+}
+
+.ie8 .c-ribbon--expandable summary {
+  white-space: normal;
+  overflow: visible;
+  text-indent: 0;
+  padding-left: 0;
+}
+
+.ie8 .c-form-checkbox__input {
+  position: static;
+}
+
+.ie8 .c-form-checkbox__faux {
+  font-size: inherit;
+  width: auto;
+  height: auto;
+  border: none;
+  margin-right: 0;
+}
