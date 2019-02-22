@@ -60,3 +60,7 @@
   @return $map;
 
 }
+
+@function get-line-height($font-size, $line-height) {
+  @return $line-height / $font-size;
+}

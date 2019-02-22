@@ -72,8 +72,8 @@
 
     @else if ($line-height != none and $line-height != false) {
 
-      @warn "`#{$line-height}` is not a valid value for `line-height`.";
-
+      //@warn "`#{$line-height}` is not a valid value for `line-height`.";
+      line-height: get-line-height($font-size, $line-height);
     }
 
   }
