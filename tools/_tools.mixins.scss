@@ -45,25 +45,43 @@
 
 
 // Create a rem-based font-size that automatically sits on our baseline grid.
+//
+// Example Usage:
+//
+// @include font-size(32px);
+// @include font-size(24px, 32px);
+// @include font-size(17px, inherit);
+//
 // ========================================================================== */
 
-@mixin font-size($font-size, $line-height: auto) {
+@mixin font-size($font-size, $line-height: generate-automatically) {
   font-size: $font-size;
   font-size: ($font-size / $global-font-size) * 1rem;
 
-  @if ($line-height == auto) {
+  // If we haven’t specified a line-height explicitly, let’s automatically
+  // create one that sits on the next closest unit of our baseline grid.
+  @if ($line-height == generate-automatically) {
     line-height: ceil($font-size / $global-line-height) * ($global-line-height / $font-size);
   }
 
+  // If we have passed a line-height value into the mixin, let’s check it and
+  // convert it.
   @else {
 
-    @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+    // Strip any units from numerical values
+    @if (type-of($line-height) == number) {
+      line-height: strip-unit($line-height) / strip-unit($font-size);
+    }
+
+    // If we’ve passed in either `inherit` or `normal` keywords, treat them as
+    // literal.
+    @else if ($line-height == "inherit" or $line-height == "normal") {
       line-height: $line-height;
     }
 
-    @else if ($line-height != none and $line-height != false) {
+    @else {
 
-      @warn "`#{$line-height}` is not a valid value for `line-height`.";
+      @warn "`#{$line-height}` is not a valid value for `line-height`. Values can be pixel values, or keywords `inherit` or `normal`.";
 
     }
 
