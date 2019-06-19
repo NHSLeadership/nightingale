@@ -2,12 +2,12 @@
    #HINTS
    ========================================================================== */
 
-@if ($global-hints == true) {
-
 @mixin _hint-error-styles() {
-  cursor:help;
+  cursor: help;
   outline: 1px solid red;
 }
+
+@if ($global-hints == true) {
 
 /**
  * List items outside of lists are definitely errors.
