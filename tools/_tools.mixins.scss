@@ -45,6 +45,13 @@
 
 
 // Create a rem-based font-size that automatically sits on our baseline grid.
+//
+// Example Usage:
+//
+// @include font-size(32px);
+// @include font-size(24px, 32px);
+// @include font-size(17px, inherit);
+//
 // ========================================================================== */
 
 @mixin font-size($font-size, $line-height: generate-automatically) {
