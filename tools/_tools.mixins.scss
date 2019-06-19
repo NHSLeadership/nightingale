@@ -68,7 +68,7 @@
 
     // If we’ve passed in either `inherit` or `normal` keywords, treat them as
     // literal.
-    @else if (type-of($line-height) == "inherit" or $line-height == "normal") {
+    @else if ($line-height == "inherit" or $line-height == "normal") {
       line-height: $line-height;
     }
 
