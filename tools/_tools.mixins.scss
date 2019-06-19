@@ -47,13 +47,13 @@
 // Create a rem-based font-size that automatically sits on our baseline grid.
 // ========================================================================== */
 
-@mixin font-size($font-size, $line-height: auto) {
+@mixin font-size($font-size, $line-height: generate-automatically) {
   font-size: $font-size;
   font-size: ($font-size / $global-font-size) * 1rem;
 
   // If we haven’t specified a line-height explicitly, let’s automatically
   // create one that sits on the next closest unit of our baseline grid.
-  @if ($line-height == auto) {
+  @if ($line-height == generate-automatically) {
     line-height: ceil($font-size / $global-line-height) * ($global-line-height / $font-size);
   }
 
