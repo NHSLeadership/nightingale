@@ -147,27 +147,19 @@ select.c-form-input {
 
 .c-form-dropdown {
   position: relative;
-
-  &:after {
-    @include sprite(arrow-down, true);
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    margin-top: -10px;
-  }
-
 }
 
-  .c-form-dropdown__select {
-    cursor: pointer;
-    background: none;
-    background-color: $color-form-bg;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-        -ms-appearance: none;
-            appearance: none;
-    border-radius: 0;
-  }
+.c-form-dropdown__select {
+  cursor: pointer;
+  background: $color-form-bg url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE0LjgzIDE2LjQybDkuMTcgOS4xNyA5LjE3LTkuMTcgMi44MyAyLjgzLTEyIDEyLTEyLTEyeiIvPjxwYXRoIGQ9Ik0wLS43NWg0OHY0OGgtNDh6IiBmaWxsPSJub25lIi8+PC9zdmc+") 99% center no-repeat;
+  background-size: 30px;
+  padding-right: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
 
 
 
