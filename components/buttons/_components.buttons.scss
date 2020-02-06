@@ -27,12 +27,14 @@
   transition: 0.2s;
 
   &:hover {
+    text-decoration: none;
     transform: translateY(-1px);
     box-shadow: 0 2px 2px 0 rgba($color-btn-shadow, 0.2),
                 0 8px 10px 0 rgba($color-btn-shadow, 0.4);
   }
 
   &:active {
+    text-decoration: none;
     box-shadow: 0 4px 4px 0 rgba($color-btn-shadow, 0.1) inset,
                 0 2px 2px 0 rgba($color-btn-shadow, 0.3) inset;
     border-color: transparent;

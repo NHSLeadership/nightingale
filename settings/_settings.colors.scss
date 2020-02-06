@@ -16,7 +16,7 @@
 
 $color-text:    color('nhs-black')     !default; // [1]
 $color-text-bg: color('white')         !default; // [1]
-$color-lists:   color('nhs-grey-dark') !default;
+$color-lists:   color('nhs-black') !default;
 
 
 
@@ -42,7 +42,7 @@ $color-warning:     color('warning')     !default;
 // ========================================================================== */
 
 $color-links:         color('nhs-blue')   !default;
-$color-links-hover:   #8060a7             !default;
+$color-links-hover:   #4c8ecf             !default;
 $color-links-active:  color('nhs-blue')   !default;
 $color-links-visited: color('nhs-purple') !default;
 
@@ -262,14 +262,5 @@ $color-quote:        color('nhs-grey-dark') !default;
 $color-quote-meta:   color('nhs-black')     !default;
 $color-quote-border: color('nhs-grey-pale') !default;
 $color-quote-alt:    color('white')         !default;
-$color-quote-alt-bg: color('nhs-purple')    !default;
+$color-quote-alt-bg: color('nhs-blue')    !default;
 
-
-
-
-
-// File-Upload
-// ========================================================================== */
-
-$color-file-upload-bg:     color('nhs-grey-pale');
-$color-file-upload-border: color('nhs-grey-mid');

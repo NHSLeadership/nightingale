@@ -10,8 +10,6 @@
    ========================================================================== */
 
 address,
-details,
-blockquote, p, pre,
 dl, ol, ul,
 figure,
 hr,
@@ -20,11 +18,16 @@ fieldset {
   @include rem(margin-bottom, $global-spacing-unit);
 }
 
-h1, h2, h3, h4, h5, h6 {
+details,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, pre,
+ul, ol,
+dd {
+
   @include rem(margin-bottom, $global-spacing-unit-small);
 }
 
 ul, ol,
 dd {
-  @include rem(margin-left, $global-spacing-unit);
+  @include rem(margin-left, $global-spacing-unit-large);
 }
